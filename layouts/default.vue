@@ -7,6 +7,10 @@
     <!-- Pages -->
     <Nuxt />
     <!--  -->
+    <NavbarMenu />
+    <!--  -->
+    <NavbarUser />
+    <!--  -->
     <Footer class="d-none d-xl-block" />
   </div>
 </template>

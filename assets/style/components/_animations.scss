@@ -1,0 +1,28 @@
+.slide-right-enter-active {
+  animation: slide-right-in 0.5s cubic-bezier(0.04, 0.55, 0.5, 0.97) forwards;
+}
+.slide-right-leave-active {
+  animation: slide-right-out 0.3s cubic-bezier(0.04, 0.55, 0.5, 0.97) forwards;
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+  will-change: animation;
+}
+
+@keyframes slide-right-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-right-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

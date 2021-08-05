@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/" class="weight-br-400 text-20">
+  <nuxt-link to="/" class="weight-br-400 text-20 d-flex">
     <img src="~/assets/images/global/logos/logo.svg" alt="logo" />
     <span>أكاديمي</span>
   </nuxt-link>

@@ -21,11 +21,7 @@
       "
     >
       <!--  -->
-      <div
-        v-for="item in sections_items"
-        :key="item.title"
-        class="sections__items"
-      >
+      <div v-for="item in getItems" :key="item.title" class="sections__items">
         <!--  -->
         <figure
           class="
@@ -50,21 +46,21 @@
           "
         >
           <!--  -->
-          <p class="border-botton padding-y-10">
+          <p class="border-botton-whiteDark padding-y-10">
             <GSvg class="svg-20" name-icon="paint-roller" />
             <span class="text-14 margin-start-10" v-text="item.title" />
           </p>
           <!--  -->
           <ul class="list-unstyled">
             <li
-              v-for="subName in item.subCategory.items"
-              :key="subName"
+              v-for="sub in item.subCategory.items"
+              :key="sub.title"
               class="padding-y-5"
             >
               <nuxt-link
                 class="text-14 text-black weight-br-300 btn-link"
-                :to="{ name: item.subCategory.path }"
-                >{{ subName }}</nuxt-link
+                :to="{ name: sub.path }"
+                >{{ sub.title }}</nuxt-link
               >
             </li>
           </ul>
@@ -77,83 +73,10 @@
 <script>
 export default {
   name: 'Sections',
-  data() {
-    return {
-      sections_items: [
-        {
-          title: 'التصميم',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-        {
-          title: 'البرمجة',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-        {
-          title: 'الميديا',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-        {
-          title: 'التسويق',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-        {
-          title: 'التصوير',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-        {
-          title: 'إدارة الأعمال',
-          subCategory: {
-            path: 'index',
-            items: [
-              'ويب ديزاين',
-              'تصميم تجربة المستخدم',
-              'جرافيك ديزابن',
-              'موشن جرافيك',
-            ],
-          },
-        },
-      ],
-    }
+  computed: {
+    getItems() {
+      return this.$store.state.sections_items
+    },
   },
 }
 </script>
@@ -191,10 +114,7 @@ export default {
     opacity: 0;
     visibility: hidden;
   }
-  //
-  .border-botton {
-    border-bottom: 2px solid var(--whiteDark);
-  }
+
   //
   .btn-link {
     transition: color 0.2s ease;
