@@ -1,0 +1,20 @@
+////////////////////////////
+// 1) Add class background with colors from themes
+@each $name, $colors in $themes {
+  // 1) Add background with the same color
+  .bg-#{$name} {
+    background-color: var(--#{$name});
+  }
+
+  //
+  @if type-of($colors) == "map" {
+    //
+    body.darkmode .bg-#{$name} {
+      background-color: map-get($colors, dark);
+    }
+    //
+    body.lightmode .bg-#{$name} {
+      background-color: map-get($colors, light);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.custom-input {
+  //
+  & input {
+    //
+    &::placeholder {
+      font-weight: 300;
+    }
+  }
+  //
+  &--object-1 {
+    //
+    & input {
+      //
+      &::placeholder {
+        color: var(--gray);
+      }
+    }
+  }
+  //
+  &--object-2 {
+    //
+    & input {
+      //
+      &::placeholder {
+        color: var(--london);
+      }
+    }
+  }
+}

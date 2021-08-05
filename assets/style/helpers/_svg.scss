@@ -1,0 +1,72 @@
+////////////////////////////
+// 1) Add class fill svg with the same color
+$chooseFillSvg: null !default;
+
+@each $fillSvg in $chooseFillSvg {
+  //
+  @if $fillSvg {
+    // Add fill with the same color
+    .fill-#{$fillSvg} {
+      fill: var(--#{$fillSvg});
+    }
+
+    //
+    @each $name, $colors in $themes {
+      //
+      @if $name == $fillSvg and type-of($colors) == "map" {
+        body.darkmode .fill-#{$name} {
+          fill: map-get($colors, dark);
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////
+// 2) Add class sizes svg
+@each $name, $size in $svg {
+  // Render class with sizes svg
+  .svg-#{$name} {
+    width: $size;
+    height: $size;
+  }
+}
+
+////////////////////////////
+/// RESPONSIVE
+////////////////////////////
+// 1) SVG => XLG
+@each $name, $size in $svg {
+  // Render class with sizes svg
+  .xlg-svg-#{$name} {
+    @include BreakPoint(xlg) {
+    }
+  }
+}
+
+// 2) SVG => LG
+@each $name, $size in $svg {
+  // Render class with sizes svg
+  .lg-svg-#{$name} {
+    @include BreakPoint(lg) {
+    }
+  }
+}
+
+// 3) SVG => MD
+@each $name, $size in $svg {
+  // Render class with sizes svg
+  .md-svg-#{$name} {
+    @include BreakPoint(md) {
+    }
+  }
+}
+
+// 4) SVG => SM
+@each $name, $size in $svg {
+  // Render class with sizes svg
+  .sm-svg-#{$name} {
+    @include BreakPoint(sm) {
+    }
+  }
+}

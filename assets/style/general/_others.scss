@@ -1,0 +1,21 @@
+///////////////////////////////
+//// Change style scrollbar
+@mixin scrollBar($width, $cTrack, $cThumb, $type: false) {
+  //
+  @if $type == "html" {
+    scrollbar-color: $cThumb $cTrack;
+  }
+
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $cTrack;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $cThumb;
+    @content;
+  }
+}

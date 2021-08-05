@@ -1,0 +1,58 @@
+// RESET ALL
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// HTML
+html {
+  font-size: 62.5%; // 10PX / 16PX = 62.5%
+
+  // FONT SIZE LG
+  @include BreakPoint(lg) {
+    // LARGE SCREEN => 9px / 16px = 56.25% => 992px
+    font-size: 56.25%;
+  }
+
+  // // FONT SIZE MD
+  // @include BreakPoint(md) {
+  //   // MEDIUM SCREEN => 8px / 16px = 50% => 768px
+  //   font-size: 50%;
+  // }
+
+  // // FONT SIZE SM
+  // @include BreakPoint(sm) {
+  //   // SMALL SCREEN => 7px / 16px = 46.875%
+  //   font-size: 46.875%;
+  // }
+
+  // Change color scroll bar
+  @include scrollBar($widthTrack, $colorTrack, $colorThumb, html);
+}
+
+// BODY
+body {
+  box-sizing: border-box;
+  //
+  font-family: $baseFont, sans-serif !important;
+  //
+  overflow-x: hidden;
+
+  // Change color scroll bar
+  @include scrollBar($widthTrack, $colorTrack, $colorThumb);
+}
+
+//
+html,
+body {
+  // height: 100%;
+  height: 10000px;
+}
+
+// SELECTION
+::selection {
+  background-color: $colorSelection;
+}

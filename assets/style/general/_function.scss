@@ -1,0 +1,32 @@
+////////////////////////////
+// 1) Convert To Hex Colors
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+////////////////////////////
+// 2) Set Color
+@function chooseColor($nameColor, $type: "light") {
+  @each $name, $color in $themes {
+    @if $name == $nameColor {
+      @if type-of($color) == "map" {
+        @return map-get($color, $type);
+      } @else {
+        @return $color;
+      }
+    }
+  }
+}
+
+////////////////////////////
+// 2) String Replace
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-slice($string, $index + 1, str-length($string));
+  }
+
+  @return $string;
+}

@@ -1,0 +1,40 @@
+////////////////////////////
+//// All Import files
+/// 1) General
+@import "./general/design-system";
+@import "./general/breakPoint";
+@import "./general/function";
+@import "./general/media";
+@import "./general/others";
+@import "./general/base";
+@import "./general/reset";
+
+/// 2) Themes
+@import "./themes/create-theme";
+
+// 3) - Bootstrap 5
+@import './vendor/bootstrap5';
+
+/// 4) Helpers
+@import "./helpers/background";
+@import "./helpers/color";
+@import "./helpers/directions";
+@import "./helpers/margin";
+@import "./helpers/padding";
+@import "./helpers/svg";
+@import "./helpers/typography";
+@import "./helpers/image";
+@import "./helpers/width";
+@import "./helpers/height";
+@import "./helpers/flexBasis";
+@import "./helpers/display";
+
+/// 5) Direction
+@import "./components/forms";
+@import "./components/buttons";
+
+/// 6) Direction
+@import "./general/dirChange";
+
+/// 7) Utilities
+@import "./utilities/helperClasses";

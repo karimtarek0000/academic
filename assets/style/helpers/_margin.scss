@@ -1,0 +1,387 @@
+// 1) - ADD CLASSES MARGIN FROM DESIGN SYSTEM
+@each $name, $marginSize in $margin {
+  // 1) - MARGIN START
+  .margin-start-#{$name} {
+    // 1 - SUPPORTS
+    @include Supports(
+      "support",
+      (
+        margin-inline: 0,
+      )
+    ) {
+      margin-inline-start: #{$marginSize};
+    }
+    // 2 - IF NOT SUPPORTS
+    @include Supports(
+      "notSupport",
+      (
+        margin-inline: 0,
+      )
+    ) {
+      @include margin("left", $sL: #{$marginSize});
+    }
+  }
+  // 2) - MARGIN END
+  .margin-end-#{$name} {
+    // 1 - SUPPORTS
+    @include Supports(
+      "support",
+      (
+        margin-inline: 0,
+      )
+    ) {
+      margin-inline-end: #{$marginSize};
+    }
+    // 2 - IF NOT SUPPORTS
+    @include Supports(
+      "notSupport",
+      (
+        margin-inline: 0,
+      )
+    ) {
+      @include margin("right", $sR: #{$marginSize});
+    }
+  }
+  // 3) - MARGIN
+  .margin-#{$name} {
+    @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+  }
+  // 4) - MARGIN - X
+  .margin-x-#{$name} {
+    @include margin("x", $sX: #{$marginSize});
+  }
+  // 5) - MARGIN - Y
+  .margin-y-#{$name} {
+    @include margin("y", $sY: #{$marginSize});
+  }
+  // 6) - MARGIN TOP
+  .margin-top-#{$name} {
+    margin-top: #{$marginSize};
+  }
+  // 7) - MARGIN BOTTOM
+  .margin-bottom-#{$name} {
+    margin-bottom: #{$marginSize};
+  }
+}
+
+///////////////////////////////////////////////
+/// RESPONSIVE
+// 2) - XLG - ADD CLASSES MARGIN FROM DESIGN SYSTEM
+@each $name, $marginSize in $margin {
+  // 1) - MARGIN START
+  .xlg-margin-start-#{$name} {
+    @include BreakPoint(xlg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-start: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("left", $sL: #{$marginSize});
+      }
+    }
+  }
+  // 2) - MARGIN END
+  .xlg-margin-end-#{$name} {
+    @include BreakPoint(xlg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-end: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("right", $sR: #{$marginSize});
+      }
+    }
+  }
+  // 3) - MARGIN
+  .xlg-margin-#{$name} {
+    @include BreakPoint(xlg) {
+      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+    }
+  }
+  // 4) - MARGIN - X
+  .xlg-margin-x-#{$name} {
+    @include BreakPoint(xlg) {
+      @include margin("x", $sX: #{$marginSize});
+    }
+  }
+  // 5) - MARGIN - Y
+  .xlg-margin-y-#{$name} {
+    @include BreakPoint(xlg) {
+      @include margin("y", $sY: #{$marginSize});
+    }
+  }
+  // 6) - MARGIN TOP
+  .xlg-margin-top-#{$name} {
+    @include BreakPoint(xlg) {
+      margin-top: #{$marginSize};
+    }
+  }
+  // 7) - MARGIN BOTTOM
+  .xlg-margin-bottom-#{$name} {
+    @include BreakPoint(xlg) {
+      margin-bottom: #{$marginSize};
+    }
+  }
+}
+
+// 3) - LG - ADD CLASSES MARGIN FROM DESIGN SYSTEM
+@each $name, $marginSize in $margin {
+  // 1) - MARGIN START
+  .lg-margin-start-#{$name} {
+    @include BreakPoint(lg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-start: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("left", $sL: #{$marginSize});
+      }
+    }
+  }
+  // 2) - MARGIN END
+  .lg-margin-end-#{$name} {
+    @include BreakPoint(lg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-end: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("right", $sR: #{$marginSize});
+      }
+    }
+  }
+  // 3) - MARGIN
+  .lg-margin-#{$name} {
+    @include BreakPoint(lg) {
+      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+    }
+  }
+  // 4) - MARGIN - X
+  .lg-margin-x-#{$name} {
+    @include BreakPoint(lg) {
+      @include margin("x", $sX: #{$marginSize});
+    }
+  }
+  // 5) - MARGIN - Y
+  .lg-margin-y-#{$name} {
+    @include BreakPoint(lg) {
+      @include margin("y", $sY: #{$marginSize});
+    }
+  }
+  // 6) - MARGIN TOP
+  .lg-margin-top-#{$name} {
+    @include BreakPoint(lg) {
+      margin-top: #{$marginSize};
+    }
+  }
+  // 7) - MARGIN BOTTOM
+  .lg-margin-bottom-#{$name} {
+    @include BreakPoint(lg) {
+      margin-bottom: #{$marginSize};
+    }
+  }
+}
+
+// 4) - MD - ADD CLASSES MARGIN FROM DESIGN SYSTEM
+@each $name, $marginSize in $margin {
+  // 1) - MARGIN START
+  .md-margin-start-#{$name} {
+    @include BreakPoint(md) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-start: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("left", $sL: #{$marginSize});
+      }
+    }
+  }
+  // 2) - MARGIN END
+  .md-margin-end-#{$name} {
+    @include BreakPoint(md) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-end: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("right", $sR: #{$marginSize});
+      }
+    }
+  }
+  // 3) - MARGIN
+  .md-margin-#{$name} {
+    @include BreakPoint(md) {
+      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+    }
+  }
+  // 4) - MARGIN - X
+  .md-margin-x-#{$name} {
+    @include BreakPoint(md) {
+      @include margin("x", $sX: #{$marginSize});
+    }
+  }
+  // 5) - MARGIN - Y
+  .md-margin-y-#{$name} {
+    @include BreakPoint(md) {
+      @include margin("y", $sY: #{$marginSize});
+    }
+  }
+  // 6) - MARGIN TOP
+  .md-margin-top-#{$name} {
+    @include BreakPoint(md) {
+      margin-top: #{$marginSize};
+    }
+  }
+  // 7) - MARGIN BOTTOM
+  .md-margin-bottom-#{$name} {
+    @include BreakPoint(md) {
+      margin-bottom: #{$marginSize};
+    }
+  }
+}
+
+// 5) - SM - ADD CLASSES MARGIN FROM DESIGN SYSTEM
+@each $name, $marginSize in $margin {
+  // 1) - MARGIN START
+  .sm-margin-start-#{$name} {
+    @include BreakPoint(sm) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-start: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("left", $sL: #{$marginSize});
+      }
+    }
+  }
+  // 2) - MARGIN END
+  .sm-margin-end-#{$name} {
+    @include BreakPoint(sm) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        margin-inline-end: #{$marginSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          margin-inline: 0,
+        )
+      ) {
+        @include margin("right", $sR: #{$marginSize});
+      }
+    }
+  }
+  // 3) - MARGIN
+  .sm-margin-#{$name} {
+    @include BreakPoint(sm) {
+      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+    }
+  }
+  // 4) - MARGIN - X
+  .sm-margin-x-#{$name} {
+    @include BreakPoint(sm) {
+      @include margin("x", $sX: #{$marginSize});
+    }
+  }
+  // 5) - MARGIN - Y
+  .sm-margin-y-#{$name} {
+    @include BreakPoint(sm) {
+      @include margin("y", $sY: #{$marginSize});
+    }
+  }
+  // 6) - MARGIN TOP
+  .sm-margin-top-#{$name} {
+    @include BreakPoint(sm) {
+      margin-top: #{$marginSize};
+    }
+  }
+  // 7) - MARGIN BOTTOM
+  .sm-margin-bottom-#{$name} {
+    @include BreakPoint(sm) {
+      margin-bottom: #{$marginSize};
+    }
+  }
+}

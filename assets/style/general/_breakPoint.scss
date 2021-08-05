@@ -1,0 +1,32 @@
+////////////////////////////
+// MEDIA MANGER
+////////////////////////////
+// MIXIN MEDIA QUERY MANGER
+@mixin BreakPoint($pointbreak) {
+  @if ($pointbreak == sm) {
+    // SM => SMALL SCREEN => MAX WIDTH 600PX = 37.5EM
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  } @else if ($pointbreak == md) {
+    // MD => MEDIUM SCREEN => FROM => MIN WIDTH 0PX TO MAX WIDTH 768PX = 48EM
+    @media only screen and (min-width: 0em) and (max-width: 48em) {
+      @content;
+    }
+  } @else if ($pointbreak == lg) {
+    // LG =>  LARGE SCREEN => FROM => MIN WIDTH 0PX TO MAX WIDTH 992PX = 62EM
+    @media only screen and (min-width: 0em) and (max-width: 62em) {
+      @content;
+    }
+  } @else if ($pointbreak == xlg) {
+    // XLG => EXTRA LARGE SCREEN => FORM => MIN WIDTH 0PX TO 1200PX = 75EM
+    @media only screen and (min-width: 0em) and (max-width: 75em) {
+      @content;
+    }
+  } @else if ($pointbreak == xxlg) {
+    // XXLG => EXTRA EXTRA LARGE SCREEN => FORM => MIN WIDTH 1200PX TO .....
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+}

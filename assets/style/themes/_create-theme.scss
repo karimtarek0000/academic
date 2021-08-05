@@ -1,0 +1,42 @@
+//// Create Themes
+////////////////////////////
+// 1) Render themes light mode, and DEFAULT with root => css custom property
+:root {
+  @each $name, $color in $themes {
+    // Check if color equla map or not
+    @if type-of($color) == "map" {
+      --#{$name}: #{map-get($color, light)};
+      //
+      body.lightmode {
+        --#{$name}: #{map-get($color, light)};
+      }
+    } @else {
+      --#{$name}: #{$color};
+    }
+  }
+}
+
+////////////////////////////
+// 2) Render themes dark mode with root => css custom property
+:root {
+  //
+  @media (prefers-color-scheme: dark) {
+    @each $name, $color in $themes {
+      // Check if color equla map or not
+      @if type-of($color) == "map" {
+        --#{$name}: #{map-get($color, dark)};
+      }
+    }
+  }
+
+  //
+  @each $name, $color in $themes {
+    // Check if color equla map or not
+    @if type-of($color) == "map" {
+      //
+      body.darkmode {
+        --#{$name}: #{map-get($color, dark)};
+      }
+    }
+  }
+}

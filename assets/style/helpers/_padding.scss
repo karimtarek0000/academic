@@ -1,0 +1,387 @@
+// 1) - ADD CLASSES PADDING FROM DESIGN SYSTEM
+@each $name, $paddingSize in $padding {
+  // 1) - PADDING START
+  .padding-start-#{$name} {
+    // 1 - SUPPORTS
+    @include Supports(
+      "support",
+      (
+        padding-inline: 0,
+      )
+    ) {
+      padding-inline-start: #{$paddingSize};
+    }
+    // 2 - IF NOT SUPPORTS
+    @include Supports(
+      "notSupport",
+      (
+        padding-inline: 0,
+      )
+    ) {
+      @include padding("left", $sL: #{$paddingSize});
+    }
+  }
+  // 2) - PADDING END
+  .padding-end-#{$name} {
+    // 1 - SUPPORTS
+    @include Supports(
+      "support",
+      (
+        padding-inline: 0,
+      )
+    ) {
+      padding-inline-end: #{$paddingSize};
+    }
+    // 2 - IF NOT SUPPORTS
+    @include Supports(
+      "notSupport",
+      (
+        padding-inline: 0,
+      )
+    ) {
+      @include padding("right", $sR: #{$paddingSize});
+    }
+  }
+  // 3) - PADDING
+  .padding-#{$name} {
+    @include padding("xy", $sX: #{$paddingSize}, $sY: #{$paddingSize});
+  }
+  // 4) - PADDING - X
+  .padding-x-#{$name} {
+    @include padding("x", $sX: #{$paddingSize});
+  }
+  // 5) - PADDING - Y
+  .padding-y-#{$name} {
+    @include padding("y", $sY: #{$paddingSize});
+  }
+  // 6) - PADDING TOP
+  .padding-top-#{$name} {
+    padding-top: #{$paddingSize};
+  }
+  // 7) - PADDING BOTTOM
+  .padding-bottom-#{$name} {
+    padding-bottom: #{$paddingSize};
+  }
+}
+
+///////////////////////////////////////////////
+/// RESPONSIVE
+// 2) - XLG - ADD CLASSES PADDING FROM DESIGN SYSTEM
+@each $name, $paddingSize in $padding {
+  // 1) - PADDING START
+  .xlg-padding-start-#{$name} {
+    @include BreakPoint(xlg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-start: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("left", $sL: #{$paddingSize});
+      }
+    }
+  }
+  // 2) - PADDING END
+  .xlg-padding-end-#{$name} {
+    @include BreakPoint(xlg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-end: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("right", $sR: #{$paddingSize});
+      }
+    }
+  }
+  // 3) - PADDING
+  .xlg-padding-#{$name} {
+    @include BreakPoint(xlg) {
+      @include padding("xy", $sX: #{$paddingSize}, $sY: #{$paddingSize});
+    }
+  }
+  // 4) - PADDING - X
+  .xlg-padding-x-#{$name} {
+    @include BreakPoint(xlg) {
+      @include padding("x", $sX: #{$paddingSize});
+    }
+  }
+  // 5) - PADDING - Y
+  .xlg-padding-y-#{$name} {
+    @include BreakPoint(xlg) {
+      @include padding("y", $sY: #{$paddingSize});
+    }
+  }
+  // 6) - PADDING TOP
+  .xlg-padding-top-#{$name} {
+    @include BreakPoint(xlg) {
+      padding-top: #{$paddingSize};
+    }
+  }
+  // 7) - PADDING BOTTOM
+  .xlg-padding-bottom-#{$name} {
+    @include BreakPoint(xlg) {
+      padding-bottom: #{$paddingSize};
+    }
+  }
+}
+
+// 3) - LG - ADD CLASSES PADDING FROM DESIGN SYSTEM
+@each $name, $paddingSize in $padding {
+  // 1) - PADDING START
+  .lg-padding-start-#{$name} {
+    @include BreakPoint(lg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-start: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("left", $sL: #{$paddingSize});
+      }
+    }
+  }
+  // 2) - PADDING END
+  .lg-padding-end-#{$name} {
+    @include BreakPoint(lg) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-end: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("right", $sR: #{$paddingSize});
+      }
+    }
+  }
+  // 3) - PADDING
+  .lg-padding-#{$name} {
+    @include BreakPoint(lg) {
+      @include padding("xy", $sX: #{$paddingSize}, $sY: #{$paddingSize});
+    }
+  }
+  // 4) - PADDING - X
+  .lg-padding-x-#{$name} {
+    @include BreakPoint(lg) {
+      @include padding("x", $sX: #{$paddingSize});
+    }
+  }
+  // 5) - PADDING - Y
+  .lg-padding-y-#{$name} {
+    @include BreakPoint(lg) {
+      @include padding("y", $sY: #{$paddingSize});
+    }
+  }
+  // 6) - PADDING TOP
+  .lg-padding-top-#{$name} {
+    @include BreakPoint(lg) {
+      padding-top: #{$paddingSize};
+    }
+  }
+  // 7) - PADDING BOTTOM
+  .lg-padding-bottom-#{$name} {
+    @include BreakPoint(lg) {
+      padding-bottom: #{$paddingSize};
+    }
+  }
+}
+
+// 4) - MD - ADD CLASSES PADDING FROM DESIGN SYSTEM
+@each $name, $paddingSize in $padding {
+  // 1) - PADDING START
+  .md-padding-start-#{$name} {
+    @include BreakPoint(md) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-start: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("left", $sL: #{$paddingSize});
+      }
+    }
+  }
+  // 2) - PADDING END
+  .md-padding-end-#{$name} {
+    @include BreakPoint(md) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-end: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("right", $sR: #{$paddingSize});
+      }
+    }
+  }
+  // 3) - PADDING
+  .md-padding-#{$name} {
+    @include BreakPoint(md) {
+      @include padding("xy", $sX: #{$paddingSize}, $sY: #{$paddingSize});
+    }
+  }
+  // 4) - PADDING - X
+  .md-padding-x-#{$name} {
+    @include BreakPoint(md) {
+      @include padding("x", $sX: #{$paddingSize});
+    }
+  }
+  // 5) - PADDING - Y
+  .md-padding-y-#{$name} {
+    @include BreakPoint(md) {
+      @include padding("y", $sY: #{$paddingSize});
+    }
+  }
+  // 6) - PADDING TOP
+  .md-padding-top-#{$name} {
+    @include BreakPoint(md) {
+      padding-top: #{$paddingSize};
+    }
+  }
+  // 7) - PADDING BOTTOM
+  .md-padding-bottom-#{$name} {
+    @include BreakPoint(md) {
+      padding-bottom: #{$paddingSize};
+    }
+  }
+}
+
+// 5) - SM - ADD CLASSES PADDING FROM DESIGN SYSTEM
+@each $name, $paddingSize in $padding {
+  // 1) - PADDING START
+  .sm-padding-start-#{$name} {
+    @include BreakPoint(sm) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-start: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("left", $sL: #{$paddingSize});
+      }
+    }
+  }
+  // 2) - PADDING END
+  .sm-padding-end-#{$name} {
+    @include BreakPoint(sm) {
+      // 1 - SUPPORTS
+      @include Supports(
+        "support",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        padding-inline-end: #{$paddingSize};
+      }
+      // 2 - IF NOT SUPPORTS
+      @include Supports(
+        "notSupport",
+        (
+          padding-inline: 0,
+        )
+      ) {
+        @include padding("right", $sR: #{$paddingSize});
+      }
+    }
+  }
+  // 3) - PADDING
+  .sm-padding-#{$name} {
+    @include BreakPoint(sm) {
+      @include padding("xy", $sX: #{$paddingSize}, $sY: #{$paddingSize});
+    }
+  }
+  // 4) - PADDING - X
+  .sm-padding-x-#{$name} {
+    @include BreakPoint(sm) {
+      @include padding("x", $sX: #{$paddingSize});
+    }
+  }
+  // 5) - PADDING - Y
+  .sm-padding-y-#{$name} {
+    @include BreakPoint(sm) {
+      @include padding("y", $sY: #{$paddingSize});
+    }
+  }
+  // 6) - PADDING TOP
+  .sm-padding-top-#{$name} {
+    @include BreakPoint(sm) {
+      padding-top: #{$paddingSize};
+    }
+  }
+  // 7) - PADDING BOTTOM
+  .sm-padding-bottom-#{$name} {
+    @include BreakPoint(sm) {
+      padding-bottom: #{$paddingSize};
+    }
+  }
+}

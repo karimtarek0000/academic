@@ -1,0 +1,26 @@
+////////////////////////////
+// 1) Add class text with the same color
+$chooseColorText: null !default;
+
+//
+@each $colorText in $chooseColorText {
+  @if $colorText {
+    .text-#{$colorText} {
+      color: var(--#{$colorText});
+    }
+    //
+    @each $name, $colors in $themes {
+      //
+      @if $name == $colorText and type-of($colors) == "map" {
+        //
+        body.darkmode .text-#{$name} {
+          color: map-get($colors, dark);
+        }
+        //
+        body.lightmode .text-#{$name} {
+          color: map-get($colors, dark);
+        }
+      }
+    }
+  }
+}

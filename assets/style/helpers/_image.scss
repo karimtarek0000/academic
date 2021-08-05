@@ -1,0 +1,12 @@
+////////////////////////////
+// 1) Add image
+@mixin addImage($img, $addColor: false) {
+  //
+  @if ($addColor) {
+    background-image: linear-gradient(#{$addColor}), url($img);
+  } @else {
+    background-image: url($img);
+  }
+  background-repeat: no-repeat;
+  @content;
+}

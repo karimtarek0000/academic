@@ -1,0 +1,164 @@
+////////////////////////////
+// All Colors Variables
+////////////////////////////
+$black: #000000;
+$whiteDark: #f5f5f5;
+$white: white;
+$gray: #7d7b7b;
+$Voodoo: #452b4e;
+$voodoo-light: #503758;
+$coral: #ff805d;
+$silver: #9e9e9e;
+$snuff: #d8c5df;
+$london: #c6b1cd;
+
+// 1) Themes Colors
+$themes: (
+  black: $black,
+  whiteDark: $whiteDark,
+  gray: $gray,
+  white: $white,
+  Voodoo: $Voodoo,
+  coral: $coral,
+  silver: $silver,
+  snuff: $snuff,
+  voodoo-light: $voodoo-light,
+  london: $london,
+);
+
+////////////////////////////
+// 2) Font
+$font: (
+  family: '',
+  weight: ':wght@200;400;700',
+  addWeight: (),
+  sizes: (
+    12: 1.2rem,
+    13: 1.3rem,
+    14: 1.4rem,
+    16: 1.6rem,
+    18: 1.8rem,
+    20: 2rem,
+    29: 2.9rem,
+    30: 3rem,
+    38: 3.8rem,
+  ),
+);
+
+//
+$customFont: (
+  status: true,
+  name: 'BR',
+  src: '../fonts/',
+  weights: (
+    bold: (
+      ext: 'bold.ttf',
+      weight: 400,
+    ),
+    regular: (
+      ext: 'regular.ttf',
+      weight: 300,
+    ),
+  ),
+);
+
+//
+$baseFont: 'BR';
+
+// Choose color text
+// Ex => first-color second-color ..etc if null will render all themes
+$chooseColorText: ('black', 'Voodoo', 'coral', 'silver', 'snuff', 'london');
+
+////////////////////////////
+/// 3) - SVG
+// SVG - SIZE
+$svg: (
+  20: 2rem,
+);
+
+// Choose fill svg
+// Ex => first-color second-color ..etc if null will render all themes
+$chooseFillSvg: ();
+
+////////////////////////////
+/// 4) - DISPLAY
+// Choose type display will add classes
+// Ex => flex - grid - block - inline-block - table - box
+$chooseDisplay: ('flex', 'block');
+
+// Choose type aligment will add classes
+// Ex => justify-content - align-items - align-self - align-content
+$chooseAligmentFlex: ();
+
+// Choose type aligment will add classes
+// Ex => flex-grow flex-shrink
+$chooseGrowAndShrink: ();
+
+////////////////////////////
+/// 5) - WIDTH
+// Write all width you need
+$chooseWidth: (
+  100: 100%,
+  148: 14.8rem,
+  195: 19.5rem,
+  75: 75%,
+  349: 349px,
+  155: 15.5rem,
+);
+
+////////////////////////////
+/// 6) - HEIGHT
+// Write all height you need
+$chooseHeight: (
+  100: 100%,
+  55: 5.5rem,
+  60: 6rem,
+  109: 109px,
+);
+
+////////////////////////////
+// 7) Padding
+$padding: (
+  5: 5px,
+  10: 1rem,
+  15: 1.5rem,
+  20: 2.1rem,
+  27: 2.7rem,
+  30: 3rem,
+  67: 6.7rem,
+  89: 8.9rem,
+);
+
+////////////////////////////
+// 8) Margin
+$margin: (
+  5: 0.5rem,
+  10: 1rem,
+  18: 1.8rem,
+  20: 2rem,
+  21: 2.1rem,
+  30: 3rem,
+  38: 3.8rem,
+  50: 5rem,
+  76: 7.6rem,
+  90: 9rem,
+  110: 11rem,
+);
+
+////////////////////////////
+// 10) BORDER RADUIS
+$borderRaduis: (
+  21: 21px,
+  25: 2.5rem,
+  60: 6rem,
+);
+
+////////////////////////////
+// 11) OTHER
+// Prorperty Change Scroll Bar
+$colorTrack: null;
+$colorThumb: null;
+$widthTrack: null;
+
+// Change Color Selection
+$colorSelection: null;

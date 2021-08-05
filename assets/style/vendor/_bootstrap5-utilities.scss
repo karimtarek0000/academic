@@ -1,0 +1,27 @@
+// Add your own utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    'ml': (
+      property: margin-end,
+      class: ml,
+      values: (
+        auto: auto,
+      ),
+    ),
+    'mr': (
+      property: margin-start,
+      class: mr,
+      values: (
+        auto: auto,
+      ),
+    ),
+    'vh': (
+      property: height,
+      class: vh,
+      values: (
+        100: 100vh,
+      ),
+    ),
+  )
+);

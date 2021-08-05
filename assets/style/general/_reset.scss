@@ -1,0 +1,70 @@
+// 1) - Reset button
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+
+  //
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+
+  //
+  &:focus {
+    outline: none;
+  }
+}
+
+// 2) - Reset heading user select
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  user-select: none;
+}
+
+// 3) - Reset image pointer event and user select
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+// 4) - Reset unorder list
+ul {
+  list-style: none;
+}
+
+// 5) - Reset anchor tag
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+
+  //
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 0;
+  font-family: inherit;
+
+  //
+  &:focus {
+    outline: 0;
+  }
+}
+
+.resetHoverLink:hover {
+  color: currentColor !important;
+}

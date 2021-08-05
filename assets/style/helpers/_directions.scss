@@ -1,0 +1,504 @@
+//////////////////////////////
+// 1) Padding Manger
+@mixin padding(
+  $dir,
+  $s: false,
+  $sX: false,
+  $sY: false,
+  $sL: false,
+  $sR: false,
+  $sT: false,
+  $sB: false,
+  $rel: "rem"
+) {
+  //
+  & {
+    //// Horizontal
+    // 1) X
+    @if $dir == "x" {
+      padding-left: #{$sX};
+      padding-right: #{$sX};
+    }
+
+    // 2) LEFT
+    @if $dir == "left" {
+      padding-left: #{$sL};
+    }
+
+    // 3) RIGHT
+    @if $dir == "right" {
+      padding-right: #{$sR};
+    }
+
+    // 4) Horizontal and Vertical
+    @if $dir == "xy" {
+      padding: #{$sY} #{$sX};
+    }
+
+    //// Vertical
+    // 5) Y
+    @if $dir == "y" {
+      padding-bottom: #{$sY};
+      padding-top: #{$sY};
+    }
+
+    // 6) TOP
+    @if $dir == "top" {
+      padding-top: #{$sT};
+    }
+
+    // 7) BOTTOM
+    @if $dir == "bottom" {
+      padding-bottom: #{$sB};
+    }
+
+    ///// SPECIFIC => TOP BOTTOM RIGHT LEFT
+    // 8) X-Y
+    @if $dir == "x-y" {
+      padding: #{$sT} #{$sR} #{$sB} #{$sL};
+    }
+  }
+
+  //
+  html[dir="rtl"] & {
+    // LEFT
+    @if $dir == "left" {
+      padding-right: #{$sL} !important;
+      padding-left: 0;
+    }
+
+    // RIGHT
+    @if $dir == "right" {
+      padding-left: #{$sR} !important;
+      padding-right: 0;
+    }
+
+    // X-Y
+    @if $dir == "x-y" {
+      padding: #{$sT} #{$sL} #{$sB} #{$sR};
+    }
+  }
+}
+
+//////////////////////////////
+// 2) Margin Manger
+@mixin margin(
+  $dir,
+  $s: false,
+  $sX: false,
+  $sY: false,
+  $sL: false,
+  $sR: false,
+  $sT: false,
+  $sB: false
+) {
+  //
+  & {
+    //// Horizontal
+    // 1) X
+    @if $dir == "x" {
+      margin-left: #{$sX};
+      margin-right: #{$sX};
+    }
+
+    // 2) LEFT
+    @if $dir == "left" {
+      margin-left: #{$sL};
+    }
+
+    // 3) RIGHT
+    @if $dir == "right" {
+      margin-right: #{$sR};
+    }
+
+    //// Horizontal and Vertical
+    @if $dir == "xy" {
+      margin: #{$sY} #{$sX};
+    }
+
+    //// Vertical
+    // 4) Y
+    @if $dir == "y" {
+      margin-top: #{$sY};
+      margin-bottom: #{$sY};
+    }
+
+    // 5) TOP
+    @if $dir == "top" {
+      margin-top: #{$sT};
+    }
+
+    // 6) BOTTOM
+    @if $dir == "bottom" {
+      margin-bottom: #{$sB};
+    }
+
+    ///// SPECIFIC => TOP BOTTOM RIGHT LEFT
+    // 7) X-Y
+    @if $dir == "x-y" {
+      margin: #{$sT} #{$sR} #{$sB} #{$sL};
+    }
+  }
+
+  //
+  html[dir="rtl"] & {
+    // LEFT
+    @if $dir == "left" {
+      margin-right: #{$sL} !important;
+      margin-left: 0;
+    }
+
+    // RIGHT
+    @if $dir == "right" {
+      margin-left: #{$sR} !important;
+      margin-right: 0;
+    }
+
+    // X-Y
+    @if $dir == "x-y" {
+      margin: #{$sT} #{$sL} #{$sB} #{$sR};
+    }
+  }
+}
+
+//////////////////////////////
+// 3) Position Manger
+@mixin position($dir, $moveT: 0, $moveB: 0, $moveL: 0, $moveR: 0) {
+  /////////////////////////////
+  //// Horizontal
+  // 1) Left or Inset start
+  @if $dir == "left" {
+    //
+    & {
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-start: #{$moveL};
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        #{$dir}: #{$moveL};
+      }
+    }
+  }
+
+  // 2) Right or Inset end
+  @if $dir == "right" {
+    //
+    & {
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-end: #{$moveR};
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        #{$dir}: #{$moveR};
+      }
+    }
+  }
+
+  // 3) Ceneter x
+  @if $dir == "centerX" {
+    //
+    & {
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline: 25%;
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  /////////////////////////////
+  //// Vertical
+  // 4) Top
+  @if $dir == "top" {
+    //
+    & {
+      #{$dir}: #{$moveT};
+    }
+  }
+
+  // 5) Bottom
+  @if $dir == "bottom" {
+    //
+    & {
+      #{$dir}: #{$moveB};
+    }
+  }
+
+  // 6) Ceneter y
+  @if $dir == "centerY" {
+    //
+    & {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  // 7) All Ceneter => top and right
+  @if $dir == "allCenter" {
+    //
+    & {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /////////////////////////////
+  //// Specifity
+  // 9) Left and Top
+  @if $dir == "lt" {
+    //
+    & {
+      top: #{$moveT};
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-start: #{$moveL};
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        left: #{$moveL};
+      }
+      //
+      @if $moveT == "50%" and $moveL == "50%" {
+        transform: translate(-50%, -50%);
+      }
+      //
+      @if $moveT == "50%" and $moveL != "50%" {
+        transform: translateY(-50%);
+      }
+      //
+      @if $moveL == "50%" and $moveT != "50%" {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // 10) Right and Top
+  @if $dir == "rt" {
+    //
+    & {
+      top: #{$moveT};
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-end: #{$moveR};
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        right: #{$moveR};
+      }
+
+      @if $moveR == "50%" and $moveT == "50%" {
+        transform: translate(50%, -50%);
+      }
+
+      @if $moveR == "50%" and $moveT != "50%" {
+        transform: translateX(50%);
+      }
+
+      @if $moveT == "50%" and $moveR != "50%" {
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  // 11) Left and Bottom
+  @if $dir == "lb" {
+    //
+    & {
+      bottom: #{$moveB};
+      // 1) - support
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-start: #{$moveL};
+      }
+      // 2) - not support
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        left: #{$moveL};
+      }
+
+      @if $moveB == "50%" and $moveL == "50%" {
+        transform: translate(-50%, 50%);
+      }
+
+      //
+      @if $moveB == "50%" and $moveL != "50%" {
+        transform: translateY(50%);
+      }
+
+      //
+      @if $moveL == "50%" and $moveB != "50%" {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // 12) Right and Bottom
+  @if $dir == "rb" {
+    //
+    & {
+      bottom: #{$moveB};
+
+      @include Supports(
+        "support",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        inset-inline-end: #{$moveR};
+      }
+
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        right: #{$moveR};
+      }
+
+      @if $moveR == "50%" and $moveB == "50%" {
+        transform: translate(50%, 50%);
+      }
+
+      @if $moveR == "50%" and $moveB != "50%" {
+        transform: translateX(50%);
+      }
+
+      @if $moveB == "50%" and $moveR != "50%" {
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  // Direction => rtl
+  html[dir="rtl"] & {
+    // Left
+    @if ($dir == "left") {
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        right: #{$moveL};
+        left: auto;
+      }
+    }
+
+    // Right
+    @if ($dir == "right") {
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        left: #{$moveR};
+        right: auto;
+      }
+    }
+
+    // Right Top or Right Bottom
+    @if ($dir == "rt" or $dir == "rb") {
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        left: #{$moveR};
+        right: auto;
+      }
+
+      @if $moveR == "50%" and $moveB == "50%" {
+        transform: translate(-50%, 50%);
+      }
+
+      @if $moveR == "50%" and $moveB != "50%" {
+        transform: translateX(-50%);
+      }
+
+      @if $moveB == "50%" and $moveR != "50%" {
+        transform: translateY(-50%);
+      }
+    }
+
+    // Left Top or Left Bottom
+    @if ($dir == "lt" or $dir == "lb") {
+      @include Supports(
+        "notSupport",
+        (
+          inset-inline: 0,
+        )
+      ) {
+        right: #{$moveL};
+        left: auto;
+      }
+    }
+  }
+}

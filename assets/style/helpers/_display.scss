@@ -1,0 +1,343 @@
+////////////////////////////
+// 1) - Display
+$display: (
+  flex: flex,
+  block: block,
+  inline: inline,
+  inline-block: inline-block,
+  none: none,
+  table: table,
+  grid: grid,
+) !default;
+
+////////////////////////////
+// 2) - Aligment
+$aligmentFlex: (
+  // Justify content
+  justify-content:
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+      between: space-between,
+      around: space-around,
+      evenly: space-evenly,
+    ),
+  // Align items
+  align-items:
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch,
+    ),
+  // Align content
+  align-content:
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+    ),
+  // Align self
+  align-self:
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+    ),
+  // Flex direction
+  flex-direction:
+    (
+      row: row,
+      column: column,
+    ),
+  // FLEX WRAP
+  flex-wrap:
+    (
+      wrap: wrap,
+      nowrap: nowrap,
+    )
+) !default;
+
+////////////////////////////
+// 3) - FLEX GROW AND SHRINK
+$growAndShrink: (
+  //
+  flex-grow:
+    (
+      0: 0,
+      1: 1,
+      2: 2,
+    ),
+  //
+  flex-shrink:
+    (
+      0: 0,
+      1: 1,
+      2: 2,
+    )
+) !default;
+
+////////////////////////////////////////////////////////
+// 1) - DISPLAY => TYPE BOX
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      .d-#{$nameBox} {
+        display: $typeBox;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////
+/// RESPONSIVE
+// 1) - DISPLAY => TYPE BOX => XXLG
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      @include BreakPoint(xxlg) {
+        .xxlg-d-#{$nameBox} {
+          display: $typeBox;
+        }
+      }
+    }
+  }
+}
+
+// 2) - DISPLAY => TYPE BOX => XLG
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      @include BreakPoint(xlg) {
+        .xlg-d-#{$nameBox} {
+          display: $typeBox;
+        }
+      }
+    }
+  }
+}
+
+// 3) - DISPLAY => TYPE BOX => LG
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      @include BreakPoint(lg) {
+        .lg-d-#{$nameBox} {
+          display: $typeBox;
+        }
+      }
+    }
+  }
+}
+
+// 4) - DISPLAY => TYPE BOX => MD
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      @include BreakPoint(md) {
+        .md-d-#{$nameBox} {
+          display: $typeBox;
+        }
+      }
+    }
+  }
+}
+
+// 5) - DISPLAY => TYPE BOX => SM
+@each $nameBox, $typeBox in $display {
+  @each $choose in $chooseDisplay {
+    @if $choose == $nameBox {
+      @include BreakPoint(sm) {
+        .sm-d-#{$nameBox} {
+          display: $typeBox;
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////
+// 2) - Aligment flex
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        .#{$nameAligment}-#{$nameSubMap} {
+          #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////
+/// RESPONSIVE
+// 1) - Aligment flex => XXLG
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        @include BreakPoint(xxlg) {
+          .xxlg-#{$nameAligment}-#{$nameSubMap} {
+            #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 2) - Aligment flex => XLG
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        @include BreakPoint(xlg) {
+          .xlg-#{$nameAligment}-#{$nameSubMap} {
+            #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 3) - Aligment flex => LG
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        @include BreakPoint(lg) {
+          .lg-#{$nameAligment}-#{$nameSubMap} {
+            #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 4) - Aligment flex => MD
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        @include BreakPoint(md) {
+          .md-#{$nameAligment}-#{$nameSubMap} {
+            #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 5) - Aligment flex => SM
+@each $nameAligment, $typeAligment in $aligmentFlex {
+  @each $choose in $chooseAligmentFlex {
+    @if $choose == $nameAligment {
+      @each $nameSubMap in map-keys($typeAligment) {
+        @include BreakPoint(sm) {
+          .sm-#{$nameAligment}-#{$nameSubMap} {
+            #{$nameAligment}: map-get($typeAligment, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////
+// 3) - FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .#{$type}-#{$nameSubMap} {
+          #{$type}: map-get($size, $nameSubMap);
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////
+/// RESPONSIVE
+// 1) - XXLG => FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .xxlg-#{$type}-#{$nameSubMap} {
+          @include BreakPoint(xxlg) {
+            #{$type}: map-get($size, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 2) - XLG => FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .xlg-#{$type}-#{$nameSubMap} {
+          @include BreakPoint(xlg) {
+            #{$type}: map-get($size, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 3) - LG => FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .lg-#{$type}-#{$nameSubMap} {
+          @include BreakPoint(lg) {
+            #{$type}: map-get($size, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 4) - MD => FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .md-#{$type}-#{$nameSubMap} {
+          @include BreakPoint(md) {
+            #{$type}: map-get($size, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 5) - SM => FLEX => GROW AND SHRINK
+@each $type, $size in $growAndShrink {
+  @each $choose in $chooseGrowAndShrink {
+    @if $choose == $type {
+      @each $nameSubMap in map-keys($size) {
+        .sm-#{$type}-#{$nameSubMap} {
+          @include BreakPoint(sm) {
+            #{$type}: map-get($size, $nameSubMap);
+          }
+        }
+      }
+    }
+  }
+}

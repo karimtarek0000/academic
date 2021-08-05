@@ -1,0 +1,93 @@
+////////////////////////////
+// 1) - ADD FONT IN FONT FAMILY
+// @import url("https://fonts.googleapis.com/css2?family=#{map-get($font, family)}#{map-get($font, weight)}&display=swap");
+
+////////////////////////////
+// 2) - ADD FONT FACE
+@each $name, $inside in map-get($customFont, weights) {
+  //
+  @if map-get($customFont, status) {
+    //
+    $nameFont: map-get($customFont, name);
+    $weightFont: map-get($inside, weight);
+    //
+    @font-face {
+      font-family: $nameFont;
+      src: url(map-get($customFont, src) + map-get($inside, ext));
+      font-weight: $weightFont;
+    }
+
+    // Add class weight
+    .f-#{to-lower-case(map-get($customFont, name))}-#{$weightFont} {
+      font-family: $nameFont;
+    }
+    .weight-#{to-lower-case(map-get($customFont, name))}-#{$weightFont} {
+      font-weight: $weightFont;
+    }
+  }
+}
+
+// ADD FONTS GOOGLE
+.f-#{to-lower-case(map-get($font, family))} {
+  font-family: map-get($font, family);
+}
+
+////////////////////////////////////
+/// 3) - ADD CLASSES FONT SIZE
+// 1) - Add classes form font size
+@each $name, $size in map-get($font, sizes) {
+  .text-#{$name} {
+    font-size: $size;
+    line-height: #{$size * 1.9};
+  }
+}
+
+//////////////////////////////////
+/// RESPONSIVE
+// 2) - FONT SIZE => XLG
+@each $name, $size in map-get($font, sizes) {
+  @include BreakPoint(xlg) {
+    .xlg-text-#{$name} {
+      font-size: $size;
+      line-height: #{$size * 1.6};
+    }
+  }
+}
+
+// 3) - FONT SIZE => LG
+@each $name, $size in map-get($font, sizes) {
+  @include BreakPoint(lg) {
+    .lg-text-#{$name} {
+      font-size: $size;
+      line-height: #{$size * 1.6};
+    }
+  }
+}
+
+// 4) - FONT SIZE => MD
+@each $name, $size in map-get($font, sizes) {
+  @include BreakPoint(md) {
+    .md-text-#{$name} {
+      font-size: $size;
+      line-height: #{$size * 1.6};
+    }
+  }
+}
+
+// 5) - FONT SIZE => SM
+@each $name, $size in map-get($font, sizes) {
+  @include BreakPoint(sm) {
+    .sm-text-#{$name} {
+      font-size: $size;
+      line-height: #{$size * 1.6};
+    }
+  }
+}
+
+////////////////////////////////////
+/// 3) - ADD CLASSES FONT WEIGHT
+@each $name, $size in map-get($font, addWeight) {
+  .weight-#{$name} {
+    font-weight: $size;
+  }
+}

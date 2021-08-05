@@ -1,0 +1,58 @@
+////////////////////////////
+// 1) - Width
+@each $name, $widthSize in $chooseWidth {
+  .width-#{$name} {
+    width: $widthSize;
+  }
+}
+
+///////////////////////////////////////////////
+/// RESPONSIVE
+////////////////////////////
+// 1) - Width - XXLG
+@each $name, $widthSize in $chooseWidth {
+  .xxlg-width-#{$name} {
+    @include BreakPoint(xxlg) {
+      width: $widthSize;
+    }
+  }
+}
+
+// 2) - Width - XLG
+@each $name, $widthSize in $chooseWidth {
+  .xlg-width-#{$name} {
+    @include BreakPoint(xlg) {
+      width: $widthSize;
+    }
+  }
+}
+
+////////////////////////////
+// 3) - Width - LG
+@each $name, $widthSize in $chooseWidth {
+  .lg-width-#{$name} {
+    @include BreakPoint(lg) {
+      width: $widthSize;
+    }
+  }
+}
+
+////////////////////////////
+// 4) - Width - MD
+@each $name, $widthSize in $chooseWidth {
+  .md-width-#{$name} {
+    @include BreakPoint(md) {
+      width: $widthSize;
+    }
+  }
+}
+
+////////////////////////////
+// 5) - Width - SM
+@each $name, $widthSize in $chooseWidth {
+  .sm-width-#{$name} {
+    @include BreakPoint(sm) {
+      width: $widthSize;
+    }
+  }
+}

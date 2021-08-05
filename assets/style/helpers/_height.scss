@@ -1,0 +1,49 @@
+////////////////////////////
+// 1) - Height
+@each $name, $heightSize in $chooseHeight {
+  .height-#{$name} {
+    height: $heightSize;
+  }
+}
+
+///////////////////////////////////////////////
+/// RESPONSIVE
+////////////////////////////
+// 1) - Height - XXLG
+@each $name, $heightSize in $chooseHeight {
+  .xxlg-height-#{$name} {
+    @include BreakPoint(xxlg) {
+      height: $heightSize;
+    }
+  }
+}
+
+////////////////////////////
+// 2) - Height - LG
+@each $name, $heightSize in $chooseHeight {
+  .lg-height-#{$name} {
+    @include BreakPoint(lg) {
+      height: $heightSize;
+    }
+  }
+}
+
+////////////////////////////
+// 3) - Height - MD
+@each $name, $heightSize in $chooseHeight {
+  .md-height-#{$name} {
+    @include BreakPoint(md) {
+      height: $heightSize;
+    }
+  }
+}
+
+////////////////////////////
+// 4) - Height - SM
+@each $name, $heightSize in $chooseHeight {
+  .sm-height-#{$name} {
+    @include BreakPoint(sm) {
+      height: $heightSize;
+    }
+  }
+}

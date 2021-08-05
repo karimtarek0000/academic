@@ -1,0 +1,41 @@
+////////////////////////////
+// 1) Detect Hover
+@mixin DetectHover() {
+  // Only run hover devices rules
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+////////////////////////////
+// 2) HOVER
+@mixin Hover($cursor: false) {
+  //
+  @include DetectHover {
+    //
+    &:hover {
+      // If true only will be add cursor pointer
+      @if $cursor {
+        cursor: pointer;
+      }
+      @content;
+    }
+  }
+}
+
+////////////////////////////
+// 3) SUPPORTS
+@mixin Supports($type, $property) {
+  //
+  @if $type == "support" {
+    @supports (#{$property}) {
+      @content;
+    }
+  }
+  // //
+  @if $type == "notSupport" {
+    @supports not (#{$property}) {
+      @content;
+    }
+  }
+}

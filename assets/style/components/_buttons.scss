@@ -1,0 +1,26 @@
+//
+.btn {
+  transition: background-color 0.3s ease;
+  //
+  &-Voodoo {
+    background-color: var(--Voodoo);
+
+    //
+    &-outline {
+      border: 1px solid var(--Voodoo);
+    }
+    //
+    &:hover {
+      background-color: rgba($Voodoo, 0.9);
+    }
+  }
+  //
+  &-coral {
+    background-color: var(--coral);
+
+    //
+    &:hover {
+      background-color: rgba($coral, 0.9);
+    }
+  }
+}
