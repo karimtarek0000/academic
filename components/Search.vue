@@ -1,17 +1,15 @@
 <template>
   <form
     class="
-      navbar__search
-      input--object-1
-      width-349
-      height-55
+      input-search input--object-1
       custom-input custom-input--object-1
       radius-21
+      height-55
       overflow-hidden
       position-relative
     "
   >
-    <div class="position-absolute navbar__search-icon cursor-pointer">
+    <div class="position-absolute input-search__icon cursor-pointer">
       <GSvg name-icon="search-line" class="svg-20" title="بحث" />
     </div>
     <input
@@ -36,4 +34,17 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+//
+.input {
+  &-search {
+    //
+    &__icon {
+      @include position('rt', $moveR: '20px', $moveT: '50%');
+    }
+  }
+}
+
+//  width-349
+// height-55
+</style>

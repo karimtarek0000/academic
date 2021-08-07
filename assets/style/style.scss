@@ -6,16 +6,18 @@
 @import "./general/function";
 @import "./general/media";
 @import "./general/others";
+
+// Bootstrap 5
+@import './vendor/bootstrap5';
+
 @import "./general/base";
 @import "./general/reset";
 
 /// 2) Themes
 @import "./themes/create-theme";
 
-// 3) - Bootstrap 5
-@import './vendor/bootstrap5';
 
-/// 4) Helpers
+/// 3) Helpers
 @import "./helpers/background";
 @import "./helpers/color";
 @import "./helpers/directions";
@@ -29,13 +31,13 @@
 @import "./helpers/flexBasis";
 @import "./helpers/display";
 
-/// 5) Direction
+/// 4) Direction
 @import "./components/forms";
 @import "./components/buttons";
 @import "./components/animations";
 
-/// 6) Direction
+/// 5) Direction
 @import "./general/dirChange";
 
-/// 7) Utilities
+/// 6) Utilities
 @import "./utilities/helperClasses";

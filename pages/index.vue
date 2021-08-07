@@ -1,5 +1,5 @@
 <template>
-  <main class="d-none d-xl-block">
+  <main>
     <!--  -->
     <Header />
     <!--  -->

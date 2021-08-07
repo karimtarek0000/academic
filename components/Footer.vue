@@ -1,9 +1,19 @@
 <template>
-  <footer class="bg-Voodoo radius-60 padding-y-67 padding-x-89 margin-top-110">
-    <div class="row justify-content-between">
+  <footer class="margin-top-110">
+    <!--  -->
+    <div
+      class="
+        row
+        bg-Voodoo
+        radius-60
+        padding-y-67 padding-x-89
+        md-padding-x-30
+        justify-content-between
+      "
+    >
       <!--  -->
-      <div class="col-3">
-        <Logo class="text-white margin-bottom-21" />
+      <div class="col-lg-3 lg-margin-bottom-10">
+        <Logo class="text-white margin-bottom-15" />
         <p
           role="description"
           class="text-snuff weight-br-300 text-13 margin-top-18"
@@ -11,16 +21,38 @@
           موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن
           العربي مع التمتع بمميزات عديدة في أكاديمي
         </p>
+        <ul class="list-unstyled d-flex margin-top-40">
+          <li v-for="so in social" :key="so.icon" class="margin-end-10">
+            <a
+              :href="so.link"
+              class="
+                social
+                width-41
+                height-41
+                d-flex
+                justify-content-center
+                align-items-center
+                bg-voodoo-light
+                rounded-circle
+                position-relative
+              "
+            >
+              <GSvg
+                class="svg-20 fill-white"
+                :name-icon="so.icon"
+                :title="so.icon"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
       <!--  -->
-      <div class="col-4">
+      <div class="col-lg-4 lg-margin-bottom-10">
         <div class="row">
           <!--  -->
           <div class="col">
-            <p role="site" class="text-white text-14 margin-bottom-21">
-              الموقع
-            </p>
-            <ul class="list-unstyled">
+            <p role="site" class="text-white text-14">الموقع</p>
+            <ul class="list-unstyled margin-top-18">
               <li v-for="site in ourSite" :key="site.name">
                 <nuxt-link
                   class="text-snuff text-14 weight-br-300"
@@ -32,10 +64,8 @@
           </div>
           <!--  -->
           <div class="col">
-            <p role="sections" class="text-white text-14 margin-bottom-21">
-              الأقسام
-            </p>
-            <ul class="row list-unstyled">
+            <p role="sections" class="text-white text-14">الأقسام</p>
+            <ul class="row list-unstyled margin-top-18">
               <li
                 v-for="(section, index) in sections"
                 :key="index"
@@ -52,7 +82,7 @@
         </div>
       </div>
       <!--  -->
-      <div class="col-4">
+      <div class="col-lg-4">
         <p role="subscription" class="text-14 text-white margin-bottom-21">
           اشترك في النشرة البريدية
         </p>
@@ -61,6 +91,9 @@
             custom-input custom-input--object-2
             height-100
             position-relative
+            margin-top-18
+            d-flex
+            flex-column
           "
         >
           <input
@@ -69,6 +102,8 @@
               bg-voodoo-light
               text-13 text-white
               width-100
+              lg-width-50
+              md-width-100
               height-55
               weight-br-300
               radius-21
@@ -93,6 +128,64 @@
           </button>
         </form>
       </div>
+    </div>
+    <!--  -->
+    <div
+      class="row justify-content-center justify-content-lg-between padding-y-15"
+    >
+      <!--  -->
+      <ul
+        class="
+          col
+          list-unstyled
+          d-flex
+          justify-content-center justify-content-lg-start
+          xxlg-padding-start-20
+        "
+      >
+        <li class="width-58 height-33 margin-end-10">
+          <img
+            class="img-fluid"
+            src="~/assets/images/global/icons/mastercard.svg"
+            alt="mastercard"
+          />
+        </li>
+        <li class="width-58 height-33 margin-end-10">
+          <img
+            class="img-fluid"
+            src="~/assets/images/global/icons/visa.svg"
+            alt="visa"
+          />
+        </li>
+        <li class="width-58 height-33 margin-end-10">
+          <img
+            class="img-fluid"
+            src="~/assets/images/global/icons/mada.svg"
+            alt="mada"
+          />
+        </li>
+      </ul>
+      <p
+        role="copyright"
+        class="
+          col-lg-5
+          mr-auto
+          d-flex
+          text-16
+          justify-content-center
+          align-items-center
+          weight-br-300
+          text-rhino
+        "
+      >
+        <span>تصميم وبرمجة</span>
+        <img
+          class="img-fluid height-20 margin-x-5"
+          src="~/assets/images/global/logos/designBy.svg"
+          alt="ibtdi"
+        />
+        <span>جميع الحقوق محفوظة ©{{ year }}</span>
+      </p>
     </div>
   </footer>
 </template>
@@ -146,7 +239,7 @@ export default {
           path: 'index',
         },
         {
-          name: '.التصميم',
+          name: 'التصميم',
           path: 'index',
         },
         {
@@ -166,9 +259,60 @@ export default {
           path: 'index',
         },
       ],
+      social: [
+        {
+          icon: 'facebook',
+          link: '#',
+        },
+        {
+          icon: 'twitter',
+          link: '#',
+        },
+        {
+          icon: 'instagram',
+          link: '#',
+        },
+        {
+          icon: 'google-plus',
+          link: '#',
+        },
+      ],
     }
+  },
+  computed: {
+    year() {
+      return new Date().getFullYear()
+    },
   },
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.social {
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+  @include DetectHover {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--coral);
+      border-radius: inherit;
+      z-index: 1;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+    }
+
+    //
+    &:hover::after {
+      transform: perspective(1000px) rotateY(180deg);
+      opacity: 1;
+    }
+  }
+}
+</style>

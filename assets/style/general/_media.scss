@@ -1,6 +1,6 @@
 ////////////////////////////
 // 1) Detect Hover
-@mixin DetectHover() {
+@mixin DetectHover {
   // Only run hover devices rules
   @media (hover: hover) {
     @content;
@@ -27,13 +27,13 @@
 // 3) SUPPORTS
 @mixin Supports($type, $property) {
   //
-  @if $type == "support" {
+  @if $type == 'support' {
     @supports (#{$property}) {
       @content;
     }
   }
   // //
-  @if $type == "notSupport" {
+  @if $type == 'notSupport' {
     @supports not (#{$property}) {
       @content;
     }

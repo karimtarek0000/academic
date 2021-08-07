@@ -1,9 +1,9 @@
 <template>
   <div class="container-lg">
     <!-- Navbar -->
-    <Navbar class="d-none d-xl-block" />
+    <Navbar v-if="outerHeight >= 992" />
     <!-- Navbar mobile -->
-    <NavbarMobile />
+    <NavbarMobile v-if="outerHeight <= 992" class="d-block d-lg-none" />
     <!-- Pages -->
     <Nuxt />
     <!--  -->
@@ -11,8 +11,21 @@
     <!--  -->
     <NavbarUser />
     <!--  -->
-    <Footer class="d-none d-xl-block" />
+    <Footer />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      outerHeight: null,
+    }
+  },
+  mounted() {
+    this.outerHeight = window.outerWidth
+  },
+}
+</script>
 
 <style></style>

@@ -1,6 +1,7 @@
 <template>
   <!--  -->
-  <div
+  <nuxt-link
+    :to="{ name: path }"
     class="
       d-flex
       justify-content-center
@@ -10,9 +11,7 @@
       radius-21
       bg-whiteDark
       position-relative
-      margin-x-10
     "
-    @click="$emit('clicked')"
   >
     <span
       v-if="count"
@@ -30,13 +29,22 @@
       v-text="count"
     />
     <GSvg class="svg-22" :name-icon="icon" :title="iconTitle" />
-  </div>
+    <span
+      v-if="text"
+      class="d-inline-block text-Voodoo margin-start-5"
+      v-text="text"
+    />
+  </nuxt-link>
 </template>
 
 <script>
 export default {
-  name: 'Notifi',
+  name: 'UserOptions',
   props: {
+    path: {
+      type: String,
+      required: true,
+    },
     count: {
       type: Number,
       default: 0,
@@ -48,6 +56,10 @@ export default {
     iconTitle: {
       type: String,
       required: true,
+    },
+    text: {
+      type: String,
+      default: '',
     },
   },
 }

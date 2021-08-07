@@ -1,6 +1,6 @@
 <template>
   <!--  -->
-  <div v-if="render === 'mobile'" class="d-flex">
+  <div class="d-flex">
     <!--  -->
     <figure class="width-61 height-55 radius-21" v-on="$listeners">
       <img
@@ -15,7 +15,7 @@
       role="info-user"
       class="text-12 text-black d-flex flex-column align-items-center"
     >
-      <div>
+      <div class="weight-br-300">
         <span v-if="statusWelcome" role="welcome">أهلا</span>
         <span role="name-user" v-text="nameUser" />
       </div>
@@ -25,6 +25,8 @@
         v-text="email"
       />
     </div>
+    <!--  -->
+    <slot />
   </div>
 </template>
 
@@ -32,10 +34,6 @@
 export default {
   name: 'InfoUser',
   props: {
-    render: {
-      type: String,
-      default: 'desktop',
-    },
     nameUser: {
       type: String,
       required: true,
