@@ -51,7 +51,7 @@
           <div class="row flex-nowrap">
             <!--  -->
             <div class="col">
-              <InfoUser
+              <UserInfo
                 name-user="كريم"
                 class="flex-column align-items-center"
                 @click.stop="s"

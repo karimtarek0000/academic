@@ -13,7 +13,7 @@
       "
       @click.stop=""
     >
-      <InfoUser
+      <UserInfo
         class="flex-column align-items-center"
         render="mobile"
         :status-welcome="false"

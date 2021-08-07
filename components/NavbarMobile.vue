@@ -20,7 +20,7 @@
       <!--  -->
       <div class="col flex-grow-0">
         <div class="d-flex align-items-center">
-          <InfoUser
+          <UserInfo
             name-user="كريم"
             class="flex-column align-items-center"
             @click.stop="openNavbarUser"
