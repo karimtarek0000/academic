@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar padding-y-25 height-115">
+  <nav class="navbar height-115">
     <!-- First row -->
-    <div class="row">
+    <div class="row navbar__wrapper padding-y-25">
       <!-- First col -->
       <div
         :class="[
@@ -50,12 +50,42 @@
         <template v-else>
           <div class="row flex-nowrap">
             <!--  -->
-            <div class="col">
+            <div class="col d-flex padding-0 position-relative">
               <UserInfo
                 name-user="كريم"
-                class="flex-column align-items-center"
-                @click.stop="s"
+                class="flex-column align-items-center cursor-pointer"
+                @click.stop="togglerUserOptions"
               />
+              <GSvg
+                class="svg-20 margin-x-5 margin-top-15"
+                name-icon="arrow-drop-down-line-1"
+                title="open"
+              />
+              <!--  -->
+              <div
+                v-show="toggleUserOptions"
+                class="
+                  user-options
+                  position-absolute
+                  width-267
+                  bg-white
+                  radius-25
+                  padding-x-20 padding-y-10
+                "
+              >
+                <!--  -->
+                <UserInfo
+                  class=""
+                  render="mobile"
+                  :status-welcome="false"
+                  name-user="كريم طارق"
+                  email="ibtdi.com@gmail.com"
+                />
+                <!--  -->
+                <OptionsUserList />
+                <!--  -->
+                <logOutButton class="border-top-whiteDark padding-y-10" />
+              </div>
             </div>
             <!--  -->
             <div class="col">
@@ -106,11 +136,15 @@ export default {
   data() {
     return {
       userLogIn: false,
+      toggleUserOptions: false,
     }
   },
+  mounted() {
+    document.addEventListener('click', () => (this.toggleUserOptions = false))
+  },
   methods: {
-    s() {
-      's'
+    togglerUserOptions() {
+      this.toggleUserOptions = !this.toggleUserOptions
     },
   },
 }
@@ -119,9 +153,15 @@ export default {
 <style lang="scss">
 //
 .navbar {
+  box-shadow: 0px 3px 25px #aeaeae1f;
+  //
+  @media only screen and (max-width: 1350px) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
   @media only screen and (min-width: 1350px) {
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 150px;
+    padding-left: 150px;
   }
 
   //
@@ -134,6 +174,28 @@ export default {
     display: block;
     margin: 0 15px;
     @include position('rt', $moveR: '-0.6rem', $moveT: '50%');
+  }
+
+  //
+  .user-options {
+    @include position('lt', $moveL: 0, $moveT: '100%');
+    z-index: 9999;
+    box-shadow: 0px 3px 25px #aeaeae1f;
+
+    .user {
+      align-items: center;
+      //
+      &__image {
+        width: 43px;
+        height: 39px;
+        margin: 0;
+      }
+      //
+      &__info {
+        align-items: flex-start !important;
+        margin: 0 10px;
+      }
+    }
   }
 }
 </style>

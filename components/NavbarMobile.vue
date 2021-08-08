@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="overflow-hidden">
     <!--  -->
     <div class="row padding-y-10">
       <div class="col d-flex justify-content-center">
@@ -12,7 +12,7 @@
         row
         justify-content-between
         align-items-center
-        padding-y-10
+        padding-y-10 padding-x-10
         margin-bottom-5
       "
     >
@@ -42,7 +42,7 @@
     </div>
     <!--  -->
     <div class="row">
-      <div class="col d-flex justify-content-center">
+      <div class="col d-flex justify-content-center padding-x-20">
         <Search class="width-349" />
       </div>
     </div>

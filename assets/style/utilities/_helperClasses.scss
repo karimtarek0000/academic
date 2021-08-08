@@ -36,3 +36,46 @@
     border-top: 2px solid var(--whiteDark);
   }
 }
+
+.text-align-center {
+  @media only screen and (max-width: 768px) {
+    text-align: center !important;
+  }
+}
+
+.shape {
+  //
+  @include DetectHover {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    &:hover::after {
+      transform: perspective(1000px) rotateY(180deg);
+      opacity: 1;
+    }
+
+    &__coral {
+      //
+      &:hover::after {
+        background-color: var(--coral);
+      }
+    }
+
+    &__Voodoo {
+      //
+      &:hover::after {
+        background-color: var(--Voodoo);
+      }
+    }
+  }
+}

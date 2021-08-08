@@ -13,6 +13,7 @@ $snuff: #d8c5df;
 $london: #c6b1cd;
 $emerald: #61c589;
 $rhino: #334565;
+$chardonnay: #ffcc7b;
 
 // 1) Themes Colors
 $themes: (
@@ -28,6 +29,7 @@ $themes: (
   london: $london,
   emerald: $emerald,
   rhino: $rhino,
+  chardonnay: $chardonnay,
 );
 
 ////////////////////////////
@@ -79,7 +81,8 @@ $chooseColorText: (
   'silver',
   'snuff',
   'london',
-  'rhino'
+  'rhino',
+  'chardonnay'
 );
 
 ////////////////////////////
@@ -88,6 +91,7 @@ $chooseColorText: (
 $svg: (
   20: 2rem,
   22: 2.2rem,
+  70: 7rem,
 );
 
 // Choose fill svg
@@ -126,6 +130,7 @@ $chooseWidth: (
   58: 5.8rem,
   50: 50%,
   116: 11.6rem,
+  267: 26.7rem,
 );
 
 ////////////////////////////
@@ -154,6 +159,7 @@ $padding: (
   27: 2.7rem,
   30: 3rem,
   67: 6.7rem,
+  61: 6.1rem,
   89: 8.9rem,
   0: 0,
 );
@@ -174,6 +180,7 @@ $margin: (
   76: 7.6rem,
   90: 9rem,
   110: 11rem,
+  0: 0,
 );
 
 ////////////////////////////

@@ -21,36 +21,7 @@
         email="ibtdi.com@gmail.com"
       />
       <!-- Render category -->
-      <ul class="list-unstyled padding-x-15 margin-top-20" role="user-options">
-        <li
-          v-for="item in items"
-          :key="item.title"
-          class="border-top-whiteDark padding-y-10"
-        >
-          <nuxt-link :to="{ name: item.path }" class="text-black text-12">
-            <!--  -->
-            <figure
-              class="
-                sections__items__action
-                d-flex
-                align-items-center
-                justify-content-between
-                cursor-pointer
-              "
-            >
-              <div class="d-flex align-items-center">
-                <GSvg
-                  class="svg-20"
-                  :name-icon="item.icon"
-                  :title="item.title"
-                />
-                <span class="text-12 margin-start-5" v-text="item.title" />
-              </div>
-              <!-- <GSvg class="svg-20" name-icon="angle-left" title="افتح" /> -->
-            </figure>
-          </nuxt-link>
-        </li>
-      </ul>
+      <OptionsUserList class="padding-x-10" />
     </div>
   </transition>
 </template>
@@ -58,37 +29,6 @@
 <script>
 export default {
   name: 'NavbarUser',
-  data() {
-    return {
-      items: [
-        {
-          title: 'دوراتي',
-          path: 'index',
-          icon: 'book-3-fill',
-        },
-        {
-          title: 'المفضلة',
-          path: 'index',
-          icon: 'heart-fill',
-        },
-        {
-          title: 'السلة',
-          path: 'index',
-          icon: 'shopping-basket-2-fill',
-        },
-        {
-          title: 'الملف الشخصي',
-          path: 'index',
-          icon: 'user-fill',
-        },
-        {
-          title: 'انضم الينا كمدرب',
-          path: 'index',
-          icon: 'team-fill-1',
-        },
-      ],
-    }
-  },
   computed: {
     toggle() {
       return this.$store.state.statusToggleNavbarUser

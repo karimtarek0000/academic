@@ -2,7 +2,14 @@
   <!--  -->
   <section class="row margin-top-90" role="our-services">
     <!--  -->
-    <div class="col-lg-12 col-xl-2 xlg-margin-bottom-20 margin-end-76">
+    <div
+      class="
+        col-lg-12 col-xl-2
+        xlg-margin-bottom-20
+        margin-end-76
+        text-align-center
+      "
+    >
       <h4 role="title" class="text-16 text-silver">خدماتنا</h4>
       <h3 role="question" class="text-30 text-black">
         ماذا نستطيع ان نقدمه لك ؟
@@ -11,7 +18,7 @@
     <!--  -->
     <div class="col-xl">
       <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-4 text-align-center">
           <img src="~/assets/images/home/other/exam.svg" alt="اختبار" />
           <p role="title" class="text-18 margin-top-18">اختبار اجتياز الدورة</p>
           <p
@@ -21,7 +28,7 @@
             بعد كل دورة تجتازها هناك اختبار لمعرفة مستواك في المادة المحددة
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4 md-margin-top-20 text-align-center">
           <img src="~/assets/images/home/other/trainers.svg" alt="اختبار" />
           <p role="title" class="text-18 margin-top-18">أفضل المدربين</p>
           <p
@@ -31,7 +38,7 @@
             باقة من أفضل المدربين في الوطن العربي في جميع المجالات
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4 md-margin-top-20 text-align-center">
           <img src="~/assets/images/home/other/certificate.svg" alt="اختبار" />
           <p role="title" class="text-18 margin-top-18">شهادات معتمدة</p>
           <p
@@ -48,7 +55,7 @@
 
 <script>
 export default {
-  name: 'OurServices',
+  name: 'SectionOurServices',
 }
 </script>
 

@@ -1,8 +1,15 @@
 <template>
-  <header class="overflow-hidden" role="header">
+  <header class="overflow-hidden lg-margin-top-40">
     <div class="row align-items-center">
       <!--  -->
-      <div class="col">
+      <div
+        class="
+          col-12 col-md-6
+          d-flex
+          align-items-center align-items-md-start
+          order-1 order-md-0
+        "
+      >
         <img
           class="resize-img animate-slide-right"
           src="~/assets/images/home/header/video.png"
@@ -10,7 +17,17 @@
         />
       </div>
       <!--  -->
-      <div class="col margin-start-50">
+      <div
+        class="
+          col-12 col-md-5
+          d-flex
+          flex-column
+          align-items-center align-items-md-start
+          order-0 order-md-1
+          md-margin-start-0
+          margin-start-50
+        "
+      >
         <h2
           role="head"
           class="text-29 search"
@@ -30,6 +47,7 @@
             text-silver
             margin-top-10
             after
+            text-align-center
           "
         >
           موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن

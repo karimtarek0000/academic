@@ -23,5 +23,12 @@ $utilities: map-merge(
         100: 100vh,
       ),
     ),
+    'text': (
+      property: text-align,
+      class: text,
+      values: (
+        right: right,
+      ),
+    ),
   )
 );

@@ -1,8 +1,8 @@
 <template>
   <!--  -->
-  <div class="d-flex">
+  <div class="user d-flex">
     <!--  -->
-    <figure class="width-61 height-55 radius-21" v-on="$listeners">
+    <figure class="user__image width-61 height-55 radius-21" v-on="$listeners">
       <img
         role="image-user"
         class="img-fluid"
@@ -12,8 +12,14 @@
     </figure>
     <!--  -->
     <div
-      role="info-user"
-      class="text-12 text-black d-flex flex-column align-items-center"
+      role="user-info"
+      class="
+        user__info
+        text-12 text-black
+        d-flex
+        flex-column
+        align-items-center
+      "
     >
       <div class="weight-br-300">
         <span v-if="statusWelcome" role="welcome">أهلا</span>
@@ -25,8 +31,6 @@
         v-text="email"
       />
     </div>
-    <!--  -->
-    <slot />
   </div>
 </template>
 

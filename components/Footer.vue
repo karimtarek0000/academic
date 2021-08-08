@@ -35,6 +35,7 @@
                 bg-voodoo-light
                 rounded-circle
                 position-relative
+                shape shape__coral
               "
             >
               <GSvg
@@ -292,27 +293,6 @@ export default {
   svg {
     position: relative;
     z-index: 2;
-  }
-  @include DetectHover {
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--coral);
-      border-radius: inherit;
-      z-index: 1;
-      transition: all 0.5s ease-in-out;
-      opacity: 0;
-    }
-
-    //
-    &:hover::after {
-      transform: perspective(1000px) rotateY(180deg);
-      opacity: 1;
-    }
   }
 }
 </style>

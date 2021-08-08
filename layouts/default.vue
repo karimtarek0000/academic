@@ -1,17 +1,20 @@
 <template>
-  <div class="container-lg">
+  <div>
     <!-- Navbar -->
     <Navbar v-if="outerHeight >= 992" />
     <!-- Navbar mobile -->
     <NavbarMobile v-if="outerHeight <= 992" class="d-block d-lg-none" />
     <!-- Pages -->
-    <Nuxt />
+    <div class="container-lg">
+      <!--  -->
+      <Nuxt />
+      <!--  -->
+      <Footer />
+    </div>
     <!--  -->
     <NavbarMenu />
     <!--  -->
     <NavbarUser />
-    <!--  -->
-    <Footer />
   </div>
 </template>
 
