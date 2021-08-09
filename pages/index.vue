@@ -60,6 +60,9 @@ export default {
     ]
     return { itemsSliderSectionAllSections }
   },
+  head: {
+    title: 'الرئيسية',
+  },
 }
 </script>
 
