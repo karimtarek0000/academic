@@ -21,7 +21,7 @@
         email="ibtdi.com@gmail.com"
       />
       <!-- Render category -->
-      <OptionsUserList class="padding-x-10" />
+      <UserOptionsList class="padding-x-10" />
     </div>
   </transition>
 </template>

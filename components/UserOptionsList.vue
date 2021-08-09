@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'OptionsUserList',
+  name: 'UserOptionsList',
   data() {
     return {
       items: [

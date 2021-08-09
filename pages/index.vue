@@ -6,6 +6,8 @@
     <SectionOurServices />
     <!--  -->
     <SectionAllSections :data="itemsSliderSectionAllSections" />
+    <!--  -->
+    <NewCourses />
   </main>
 </template>
 

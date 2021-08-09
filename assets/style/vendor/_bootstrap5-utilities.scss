@@ -16,6 +16,13 @@ $utilities: map-merge(
         auto: auto,
       ),
     ),
+    'm-s': (
+      property: margin-right,
+      class: m-s,
+      values: (
+        2: 2px,
+      ),
+    ),
     'vh': (
       property: height,
       class: vh,

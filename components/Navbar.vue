@@ -82,7 +82,7 @@
                   email="ibtdi.com@gmail.com"
                 />
                 <!--  -->
-                <OptionsUserList />
+                <UserOptionsList />
                 <!--  -->
                 <logOutButton class="border-top-whiteDark padding-y-10" />
               </div>

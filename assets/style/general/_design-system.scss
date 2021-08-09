@@ -14,6 +14,7 @@ $london: #c6b1cd;
 $emerald: #61c589;
 $rhino: #334565;
 $chardonnay: #ffcc7b;
+$picton: #40cde8;
 
 // 1) Themes Colors
 $themes: (
@@ -30,6 +31,7 @@ $themes: (
   emerald: $emerald,
   rhino: $rhino,
   chardonnay: $chardonnay,
+  picton: $picton,
 );
 
 ////////////////////////////
@@ -43,6 +45,7 @@ $font: (
     12: 1.2rem,
     13: 1.3rem,
     14: 1.4rem,
+    15: 1.5rem,
     16: 1.6rem,
     18: 1.8rem,
     20: 2rem,
@@ -82,7 +85,8 @@ $chooseColorText: (
   'snuff',
   'london',
   'rhino',
-  'chardonnay'
+  'chardonnay',
+  'picton'
 );
 
 ////////////////////////////
@@ -131,6 +135,7 @@ $chooseWidth: (
   50: 50%,
   116: 11.6rem,
   267: 26.7rem,
+  32: 3.2rem,
 );
 
 ////////////////////////////
@@ -146,6 +151,7 @@ $chooseHeight: (
   100: 100%,
   109: 109px,
   115: 11.5rem,
+  32: 3.2rem,
 );
 
 ////////////////////////////
@@ -189,6 +195,7 @@ $borderRaduis: (
   21: 21px,
   25: 2.5rem,
   60: 6rem,
+  18: 1.8rem,
 );
 
 ////////////////////////////

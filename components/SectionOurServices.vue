@@ -1,6 +1,6 @@
 <template>
   <!--  -->
-  <section class="row margin-top-90" role="our-services">
+  <section class="row xlg-margin-top-30 margin-top-90" role="our-services">
     <!--  -->
     <div
       class="

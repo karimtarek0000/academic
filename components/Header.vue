@@ -35,7 +35,7 @@
         >
           ابحث عن ما تريد وتعلم
         </h2>
-        <h1 role="head" class="text-38 text-black after">
+        <h1 role="head" class="text-38 text-black text-align-center after">
           في أي وقت وفي أي مكان
         </h1>
         <p

@@ -7,6 +7,10 @@
   object-fit: cover;
 }
 
+.user-select-none {
+  user-select: none;
+}
+
 ////////////////////////////
 // 2) ADD CLASSES BORDER RADUIS
 @each $name, $size in $borderRaduis {
