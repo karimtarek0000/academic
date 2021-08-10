@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar height-115">
+  <nav class="navbar">
     <!-- First row -->
     <div class="row navbar__wrapper padding-y-25">
       <!-- First col -->

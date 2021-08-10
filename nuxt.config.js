@@ -60,7 +60,10 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/plugins.js'],
+  plugins: [
+    '@/plugins/plugins.js',
+    { src: '@/plugins/VueRate.js', mode: 'client' },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -77,7 +80,17 @@ export default {
     '@nuxtjs/axios',
     // Style resources
     '@nuxtjs/style-resources',
+    'nuxt-mq',
   ],
+
+  //
+  mq: {
+    defaultBreakpoint: 'desktop',
+    breakpoints: {
+      tablet: 992,
+      desktop: Infinity,
+    },
+  },
 
   //
   styleResources: {

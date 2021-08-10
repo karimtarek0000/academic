@@ -26,6 +26,11 @@
 }
 
 //
+.direction-ltr {
+  direction: ltr;
+}
+
+//
 .border {
   //
   &-botton-whiteDark {
@@ -47,7 +52,9 @@
   }
 }
 
+//
 .shape {
+  overflow: hidden;
   //
   @include DetectHover {
     &::after {
@@ -82,4 +89,32 @@
       }
     }
   }
+}
+
+//
+.set-padding {
+  @media only screen and (min-width: 1350px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+//
+.space-between-slides {
+  .slick-slide {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+//
+.translate-up-slider-action {
+  .slider__actions {
+    transform: translateY(4rem);
+  }
+}
+
+//
+.shadow-cards {
+  box-shadow: 0px 5px 10px rgba(#bebebe17, 0.2);
 }

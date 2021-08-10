@@ -15,6 +15,7 @@ $emerald: #61c589;
 $rhino: #334565;
 $chardonnay: #ffcc7b;
 $picton: #40cde8;
+$alabaster: #fafafa;
 
 // 1) Themes Colors
 $themes: (
@@ -32,6 +33,7 @@ $themes: (
   rhino: $rhino,
   chardonnay: $chardonnay,
   picton: $picton,
+  alabaster: $alabaster,
 );
 
 ////////////////////////////
@@ -42,6 +44,7 @@ $font: (
   addWeight: (),
   sizes: (
     10: 1rem,
+    11: 1.1rem,
     12: 1.2rem,
     13: 1.3rem,
     14: 1.4rem,
@@ -122,6 +125,7 @@ $chooseGrowAndShrink: ();
 $chooseWidth: (
   100: 100%,
   148: 14.8rem,
+  181: 18.1rem,
   195: 19.5rem,
   75: 75%,
   349: 349px,
@@ -136,6 +140,7 @@ $chooseWidth: (
   116: 11.6rem,
   267: 26.7rem,
   32: 3.2rem,
+  91: 9.1rem,
 );
 
 ////////////////////////////
@@ -152,6 +157,7 @@ $chooseHeight: (
   109: 109px,
   115: 11.5rem,
   32: 3.2rem,
+  91: 9.1rem,
 );
 
 ////////////////////////////
@@ -164,6 +170,7 @@ $padding: (
   25: 2.5rem,
   27: 2.7rem,
   30: 3rem,
+  45: 4.5rem,
   67: 6.7rem,
   61: 6.1rem,
   89: 8.9rem,

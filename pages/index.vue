@@ -7,7 +7,17 @@
     <!--  -->
     <SectionAllSections :data="itemsSliderSectionAllSections" />
     <!--  -->
-    <NewCourses />
+    <SectionNewCourses />
+    <!--  -->
+    <SectionSpecialCourses />
+    <!--  -->
+    <SectionZoomMeetings />
+    <!--  -->
+    <SectionCombinedCourses />
+    <!--  -->
+    <Blog />
+    <!--  -->
+    <SectionTestimonials />
   </main>
 </template>
 

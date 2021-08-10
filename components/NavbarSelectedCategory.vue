@@ -1,53 +1,45 @@
 <template>
-  <div>
+  <nav
+    ref="newCourses"
+    role="category"
+    class="
+      d-flex
+      align-items-center
+      justify-content-center
+      show-swip
+      new-courses__wrapper
+      overflow-hidden
+    "
+    @mousedown="mouseDown"
+    @touchstart="touchStart"
+    @mousemove="mouseMove"
+    @touchmove="touchMove"
+    @mouseleave="mouseLeave"
+    @mouseup="mouseUp"
+  >
     <!--  -->
-    <div role="title-section" class="text-center margin-bottom-30">
-      <h5 class="text-coral text-16">تعلم أولا</h5>
-      <h2 class="text-black text-30">الكورسات المضافة حديثا</h2>
-    </div>
-    <!--  -->
-    <nav
-      ref="newCourses"
-      role="category"
+    <ul
+      role="items"
       class="
+        new-courses__items
+        margin-0
         d-flex
         align-items-center
-        justify-content-center
-        show-swip
-        new-courses__wrapper
-        overflow-hidden
+        list-unstyled
       "
-      @mousedown="mouseDown"
-      @touchstart="touchStart"
-      @mousemove="mouseMove"
-      @touchmove="touchMove"
-      @mouseleave="mouseLeave"
-      @mouseup="mouseUp"
     >
-      <!--  -->
-      <ul
-        role="items"
-        class="
-          new-courses__items
-          margin-0
-          d-flex
-          align-items-center
-          list-unstyled
-        "
-      >
-        <li
-          v-for="item in items"
-          :key="item"
-          :class="[
-            'new-courses__item user-select-none cursor-pointer d-flex align-items-center justify-content-center width-155 height-55 radius-18 text-13 text-black margin-end-20 flex-shrink-0 weight-br-300',
-            { 'new-courses__active': item === selected },
-          ]"
-          @click="sendNewSelected(item)"
-          v-text="item"
-        />
-      </ul>
-    </nav>
-  </div>
+      <li
+        v-for="item in items"
+        :key="item"
+        :class="[
+          'new-courses__item user-select-none cursor-pointer d-flex align-items-center justify-content-center width-155 height-55 radius-18 text-13 text-black margin-end-20 flex-shrink-0 weight-br-300',
+          { 'new-courses__active': item === selected },
+        ]"
+        @click="sendNewSelected(item)"
+        v-text="item"
+      />
+    </ul>
+  </nav>
 </template>
 
 <script>

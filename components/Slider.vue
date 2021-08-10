@@ -1,5 +1,5 @@
 <template>
-  <div class="row flex-column align-items-center">
+  <div class="row slider flex-column align-items-center">
     <VueSlickCarousel ref="carousel" class="row" v-bind="settings">
       <!--  -->
       <slot />
@@ -12,6 +12,7 @@
         width-148
         align-items-center
         justify-content-center
+        slider__actions
       "
     >
       <button
@@ -48,12 +49,6 @@
 <script>
 export default {
   name: 'Slider',
-  props: {
-    settingsSlider: {
-      type: Object,
-      default: () => {},
-    },
-  },
   data() {
     return {
       settings: {
@@ -62,11 +57,25 @@ export default {
         focusOnSelect: true,
         infinite: true,
         speed: 500,
-        // touchThreshold: 1,
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
-        ...this.settingsSlider,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       },
     }
   },

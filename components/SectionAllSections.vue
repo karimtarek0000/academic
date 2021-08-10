@@ -24,7 +24,7 @@
     </div>
     <!--  -->
     <div class="col col-lg-12 col-xl-9">
-      <Slider :settings-slider="settingsSlider">
+      <Slider v-if="data.length">
         <div
           v-for="item in data"
           :key="item.id"
@@ -55,28 +55,6 @@ export default {
       type: Array,
       required: true,
     },
-  },
-  data() {
-    return {
-      settingsSlider: {
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      },
-    }
   },
 }
 </script>

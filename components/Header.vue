@@ -167,7 +167,7 @@ export default {
 
 @keyframes typing {
   0% {
-    width: -1%;
+    width: 0%;
   }
   50% {
     width: 100%;

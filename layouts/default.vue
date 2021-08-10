@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- Navbar -->
-    <Navbar v-if="outerHeight >= 992" />
+    <Navbar v-if="$mq === 'desktop'" class="d-none d-lg-block" />
     <!-- Navbar mobile -->
-    <NavbarMobile v-if="outerHeight <= 992" class="d-block d-lg-none" />
+    <NavbarMobile v-else />
     <!-- Pages -->
     <div class="container-lg">
       <!--  -->
@@ -19,16 +19,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      outerHeight: null,
-    }
-  },
-  mounted() {
-    this.outerHeight = window.outerWidth
-  },
-}
+export default {}
 </script>
 
 <style></style>
