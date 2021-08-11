@@ -80,6 +80,7 @@ export default {
     '@nuxtjs/axios',
     // Style resources
     '@nuxtjs/style-resources',
+    //
     'nuxt-mq',
   ],
 
@@ -105,6 +106,20 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+
+  //
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/courses/:categoryName',
+        component: resolve(__dirname, 'pages/courses.vue'),
+      })
+      routes.push({
+        path: '/courses/:categoryName/:courseName',
+        component: resolve(__dirname, 'pages/course.vue'),
+      })
+    },
+  },
 
   build: {
     extend(config, ctx) {

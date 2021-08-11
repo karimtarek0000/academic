@@ -1,6 +1,6 @@
 <template>
-  <div class="row slider flex-column align-items-center">
-    <VueSlickCarousel ref="carousel" class="row" v-bind="settings">
+  <div class="row slider flex-column align-items-center position-relative">
+    <VueSlickCarousel ref="carousel" class="row g-0" v-bind="settings">
       <!--  -->
       <slot />
     </VueSlickCarousel>
@@ -49,33 +49,26 @@
 <script>
 export default {
   name: 'Slider',
+  props: {
+    addSettings: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       settings: {
+        // lazyLoad: 'ondemand',
+        // autoplay: true,
+        // autoplaySpeed: 3000,
         arrows: false,
         dots: false,
         focusOnSelect: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 0,
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-        ],
+        // initialSlide: 1,
+        ...this.addSettings,
       },
     }
   },

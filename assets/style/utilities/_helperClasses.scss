@@ -31,6 +31,14 @@
 }
 
 //
+.truncut-text {
+  max-width: 30rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//
 .border {
   //
   &-botton-whiteDark {

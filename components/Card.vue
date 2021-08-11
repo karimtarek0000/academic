@@ -49,7 +49,11 @@
           </div>
           <!--  -->
           <div class="col d-flex align-items-center">
-            <GSvg class="svg-20" name-icon="notebook" title="المحاضرة" />
+            <GSvg
+              class="svg-20 fill-coral"
+              name-icon="notebook"
+              title="المحاضرة"
+            />
             <p role="number-lecture" class="margin-start-5 margin-0 text-13">
               <span>23</span>
               <span>محاضرة</span>

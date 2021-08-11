@@ -23,7 +23,7 @@
       />
     </Slider> -->
     <!--  -->
-    <Slider v-if="s.length" class="padding-y-20">
+    <Slider v-if="s.length" class="padding-y-20" :add-settings="settings">
       <CardTestimonials
         v-for="sd in s"
         :key="sd"
@@ -36,11 +36,14 @@
 
 <script>
 import CardTestimonials from '@/components/CardTestimonials.vue'
+import sliderSetting from '@/mixins/sliderSetting.js'
+
 export default {
   name: 'SectionTestimonials',
   components: {
     CardTestimonials,
   },
+  mixins: [sliderSetting],
   data() {
     return {
       s: [1, 2, 3, 4, 5, 6],

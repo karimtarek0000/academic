@@ -1,14 +1,6 @@
 <template>
   <nuxt-link
-    class="
-      btn
-      width-148
-      height-55
-      d-flex
-      justify-content-center
-      align-items-center
-      radius-21
-    "
+    class="btn d-flex justify-content-center align-items-center radius-21"
     :to="{ name: to }"
     >{{ title }}</nuxt-link
   >

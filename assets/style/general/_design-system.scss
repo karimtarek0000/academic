@@ -52,6 +52,7 @@ $font: (
     16: 1.6rem,
     18: 1.8rem,
     20: 2rem,
+    22: 2.2rem,
     29: 2.9rem,
     30: 3rem,
     38: 3.8rem,
@@ -99,17 +100,18 @@ $svg: (
   20: 2rem,
   22: 2.2rem,
   70: 7rem,
+  37: 3.7rem,
 );
 
 // Choose fill svg
 // Ex => first-color second-color ..etc if null will render all themes
-$chooseFillSvg: ('white');
+$chooseFillSvg: ('white', 'Voodoo', 'coral');
 
 ////////////////////////////
 /// 4) - DISPLAY
 // Choose type display will add classes
 // Ex => flex - grid - block - inline-block - table - box
-$chooseDisplay: ('flex', 'block');
+$chooseDisplay: ();
 
 // Choose type aligment will add classes
 // Ex => justify-content - align-items - align-self - align-content
@@ -141,6 +143,7 @@ $chooseWidth: (
   267: 26.7rem,
   32: 3.2rem,
   91: 9.1rem,
+  30: 30%,
 );
 
 ////////////////////////////
@@ -203,6 +206,7 @@ $borderRaduis: (
   25: 2.5rem,
   60: 6rem,
   18: 1.8rem,
+  27: 2.7rem,
 );
 
 ////////////////////////////

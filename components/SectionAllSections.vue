@@ -24,7 +24,7 @@
     </div>
     <!--  -->
     <div class="col col-lg-12 col-xl-9">
-      <Slider v-if="data.length">
+      <Slider v-if="data.length" :add-settings="settings">
         <div
           v-for="item in data"
           :key="item.id"
@@ -48,8 +48,10 @@
 </template>
 
 <script>
+import sliderSetting from '@/mixins/sliderSetting.js'
 export default {
   name: 'SectionAllSections',
+  mixins: [sliderSetting],
   props: {
     data: {
       type: Array,

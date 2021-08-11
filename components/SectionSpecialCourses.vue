@@ -15,7 +15,7 @@
     <!--  -->
     <Heading h5="تعلم أولا" h2="الكورسات المميزة" />
     <!--  -->
-    <Slider v-if="s.length" class="padding-y-20">
+    <Slider v-if="s.length" class="padding-y-20" :add-settings="settings">
       <Card v-for="sd in s" :key="sd" dir="rtl" class="margin-y-20" />
     </Slider>
   </section>
@@ -23,11 +23,13 @@
 
 <script>
 import Card from '@/components/Card.vue'
+import sliderSetting from '@/mixins/sliderSetting.js'
 export default {
   name: 'SectionSpecialCourses',
   components: {
     Card,
   },
+  mixins: [sliderSetting],
   data() {
     return {
       s: [1, 2, 3, 4, 5, 6],
