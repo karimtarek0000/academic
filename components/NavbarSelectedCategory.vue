@@ -32,8 +32,11 @@
         v-for="item in items"
         :key="item"
         :class="[
-          'new-courses__item user-select-none cursor-pointer d-flex align-items-center justify-content-center width-155 height-55 radius-18 text-13 text-black margin-end-20 flex-shrink-0 weight-br-300',
-          { 'new-courses__active': item === selected },
+          'new-courses__item user-select-none cursor-pointer d-flex align-items-center justify-content-center width-155 height-55 radius-18 text-13  margin-end-20 flex-shrink-0 weight-br-300',
+          {
+            'new-courses__active': item === selected,
+            'text-black': item !== selected,
+          },
         ]"
         @click="sendNewSelected(item)"
         v-text="item"
@@ -132,6 +135,14 @@ export default {
       transparent,
       rgba($chardonnay, 0.5) 100%
     );
+  }
+}
+
+.new-courses {
+  &__active {
+    font-weight: 400;
+    background-color: var(--coral);
+    color: var(--white);
   }
 }
 </style>

@@ -47,7 +47,7 @@ export default {
   &__items {
     max-width: 100%;
   }
-
+  //
   &__item {
     transition: all 0.1s ease;
     @include DetectHover {
@@ -57,12 +57,6 @@ export default {
         color: var(--white);
       }
     }
-  }
-
-  &__active {
-    font-weight: 400;
-    background-color: var(--coral);
-    color: var(--white);
   }
 }
 </style>
