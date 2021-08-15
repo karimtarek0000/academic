@@ -1,15 +1,14 @@
 ////////////////////////////
 //// All Import files
+// Bootstrap 5
+@import './vendor/bootstrap5';
+
 /// 1) General
 @import "./general/design-system";
 @import "./general/breakPoint";
 @import "./general/function";
 @import "./general/media";
 @import "./general/others";
-
-// Bootstrap 5
-@import './vendor/bootstrap5';
-
 @import "./general/base";
 @import "./general/reset";
 
