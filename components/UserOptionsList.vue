@@ -6,7 +6,7 @@
       :key="item.title"
       class="border-top-whiteDark padding-y-10 d-flex"
     >
-      <nuxt-link :to="{ name: item.path }" class="text-black text-12">
+      <nuxt-link :to="{ name: item.path }" class="text-dark text-12">
         <!--  -->
         <figure
           class="
@@ -73,7 +73,7 @@ export default {
       transition: color 0.3s ease;
       //
       &:hover {
-        color: rgba($black, 0.6);
+        color: rgba($dark, 0.6);
       }
     }
   }

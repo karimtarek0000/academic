@@ -20,7 +20,7 @@
       "
     >
       <h4 role="title" class="text-16 text-chardonnay">الاقسام</h4>
-      <h3 role="question" class="text-30 text-white">جميع المجالات</h3>
+      <h3 role="question" class="text-30 text-light">جميع المجالات</h3>
     </div>
     <!--  -->
     <div class="col col-lg-12 col-xl-9">
@@ -33,7 +33,7 @@
           <GSvg class="svg-70" :name-icon="item.icon" :title="item.title" />
           <h4
             role="title"
-            class="text-20 margin-top-20 text-white"
+            class="text-20 margin-top-20 text-light"
             v-text="item.title"
           />
           <p

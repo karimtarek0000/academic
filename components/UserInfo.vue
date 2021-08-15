@@ -13,13 +13,7 @@
     <!--  -->
     <div
       role="user-info"
-      class="
-        user__info
-        text-12 text-black
-        d-flex
-        flex-column
-        align-items-center
-      "
+      class="user__info text-12 text-dark d-flex flex-column align-items-center"
     >
       <div class="weight-br-300">
         <span v-if="statusWelcome" role="welcome">أهلا</span>

@@ -11,7 +11,7 @@
       "
     >
       <h4 role="title" class="text-16 text-silver">خدماتنا</h4>
-      <h3 role="question" class="text-30 text-black">
+      <h3 role="question" class="text-30 text-dark">
         ماذا نستطيع ان نقدمه لك ؟
       </h3>
     </div>

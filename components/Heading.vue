@@ -2,7 +2,7 @@
   <!--  -->
   <div role="title-section" class="text-center margin-bottom-30">
     <h5 class="text-coral text-16" v-text="h5" />
-    <h2 class="text-black text-30" v-text="h2" />
+    <h2 class="text-dark text-30" v-text="h2" />
   </div>
 </template>
 

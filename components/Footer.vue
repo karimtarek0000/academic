@@ -13,7 +13,7 @@
     >
       <!--  -->
       <div class="col-lg-3 lg-margin-bottom-10">
-        <Logo class="text-white margin-bottom-15" />
+        <Logo class="text-light margin-bottom-15" />
         <p
           role="description"
           class="text-snuff weight-br-300 text-13 margin-top-18"
@@ -39,7 +39,7 @@
               "
             >
               <GSvg
-                class="svg-20 fill-white"
+                class="svg-20 fill-light"
                 :name-icon="so.icon"
                 :title="so.icon"
               />
@@ -52,7 +52,7 @@
         <div class="row">
           <!--  -->
           <div class="col">
-            <p role="site" class="text-white text-14">الموقع</p>
+            <p role="site" class="text-light text-14">الموقع</p>
             <ul class="list-unstyled margin-top-18">
               <li v-for="site in ourSite" :key="site.name">
                 <nuxt-link
@@ -65,7 +65,7 @@
           </div>
           <!--  -->
           <div class="col">
-            <p role="sections" class="text-white text-14">الأقسام</p>
+            <p role="sections" class="text-light text-14">الأقسام</p>
             <ul class="row list-unstyled margin-top-18">
               <li
                 v-for="(section, index) in sections"
@@ -84,7 +84,7 @@
       </div>
       <!--  -->
       <div class="col-lg-4">
-        <p role="subscription" class="text-14 text-white margin-bottom-21">
+        <p role="subscription" class="text-14 text-light margin-bottom-21">
           اشترك في النشرة البريدية
         </p>
         <form
@@ -101,7 +101,7 @@
             class="
               padding-start-27
               bg-voodoo-light
-              text-13 text-white
+              text-13 text-light
               width-100
               lg-width-50
               md-width-100
@@ -119,7 +119,7 @@
             class="
               btn btn-coral
               width-155
-              text-white text-14
+              text-light text-14
               height-55
               radius-21
               margin-top-30

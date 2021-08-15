@@ -89,7 +89,7 @@
             after-btn
             height-41
             width-116
-            text-12 text-white
+            text-12 text-light
             m-s-auto
             margin-top-20
           "

@@ -35,7 +35,7 @@
         >
           ابحث عن ما تريد وتعلم
         </h2>
-        <h1 role="head" class="text-38 text-black text-align-center after">
+        <h1 role="head" class="text-38 text-dark text-align-center after">
           في أي وقت وفي أي مكان
         </h1>
         <p
@@ -61,7 +61,7 @@
             height-60
             width-195
             margin-y-38
-            text-16 text-white
+            text-16 text-light
           "
           title="ابدأ التعلم"
           to="sign-up"
@@ -108,7 +108,7 @@ export default {
       height: 100%;
       transform: scaleY(1);
       transform-origin: bottom;
-      background-color: var(--white);
+      background-color: var(--light);
       @include position('allCenter');
       animation: scale-0 2s ease-in-out forwards;
       will-change: animation;

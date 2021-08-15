@@ -20,7 +20,7 @@
     </figure>
     <!--  -->
     <div class="width-75 mx-auto d-flex flex-column align-items-center">
-      <p role="opnion" class="text-13 text-black weight-br-300">
+      <p role="opnion" class="text-13 text-dark weight-br-300">
         موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن
         العربي مع التمتع بمميزات عديدة في أكاديمي
       </p>
@@ -43,7 +43,7 @@
     </div>
     <!--  -->
     <div>
-      <p role="name" class="text-black text-14 margin-0">أحمد حمدان</p>
+      <p role="name" class="text-dark text-14 margin-0">أحمد حمدان</p>
       <p role="job" class="text-silver weight-br-300 text-12">
         أستاذ موارد بشرية
       </p>

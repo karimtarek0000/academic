@@ -1,9 +1,9 @@
 ////////////////////////////
 // All Colors Variables
 ////////////////////////////
-$black: #000000;
+$dark: #000000;
 $whiteDark: #f5f5f5;
-$white: #ffff;
+$light: #ffff;
 $gray: #7d7b7b;
 $Voodoo: #452b4e;
 $voodoo-light: #503758;
@@ -20,10 +20,10 @@ $alto: #dedede;
 
 // 1) Themes Colors
 $themes: (
-  black: $black,
+  dark: $dark,
   whiteDark: $whiteDark,
   gray: $gray,
-  white: $white,
+  light: $light,
   Voodoo: $Voodoo,
   coral: $coral,
   silver: $silver,
@@ -84,7 +84,8 @@ $baseFont: 'BR';
 // Choose color text
 // Ex => first-color second-color ..etc if null will render all themes
 $chooseColorText: (
-  'black',
+  'dark',
+  'light',
   'Voodoo',
   'coral',
   'silver',
@@ -107,7 +108,7 @@ $svg: (
 
 // Choose fill svg
 // Ex => first-color second-color ..etc if null will render all themes
-$chooseFillSvg: ('white', 'Voodoo', 'coral');
+$chooseFillSvg: ('light', 'Voodoo', 'coral');
 
 ////////////////////////////
 /// 4) - DISPLAY

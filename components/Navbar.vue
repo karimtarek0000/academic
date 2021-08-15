@@ -11,7 +11,7 @@
       >
         <div class="row flex-nowrap width-100 align-items-center">
           <!-- 1) - Logo -->
-          <Logo class="col text-black resetHoverLink" color="text-Voodoo" />
+          <Logo class="col text-dark resetHoverLink" color="text-Voodoo" />
           <!-- 2) - Sections -->
           <Sections class="col-2" />
           <!-- 3) - Search-1 -->
@@ -35,7 +35,7 @@
               width-148
               height-55
               margin-end-20
-              text-14 text-white
+              text-14 text-light
             "
             title="حساب جديد"
             to="sign-up"
@@ -68,7 +68,7 @@
                   user-options
                   position-absolute
                   width-267
-                  bg-white
+                  bg-light
                   radius-25
                   padding-x-20 padding-y-10
                 "

@@ -17,7 +17,7 @@
         width-181
         height-55
         margin-y-38
-        text-14 text-white
+        text-14 text-light
         mx-auto
       "
       title="شاهد المزيد"
@@ -54,7 +54,7 @@ export default {
       &:hover {
         font-weight: 400;
         background-color: var(--coral);
-        color: var(--white);
+        color: var(--light);
       }
     }
   }

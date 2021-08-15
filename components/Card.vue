@@ -13,7 +13,7 @@
       <!-- Part 1 -->
       <div>
         <h6 role="category-name" class="text-12 text-picton">التصميم</h6>
-        <h4 role="title" class="text-15 text-black width-75">
+        <h4 role="title" class="text-15 text-dark width-75">
           الفرق بين التايبوجرافي و الكاليجرافي وفن التعريب
         </h4>
       </div>
@@ -32,7 +32,7 @@
             />
           </figure>
           <!--  -->
-          <span class="margin-start-5 text-black text-10">أحمد حمدان</span>
+          <span class="margin-start-5 text-dark text-10">أحمد حمدان</span>
         </div>
         <!-- Part 2 -->
         <template v-if="!time">
@@ -68,7 +68,7 @@
               <span class="text-silver text-11 margin-start-5">يبدا</span>
             </div>
             <!--  -->
-            <div class="d-flex align-items-center text-black">
+            <div class="d-flex align-items-center text-dark">
               <span role="date">20/8/2020</span>
               <span class="margin-x-5">|</span>
               <span role="time">12:00AM</span>
@@ -102,7 +102,7 @@
                 text-12
                 width-116
                 height-41
-                text-white
+                text-light
                 btn-Voodoo
                 radius-18
               "
@@ -118,7 +118,7 @@
                 text-12
                 width-116
                 height-41
-                text-white
+                text-light
                 btn-Voodoo
                 mx-auto
                 radius-18

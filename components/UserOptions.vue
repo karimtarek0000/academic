@@ -22,7 +22,7 @@
         text-center
         bg-emerald
         rounded-circle
-        text-black text-12 text-white
+        text-dark text-12 text-light
         count-notifi
         position-absolute
       "

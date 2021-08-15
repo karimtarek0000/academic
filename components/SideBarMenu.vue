@@ -20,7 +20,7 @@
             btn-Voodoo
             width-148
             height-55
-            text-14 text-white
+            text-14 text-light
             margin-bottom-5
           "
           title="حساب جديد"
@@ -124,7 +124,7 @@
               class="padding-y-5"
             >
               <nuxt-link
-                class="text-14 text-black weight-br-300 btn-link"
+                class="text-14 text-dark weight-br-300 btn-link"
                 :to="{ name: sub.path }"
                 >{{ sub.title }}</nuxt-link
               >

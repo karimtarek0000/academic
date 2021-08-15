@@ -15,7 +15,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'text-white',
+      default: 'text-light',
     },
   },
 }

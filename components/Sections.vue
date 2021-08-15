@@ -16,7 +16,7 @@
         position-absolute
         shadow-wrapper
         radius-25
-        bg-white
+        bg-light
         padding-start-20 padding-end-30 padding-top-15 padding-bottom-20
       "
     >
@@ -40,7 +40,7 @@
           class="
             sections__details
             shadow-wrapper
-            bg-white
+            bg-light
             padding-x-10
             position-absolute
           "
@@ -58,7 +58,7 @@
               class="padding-y-5"
             >
               <nuxt-link
-                class="text-14 text-black weight-br-300 btn-link"
+                class="text-14 text-dark weight-br-300 btn-link"
                 :to="{ name: sub.path }"
                 >{{ sub.title }}</nuxt-link
               >
@@ -120,7 +120,7 @@ export default {
     transition: color 0.2s ease;
     //
     &:hover {
-      color: rgba($black, 0.6);
+      color: rgba($dark, 0.6);
     }
   }
   // Hover

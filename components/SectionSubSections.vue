@@ -1,6 +1,6 @@
 <template>
   <section class="sub-section margin-top-50 border-top-whiteDark padding-y-30">
-    <h2 class="text-22 text-black margin-bottom-30">الأقسام الفرعية</h2>
+    <h2 class="text-22 text-dark margin-bottom-30">الأقسام الفرعية</h2>
     <!--  -->
     <div class="wrapper">
       <Slider :add-settings="settings">

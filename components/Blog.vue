@@ -22,19 +22,13 @@
         <!--  -->
         <div>
           <h6 role="category-blog" class="text-12 text-picton">التصميم</h6>
-          <h4 role="blog-title" class="text-16 text-black">
+          <h4 role="blog-title" class="text-16 text-dark">
             طريقة عمل تايبوجرافي خرافي وسهل بالاليستريتور
           </h4>
           <!--  -->
           <div
             role="author-info"
-            class="
-              d-flex
-              align-items-center
-              text-black
-              weight-br-300
-              margin-y-5
-            "
+            class="d-flex align-items-center text-dark weight-br-300 margin-y-5"
           >
             <GSvg class="svg-20 margin-end-5" name-icon="user" title="الكاتب" />
             <span class="text-capitalize">ahmed hamdan</span>

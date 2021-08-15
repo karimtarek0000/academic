@@ -8,7 +8,7 @@
         bg-black
         position-fixed
         width-220
-        bg-white
+        bg-light
         padding-top-30
       "
       @click.stop=""
