@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-right">
-    <div
+    <aside
       v-show="toggle"
       role="navbar-user-options"
       class="
@@ -22,13 +22,13 @@
       />
       <!-- Render category -->
       <UserOptionsList class="padding-x-10" />
-    </div>
+    </aside>
   </transition>
 </template>
 
 <script>
 export default {
-  name: 'NavbarUser',
+  name: 'SideBarUser',
   computed: {
     toggle() {
       return this.$store.state.statusToggleNavbarUser

@@ -1,6 +1,6 @@
 <template>
   <!--  -->
-  <ul class="list-unstyled margin-top-20" role="user-options">
+  <ul class="user-options list-unstyled margin-top-20" role="user-options">
     <li
       v-for="item in items"
       :key="item.title"
@@ -67,12 +67,14 @@ export default {
 </script>
 
 <style lang="scss">
-@include DetectHover {
-  span {
-    transition: color 0.3s ease;
-    //
-    &:hover {
-      color: rgba($black, 0.6);
+.user-options {
+  @include DetectHover {
+    span {
+      transition: color 0.3s ease;
+      //
+      &:hover {
+        color: rgba($black, 0.6);
+      }
     }
   }
 }

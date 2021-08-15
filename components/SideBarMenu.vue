@@ -1,6 +1,6 @@
 <template>
   <transition v-if="statusToggler" name="slide-right">
-    <div
+    <aside
       class="
         navbar-menu
         position-fixed
@@ -132,13 +132,13 @@
           </ul>
         </div>
       </transition>
-    </div>
+    </aside>
   </transition>
 </template>
 
 <script>
 export default {
-  name: 'NavbarMenu',
+  name: 'SideBarMenu',
   data() {
     return {
       subCategory: null,

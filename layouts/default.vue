@@ -12,9 +12,9 @@
       <Footer />
     </div>
     <!--  -->
-    <NavbarMenu />
+    <SideBarMenu />
     <!--  -->
-    <NavbarUser />
+    <SideBarUser />
   </div>
 </template>
 
