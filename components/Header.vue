@@ -57,7 +57,7 @@
         <BtnPrimary
           class="
             btn-Voodoo
-            after-btn
+            translate-up-btn
             height-60
             width-195
             margin-y-38
@@ -125,7 +125,7 @@ export default {
     }
   }
   //
-  .after-btn {
+  .translate-up-btn {
     animation: slide-up 1.5s ease-in-out forwards;
   }
   //

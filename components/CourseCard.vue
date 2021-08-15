@@ -86,7 +86,6 @@
         <BtnPrimary
           class="
             btn-Voodoo
-            after-btn
             height-41
             width-116
             text-12 text-light
