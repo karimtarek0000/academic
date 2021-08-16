@@ -14,15 +14,6 @@
     <!--  -->
     <Heading h5="عملاء سعيدة" h2="آراء العملاء" />
     <!--  -->
-    <!-- <Slider v-if="s.length">
-      <CardTestimonials
-        v-for="sd in s"
-        :key="sd"
-        dir="rtl"
-        class="margin-y-20"
-      />
-    </Slider> -->
-    <!--  -->
     <Slider v-if="s.length" class="padding-y-20" :add-settings="settings">
       <CardTestimonials
         v-for="sd in s"

@@ -158,22 +158,4 @@ export default {
     }
   }
 }
-
-.specific-size {
-  @media only screen and (min-width: 1350px) {
-    flex-basis: calc(97% / 3);
-  }
-
-  @media only screen and (max-width: 1350px) {
-    flex-basis: calc(97% / 3);
-  }
-
-  @media only screen and (max-width: 992px) {
-    flex-basis: calc(97% / 2);
-  }
-
-  @media only screen and (max-width: 600px) {
-    flex-basis: 100%;
-  }
-}
 </style>

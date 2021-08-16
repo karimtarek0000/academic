@@ -174,7 +174,7 @@ export default {
 //
 .navbar-menu {
   @include position('lt', $moveR: 0, $moveT: 0);
-  box-shadow: -3px 0px 15px darken($whiteDark, 10%);
+  box-shadow: -3px 0px 5px darken($whiteDark, 10%);
   z-index: 9999;
 
   //

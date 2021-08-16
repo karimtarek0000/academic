@@ -64,6 +64,7 @@
           </div>
           <!--  -->
           <div
+            v-if="!addPrice"
             class="
               width-41
               height-41
@@ -73,6 +74,7 @@
               justify-content-center
               bg-whiteDark
               cursor-pointer
+              md-margin-top-20
             "
           >
             <GSvg
@@ -83,7 +85,21 @@
           </div>
         </div>
         <!--  -->
+        <div v-if="addPrice" class="d-flex align-items-center margin-top-20">
+          <p
+            role="new-price"
+            class="d-flex text-15 text-dark margin-0 margin-end-10"
+          >
+            <span>S.R</span> <span class="m-s-2">50</span>
+          </p>
+          <del role="discount" class="d-flex text-silver text-14 weight-br-300">
+            <span>S.R</span>
+            <span class="m-s-2">50</span>
+          </del>
+        </div>
+        <!--  -->
         <BtnPrimary
+          v-if="!addPrice"
           class="
             btn-Voodoo
             height-41
@@ -103,6 +119,12 @@
 <script>
 export default {
   name: 'CourseCard',
+  props: {
+    addPrice: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>
 

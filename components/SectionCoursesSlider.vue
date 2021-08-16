@@ -1,5 +1,5 @@
 <template>
-  <section class="courses">
+  <section role="design-courses" class="courses">
     <Slider :add-settings="sliderSettings">
       <CourseCard v-for="s in ss" :key="s" dir="rtl" class="margin-y-20" />
     </Slider>
@@ -17,13 +17,12 @@ export default {
     return {
       ss: 6,
       sliderSettings: {
-        slidesToShow: 1,
         centerMode: true,
         centerPadding: '300px',
         variableWidth: false,
         responsive: [
           {
-            breakpoint: 542,
+            breakpoint: 650,
             settings: {
               slidesToShow: 1,
               centerPadding: '0px',

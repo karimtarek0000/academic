@@ -11,11 +11,19 @@
       >
         <div class="row flex-nowrap width-100 align-items-center">
           <!-- 1) - Logo -->
-          <Logo class="col text-dark resetHoverLink" color="text-Voodoo" />
+          <Logo
+            class="col-3 col-xl-3 padding-x-0 text-dark resetHoverLink"
+            color="text-Voodoo"
+          />
           <!-- 2) - Sections -->
-          <Sections class="col-2" />
+          <Sections class="col-2 col-xl-1 padding-x-0" />
           <!-- 3) - Search-1 -->
-          <div class="col-7">
+          <div
+            :class="[
+              'col padding-x-0 mr-auto',
+              { 'col-xl-6': !userLogIn, 'col-xl-7': userLogIn },
+            ]"
+          >
             <Search />
           </div>
         </div>
@@ -23,7 +31,7 @@
       <!-- Second col -->
       <div
         :class="[
-          'col  d-flex',
+          'col  d-flex justify-content-xl-end',
           { 'col-lg-4': !userLogIn, 'col-xl-5': userLogIn },
         ]"
       >
@@ -57,8 +65,8 @@
                 @click.stop="togglerUserOptions"
               />
               <GSvg
-                class="svg-20 margin-x-5 margin-top-15"
-                name-icon="arrow-drop-down-line-1"
+                class="svg-22 margin-x-5 margin-top-15"
+                name-icon="arrow_drop_down_line__1"
                 title="open"
               />
               <!--  -->
@@ -156,8 +164,8 @@ export default {
   box-shadow: 0px 3px 25px #aeaeae1f;
   //
   @media only screen and (max-width: 1350px) {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
   @media only screen and (min-width: 1350px) {
     padding-right: 150px;
@@ -172,8 +180,12 @@ export default {
     width: 2px;
     background-color: $whiteDark;
     display: block;
-    margin: 0 15px;
-    @include position('rt', $moveR: '-0.6rem', $moveT: '50%');
+    @include position('rt', $moveR: '-2%', $moveT: '50%');
+
+    //
+    @media only screen and (max-width: 1200px) {
+      display: none;
+    }
   }
 
   //

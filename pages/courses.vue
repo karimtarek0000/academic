@@ -12,6 +12,83 @@
     <SectionCoursesSlider />
     <!--  -->
     <SectionSubSections :items="items" />
+    <!--  -->
+    <div
+      class="
+        row
+        justify-content-between
+        align-items-center
+        set-padding
+        d-none
+        padding-y-20
+        margin-bottom-10
+      "
+    >
+      <!--  -->
+      <div
+        role="number-search"
+        class="col col-lg-3 d-flex align-items-center text-16 text-dark"
+      >
+        <span class="margin-end-5">200</span>
+        <span>نتائج البحث</span>
+      </div>
+      <!--  -->
+      <div class="col col-lg-6 sort">
+        <div class="row justify-content-end align-items-center">
+          <!--  -->
+          <SelectBox
+            class="
+              col-3
+              border-gallery
+              text-14
+              padding-y-10
+              radius-14
+              padding-start-20
+              margin-end-10
+            "
+          />
+          <!--  -->
+          <SelectBox
+            class="
+              col-3
+              border-gallery
+              text-14
+              padding-y-10
+              radius-14
+              padding-start-20
+            "
+          />
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div
+      class="
+        row
+        padding-y-10
+        lg-padding-x-10
+        justify-content-between
+        set-padding
+      "
+    >
+      <!--  -->
+      <div class="col col-sm-3">
+        <!--  -->
+        <AsideFilter />
+      </div>
+      <!--  -->
+      <div class="col-12 col-sm-8">
+        <!--  -->
+        <div class="row">
+          <CourseCard
+            v-for="t in 3"
+            :key="t"
+            class="col-sm-12 col-md-12 margin-bottom-20"
+            :add-price="true"
+          />
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -64,4 +141,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.sort {
+  //
+  .select-animate__action__text {
+    font-size: 12px;
+  }
+}
+</style>

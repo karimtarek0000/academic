@@ -15,7 +15,6 @@
   >
     <span
       v-if="count"
-      role="count-notifi"
       class="
         width-24
         height-24
@@ -23,7 +22,7 @@
         bg-emerald
         rounded-circle
         text-dark text-12 text-light
-        count-notifi
+        count
         position-absolute
       "
       v-text="count"
@@ -65,4 +64,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.count {
+  @include position('rt', $moveT: '-5px', $moveR: '-6px');
+}
+</style>

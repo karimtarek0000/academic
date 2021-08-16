@@ -1,5 +1,13 @@
 <template>
-  <section class="sub-section margin-top-50 border-top-whiteDark padding-y-30">
+  <section
+    class="
+      sub-section
+      margin-top-50
+      border-top-whiteDark
+      padding-y-30
+      set-padding
+    "
+  >
     <h2 class="text-22 text-dark margin-bottom-30">الأقسام الفرعية</h2>
     <!--  -->
     <div class="wrapper">
@@ -40,7 +48,6 @@ export default {
   data() {
     return {
       settings: {
-        slidesToShow: 4,
         responsive: [
           {
             breakpoint: 600,
@@ -58,6 +65,12 @@ export default {
             breakpoint: 1300,
             settings: {
               slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 10000,
+            settings: {
+              slidesToShow: 4,
             },
           },
         ],
@@ -86,10 +99,10 @@ export default {
   .arrow {
     pointer-events: all;
     &--prev {
-      transform: translateX(-50px);
+      transform: translateX(-6rem);
     }
     &--next {
-      transform: translateX(50px);
+      transform: translateX(6rem);
     }
   }
 
@@ -103,7 +116,7 @@ export default {
     margin: 0 auto;
     max-width: 88vw;
     @media only screen and (max-width: 1200px) {
-      max-width: 80vw;
+      max-width: 70vw;
     }
   }
 }

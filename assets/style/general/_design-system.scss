@@ -17,6 +17,8 @@ $chardonnay: #ffcc7b;
 $picton: #40cde8;
 $alabaster: #fafafa;
 $alto: #dedede;
+$gallery: #ebebeb;
+$smoky: #635972;
 
 // 1) Themes Colors
 $themes: (
@@ -36,6 +38,8 @@ $themes: (
   picton: $picton,
   alabaster: $alabaster,
   alto: $alto,
+  gallery: $gallery,
+  smoky: $smoky,
 );
 
 ////////////////////////////
@@ -108,7 +112,7 @@ $svg: (
 
 // Choose fill svg
 // Ex => first-color second-color ..etc if null will render all themes
-$chooseFillSvg: ('light', 'Voodoo', 'coral');
+$chooseFillSvg: ('light', 'Voodoo', 'coral', 'light');
 
 ////////////////////////////
 /// 4) - DISPLAY
@@ -210,6 +214,8 @@ $borderRaduis: (
   60: 6rem,
   18: 1.8rem,
   27: 2.7rem,
+  10: 1rem,
+  14: 1.4rem,
 );
 
 ////////////////////////////

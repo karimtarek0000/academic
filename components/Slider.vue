@@ -67,7 +67,6 @@ export default {
         infinite: true,
         speed: 500,
         slidesToScroll: 1,
-        // initialSlide: 1,
         ...this.addSettings,
       },
     }
