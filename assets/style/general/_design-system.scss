@@ -19,6 +19,7 @@ $alabaster: #fafafa;
 $alto: #dedede;
 $gallery: #ebebeb;
 $smoky: #635972;
+$roseWhite: #fffaf9;
 
 // 1) Themes Colors
 $themes: (
@@ -40,6 +41,7 @@ $themes: (
   alto: $alto,
   gallery: $gallery,
   smoky: $smoky,
+  roseWhite: $roseWhite,
 );
 
 ////////////////////////////
@@ -56,6 +58,7 @@ $font: (
     14: 1.4rem,
     15: 1.5rem,
     16: 1.6rem,
+    17: 1.7rem,
     18: 1.8rem,
     20: 2rem,
     22: 2.2rem,
@@ -107,7 +110,9 @@ $svg: (
   20: 2rem,
   22: 2.2rem,
   70: 7rem,
+  90: 9rem,
   37: 3.7rem,
+  140: 14rem,
 );
 
 // Choose fill svg

@@ -1,5 +1,5 @@
 <template>
-  <svg>
+  <svg v-on="$listeners">
     <use
       :xlink:href="require(`~/assets/icons/${src}.svg`) + '#icon-' + nameIcon"
     >

@@ -24,4 +24,13 @@
       background-color: rgba($coral, 0.9);
     }
   }
+  //
+  &-emerald {
+    background-color: var(--emerald);
+
+    //
+    &:hover {
+      background-color: rgba($emerald, 0.9);
+    }
+  }
 }
