@@ -1,13 +1,13 @@
 <template>
   <nav
-    ref="newCourses"
+    ref="navbarSelected"
     role="category"
     class="
       d-flex
       align-items-center
       justify-content-center
       show-swip
-      new-courses__wrapper
+      navbar-selected__wrapper
       overflow-hidden
     "
     @mousedown="mouseDown"
@@ -21,7 +21,7 @@
     <ul
       role="items"
       class="
-        new-courses__items
+        navbar-selected__items
         margin-0
         d-flex
         align-items-center
@@ -32,9 +32,9 @@
         v-for="item in items"
         :key="item"
         :class="[
-          'new-courses__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13  margin-end-20 flex-shrink-0 weight-br-300',
+          'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13 flex-shrink-0 weight-br-300',
           {
-            'new-courses__active': item === selected,
+            'navbar-selected__active': item === selected,
           },
         ]"
         @click="sendNewSelected(item)"
@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'NavbarSelectedCategory',
+  name: 'NavbarSelected',
   model: {
     prop: 'selected',
     event: 'changeSelected',
@@ -62,34 +62,27 @@ export default {
       status: false,
       startDownX: null,
       scrollLeft: null,
-      items: [
-        'التصميم',
-        'إدارة الاعمال',
-        'البرمجة',
-        'التصوير',
-        'التسويق',
-        'الميديا',
-      ],
     }
   },
+  inject: ['items'],
   methods: {
     // 1
     mouseDown(e) {
       // 1
       this.status = true
       // 2
-      this.startDownX = e.pageX - this.$refs.newCourses.offsetLeft
+      this.startDownX = e.pageX - this.$refs.navbarSelected.offsetLeft
       // 3
-      this.scrollLeft = this.$refs.newCourses.scrollLeft
+      this.scrollLeft = this.$refs.navbarSelected.scrollLeft
     },
     // 2
     mouseMove(e) {
       // 1
       if (!this.status) return
       // 2
-      const startMoveX = e.pageX - this.$refs.newCourses.offsetLeft
+      const startMoveX = e.pageX - this.$refs.navbarSelected.offsetLeft
       const div = startMoveX - this.startDownX
-      this.$refs.newCourses.scrollLeft = this.scrollLeft - div
+      this.$refs.navbarSelected.scrollLeft = this.scrollLeft - div
     },
     //
     mouseLeave() {
@@ -105,17 +98,19 @@ export default {
       // 1
       this.status = true
       // 2
-      this.startDownX = e.touches[0].pageX - this.$refs.newCourses.offsetLeft
+      this.startDownX =
+        e.touches[0].pageX - this.$refs.navbarSelected.offsetLeft
       // 3
-      this.scrollLeft = this.$refs.newCourses.scrollLeft
+      this.scrollLeft = this.$refs.navbarSelected.scrollLeft
     },
     touchMove(e) {
       // 1
       if (!this.status) return
       // 2
-      const startMoveX = e.touches[0].pageX - this.$refs.newCourses.offsetLeft
+      const startMoveX =
+        e.touches[0].pageX - this.$refs.navbarSelected.offsetLeft
       const div = startMoveX - this.startDownX
-      this.$refs.newCourses.scrollLeft = this.scrollLeft - div
+      this.$refs.navbarSelected.scrollLeft = this.scrollLeft - div
     },
     sendNewSelected(newName) {
       this.$emit('changeSelected', newName)
@@ -125,23 +120,49 @@ export default {
 </script>
 
 <style lang="scss">
-.show-swip {
-  border-radius: 13px;
+// .show-swip {
+//   border-radius: 13px;
+//   //
+//   @media only screen and (max-width: 900px) {
+//     background-image: linear-gradient(
+//       to right,
+//       transparent,
+//       rgba($chardonnay, 0.5) 100%
+//     );
+//   }
+// }
+//
+.navbar-selected {
   //
-  @media only screen and (max-width: 900px) {
-    background-image: linear-gradient(
-      to right,
-      transparent,
-      rgba($chardonnay, 0.5) 100%
-    );
+  &__wrapper {
+    max-width: 99%;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
+  //
+  &__items {
+    max-width: 100%;
+  }
 
-.new-courses {
+  //
   &__active {
     font-weight: 400;
-    background-color: var(--coral);
-    color: var(--light);
+    pointer-events: none;
+  }
+
+  //
+  &__item {
+    transition: all 0.1s ease;
+
+    @include DetectHover {
+      &:hover {
+        font-weight: 400;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-left: 2rem;
+    }
   }
 }
 </style>

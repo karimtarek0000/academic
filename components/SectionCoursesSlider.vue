@@ -29,22 +29,34 @@ export default {
             },
           },
           {
-            breakpoint: 760,
+            breakpoint: 767,
             settings: {
               slidesToShow: 2,
               centerPadding: '0px',
             },
           },
           {
-            breakpoint: 842,
+            breakpoint: 843,
             settings: {
               centerPadding: '50px',
             },
           },
           {
-            breakpoint: 1400,
+            breakpoint: 990,
             settings: {
-              centerPadding: '100px',
+              centerPadding: '150px',
+            },
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              centerPadding: '200px',
+            },
+          },
+          {
+            breakpoint: 1300,
+            settings: {
+              centerPadding: '250px',
             },
           },
         ],

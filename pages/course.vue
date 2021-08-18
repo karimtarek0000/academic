@@ -14,6 +14,8 @@
         "
       />
     </SectionCourseInformation>
+    <!--  -->
+    <NavbarSelected v-model="selected" @changeSelected="s" />
   </main>
 </template>
 
@@ -37,6 +39,13 @@ export default {
           icon: 'file-download-fill',
         },
       ],
+      itemsNavbarSelected: [
+        'نظرة عامة',
+        'محتوى المادة',
+        'متطلبات الدورة',
+        'آراء الطلاب',
+        'المدرب',
+      ],
     }
   },
   validate({ params }) {
@@ -48,12 +57,17 @@ export default {
       rating: this.rating,
       courseContent: this.courseContent,
       bookingStatic: this.bookingStatic,
+      items: this.itemsNavbarSelected,
     }
   },
   data() {
     return {
       rating: 4,
+      selected: 'نظرة عامة',
     }
+  },
+  methods: {
+    s(d) {},
   },
   head() {
     return {
@@ -93,6 +107,37 @@ export default {
   //
   &__set-width-booking {
     width: 35.2rem;
+  }
+}
+
+.navbar-selected {
+  //
+  &__wrapper {
+    border: 1px solid var(--gallery);
+    border-radius: 1.8rem !important;
+
+    @media only screen and (min-width: 768px) {
+      margin-top: -7rem;
+    }
+  }
+  //
+  &__item {
+    width: 24.2rem;
+    height: 6.5rem;
+    font-size: 16px;
+    //
+    @include DetectHover {
+      &:hover {
+        background-color: var(--chardon);
+        color: var(--coral);
+      }
+    }
+  }
+
+  //
+  &__active {
+    background-color: var(--chardon);
+    color: var(--coral);
   }
 }
 </style>

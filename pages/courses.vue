@@ -68,7 +68,7 @@
         padding-y-10
         lg-padding-x-10
         justify-content-between
-        set-padding
+        custom-container
       "
     >
       <!--  -->

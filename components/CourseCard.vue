@@ -12,7 +12,7 @@
         />
       </figure>
       <!--  -->
-      <div class="col-md-8 lg-padding-x-20 xxlg-padding-x-45 padding-y-20">
+      <div class="col-md-8 padding-x-20 xxlg-padding-x-45 padding-y-20">
         <!--  -->
         <div class="row">
           <!--  -->

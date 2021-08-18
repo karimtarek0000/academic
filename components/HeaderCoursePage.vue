@@ -1,15 +1,7 @@
 <template>
-  <header class="header radius-21 margin-top-20">
+  <header class="header radius-21 lg-margin-top-20">
     <!--  -->
-    <div
-      class="
-        row
-        g-0
-        justify-content-between
-        padding-y-67 padding-x-30
-        set-padding
-      "
-    >
+    <div class="row g-0 justify-content-between padding-y-67 custom-container">
       <!-- 1 -->
       <div class="col-12 col-md-8 padding-0">
         <!-- 1 -->
@@ -28,7 +20,14 @@
         <!-- 2 -->
         <div class="row g-0 align-items-center margin-y-30">
           <!-- 1 -->
-          <div class="col-12 col-sm-8 padding-x-0 d-flex align-items-center">
+          <div
+            class="
+              col-12 col-sm-8 col-lg-5
+              padding-x-0
+              d-flex
+              align-items-center
+            "
+          >
             <client-only>
               <StarsRatings
                 v-model="rating"

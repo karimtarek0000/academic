@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss">
-@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 577px) {
   .aside-filter {
     position: fixed;
     top: 0;

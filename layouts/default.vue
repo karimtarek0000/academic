@@ -5,7 +5,7 @@
     <!-- Navbar mobile -->
     <NavbarMobile v-else class="d-block d-lg-none" />
     <!-- Pages -->
-    <div class="container-lg">
+    <div class="container-xxl">
       <!--  -->
       <Nuxt />
       <!--  -->

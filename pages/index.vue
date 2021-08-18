@@ -68,7 +68,21 @@ export default {
           'موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن العربي',
       },
     ]
-    return { itemsSliderSectionAllSections }
+
+    const itemsNavbarSelected = [
+      'التصميم',
+      'إدارة الاعمال',
+      'البرمجة',
+      'التصوير',
+      'التسويق',
+      'الميديا',
+    ]
+    return { itemsSliderSectionAllSections, itemsNavbarSelected }
+  },
+  provide() {
+    return {
+      items: this.itemsNavbarSelected,
+    }
   },
   head: {
     title: 'الرئيسية',

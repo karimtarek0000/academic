@@ -7,7 +7,7 @@
         class="svg-20 margin-end-5 flex-shrink-0"
         title="الأقسام"
       />
-      <span class="text-13">الأقسام</span>
+      <span class="text-15">الأقسام</span>
     </div>
     <!--  -->
     <div

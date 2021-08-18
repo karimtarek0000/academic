@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <!-- First row -->
-    <div class="row navbar__wrapper padding-y-25">
+    <div class="row navbar__wrapper custom-container padding-y-25">
       <!-- First col -->
       <div
         :class="[
@@ -16,11 +16,11 @@
             color="text-Voodoo"
           />
           <!-- 2) - Sections -->
-          <Sections class="col-2 col-xl-1 padding-x-0" />
+          <Sections class="col-2 col-xl-1" />
           <!-- 3) - Search-1 -->
           <div
             :class="[
-              'col padding-x-0 mr-auto',
+              'col  mr-auto',
               { 'col-xl-6': !userLogIn, 'col-xl-7': userLogIn },
             ]"
           >
@@ -163,16 +163,6 @@ export default {
 .navbar {
   box-shadow: 0px 3px 25px #aeaeae1f;
   //
-  @media only screen and (max-width: 1350px) {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-  @media only screen and (min-width: 1350px) {
-    padding-right: 150px;
-    padding-left: 150px;
-  }
-
-  //
   .pseudo::after {
     content: '';
     position: absolute;
@@ -180,7 +170,7 @@ export default {
     width: 2px;
     background-color: $whiteDark;
     display: block;
-    @include position('rt', $moveR: '-2%', $moveT: '50%');
+    @include position('rt', $moveR: '-6px', $moveT: '50%');
 
     //
     @media only screen and (max-width: 1200px) {
