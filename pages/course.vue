@@ -16,6 +16,19 @@
     </SectionCourseInformation>
     <!--  -->
     <NavbarSelected v-model="selected" @changeSelected="s" />
+    <!--  -->
+    <article class="custom-container">
+      <Overview class="padding-y-30 border-botton-whiteDark" />
+      <CourseDescription
+        class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
+      />
+      <CourseContent
+        class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
+      />
+      <CourseRequirements class="padding-y-30 border-botton-whiteDark" />
+      <StudentsOpinion class="padding-y-30 border-botton-whiteDark" />
+      <AboutTeacher class="padding-y-30 border-botton-whiteDark" />
+    </article>
   </main>
 </template>
 

@@ -170,7 +170,7 @@ export default {
     width: 2px;
     background-color: $whiteDark;
     display: block;
-    @include position('rt', $moveR: '-6px', $moveT: '50%');
+    @include position('rt', $moveR: '-2px', $moveT: '50%');
 
     //
     @media only screen and (max-width: 1200px) {

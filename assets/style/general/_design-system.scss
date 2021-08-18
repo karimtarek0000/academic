@@ -21,6 +21,7 @@ $gallery: #ebebeb;
 $smoky: #635972;
 $roseWhite: #fffaf9;
 $chardon: #fff3f0;
+$sauvignon: #fff6f3;
 
 // 1) Themes Colors
 $themes: (
@@ -44,6 +45,7 @@ $themes: (
   smoky: $smoky,
   roseWhite: $roseWhite,
   chardon: $chardon,
+  sauvignon: $sauvignon,
 );
 
 ////////////////////////////
@@ -109,6 +111,7 @@ $chooseColorText: (
 /// 3) - SVG
 // SVG - SIZE
 $svg: (
+  11: 1.1rem,
   20: 2rem,
   22: 2.2rem,
   70: 7rem,
@@ -223,6 +226,7 @@ $borderRaduis: (
   27: 2.7rem,
   10: 1rem,
   14: 1.4rem,
+  9: 9px,
 );
 
 ////////////////////////////

@@ -1,0 +1,63 @@
+<template>
+  <section class="about-teacher">
+    <h2 role="head" class="text-22 text-dark margin-end-20 margin-bottom-20">
+      المدرب
+    </h2>
+    <div class="row max-width-831 g-0">
+      <div class="col-sm-12 col-md-4">
+        <!--  -->
+        <figure class="margin-0 about-teacher__image overflow-hidden radius-21">
+          <img
+            class="resize-img"
+            src="~/assets/images/global/test.png"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <p role="name" class="text-18">أحمد حمدان</p>
+        <p
+          role="job"
+          class="text-14 text-silver weight-br-300 margin-bottom-10"
+        >
+          أستاذ موارد بشرية
+        </p>
+        <p role="description" class="text-14 weight-br-300">
+          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي
+          القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة
+          التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ
+          طبيعياَ هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+          سيلهي القارئ عن التركيز على الشكل الخارجي للنص
+        </p>
+        <!--  -->
+        <BtnPrimary
+          class="
+            btn-Voodoo
+            height-41
+            width-148
+            text-12 text-light
+            ml-auto
+            margin-top-20
+          "
+          title="تعرف أكثر"
+          to="index"
+        />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'AboutTeacher',
+}
+</script>
+
+<style lang="scss">
+.about-teacher {
+  &__image {
+    width: 25.3rem;
+    height: 22.5rem;
+  }
+}
+</style>
