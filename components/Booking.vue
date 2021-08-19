@@ -55,7 +55,7 @@
           class="list-unstyled text-13 weight-br-300 text-dark"
         >
           <li
-            v-for="(content, index) in courseContent"
+            v-for="(content, index) in totalCourseContent"
             :key="index"
             class="padding-y-5"
           >
@@ -109,7 +109,7 @@
 <script>
 export default {
   name: 'Booking',
-  inject: ['bookingStatic', 'courseContent'],
+  inject: ['bookingStatic', 'totalCourseContent'],
 }
 </script>
 

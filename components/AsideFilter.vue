@@ -3,7 +3,7 @@
     <!--  -->
     <div class="row flex-column">
       <!--  -->
-      <SelectBoxUpDown class="col margin-bottom-30" title="الاقسام">
+      <AccordionAnimate class="col margin-bottom-30" title="الاقسام">
         <div
           v-for="i in 4"
           :key="i"
@@ -11,9 +11,9 @@
         >
           ويب ديزاين
         </div>
-      </SelectBoxUpDown>
+      </AccordionAnimate>
       <!--  -->
-      <SelectBoxUpDown class="col margin-bottom-30" title="السعر">
+      <AccordionAnimate class="col margin-bottom-30" title="السعر">
         <Radio
           class="margin-y-5"
           v-bind="{
@@ -36,9 +36,9 @@
           }"
           @changeSelect="priceSelected = $event"
         />
-      </SelectBoxUpDown>
+      </AccordionAnimate>
       <!--  -->
-      <SelectBoxUpDown class="col margin-bottom-30" title="اللغة">
+      <AccordionAnimate class="col margin-bottom-30" title="اللغة">
         <Radio
           class="margin-y-5"
           v-bind="{
@@ -61,7 +61,7 @@
           }"
           @changeSelect="languageSelected = $event"
         />
-      </SelectBoxUpDown>
+      </AccordionAnimate>
     </div>
   </aside>
 </template>

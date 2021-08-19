@@ -37,7 +37,7 @@ export default {
   name: 'Course',
   asyncData() {
     return {
-      courseContent: [44, 75, 75],
+      totalCourseContent: [44, 75, 75],
       bookingStatic: [
         {
           title: 'محاضرة',
@@ -59,6 +59,28 @@ export default {
         'آراء الطلاب',
         'المدرب',
       ],
+      courseContent: [
+        {
+          title: 'المقدمة',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          title: 'الباب الاول',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          title: 'الباب الثاني',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          title: 'الباب الثالث',
+          lectures: 12,
+          time: 32,
+        },
+      ],
     }
   },
   validate({ params }) {
@@ -68,9 +90,10 @@ export default {
   provide() {
     return {
       rating: this.rating,
-      courseContent: this.courseContent,
+      totalCourseContent: this.totalCourseContent,
       bookingStatic: this.bookingStatic,
       items: this.itemsNavbarSelected,
+      courseContent: this.courseContent,
     }
   },
   data() {
@@ -98,6 +121,7 @@ export default {
 }
 </script>
 <style lang="scss">
+//
 .course {
   //
   &__play {
@@ -122,7 +146,7 @@ export default {
     width: 35.2rem;
   }
 }
-
+//
 .navbar-selected {
   //
   &__wrapper {

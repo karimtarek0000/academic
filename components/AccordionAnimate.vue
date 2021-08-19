@@ -1,9 +1,9 @@
 <template>
-  <div class="select-animate padding-0">
+  <div class="accordion-animate padding-0">
     <!--  -->
     <div
       class="
-        select-animate__action
+        accordion-animate__action
         d-flex
         justify-content-between
         align-items-center
@@ -12,26 +12,34 @@
         radius-10
         cursor-pointer
       "
-      @click="toggle = !toggle"
+      v-on="$listeners"
     >
+      <!-- Add icon -->
+      <slot name="icon" />
       <!--  -->
-      <span
-        class="select-animate__action__text text-18 text-dark"
-        v-text="title"
-      />
-      <!--  -->
+      <!-- Change title -->
+      <slot name="title">
+        <span
+          slot="title"
+          class="accordion-animate__action__text text-18 text-dark"
+          v-text="title"
+        />
+      </slot>
+      <!-- Icon -->
       <GSvg
-        class="svg-20"
+        class="svg-20 arrow"
         :name-icon="
-          toggle ? 'arrow_drop_up_line__1' : 'arrow_drop_down_line__1'
+          toggleStatus ? 'arrow_drop_up_line__1' : 'arrow_drop_down_line__1'
         "
       />
+      <!-- Time -->
+      <slot name="time" />
     </div>
     <!--  -->
     <div
       :class="[
-        'select-animate__box padding-top-10',
-        { 'select-animate__box--active': toggle },
+        'accordion-animate__box padding-top-10',
+        { 'accordion-animate__box--active': toggleStatus },
       ]"
     >
       <slot />
@@ -41,28 +49,23 @@
 
 <script>
 export default {
-  name: 'SelectBoxUpDown',
+  name: 'AccordionAnimate',
   props: {
     title: {
       type: String,
       default: '',
     },
-    status: {
+    toggleStatus: {
       type: Boolean,
-      default: true,
+      default: false,
     },
-  },
-  data() {
-    return {
-      toggle: this.status,
-    }
   },
 }
 </script>
 
 <style lang="scss">
 //
-.select-animate {
+.accordion-animate {
   //
   &__box {
     overflow-y: hidden;
