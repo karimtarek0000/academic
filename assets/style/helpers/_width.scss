@@ -39,13 +39,13 @@
 
 ////////////////////////////
 // 4) - Width - MD
-// @each $name, $widthSize in $chooseWidth {
-//   .md-width-#{$name} {
-//     @include BreakPoint(md) {
-//       width: $widthSize;
-//     }
-//   }
-// }
+@each $name, $widthSize in $chooseWidth {
+  .md-width-#{$name} {
+    @include BreakPoint(md) {
+      width: $widthSize;
+    }
+  }
+}
 
 ////////////////////////////
 // 5) - Width - SM

@@ -5,7 +5,9 @@
         آراء الطلاب
       </h2>
       <!--  -->
-      <Opinion class="bg-sauvignon" />
+      <Opinion class="bg-sauvignon">
+        <GSvg class="sm-svg-70 svg-90" name-icon="feature" />
+      </Opinion>
     </div>
   </section>
 </template>

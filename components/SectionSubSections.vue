@@ -50,7 +50,7 @@ export default {
       settings: {
         responsive: [
           {
-            breakpoint: 600,
+            breakpoint: 675,
             settings: {
               slidesToShow: 1,
             },

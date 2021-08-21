@@ -1,7 +1,15 @@
 <template>
   <section role="course-content">
     <div class="row">
-      <div class="col-12 d-flex align-items-center margin-bottom-30">
+      <div
+        class="
+          col-12
+          d-flex
+          flex-column flex-sm-row
+          align-items-sm-center
+          margin-bottom-30
+        "
+      >
         <h2 role="head" class="text-22 text-dark margin-end-20">
           محتوى الدورة
         </h2>
@@ -46,6 +54,7 @@
         class="
           col-12 col-lg-10
           padding-y-30 padding-x-45
+          md-padding-x-10
           border-whiteDark
           radius-21
         "
@@ -113,6 +122,7 @@
                 class="
                   text-silver text-12
                   padding-bottom-20 padding-start-30
+                  md-width-100
                   width-75
                 "
               >

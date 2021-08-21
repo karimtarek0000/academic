@@ -19,9 +19,9 @@
         justify-content-between
         align-items-center
         set-padding
-        d-none
         padding-y-20
         margin-bottom-10
+        d-none d-md-flex
       "
     >
       <!--  -->

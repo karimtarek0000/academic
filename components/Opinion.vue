@@ -1,8 +1,28 @@
 <template>
-  <div role="opinion" class="opinion max-width-831 radius-21">
-    <div class="row height-100 align-items-center padding-x-10">
+  <div
+    role="opinion"
+    class="
+      opinion
+      max-width-831
+      radius-21
+      sm-padding-20
+      md-padding-10
+      overflow-hidden
+    "
+  >
+    <div class="row align-items-center">
       <!--  -->
-      <div class="col-2 d-flex flex-column align-items-center">
+      <div
+        class="
+          col-12 col-sm-2
+          flex-grow-0
+          padding-x-5
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-sm-center
+        "
+      >
         <!--  -->
         <figure class="margin-0 opinion__dim rounded-circle overflow-hidden">
           <img
@@ -29,7 +49,7 @@
         </client-only>
       </div>
       <!--  -->
-      <div class="col padding-x-5">
+      <div class="col-12 col-sm-8 flex-grow-2">
         <p role="name" class="text-14">أحمد حمدان</p>
         <p role="date" class="text-silver text-14 weight-br-300">20/8/2020</p>
         <p role="description" class="text-12 weight-br-300 xxlg-width-75">
@@ -38,8 +58,8 @@
         </p>
       </div>
       <!--  -->
-      <div class="col-2">
-        <GSvg class="sm-svg-70 svg-90" name-icon="feature" />
+      <div class="col-12 col-sm-2 text-center md-margin-top-10">
+        <slot />
       </div>
     </div>
   </div>
@@ -58,7 +78,9 @@ export default {
 
 <style lang="scss">
 .opinion {
-  min-height: 15.8rem;
+  .row {
+    min-height: 15.8rem;
+  }
   //
   &__dim {
     width: 67px;

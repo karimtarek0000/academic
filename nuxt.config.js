@@ -63,10 +63,17 @@ export default {
   plugins: [
     '@/plugins/plugins.js',
     { src: '@/plugins/VueRate.js', mode: 'client' },
+    { src: '@/plugins/video.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
+
+  //
+  loading: {
+    color: 'blue',
+    height: '5px',
+  },
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -82,6 +89,8 @@ export default {
     '@nuxtjs/style-resources',
     //
     'nuxt-mq',
+    //
+    'vue-social-sharing/nuxt',
   ],
 
   //

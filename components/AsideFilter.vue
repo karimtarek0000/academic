@@ -3,7 +3,12 @@
     <!--  -->
     <div class="row flex-column">
       <!--  -->
-      <AccordionAnimate class="col margin-bottom-30" title="الاقسام">
+      <AccordionAnimate
+        :toggle-status="accordion1"
+        class="col margin-bottom-30"
+        title="الاقسام"
+        @click="accordion1 = !accordion1"
+      >
         <div
           v-for="i in 4"
           :key="i"
@@ -13,7 +18,12 @@
         </div>
       </AccordionAnimate>
       <!--  -->
-      <AccordionAnimate class="col margin-bottom-30" title="السعر">
+      <AccordionAnimate
+        class="col margin-bottom-30"
+        :toggle-status="accordion2"
+        title="السعر"
+        @click="accordion2 = !accordion2"
+      >
         <Radio
           class="margin-y-5"
           v-bind="{
@@ -38,7 +48,12 @@
         />
       </AccordionAnimate>
       <!--  -->
-      <AccordionAnimate class="col margin-bottom-30" title="اللغة">
+      <AccordionAnimate
+        class="col margin-bottom-30"
+        title="اللغة"
+        :toggle-status="accordion3"
+        @click="accordion3 = !accordion3"
+      >
         <Radio
           class="margin-y-5"
           v-bind="{
@@ -73,6 +88,9 @@ export default {
     return {
       priceSelected: '',
       languageSelected: '',
+      accordion1: true,
+      accordion2: true,
+      accordion3: true,
     }
   },
 }

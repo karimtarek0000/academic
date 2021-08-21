@@ -1,5 +1,7 @@
 <template>
-  <header class="header radius-21 lg-margin-top-20">
+  <header
+    class="header radius-21 lg-margin-top-20 position-relative overflow-hidden"
+  >
     <!--  -->
     <div class="row g-0 justify-content-between padding-y-67 custom-container">
       <!-- 1 -->
@@ -138,6 +140,7 @@
             justify-content-center
             cursor-pointer
           "
+          @click="toggleSocialMedia = !toggleSocialMedia"
         >
           <!--  -->
           <GSvg
@@ -150,6 +153,10 @@
         </div>
       </div>
     </div>
+    <!--  -->
+    <transition name="slide-left">
+      <ShareSocialMedia v-show="toggleSocialMedia" />
+    </transition>
   </header>
 </template>
 
@@ -157,6 +164,11 @@
 export default {
   name: 'HeaderCoursePage',
   inject: ['rating'],
+  data() {
+    return {
+      toggleSocialMedia: false,
+    }
+  },
 }
 </script>
 

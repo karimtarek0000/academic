@@ -18,7 +18,9 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
+    "vue-plyr": "^7.0.0",
     "vue-slick-carousel": "^1.0.6",
+    "vue-social-sharing": "^3.0.8",
     "vue-star-rating": "^1.7.0"
   },
   "devDependencies": {

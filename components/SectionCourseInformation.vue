@@ -48,7 +48,9 @@
 export default {
   name: 'SectionCourseInformation',
   methods: {
-    playVideo() {},
+    playVideo() {
+      this.$emit('openVideo', true)
+    },
   },
 }
 </script>

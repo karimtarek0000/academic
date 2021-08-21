@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main class="course">
     <!--  -->
     <HeaderCoursePage />
     <!--  -->
-    <SectionCourseInformation>
+    <SectionCourseInformation @openVideo="toggleBackDrop = $event">
       <Booking
         class="
           col-12 col-lg-3
@@ -27,8 +27,25 @@
       />
       <CourseRequirements class="padding-y-30 border-botton-whiteDark" />
       <StudentsOpinion class="padding-y-30 border-botton-whiteDark" />
+      <StudentReviews class="padding-y-30 border-botton-whiteDark" />
       <AboutTeacher class="padding-y-30 border-botton-whiteDark" />
     </article>
+    <!--  -->
+    <BackDrop
+      :toggle="toggleBackDrop"
+      @toggleBackDrop="toggleBackDrop = $event"
+    >
+      <div
+        class="video__wrapper d-flex justify-content-center align-items-center"
+        @click.stop
+      >
+        <vue-plyr :options="options" :autoplay="toggleBackDrop">
+          <video controls crossorigin playsinline>
+            <source size="720" src="~/assets/images/s.mp4" type="video/mp4" />
+          </video>
+        </vue-plyr>
+      </div>
+    </BackDrop>
   </main>
 </template>
 
@@ -59,6 +76,7 @@ export default {
         'آراء الطلاب',
         'المدرب',
       ],
+      socialMedia: ['facebook', 'twitter', 'linkedin', 'whatsapp'],
       courseContent: [
         {
           title: 'المقدمة',
@@ -94,16 +112,25 @@ export default {
       bookingStatic: this.bookingStatic,
       items: this.itemsNavbarSelected,
       courseContent: this.courseContent,
+      socialMedia: this.socialMedia,
     }
   },
   data() {
     return {
       rating: 4,
       selected: 'نظرة عامة',
+      toggleBackDrop: false,
+      options: {
+        ratio: '16:9',
+      },
     }
   },
   methods: {
     s(d) {},
+    ss() {
+      // eslint-disable-next-line no-console
+      console.log('space')
+    },
   },
   head() {
     return {
@@ -145,36 +172,49 @@ export default {
   &__set-width-booking {
     width: 35.2rem;
   }
-}
-//
-.navbar-selected {
-  //
-  &__wrapper {
-    border: 1px solid var(--gallery);
-    border-radius: 1.8rem !important;
 
-    @media only screen and (min-width: 768px) {
-      margin-top: -7rem;
-    }
-  }
   //
-  &__item {
-    width: 24.2rem;
-    height: 6.5rem;
-    font-size: 16px;
+  .navbar-selected {
     //
-    @include DetectHover {
-      &:hover {
-        background-color: var(--chardon);
-        color: var(--coral);
+    &__wrapper {
+      border: 1px solid var(--gallery);
+      border-radius: 1.8rem !important;
+
+      @media only screen and (min-width: 768px) {
+        margin-top: -7rem;
       }
     }
-  }
+    //
+    &__item {
+      width: 24.2rem;
+      height: 6.5rem;
+      font-size: 16px;
+      //
+      @include DetectHover {
+        &:hover {
+          background-color: var(--chardon);
+          color: var(--coral);
+        }
+      }
+    }
 
+    //
+    &__active {
+      background-color: var(--chardon);
+      color: var(--coral);
+    }
+  }
   //
-  &__active {
-    background-color: var(--chardon);
-    color: var(--coral);
+  .video__wrapper {
+    min-width: 70vw;
+
+    @media only screen and (max-width: 768px) {
+      min-width: 100vw;
+    }
+
+    .plyr {
+      min-width: 100%;
+    }
   }
 }
 </style>
