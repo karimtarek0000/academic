@@ -5,6 +5,7 @@
       role="navbar-user-options"
       class="
         navbar-user
+        global-style-sidebar
         bg-black
         position-fixed
         width-220
@@ -45,8 +46,6 @@ export default {
 <style lang="scss">
 .navbar-user {
   height: 100vh;
-  @include position('lt', $moveR: 0, $moveT: 0);
-  box-shadow: -3px 0px 5px darken($whiteDark, 10%);
   z-index: 8888;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="margin-top-110">
+  <footer class="margin-top-40">
     <!--  -->
     <div
       class="

@@ -158,3 +158,12 @@
 .max-width-831 {
   max-width: 83.1rem;
 }
+
+.global-style-sidebar {
+  @include position('lt', $moveR: 0, $moveT: 0);
+  box-shadow: -3px 0px 50px #bbb8b8bd;
+}
+
+.zindex-4 {
+  z-index: 4;
+}

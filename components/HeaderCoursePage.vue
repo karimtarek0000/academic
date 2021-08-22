@@ -80,7 +80,7 @@
             <nuxt-link
               to="/"
               role="author"
-              class="author text-chardonnay cursor-pointer"
+              class="author zindex-4 text-chardonnay cursor-pointer"
             >
               أحمد حمدان
             </nuxt-link>

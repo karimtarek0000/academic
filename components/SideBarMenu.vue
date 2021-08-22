@@ -3,6 +3,7 @@
     <aside
       class="
         navbar-menu
+        global-style-sidebar
         position-fixed
         bg-whiteDark
         padding-x-10
@@ -173,8 +174,6 @@ export default {
 <style lang="scss">
 //
 .navbar-menu {
-  @include position('lt', $moveR: 0, $moveT: 0);
-  box-shadow: -3px 0px 5px darken($whiteDark, 10%);
   z-index: 9999;
 
   //

@@ -29,6 +29,7 @@
       <StudentsOpinion class="padding-y-30 border-botton-whiteDark" />
       <StudentReviews class="padding-y-30 border-botton-whiteDark" />
       <AboutTeacher class="padding-y-30 border-botton-whiteDark" />
+      <MoreCourses class="padding-y-30" />
     </article>
     <!--  -->
     <BackDrop
@@ -46,6 +47,8 @@
         </vue-plyr>
       </div>
     </BackDrop>
+    <!--  -->
+    <QuickAddInMobile />
   </main>
 </template>
 

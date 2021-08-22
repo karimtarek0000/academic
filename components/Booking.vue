@@ -80,27 +80,7 @@
       </div>
       <!--  -->
       <div class="col-12">
-        <button
-          type="button"
-          class="
-            btn btn-emerald
-            d-flex
-            bg-emerald
-            justify-content-center
-            width-100
-            text-14
-            radius-18
-            height-60
-            align-items-center
-          "
-        >
-          <GSvg
-            class="svg-20 margin-end-10"
-            name-icon="shopping-cart"
-            title="اضف الى السلة"
-          />
-          <span class="text-light">أضف الى السلة</span>
-        </button>
+        <addToShop class="width-100" />
       </div>
     </div>
   </div>
