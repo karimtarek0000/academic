@@ -26,6 +26,8 @@ $facebook: #395693;
 $twitter: #1da0ee;
 $linkedin: #0470ac;
 $whatsapp: #25d366;
+$instagram: #ed2884;
+$athens: #f8f9fa;
 
 // 1) Themes Colors
 $themes: (
@@ -54,6 +56,8 @@ $themes: (
   twitter: $twitter,
   linkedin: $linkedin,
   whatsapp: $whatsapp,
+  instagram: $instagram,
+  athens: $athens,
 );
 
 ////////////////////////////
@@ -74,6 +78,7 @@ $font: (
     18: 1.8rem,
     20: 2rem,
     22: 2.2rem,
+    25: 2.5rem,
     29: 2.9rem,
     30: 3rem,
     38: 3.8rem,
@@ -126,6 +131,7 @@ $svg: (
   90: 9rem,
   37: 3.7rem,
   140: 14rem,
+  18: 1.8rem,
 );
 
 // Choose fill svg
@@ -169,6 +175,7 @@ $chooseWidth: (
   32: 3.2rem,
   91: 9.1rem,
   30: 30%,
+  29: 2.9rem,
 );
 
 ////////////////////////////
@@ -177,6 +184,7 @@ $chooseWidth: (
 $chooseHeight: (
   20: 2rem,
   24: 2.4rem,
+  29: 2.9rem,
   33: 3.3rem,
   41: 4.1rem,
   55: 5.5rem,
@@ -229,12 +237,14 @@ $margin: (
 $borderRaduis: (
   21: 21px,
   25: 2.5rem,
+  30: 3rem,
   60: 6rem,
   18: 1.8rem,
   27: 2.7rem,
   10: 1rem,
   14: 1.4rem,
   9: 9px,
+  49: 4.9rem,
 );
 
 ////////////////////////////

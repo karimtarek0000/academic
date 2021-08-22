@@ -15,20 +15,35 @@
       />
     </SectionCourseInformation>
     <!--  -->
-    <NavbarSelected v-model="selected" @changeSelected="s" />
+    <NavbarSelected
+      v-model="selected"
+      :status-render="false"
+      @changeSelected="s"
+    />
     <!--  -->
     <article class="custom-container">
-      <Overview class="padding-y-30 border-botton-whiteDark" />
+      <Overview id="overview" class="padding-y-30 border-botton-whiteDark" />
       <CourseDescription
+        id="course-description"
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
       <CourseContent
+        id="course-requirements"
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
-      <CourseRequirements class="padding-y-30 border-botton-whiteDark" />
-      <StudentsOpinion class="padding-y-30 border-botton-whiteDark" />
+      <CourseRequirements
+        id="course-requirements"
+        class="padding-y-30 border-botton-whiteDark"
+      />
+      <StudentsOpinion
+        id="students-opinion"
+        class="padding-y-30 border-botton-whiteDark"
+      />
       <StudentReviews class="padding-y-30 border-botton-whiteDark" />
-      <AboutTeacher class="padding-y-30 border-botton-whiteDark" />
+      <AboutTeacher
+        id="about-teacher"
+        class="padding-y-30 border-botton-whiteDark"
+      />
       <MoreCourses class="padding-y-30" />
     </article>
     <!--  -->
@@ -73,11 +88,26 @@ export default {
         },
       ],
       itemsNavbarSelected: [
-        'نظرة عامة',
-        'محتوى المادة',
-        'متطلبات الدورة',
-        'آراء الطلاب',
-        'المدرب',
+        {
+          name: 'نظرة عامة',
+          id: 'overview',
+        },
+        {
+          name: 'محتوى المادة',
+          id: 'course-description',
+        },
+        {
+          name: 'متطلبات الدورة',
+          id: 'course-requirements',
+        },
+        {
+          name: 'آراء الطلاب',
+          id: 'students-opinion',
+        },
+        {
+          name: 'المدرب',
+          id: 'about-teacher',
+        },
       ],
       socialMedia: ['facebook', 'twitter', 'linkedin', 'whatsapp'],
       courseContent: [
@@ -194,7 +224,7 @@ export default {
       font-size: 16px;
       //
       @include DetectHover {
-        &:hover {
+        &:hover a {
           background-color: var(--chardon);
           color: var(--coral);
         }
@@ -202,7 +232,7 @@ export default {
     }
 
     //
-    &__active {
+    &__active a {
       background-color: var(--chardon);
       color: var(--coral);
     }

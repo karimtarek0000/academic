@@ -62,8 +62,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/plugins.js',
-    { src: '@/plugins/VueRate.js', mode: 'client' },
-    { src: '@/plugins/video.js', mode: 'client' },
+    { src: '@/plugins/pluginsClient.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -126,6 +125,10 @@ export default {
       routes.push({
         path: '/courses/:categoryName/:courseName',
         component: resolve(__dirname, 'pages/course.vue'),
+      })
+      routes.push({
+        path: '/instructor/:name',
+        component: resolve(__dirname, 'pages/instructor.vue'),
       })
     },
   },

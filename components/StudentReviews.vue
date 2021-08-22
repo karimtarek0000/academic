@@ -4,7 +4,7 @@
       تقييمات الطلاب
     </h2>
     <!--  -->
-    <p>rating component</p>
+    <TotalRatingsStudents class="margin-bottom-40 margin-top-30" />
     <!--  -->
     <Opinion
       v-for="d in 3"

@@ -24,6 +24,13 @@ $utilities: map-merge(
         auto: auto,
       ),
     ),
+    'm-s-l': (
+      property: margin-left,
+      class: m-s-l,
+      values: (
+        auto: auto,
+      ),
+    ),
     'm-x': (
       property: margin-inline,
       class: m-x,

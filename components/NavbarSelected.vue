@@ -28,18 +28,47 @@
         list-unstyled
       "
     >
-      <li
-        v-for="item in items"
-        :key="item"
-        :class="[
-          'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13 flex-shrink-0 weight-br-300',
-          {
-            'navbar-selected__active': item === selected,
-          },
-        ]"
-        @click="sendNewSelected(item)"
-        v-text="item"
-      />
+      <template v-if="statusRender">
+        <li
+          v-for="item in items"
+          :key="item"
+          :class="[
+            'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13 flex-shrink-0 weight-br-300',
+            {
+              'navbar-selected__active': item === selected,
+            },
+          ]"
+          @click="sendNewSelected(item)"
+          v-text="item"
+        />
+      </template>
+      <!--  -->
+      <template v-else>
+        <li
+          v-for="item in items"
+          :key="item.name"
+          :class="[
+            'navbar-selected__item overflow-hidden radius-18 user-select-none cursor-pointer d-flex align-items-center justify-content-center  width-155 height-55 text-13 flex-shrink-0 weight-br-300',
+            {
+              'navbar-selected__active': item.name === selected,
+            },
+          ]"
+        >
+          <a
+            v-smooth-scroll
+            class="
+              text-dark
+              d-flex
+              align-items-center
+              justify-content-center
+              width-100
+              height-100
+            "
+            :href="`#${item.id}`"
+            v-text="item.name"
+          />
+        </li>
+      </template>
     </ul>
   </nav>
 </template>
@@ -55,6 +84,10 @@ export default {
     selected: {
       type: String,
       default: '',
+    },
+    statusRender: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -120,17 +153,6 @@ export default {
 </script>
 
 <style lang="scss">
-// .show-swip {
-//   border-radius: 13px;
-//   //
-//   @media only screen and (max-width: 900px) {
-//     background-image: linear-gradient(
-//       to right,
-//       transparent,
-//       rgba($chardonnay, 0.5) 100%
-//     );
-//   }
-// }
 //
 .navbar-selected {
   //
