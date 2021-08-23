@@ -5,23 +5,29 @@
   &-Voodoo {
     background-color: var(--Voodoo);
 
-    //
     &-outline {
       border: 1px solid var(--Voodoo);
     }
+
     //
-    &:hover {
-      background-color: rgba($Voodoo, 0.9);
-      color: var(--light);
+    @include DetectHover {
+      //
+      &:hover {
+        background-color: rgba($Voodoo, 0.9);
+        color: var(--light);
+      }
     }
   }
   //
   &-coral {
     background-color: var(--coral);
 
-    //
-    &:hover {
-      background-color: rgba($coral, 0.9);
+    @include DetectHover {
+      //
+      &:hover {
+        background-color: rgba($coral, 0.9);
+        color: var(--light);
+      }
     }
   }
   //
@@ -29,8 +35,16 @@
     background-color: var(--emerald);
 
     //
+    @include DetectHover {
+      &:hover {
+        background-color: rgba($emerald, 0.9);
+      }
+    }
+  }
+
+  @include DetectHover {
     &:hover {
-      background-color: rgba($emerald, 0.9);
+      color: var(--light);
     }
   }
 }

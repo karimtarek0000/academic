@@ -3,16 +3,21 @@
     <!--  -->
     <HeaderCoursePage />
     <!--  -->
-    <SectionCourseInformation @openVideo="toggleBackDrop = $event">
-      <Booking
-        class="
-          col-12 col-lg-3
-          course__set-width-booking
-          bg-light
-          md-margin-top-20 md-margin-start-0
-          margin-start-30
-        "
-      />
+    <SectionCourseInformation>
+      <template slot="video">
+        <Video class="col-12 col-lg-5" @openVideo="toggleBackDrop = $event" />
+      </template>
+      <template slot="booking">
+        <Booking
+          class="
+            col-12 col-lg-3
+            course__set-width-booking
+            bg-light
+            md-margin-top-20 md-margin-start-0
+            margin-start-30
+          "
+        />
+      </template>
     </SectionCourseInformation>
     <!--  -->
     <NavbarSelected
@@ -69,7 +74,7 @@
 
 <script>
 export default {
-  name: 'Course',
+  name: 'CourseDetails',
   asyncData() {
     return {
       totalCourseContent: [44, 75, 75],
@@ -184,22 +189,10 @@ export default {
 //
 .course {
   //
-  &__play {
-    @include position('allCenter');
-  }
-  //
-  &__instructor {
-    @include position('lb', $moveL: '3rem', $moveB: '2rem');
-  }
-  //
   &__info {
     @media only screen and (min-width: 768px) {
       transform: translateY(-10rem);
     }
-  }
-  //
-  &__set-width-video {
-    width: 55.1rem;
   }
   //
   &__set-width-booking {
@@ -235,18 +228,6 @@ export default {
     &__active a {
       background-color: var(--chardon);
       color: var(--coral);
-    }
-  }
-  //
-  .video__wrapper {
-    min-width: 70vw;
-
-    @media only screen and (max-width: 768px) {
-      min-width: 100vw;
-    }
-
-    .plyr {
-      min-width: 100%;
     }
   }
 }

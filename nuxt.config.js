@@ -124,7 +124,7 @@ export default {
       })
       routes.push({
         path: '/courses/:categoryName/:courseName',
-        component: resolve(__dirname, 'pages/course.vue'),
+        component: resolve(__dirname, 'pages/course-details.vue'),
       })
       routes.push({
         path: '/instructor/:name',

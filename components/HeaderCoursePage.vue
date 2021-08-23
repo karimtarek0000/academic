@@ -80,7 +80,7 @@
             <nuxt-link
               to="/"
               role="author"
-              class="author zindex-4 text-chardonnay cursor-pointer"
+              class="underline zindex-4 text-chardonnay cursor-pointer"
             >
               أحمد حمدان
             </nuxt-link>
@@ -183,14 +183,6 @@ export default {
   .icons {
     width: 8.3rem;
     height: 7.4rem;
-  }
-
-  .author {
-    text-decoration: underline;
-    //
-    &:hover {
-      color: var(--chardonnay);
-    }
   }
 
   .vue-star-rating-rating-text {

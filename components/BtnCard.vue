@@ -2,6 +2,7 @@
   <button
     type="button"
     class="btn d-flex justify-content-center align-items-center"
+    @click.stop="s"
     v-text="title"
   />
 </template>
@@ -14,6 +15,9 @@ export default {
       type: String,
       default: 'اضف الي السلة',
     },
+  },
+  methods: {
+    s() {},
   },
 }
 </script>

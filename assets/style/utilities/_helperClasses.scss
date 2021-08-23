@@ -40,6 +40,28 @@
 }
 
 //
+.video__wrapper {
+  min-width: 70vw;
+
+  @media only screen and (max-width: 768px) {
+    min-width: 100vw;
+  }
+
+  .plyr {
+    min-width: 100%;
+  }
+}
+
+//
+.underline {
+  text-decoration: underline !important;
+  //
+  &:hover {
+    color: var(--chardonnay);
+  }
+}
+
+//
 .border {
   //
   &-botton-whiteDark {
