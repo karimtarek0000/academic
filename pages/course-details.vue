@@ -20,11 +20,36 @@
       </template>
     </SectionCourseInformation>
     <!--  -->
-    <NavbarSelected
-      v-model="selected"
-      :status-render="false"
-      @changeSelected="s"
-    />
+    <NavbarSelected>
+      <template>
+        <li
+          v-for="item in itemsNavbarSelected"
+          :key="item.name"
+          style="width: 24.2rem; height: 6.5rem"
+          :class="[
+            'navbar-selected__item overflow-hidden radius-18 user-select-none cursor-pointer d-flex align-items-center justify-content-center text-13 flex-shrink-0 weight-br-300',
+            {
+              'navbar-selected__active': item.name === selected,
+            },
+          ]"
+        >
+          <a
+            v-smooth-scroll
+            class="
+              text-dark
+              d-flex
+              align-items-center
+              justify-content-center
+              width-100
+              height-100
+              text-16
+            "
+            :href="`#${item.id}`"
+            v-text="item.name"
+          />
+        </li>
+      </template>
+    </NavbarSelected>
     <!--  -->
     <article class="custom-container">
       <Overview id="overview" class="padding-y-30 border-botton-whiteDark" />
@@ -48,7 +73,21 @@
       <AboutTeacher
         id="about-teacher"
         class="padding-y-30 border-botton-whiteDark"
-      />
+      >
+        <BtnGo
+          class="
+            btn-Voodoo
+            height-41
+            width-148
+            text-12 text-light
+            ml-auto
+            margin-top-20
+          "
+          to="index"
+        >
+          تعرف أكثر
+        </BtnGo>
+      </AboutTeacher>
       <MoreCourses class="padding-y-30" />
     </article>
     <!--  -->
@@ -148,7 +187,6 @@ export default {
       rating: this.rating,
       totalCourseContent: this.totalCourseContent,
       bookingStatic: this.bookingStatic,
-      items: this.itemsNavbarSelected,
       courseContent: this.courseContent,
       socialMedia: this.socialMedia,
     }
@@ -162,13 +200,6 @@ export default {
         ratio: '16:9',
       },
     }
-  },
-  methods: {
-    s(d) {},
-    ss() {
-      // eslint-disable-next-line no-console
-      console.log('space')
-    },
   },
   head() {
     return {
@@ -212,9 +243,6 @@ export default {
     }
     //
     &__item {
-      width: 24.2rem;
-      height: 6.5rem;
-      font-size: 16px;
       //
       @include DetectHover {
         &:hover a {

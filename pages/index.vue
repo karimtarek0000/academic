@@ -7,7 +7,24 @@
     <!--  -->
     <SectionAllSections :data="itemsSliderSectionAllSections" />
     <!--  -->
-    <SectionNewCourses />
+    <SectionNewCourses>
+      <NavbarSelected>
+        <template>
+          <li
+            v-for="item in itemsNavbarSelected"
+            :key="item"
+            :class="[
+              'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13 flex-shrink-0 weight-br-300',
+              {
+                'navbar-selected__active': item === selected,
+              },
+            ]"
+            @click="selected = item"
+            v-text="item"
+          />
+        </template>
+      </NavbarSelected>
+    </SectionNewCourses>
     <!--  -->
     <SectionSpecialCourses />
     <!--  -->
@@ -68,7 +85,6 @@ export default {
           'موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن العربي',
       },
     ]
-
     const itemsNavbarSelected = [
       'التصميم',
       'إدارة الاعمال',
@@ -79,9 +95,9 @@ export default {
     ]
     return { itemsSliderSectionAllSections, itemsNavbarSelected }
   },
-  provide() {
+  data() {
     return {
-      items: this.itemsNavbarSelected,
+      selected: 'التصميم',
     }
   },
   head: {

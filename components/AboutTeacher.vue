@@ -1,10 +1,12 @@
 <template>
   <section class="about-teacher">
-    <h2 role="head" class="text-22 text-dark margin-end-20 margin-bottom-20">
-      المدرب
-    </h2>
+    <slot name="head">
+      <h2 role="head" class="text-22 text-dark margin-end-20 margin-bottom-40">
+        المدرب
+      </h2>
+    </slot>
     <div class="row max-width-831 g-0">
-      <div class="col-sm-12 col-md-4">
+      <div class="col-sm-12 d-flex flex-column align-items-center col-md-4">
         <!--  -->
         <figure class="margin-0 about-teacher__image overflow-hidden radius-21">
           <img
@@ -13,6 +15,7 @@
             alt=""
           />
         </figure>
+        <slot name="social" />
       </div>
       <div class="col-sm-12 col-md-8">
         <p role="name" class="text-18">أحمد حمدان</p>
@@ -30,18 +33,7 @@
           سيلهي القارئ عن التركيز على الشكل الخارجي للنص
         </p>
         <!--  -->
-        <BtnPrimary
-          class="
-            btn-Voodoo
-            height-41
-            width-148
-            text-12 text-light
-            ml-auto
-            margin-top-20
-          "
-          title="تعرف أكثر"
-          to="index"
-        />
+        <slot />
       </div>
     </div>
   </section>

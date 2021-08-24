@@ -1,23 +1,18 @@
 <template>
-  <nuxt-link
-    class="btn d-flex justify-content-center align-items-center radius-21"
-    :to="{ name: to }"
-    >{{ title }}</nuxt-link
+  <button
+    type="button"
+    class="btn d-flex justify-content-center align-items-center"
+    @click.stop="s"
   >
+    <slot />
+  </button>
 </template>
 
 <script>
 export default {
   name: 'BtnPrimary',
-  props: {
-    title: {
-      type: String,
-      default: 'click',
-    },
-    to: {
-      type: String,
-      required: true,
-    },
+  methods: {
+    s() {},
   },
 }
 </script>

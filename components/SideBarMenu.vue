@@ -16,7 +16,7 @@
         role="select-register"
         class="d-flex flex-column align-items-center margin-y-10"
       >
-        <BtnPrimary
+        <BtnGo
           class="
             btn-Voodoo
             width-148
@@ -24,14 +24,16 @@
             text-14 text-light
             margin-bottom-5
           "
-          title="حساب جديد"
           to="sign-up"
-        />
-        <BtnPrimary
+        >
+          حساب جديد
+        </BtnGo>
+        <BtnGo
           class="width-148 height-55 btn-Voodoo-outline text-14 text-Voodoo"
-          title="تسجيل الدخول"
           to="sign-in"
-        />
+        >
+          تسجيل الدخول
+        </BtnGo>
       </div>
       <!--  -->
       <div

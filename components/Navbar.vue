@@ -37,7 +37,7 @@
       >
         <!-- If user not login -->
         <template v-if="!userLogIn">
-          <BtnPrimary
+          <BtnGo
             class="
               btn-Voodoo
               width-148
@@ -45,14 +45,16 @@
               margin-end-20
               text-14 text-light
             "
-            title="حساب جديد"
             to="sign-up"
-          />
-          <BtnPrimary
+          >
+            حساب جديد
+          </BtnGo>
+          <BtnGo
             class="width-148 height-55 btn-Voodoo-outline text-14 text-Voodoo"
-            title="تسجيل الدخول"
             to="sign-in"
-          />
+          >
+            تسجيل الدخول
+          </BtnGo>
         </template>
         <!-- If user login -->
         <template v-else>

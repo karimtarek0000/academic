@@ -18,6 +18,29 @@
       }
     }
   }
+
+  //
+  &-voodoo-light {
+    //
+    @include DetectHover {
+      //
+      &:hover {
+        background-color: var(--voodoo-light);
+        color: var(--light);
+      }
+    }
+  }
+
+  &-chardonnay {
+    //
+    @include DetectHover {
+      //
+      &:hover {
+        background-color: rgba($chardonnay, 0.9);
+        color: var(--light);
+      }
+    }
+  }
   //
   &-coral {
     background-color: var(--coral);
@@ -38,13 +61,8 @@
     @include DetectHover {
       &:hover {
         background-color: rgba($emerald, 0.9);
+        color: var(--light);
       }
-    }
-  }
-
-  @include DetectHover {
-    &:hover {
-      color: var(--light);
     }
   }
 }

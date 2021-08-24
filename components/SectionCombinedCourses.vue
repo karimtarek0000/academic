@@ -48,7 +48,7 @@
             </del>
           </div>
           <div class="col flex-grow-0">
-            <BtnCard
+            <BtnPrimary
               class="
                 bg-Voodoo
                 text-12
@@ -58,7 +58,9 @@
                 btn-Voodoo
                 radius-18
               "
-            />
+            >
+              أضف الى السلة
+            </BtnPrimary>
           </div>
         </template>
       </Card>
@@ -68,13 +70,13 @@
 
 <script>
 import Card from '@/components/Card.vue'
-import BtnCard from '@/components/BtnCard.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
+import BtnPrimary from '~/components/BtnPrimary.vue'
 export default {
   name: 'SectionCombinedCourses',
   components: {
     Card,
-    BtnCard,
+    BtnPrimary,
   },
   mixins: [sliderSetting],
   data() {

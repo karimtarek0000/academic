@@ -3,7 +3,7 @@
     <!--  -->
     <Heading h5="تعلم أولا" h2="الكورسات المضافة حديثا" />
     <!--  -->
-    <NavbarSelected v-model="selected" />
+    <slot />
     <!--  -->
     <div role="all-courses" class="set-padding margin-top-50">
       <div class="row justify-content-between padding-x-15">
@@ -51,7 +51,7 @@
               </del>
             </div>
             <div class="col flex-grow-0">
-              <BtnCard
+              <BtnPrimary
                 class="
                   bg-Voodoo
                   text-12
@@ -61,14 +61,16 @@
                   btn-Voodoo
                   radius-18
                 "
-              />
+              >
+                أضف الى السلة
+              </BtnPrimary>
             </div>
           </template>
         </Card>
       </div>
     </div>
     <!--  -->
-    <BtnPrimary
+    <BtnGo
       class="
         btn-Voodoo
         width-181
@@ -77,20 +79,16 @@
         text-14 text-light
         mx-auto
       "
-      title="شاهد المزيد"
       to="index"
-    />
+    >
+      شاهد المزيد
+    </BtnGo>
   </section>
 </template>
 
 <script>
 export default {
   name: 'SectionNewCourses',
-  data() {
-    return {
-      selected: 'التصميم',
-    }
-  },
 }
 </script>
 

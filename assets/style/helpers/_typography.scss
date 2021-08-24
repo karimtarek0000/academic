@@ -45,44 +45,44 @@
 //////////////////////////////////
 /// RESPONSIVE
 // 2) - FONT SIZE => XLG
-@each $name, $size in map-get($font, sizes) {
-  @include BreakPoint(xlg) {
-    .xlg-text-#{$name} {
-      font-size: $size;
-      line-height: #{$size * 1.6};
-    }
-  }
-}
+// @each $name, $size in map-get($font, sizes) {
+//   @include BreakPoint(xlg) {
+//     .xlg-text-#{$name} {
+//       font-size: $size;
+//       line-height: #{$size * 2};
+//     }
+//   }
+// }
 
-// 3) - FONT SIZE => LG
-@each $name, $size in map-get($font, sizes) {
-  @include BreakPoint(lg) {
-    .lg-text-#{$name} {
-      font-size: $size;
-      line-height: #{$size * 1.6};
-    }
-  }
-}
+// // 3) - FONT SIZE => LG
+// @each $name, $size in map-get($font, sizes) {
+//   @include BreakPoint(lg) {
+//     .lg-text-#{$name} {
+//       font-size: $size;
+//       line-height: #{$size * 2};
+//     }
+//   }
+// }
 
-// 4) - FONT SIZE => MD
-@each $name, $size in map-get($font, sizes) {
-  @include BreakPoint(md) {
-    .md-text-#{$name} {
-      font-size: $size;
-      line-height: #{$size * 1.6};
-    }
-  }
-}
+// // 4) - FONT SIZE => MD
+// @each $name, $size in map-get($font, sizes) {
+//   @include BreakPoint(md) {
+//     .md-text-#{$name} {
+//       font-size: $size;
+//       line-height: #{$size * 2};
+//     }
+//   }
+// }
 
-// 5) - FONT SIZE => SM
-@each $name, $size in map-get($font, sizes) {
-  @include BreakPoint(sm) {
-    .sm-text-#{$name} {
-      font-size: $size;
-      line-height: #{$size * 1.6};
-    }
-  }
-}
+// // 5) - FONT SIZE => SM
+// @each $name, $size in map-get($font, sizes) {
+//   @include BreakPoint(sm) {
+//     .sm-text-#{$name} {
+//       font-size: $size;
+//       line-height: #{$size * 2};
+//     }
+//   }
+// }
 
 ////////////////////////////////////
 /// 3) - ADD CLASSES FONT WEIGHT

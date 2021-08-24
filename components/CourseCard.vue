@@ -98,7 +98,7 @@
           </del>
         </div>
         <!--  -->
-        <BtnPrimary
+        <BtnGo
           v-if="!addPrice"
           class="
             btn-Voodoo
@@ -108,9 +108,10 @@
             m-s-auto
             margin-top-20
           "
-          title="تصفح الكورس"
           to="sign-up"
-        />
+        >
+          تصفح الكورس
+        </BtnGo>
       </div>
     </div>
   </div>

@@ -29,8 +29,7 @@
           </div>
         </div>
         <div slot="part3" class="col">
-          <BtnCard
-            title="انضم الى الاجتماع"
+          <BtnPrimary
             class="
               bg-Voodoo
               text-12
@@ -41,7 +40,9 @@
               mx-auto
               radius-18
             "
-          />
+          >
+            انضم الى الاجتماع
+          </BtnPrimary>
         </div>
       </Card>
     </Slider>
@@ -50,13 +51,13 @@
 
 <script>
 import Card from '@/components/Card.vue'
-import BtnCard from '@/components/BtnCard.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
+import BtnPrimary from '~/components/BtnPrimary.vue'
 export default {
   name: 'SectionZoomMeetings',
   components: {
     Card,
-    BtnCard,
+    BtnPrimary,
   },
   mixins: [sliderSetting],
   data() {

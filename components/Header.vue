@@ -54,7 +54,7 @@
           العربي مع التمتع بمميزات عديدة في أكاديمي
         </p>
         <!--  -->
-        <BtnPrimary
+        <BtnGo
           class="
             btn-Voodoo
             translate-up-btn
@@ -63,9 +63,10 @@
             margin-y-38
             text-16 text-light
           "
-          title="ابدأ التعلم"
           to="sign-up"
-        />
+        >
+          ابدأ التعلم
+        </BtnGo>
       </div>
     </div>
   </header>
