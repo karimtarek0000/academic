@@ -97,6 +97,10 @@ export default {
     max-width: 99%;
     margin-left: auto;
     margin-right: auto;
+    //
+    @media only screen and (max-width: 992px) {
+      max-width: 78vw;
+    }
   }
   //
   &__items {

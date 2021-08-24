@@ -13,10 +13,10 @@
       </template>
       <template slot="btn">
         <BtnPrimary
+          style="width: 29.4rem; height: 6rem"
           class="
             btn-emerald
             radius-18
-            course-user__continue
             text-light text-14
             bg-emerald
             margin-top-40
@@ -27,15 +27,34 @@
       </template>
     </HeaderCousreUser>
     <!--  -->
-    <div class="bg-Voodoo radius-30 margin-bottom-50">
+    <div
+      class="bg-Voodoo radius-30 margin-bottom-50 md-padding-y-20 padding-y-0"
+    >
       <div
-        class="row g-0 custom-container align-items-center"
-        style="height: 9.9rem"
+        class="
+          row
+          g-0
+          custom-container
+          justify-content-between
+          align-items-center
+        "
+        style="min-height: 9.9rem"
       >
-        <div class="col d-flex align-items-center">
-          <p role="question" class="text-18 text-light margin-end-20">
+        <div
+          class="
+            col-12 col-md-6
+            d-flex
+            flex-column flex-md-row
+            align-items-center
+          "
+        >
+          <p
+            role="question"
+            class="text-18 text-light md-margin-end-0 margin-end-20"
+          >
             هل قمت باكمال الدورة ؟
           </p>
+          <!--  -->
           <BtnPrimary
             style="width: 17.4rem; height: 5rem"
             class="btn-chardonnay text-14 text-light bg-chardonnay radius-14"
@@ -47,10 +66,10 @@
             />
           </BtnPrimary>
         </div>
-        <div class="col flex-grow-0">
+        <div class="col-12 col-md-2 flex-grow-0 md-margin-top-20">
           <BtnGo
             style="width: 17.4rem; height: 5rem"
-            class="text-14 text-light btn-voodoo-light radius-14"
+            class="text-14 m-x-auto text-light btn-voodoo-light radius-14"
             to="index"
           >
             <span>تفاصيل الدورة</span>
@@ -253,13 +272,12 @@ export default {
 <style lang="scss">
 .course-user {
   //
-  &__continue {
-    width: 29.4rem;
-    height: 6rem;
-  }
-
-  //
   .navbar-selected {
+    //
+    &__wrapper {
+      border: 1px solid var(--gallery);
+      border-radius: 1.8rem !important;
+    }
     //
     &__item {
       //
@@ -275,6 +293,11 @@ export default {
     &__active {
       background-color: var(--chardon);
       color: var(--coral);
+    }
+  }
+  .progress {
+    span {
+      background-color: var(--coral);
     }
   }
 }

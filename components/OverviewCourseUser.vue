@@ -15,7 +15,7 @@
         <div class="row col-lg-11 g-0 justify-content-between">
           <!--  -->
           <div class="col-12 col-md-6 md-padding-end-0 padding-end-20">
-            <div style="min-height: 10.6rem">
+            <div>
               <!--  -->
               <h6 class="row g-0 align-items-center margin-bottom-10">
                 <span class="col text-16 text-dark">آخر الاسئلة</span>
@@ -26,9 +26,11 @@
               <!--  -->
               <div class="row g-0 flex-column">
                 <div
+                  style="min-height: 10.6rem"
                   class="
                     col
                     d-flex
+                    flex-column flex-sm-row
                     align-items-center
                     bg-alabaster
                     padding-x-20 padding-y-10
@@ -50,6 +52,7 @@
                     role="question"
                     class="
                       margin-start-10
+                      sm-margin-top-10
                       md-width-100
                       width-75
                       text-13 text-dark
@@ -75,9 +78,11 @@
               <!--  -->
               <div class="row g-0 flex-column">
                 <div
+                  style="min-height: 10.6rem"
                   class="
                     col
                     d-flex
+                    flex-column flex-sm-row
                     align-items-center
                     bg-alabaster
                     padding-x-20 padding-y-10
@@ -99,6 +104,7 @@
                     role="question"
                     class="
                       margin-start-10
+                      sm-margin-y-10
                       md-width-100
                       width-75
                       text-13 text-dark
@@ -126,63 +132,76 @@
     <!--  -->
     <div
       role="information"
-      class="d-flex align-items-center padding-y-45 border-botton-whiteDark"
+      class="
+        d-flex
+        flex-column flex-sm-row
+        align-items-start align-items-sm-center
+        padding-y-45
+        border-botton-whiteDark
+      "
     >
-      <h2 role="head" class="text-dark text-18 margin-end-20">بالارقام</h2>
-      <figure
-        role="count-lecture"
-        style="height: 3.9rem"
-        class="
-          margin-bottom-0 margin-end-10
-          text-13 text-light
-          weight-br-300
-          text-center
-          bg-emerald
-          d-flex
-          align-items-center
-          justify-content-center
-          radius-9
-          padding-x-20
-        "
+      <h2
+        role="head"
+        class="text-dark text-18 sm-margin-bottom-15 margin-end-20"
       >
-        12 محاضرة
-      </figure>
-      <figure
-        role="count-students"
-        style="height: 3.9rem"
-        class="
-          margin-bottom-0 margin-end-10
-          text-13 text-light
-          weight-br-300
-          text-center
-          bg-emerald
-          d-flex
-          align-items-center
-          justify-content-center
-          radius-9
-          padding-x-20
-        "
-      >
-        12 شخص مشترك
-      </figure>
-      <figure
-        role="language-lectures"
-        style="height: 3.9rem"
-        class="
-          margin-bottom-0
-          text-13 text-silver
-          weight-br-300
-          text-center
-          bg-gallery
-          d-flex
-          align-items-center
-          justify-content-center
-          radius-9
-          padding-x-20
-        "
-      >
-        اللغة الانجليزية
-      </figure>
+        بالارقام
+      </h2>
+      <div class="d-flex">
+        <figure
+          role="count-lecture"
+          style="min-height: 3.9rem"
+          class="
+            margin-bottom-0 margin-end-10
+            text-13 text-light
+            weight-br-300
+            text-center
+            bg-emerald
+            d-flex
+            align-items-center
+            justify-content-center
+            radius-9
+            padding-x-20
+          "
+        >
+          12 محاضرة
+        </figure>
+        <figure
+          role="count-students"
+          style="min-height: 3.9rem"
+          class="
+            margin-bottom-0 margin-end-10
+            text-13 text-light
+            weight-br-300
+            text-center
+            bg-emerald
+            d-flex
+            align-items-center
+            justify-content-center
+            radius-9
+            padding-x-20
+          "
+        >
+          12 شخص مشترك
+        </figure>
+        <figure
+          role="language-lectures"
+          style="min-height: 3.9rem"
+          class="
+            margin-bottom-0
+            text-13 text-silver
+            weight-br-300
+            text-center
+            bg-gallery
+            d-flex
+            align-items-center
+            justify-content-center
+            radius-9
+            padding-x-20
+          "
+        >
+          اللغة الانجليزية
+        </figure>
+      </div>
     </div>
     <!--  -->
     <div role="description" class="padding-y-30 border-botton-whiteDark">
@@ -211,7 +230,7 @@
       </p>
     </div>
     <!--  -->
-    <div role="about-intructor" class="padding-y-20 border-botton-whiteDark">
+    <div role="about-intructor" class="padding-y-20">
       <slot name="about-instructor" />
     </div>
   </section>
