@@ -231,14 +231,109 @@
     </div>
     <!--  -->
     <div role="about-intructor" class="padding-y-20">
-      <slot name="about-instructor" />
+      <AboutTeacher>
+        <h2
+          slot="head"
+          role="head"
+          class="text-dark text-18 margin-end-20 margin-bottom-20"
+        >
+          المدرب
+        </h2>
+        <div
+          slot="social"
+          class="
+            col-5 col-md-7 col-lg-8
+            d-flex
+            justify-content-between
+            margin-top-10
+          "
+        >
+          <a
+            role="instagram"
+            href="#"
+            target="_blank"
+            class="
+              d-flex
+              align-items-center
+              justify-content-center
+              width-29
+              height-29
+              bg-instagram
+              rounded-circle
+            "
+          >
+            <GSvg
+              class="svg-18 fill-light"
+              name-icon="instagram"
+              title="instagram"
+            />
+          </a>
+          <a
+            role="facebook"
+            href="#"
+            target="_blank"
+            class="
+              d-flex
+              align-items-center
+              justify-content-center
+              width-29
+              height-29
+              bg-facebook
+              rounded-circle
+            "
+          >
+            <GSvg
+              class="svg-18 fill-light"
+              name-icon="facebook"
+              title="facebook"
+            />
+          </a>
+          <a
+            role="twitter"
+            href="#"
+            target="_blank"
+            class="
+              d-flex
+              align-items-center
+              justify-content-center
+              width-29
+              height-29
+              bg-twitter
+              rounded-circle
+            "
+          >
+            <GSvg
+              class="svg-18 fill-light"
+              name-icon="twitter"
+              title="twitter"
+            />
+          </a>
+          <a
+            role="google"
+            href="#"
+            target="_blank"
+            class="
+              d-flex
+              align-items-center
+              justify-content-center
+              width-29
+              height-29
+              bg-light
+              rounded-circle
+              border-whiteDark
+            "
+          >
+            <GSvg class="svg-18" name-icon="google" title="google" />
+          </a>
+        </div>
+      </AboutTeacher>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'OverviewCourseUser',
+  name: 'UserCourseOverview',
 }
 </script>
 

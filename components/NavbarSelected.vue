@@ -21,6 +21,7 @@
       role="items"
       class="
         navbar-selected__items
+        position-relative
         margin-0
         d-flex
         align-items-center

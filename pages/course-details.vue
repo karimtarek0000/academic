@@ -58,7 +58,6 @@
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
       <CourseContent
-        id="course-requirements"
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
       <CourseRequirements

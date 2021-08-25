@@ -83,122 +83,33 @@
       <template>
         <li
           v-for="item in itemsNavbarSelected"
-          :key="item"
+          :key="item.name"
           style="width: 16.7rem; height: 6.5rem"
           :class="[
-            'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark radius-18 text-16 flex-shrink-0 weight-br-300',
+            'navbar-selected__item overflow-hidden user-select-none cursor-pointer d-flex align-items-center justify-content-center text-16 flex-shrink-0',
             {
-              'navbar-selected__active': item === selected,
+              'weight-br-400 text-coral': item.name === selected.name,
+            },
+            {
+              'weight-br-300': item.name !== selected.name,
             },
           ]"
-          @click="selected = item"
-          v-text="item"
+          @click="moveActive($event, item)"
+          v-text="item.name"
+        />
+        <span
+          ref="navbar__active"
+          class="navbar-selected__active radius-18 bg-chardon position-absolute"
+          style="width: 16.7rem; height: 6.5rem"
         />
       </template>
     </NavbarSelected>
     <!--  -->
     <article class="custom-container">
-      <OverviewCourseUser>
-        <template slot="about-instructor">
-          <AboutTeacher>
-            <h2
-              slot="head"
-              role="head"
-              class="text-dark text-18 margin-end-20 margin-bottom-20"
-            >
-              المدرب
-            </h2>
-            <!--  -->
-            <div
-              slot="social"
-              class="
-                col-5 col-md-7 col-lg-8
-                d-flex
-                justify-content-between
-                margin-top-10
-              "
-            >
-              <a
-                role="instagram"
-                href="#"
-                target="_blank"
-                class="
-                  d-flex
-                  align-items-center
-                  justify-content-center
-                  width-29
-                  height-29
-                  bg-instagram
-                  rounded-circle
-                "
-              >
-                <GSvg
-                  class="svg-18 fill-light"
-                  name-icon="instagram"
-                  title="instagram"
-                />
-              </a>
-              <a
-                role="facebook"
-                href="#"
-                target="_blank"
-                class="
-                  d-flex
-                  align-items-center
-                  justify-content-center
-                  width-29
-                  height-29
-                  bg-facebook
-                  rounded-circle
-                "
-              >
-                <GSvg
-                  class="svg-18 fill-light"
-                  name-icon="facebook"
-                  title="facebook"
-                />
-              </a>
-              <a
-                role="twitter"
-                href="#"
-                target="_blank"
-                class="
-                  d-flex
-                  align-items-center
-                  justify-content-center
-                  width-29
-                  height-29
-                  bg-twitter
-                  rounded-circle
-                "
-              >
-                <GSvg
-                  class="svg-18 fill-light"
-                  name-icon="twitter"
-                  title="twitter"
-                />
-              </a>
-              <a
-                role="google"
-                href="#"
-                target="_blank"
-                class="
-                  d-flex
-                  align-items-center
-                  justify-content-center
-                  width-29
-                  height-29
-                  bg-light
-                  rounded-circle
-                  border-whiteDark
-                "
-              >
-                <GSvg class="svg-18" name-icon="google" title="google" />
-              </a>
-            </div>
-          </AboutTeacher>
-        </template>
-      </OverviewCourseUser>
+      <component :is="selected.compName">
+        <UserCourseOverview />
+        <UserCourseContent />
+      </component>
       <!--  -->
     </article>
     <!--  -->
@@ -229,30 +140,96 @@ export default {
   },
   asyncData() {
     return {
-      itemsNavbarSelected: [
-        'نظرة عامة',
-        'محتوى المادة',
-        'أسئلة وأجوبة',
-        'اختبار',
-        'اعلانات',
-        'مهمة',
-        'موعد',
+      courseContent: [
+        {
+          id: 0,
+          title: 'المقدمة',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          id: 1,
+          title: 'الباب الاول',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          id: 2,
+          title: 'الباب الثاني',
+          lectures: 12,
+          time: 32,
+        },
+        {
+          id: 3,
+          title: 'الباب الثالث',
+          lectures: 12,
+          time: 32,
+        },
       ],
     }
   },
   provide() {
     return {
       progress: '70%',
+      courseContent: this.courseContent,
     }
   },
   data() {
     return {
+      itemsNavbarSelected: [
+        {
+          name: 'نظرة عامة',
+          compName: 'UserCourseOverview',
+        },
+        {
+          name: 'محتوى المادة',
+          compName: 'UserCourseContent',
+        },
+        {
+          name: 'أسئلة وأجوبة',
+          compName: 'UserCourseOverview',
+        },
+        {
+          name: 'اختبار',
+          compName: 'UserCourseOverview',
+        },
+        {
+          name: 'اعلانات',
+          compName: 'UserCourseOverview',
+        },
+        {
+          name: 'مهمة',
+          compName: 'UserCourseOverview',
+        },
+        {
+          name: 'موعد',
+          compName: 'UserCourseOverview',
+        },
+      ],
       toggleBackDrop: false,
-      selected: 'نظرة عامة',
+      selected: {
+        name: 'نظرة عامة',
+        compName: 'UserCourseOverview',
+      },
       options: {
         ratio: '16:9',
       },
     }
+  },
+  mounted() {
+    const offsetLeftFirstElement = document.querySelectorAll(
+      '.navbar-selected__item'
+    )[0].offsetLeft
+    document.querySelector(
+      '.navbar-selected__active'
+    ).style.left = `${offsetLeftFirstElement}px`
+  },
+  methods: {
+    moveActive(e, item) {
+      const { offsetLeft } = e.target
+      this.selected = item
+      this.$refs.navbar__active.style.left = `${offsetLeft}px`
+    },
   },
   head() {
     return {
@@ -283,16 +260,16 @@ export default {
       //
       @include DetectHover {
         &:hover {
-          background-color: var(--chardon);
           color: var(--coral);
         }
       }
     }
-
     //
     &__active {
-      background-color: var(--chardon);
-      color: var(--coral);
+      top: 0;
+      z-index: -1;
+      transition: left 0.6s cubic-bezier(0.66, 0.36, 0.58, 0.57);
+      will-change: left;
     }
   }
   .progress {
