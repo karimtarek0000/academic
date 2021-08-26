@@ -75,12 +75,13 @@
           </div>
           <!-- Parent -->
           <div
-            v-for="(course, index) in courseContent"
+            v-for="(course, index) in wrapperCourseContent.courseContent"
             :key="course.title"
             class="d-flex align-items-baseline"
           >
-            <!--  -->
-            <div
+            <!-- Select button -->
+            <button
+              v-if="renderSelect"
               style="width: 25px; height: 25px"
               class="
                 rounded-circle
@@ -96,12 +97,12 @@
               @click.stop="selectedData(course)"
             >
               <GSvg
-                v-show="selectAll.selectAll"
+                v-show="course.status === 'complete'"
                 class="svg-20"
                 name-icon="select"
                 title="تحديد الكل"
               />
-            </div>
+            </button>
             <!--  -->
             <AccordionAnimate
               :toggle-status="index === selectAccordion"
@@ -228,7 +229,7 @@
 <script>
 export default {
   name: 'CourseContent',
-  inject: ['courseContent', 'selectAll'],
+  inject: ['wrapperCourseContent', 'wrapperSelectAll'],
   props: {
     renderSelect: {
       type: Boolean,
@@ -239,10 +240,19 @@ export default {
     return {
       selectAccordion: 0,
       selectAccordionSub: null,
-      allDataSelected: [],
     }
   },
   watch: {
+    'wrapperSelectAll.selectAll': {
+      deep: true,
+      handler(value) {
+        if (value) {
+          this.wrapperCourseContent.courseContent.map(
+            (content) => (content.status = 'complete')
+          )
+        }
+      },
+    },
     selectAccordion() {
       if (this.selectAccordionSub !== null) this.selectAccordionSub = null
     },
@@ -262,14 +272,11 @@ export default {
       this.selectAccordionSub = index
     },
     selectedData(course) {
-      // 1) - Find index based id
-      const getIndex = this.allDataSelected.findIndex(
-        (data) => data.id === course.id
-      )
-      // 2) - If there index will remove from array becouse user want not selected.
-      if (getIndex >= 0) return this.allDataSelected.splice(getIndex, 1)
-      // 3) - Finaly push new date into array.
-      this.allDataSelected.push(course)
+      if (course.status === 'complete') {
+        this.wrapperSelectAll.selectAll = false
+        return (course.status = 'not-complete')
+      }
+      course.status = 'complete'
     },
   },
 }

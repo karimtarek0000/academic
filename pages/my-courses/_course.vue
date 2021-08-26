@@ -5,7 +5,7 @@
         <Video
           style="width: 55.6rem"
           class="col-12 col-lg-5"
-          @openVideo="toggleBackDrop = $event"
+          @openVideo="toggleBackDropVideo = $event"
         />
       </template>
       <template slot="progress">
@@ -106,26 +106,101 @@
     </NavbarSelected>
     <!--  -->
     <article class="custom-container">
-      <component :is="selected.compName">
+      <component
+        :is="selected.compName"
+        @addAnswer="toggleBackDropAddAnswer = $event"
+      >
         <UserCourseOverview />
         <UserCourseContent />
+        <UserQuestionAndAnswer />
       </component>
       <!--  -->
     </article>
-    <!--  -->
+    <!-- Video -->
     <BackDrop
-      :toggle="toggleBackDrop"
-      @toggleBackDrop="toggleBackDrop = $event"
+      :toggle="toggleBackDropVideo"
+      @toggleBackDrop="toggleBackDropVideo = $event"
     >
       <div
         class="video__wrapper d-flex justify-content-center align-items-center"
         @click.stop
       >
-        <vue-plyr :options="options" :autoplay="toggleBackDrop">
+        <vue-plyr :options="options" :autoplay="toggleBackDropVideo">
           <video controls crossorigin playsinline>
             <source size="720" src="~/assets/images/s.mp4" type="video/mp4" />
           </video>
         </vue-plyr>
+      </div>
+    </BackDrop>
+    <!-- Add Answer -->
+    <BackDrop
+      :toggle="toggleBackDropAddAnswer"
+      @toggleBackDrop="toggleBackDropAddAnswer = $event"
+    >
+      <div
+        v-if="toggleBackDropAddAnswer"
+        style="width: 65.9rem; min-height: 35.3rem"
+        class="
+          bg-light
+          radius-21
+          padding-x-45 padding-y-10
+          slide-up-enter-active
+        "
+        @click.stop
+      >
+        <div class="row g-0 position-relative border-botton-whiteDark">
+          <div
+            style="width: 3rem; height: 3rem"
+            class="
+              course-user__close
+              position-absolute
+              bg-light
+              radius-9
+              cursor-pointer
+              d-flex
+              align-items-center
+              justify-content-center
+            "
+            @click="toggleBackDropAddAnswer = false"
+          >
+            <GSvg class="svg-17" name-icon="close" title="اقفل" />
+          </div>
+          <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
+            إضافة اجابة
+          </h3>
+        </div>
+        <!--  -->
+        <div class="row g-0 text-center padding-y-20">
+          <p role="title" class="text-16 text-dark margin-bottom-5">السؤال</p>
+          <p role="question" class="text-13 weight-br-300">
+            ما هو الكاليجرافي وما هو فن التعريب أرجو الشرح بطريقة اوضح؟
+          </p>
+        </div>
+        <!--  -->
+        <div class="row g-0">
+          <form>
+            <textarea
+              v-model="answer"
+              style="width: 100%; height: 7.3rem"
+              class="padding-10 radius-12 text-13"
+              placeholder="الاجابة"
+            ></textarea>
+          </form>
+          <button
+            disabled
+            style="width: 13.6rem; height: 4.2rem"
+            type="submit"
+            class="
+              btn btn-Voodoo
+              text-light text-12
+              radius-14
+              margin-top-15
+              mx-auto
+            "
+          >
+            ارسال
+          </button>
+        </div>
       </div>
     </BackDrop>
   </main>
@@ -140,38 +215,44 @@ export default {
   },
   asyncData() {
     return {
-      courseContent: [
-        {
-          id: 0,
-          title: 'المقدمة',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          id: 1,
-          title: 'الباب الاول',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          id: 2,
-          title: 'الباب الثاني',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          id: 3,
-          title: 'الباب الثالث',
-          lectures: 12,
-          time: 32,
-        },
-      ],
+      wrapperCourseContent: {
+        courseContent: [
+          {
+            id: 0,
+            title: 'المقدمة',
+            lectures: 12,
+            time: 32,
+            status: 'complete',
+          },
+          {
+            id: 1,
+            title: 'الباب الاول',
+            lectures: 12,
+            time: 32,
+            status: 'not-complete',
+          },
+          {
+            id: 2,
+            title: 'الباب الثاني',
+            lectures: 12,
+            time: 32,
+            status: 'not-complete',
+          },
+          {
+            id: 3,
+            title: 'الباب الثالث',
+            lectures: 12,
+            time: 32,
+            status: 'complete',
+          },
+        ],
+      },
     }
   },
   provide() {
     return {
       progress: '70%',
-      courseContent: this.courseContent,
+      wrapperCourseContent: this.wrapperCourseContent,
     }
   },
   data() {
@@ -187,7 +268,7 @@ export default {
         },
         {
           name: 'أسئلة وأجوبة',
-          compName: 'UserCourseOverview',
+          compName: 'UserQuestionAndAnswer',
         },
         {
           name: 'اختبار',
@@ -206,7 +287,8 @@ export default {
           compName: 'UserCourseOverview',
         },
       ],
-      toggleBackDrop: false,
+      toggleBackDropVideo: false,
+      toggleBackDropAddAnswer: false,
       selected: {
         name: 'نظرة عامة',
         compName: 'UserCourseOverview',
@@ -214,6 +296,7 @@ export default {
       options: {
         ratio: '16:9',
       },
+      answer: '',
     }
   },
   mounted() {
@@ -275,6 +358,27 @@ export default {
   .progress {
     span {
       background-color: var(--coral);
+    }
+  }
+  //
+  &__close {
+    top: 15px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+    //
+    @include DetectHover {
+      &:hover {
+        background-color: var(--whiteDark);
+      }
+    }
+  }
+  //
+  textarea {
+    border-color: var(--coral);
+    //
+    &::placeholder {
+      color: var(--dark);
+      font-size: 1.3rem;
     }
   }
 }

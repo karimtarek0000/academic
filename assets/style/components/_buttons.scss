@@ -43,8 +43,6 @@
   }
   //
   &-coral {
-    background-color: var(--coral);
-
     @include DetectHover {
       //
       &:hover {

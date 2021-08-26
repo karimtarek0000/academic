@@ -3,12 +3,12 @@
     <!--  -->
     <CourseContent
       :render-select="true"
-      class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
+      class="padding-top-30 padding-bottom-45"
     >
       <!--  -->
       <button
         class="text-12 bg-light weight-br-300"
-        @click="wrapper.selectAll = !wrapper.selectAll"
+        @click="wrapperSelectAll.selectAll = !wrapperSelectAll.selectAll"
       >
         <GSvg
           class="svg-20 margin-end-5"
@@ -18,23 +18,34 @@
         <span>تحديد الكل</span>
       </button>
     </CourseContent>
+    <!--  -->
+    <div class="col-12 col-lg-10">
+      <BtnPrimary
+        :disabled="true"
+        style="width: 23.6rem; height: 6rem"
+        class="btn-Voodoo m-x-auto bg-Voodoo text-light radius-21 text-14"
+      >
+        تحديد كمكتملة
+      </BtnPrimary>
+    </div>
+    <!--  -->
   </section>
 </template>
 
 <script>
 export default {
   name: 'UserCourseContent',
-  inject: ['courseContent'],
+  inject: ['wrapperCourseContent'],
   data() {
     return {
-      wrapper: {
-        selectAll: true,
+      wrapperSelectAll: {
+        selectAll: false,
       },
     }
   },
   provide() {
     return {
-      selectAll: this.wrapper,
+      wrapperSelectAll: this.wrapperSelectAll,
     }
   },
 }

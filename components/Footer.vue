@@ -125,6 +125,7 @@
               type="submit"
               class="
                 btn btn-coral
+                bg-coral
                 width-155
                 text-light text-14
                 height-55

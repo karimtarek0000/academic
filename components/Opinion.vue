@@ -24,7 +24,10 @@
         "
       >
         <!--  -->
-        <figure class="margin-0 opinion__dim rounded-circle overflow-hidden">
+        <figure
+          style="width: 6.8rem; height: 6.8rem"
+          class="margin-0 rounded-circle overflow-hidden"
+        >
           <img
             class="resize-img"
             src="~/assets/images/global/avatar.png"
@@ -80,11 +83,6 @@ export default {
 .opinion {
   .row {
     min-height: 15.8rem;
-  }
-  //
-  &__dim {
-    width: 67px;
-    height: 67px;
   }
 }
 </style>
