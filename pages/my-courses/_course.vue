@@ -82,7 +82,7 @@
     <NavbarSelected class="margin-bottom-50">
       <template>
         <li
-          v-for="item in itemsNavbarSelected"
+          v-for="(item, index) in itemsNavbarSelected"
           :key="item.name"
           style="width: 16.7rem; height: 6.5rem"
           :class="[
@@ -94,7 +94,7 @@
               'weight-br-300': item.name !== selected.name,
             },
           ]"
-          @click="moveActive($event, item)"
+          @click="moveActive($event, item, index)"
           v-text="item.name"
         />
         <span
@@ -106,14 +106,17 @@
     </NavbarSelected>
     <!--  -->
     <article class="custom-container">
-      <component
-        :is="selected.compName"
-        @addAnswer="toggleBackDropAddAnswer = $event"
-      >
-        <UserCourseOverview />
-        <UserCourseContent />
-        <UserQuestionAndAnswer />
-      </component>
+      <transition :name="dirctionAnimate">
+        <component
+          :is="selected.compName"
+          @addAnswer="toggleBackDropAddAnswer = $event"
+          @addReport="toggleBackDropAddReport = $event"
+        >
+          <UserCourseOverview />
+          <UserCourseContent />
+          <UserQuestionAndAnswer />
+        </component>
+      </transition>
       <!--  -->
     </article>
     <!-- Video -->
@@ -132,76 +135,175 @@
         </vue-plyr>
       </div>
     </BackDrop>
-    <!-- Add Answer -->
+    <!--  -->
     <BackDrop
-      :toggle="toggleBackDropAddAnswer"
-      @toggleBackDrop="toggleBackDropAddAnswer = $event"
+      :toggle="toggleBackDropAddAnswer || toggleBackDropAddReport"
+      @toggleBackDrop="closeBackDrop"
     >
-      <div
-        v-if="toggleBackDropAddAnswer"
-        style="width: 65.9rem; min-height: 35.3rem"
-        class="
-          bg-light
-          radius-21
-          padding-x-45 padding-y-10
-          slide-up-enter-active
-        "
-        @click.stop
-      >
-        <div class="row g-0 position-relative border-botton-whiteDark">
-          <div
-            style="width: 3rem; height: 3rem"
-            class="
-              course-user__close
-              position-absolute
-              bg-light
-              radius-9
-              cursor-pointer
-              d-flex
-              align-items-center
-              justify-content-center
-            "
-            @click="toggleBackDropAddAnswer = false"
-          >
-            <GSvg class="svg-17" name-icon="close" title="اقفل" />
+      <template v-if="toggleBackDropAddAnswer">
+        <div
+          role="add-answer"
+          style="width: 65.9rem; min-height: 35.3rem"
+          class="
+            bg-light
+            radius-21
+            padding-x-45 padding-y-10
+            slide-up-enter-active
+          "
+          @click.stop
+        >
+          <div class="row g-0 position-relative border-botton-whiteDark">
+            <div
+              style="width: 3rem; height: 3rem"
+              class="
+                course-user__close
+                position-absolute
+                bg-light
+                radius-9
+                cursor-pointer
+                d-flex
+                align-items-center
+                justify-content-center
+              "
+              @click="toggleBackDropAddAnswer = false"
+            >
+              <GSvg class="svg-17" name-icon="close" title="اقفل" />
+            </div>
+            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
+              إضافة اجابة
+            </h3>
           </div>
-          <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-            إضافة اجابة
-          </h3>
+          <!--  -->
+          <div class="row g-0 text-center padding-y-20">
+            <p role="title" class="text-16 text-dark margin-bottom-5">السؤال</p>
+            <p role="question" class="text-13 weight-br-300">
+              ما هو الكاليجرافي وما هو فن التعريب أرجو الشرح بطريقة اوضح؟
+            </p>
+          </div>
+          <!--  -->
+          <div class="row g-0 answer">
+            <form>
+              <textarea
+                ref="firstInput"
+                v-model="answer"
+                style="width: 100%; height: 7.3rem"
+                class="padding-10 radius-12 text-13"
+                placeholder="الاجابة"
+              ></textarea>
+            </form>
+            <button
+              disabled
+              style="width: 13.6rem; height: 4.2rem"
+              type="submit"
+              class="
+                btn btn-Voodoo
+                text-light text-12
+                radius-14
+                margin-top-15
+                mx-auto
+              "
+            >
+              ارسال
+            </button>
+          </div>
         </div>
-        <!--  -->
-        <div class="row g-0 text-center padding-y-20">
-          <p role="title" class="text-16 text-dark margin-bottom-5">السؤال</p>
-          <p role="question" class="text-13 weight-br-300">
-            ما هو الكاليجرافي وما هو فن التعريب أرجو الشرح بطريقة اوضح؟
-          </p>
-        </div>
-        <!--  -->
-        <div class="row g-0">
-          <form>
-            <textarea
-              v-model="answer"
-              style="width: 100%; height: 7.3rem"
-              class="padding-10 radius-12 text-13"
-              placeholder="الاجابة"
-            ></textarea>
-          </form>
-          <button
-            disabled
-            style="width: 13.6rem; height: 4.2rem"
-            type="submit"
+      </template>
+      <!--  -->
+      <template v-if="toggleBackDropAddReport">
+        <div
+          role="add-report"
+          style="width: 65.9rem; min-height: 35.3rem"
+          class="
+            bg-light
+            radius-21
+            padding-x-45 padding-y-20
+            slide-up-enter-active
+          "
+          @click.stop
+        >
+          <div
             class="
-              btn btn-Voodoo
-              text-light text-12
-              radius-14
-              margin-top-15
-              mx-auto
+              row
+              g-0
+              position-relative
+              border-botton-whiteDark
+              margin-bottom-40
             "
           >
-            ارسال
-          </button>
+            <div
+              style="width: 3rem; height: 3rem"
+              class="
+                course-user__close
+                position-absolute
+                bg-light
+                radius-9
+                cursor-pointer
+                d-flex
+                align-items-center
+                justify-content-center
+              "
+              @click="toggleBackDropAddReport = false"
+            >
+              <GSvg class="svg-17" name-icon="close" title="اقفل" />
+            </div>
+            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
+              ابلاغ
+            </h3>
+          </div>
+          <!--  -->
+          <div class="row g-0">
+            <form>
+              <div>
+                <input
+                  ref="firstInput"
+                  type="text"
+                  class="
+                    width-100
+                    padding-y-15 padding-x-10
+                    radius-12
+                    text-13
+                    border-whiteDark-1
+                  "
+                  placeholder="العنوان"
+                />
+              </div>
+              <div class="margin-y-10">
+                <input
+                  type="email"
+                  class="
+                    width-100
+                    padding-y-15 padding-x-10
+                    radius-12
+                    border-whiteDark-1
+                    text-13
+                  "
+                  placeholder="البريد الالكتروني"
+                />
+              </div>
+              <textarea
+                v-model="report"
+                style="width: 100%; height: 7.3rem"
+                class="padding-10 radius-12 text-13"
+                placeholder="التفاصيل"
+              ></textarea>
+            </form>
+            <button
+              disabled
+              style="width: 13.6rem; height: 4.2rem"
+              type="submit"
+              class="
+                btn btn-Voodoo
+                text-light text-12
+                radius-14
+                margin-top-15
+                mx-auto
+              "
+            >
+              ارسال
+            </button>
+          </div>
         </div>
-      </div>
+      </template>
     </BackDrop>
   </main>
 </template>
@@ -289,15 +391,34 @@ export default {
       ],
       toggleBackDropVideo: false,
       toggleBackDropAddAnswer: false,
+      toggleBackDropAddReport: false,
       selected: {
         name: 'نظرة عامة',
         compName: 'UserCourseOverview',
       },
+      numComp: 0,
+      dirctionAnimate: 'slide-right-dir',
+      answer: '',
+      report: '',
       options: {
         ratio: '16:9',
       },
-      answer: '',
     }
+  },
+  computed: {
+    addUser() {
+      return this.toggleBackDropAddAnswer || this.toggleBackDropAddReport
+    },
+  },
+  watch: {
+    addUser(value) {
+      if (value) this.$nextTick(() => this.$refs.firstInput.focus())
+    },
+    numComp(newValue, oldValue) {
+      newValue > oldValue
+        ? (this.dirctionAnimate = 'slide-right-dir')
+        : (this.dirctionAnimate = 'slide-left-dir')
+    },
   },
   mounted() {
     const offsetLeftFirstElement = document.querySelectorAll(
@@ -308,10 +429,15 @@ export default {
     ).style.left = `${offsetLeftFirstElement}px`
   },
   methods: {
-    moveActive(e, item) {
+    moveActive(e, item, index) {
       const { offsetLeft } = e.target
       this.selected = item
+      this.numComp = index
       this.$refs.navbar__active.style.left = `${offsetLeft}px`
+    },
+    closeBackDrop() {
+      this.toggleBackDropAddAnswer = false
+      this.toggleBackDropAddReport = false
     },
   },
   head() {
@@ -351,7 +477,7 @@ export default {
     &__active {
       top: 0;
       z-index: -1;
-      transition: left 0.6s cubic-bezier(0.66, 0.36, 0.58, 0.57);
+      transition: left 0.4s cubic-bezier(0.66, 0.36, 0.58, 0.57);
       will-change: left;
     }
   }
@@ -373,12 +499,30 @@ export default {
     }
   }
   //
-  textarea {
-    border-color: var(--coral);
-    //
-    &::placeholder {
-      color: var(--dark);
-      font-size: 1.3rem;
+  .answer {
+    textarea {
+      //
+      &::placeholder {
+        color: var(--dark);
+        font-size: 1.3rem;
+      }
+    }
+  }
+  //
+  form {
+    input {
+      &:focus {
+        border-color: var(--coral);
+      }
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: var(--silver);
+        font-weight: 300;
+        font-size: 1.2rem;
+      }
     }
   }
 }

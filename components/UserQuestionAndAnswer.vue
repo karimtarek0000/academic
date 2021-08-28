@@ -107,6 +107,7 @@
                 margin-y-5
                 sm-margin-x-10
               "
+              @click="addReport"
             >
               ابلاغ
             </button>
@@ -137,6 +138,9 @@ export default {
   methods: {
     addAnswer() {
       this.$emit('addAnswer', true)
+    },
+    addReport() {
+      this.$emit('addReport', true)
     },
   },
 }

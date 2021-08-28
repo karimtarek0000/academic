@@ -29,9 +29,11 @@
 }
 
 textarea {
+  border-color: var(--whiteDark);
   resize: none;
   //
   &:focus {
     outline: none;
+    border-color: var(--coral);
   }
 }
