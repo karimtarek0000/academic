@@ -63,6 +63,7 @@
           <div
             class="
               d-flex
+              flex-column flex-sm-row
               align-items-center
               justify-content-between
               margin-bottom-10

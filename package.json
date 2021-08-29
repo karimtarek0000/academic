@@ -16,8 +16,10 @@
     "@nuxtjs/style-resources": "^1.2.0",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
+    "date-fns": "^1.29.0",
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
+    "vue-airbnb-style-datepicker": "^2.7.1",
     "vue-plyr": "^7.0.0",
     "vue-slick-carousel": "^1.0.6",
     "vue-social-sharing": "^3.0.8",
@@ -25,6 +27,7 @@
     "vue2-smooth-scroll": "^1.5.0"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",

@@ -28,8 +28,9 @@
   }
 }
 
-textarea {
-  border-color: var(--whiteDark);
+textarea,
+select {
+  border: 1px solid var(--whiteDark);
   resize: none;
   //
   &:focus {

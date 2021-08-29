@@ -16,11 +16,14 @@
           <span>أسئلة في هذه الدورة</span>
         </h2>
         <!--  -->
-        <BtnPrimary
+        <button
+          role="add-new-question"
           style="width: 17.4rem; height: 5rem"
           class="btn-coral radius-14 bg-coral text-light text-14"
-          >سؤال جديد</BtnPrimary
+          @click="sendEmit('newQuestion')"
         >
+          سؤال جديد
+        </button>
       </div>
       <!--  -->
       <div
@@ -92,7 +95,7 @@
               role="add-answer"
               style="width: 10.1rem; height: 3rem"
               class="btn btn-coral text-light text-11 bg-coral radius-9"
-              @click="addAnswer"
+              @click="sendEmit('addAnswer')"
             >
               إضافة اجابة
             </button>
@@ -107,7 +110,7 @@
                 margin-y-5
                 sm-margin-x-10
               "
-              @click="addReport"
+              @click="sendEmit('addReport')"
             >
               ابلاغ
             </button>
@@ -136,11 +139,8 @@
 export default {
   name: 'UserQuestionAndAnswer',
   methods: {
-    addAnswer() {
-      this.$emit('addAnswer', true)
-    },
-    addReport() {
-      this.$emit('addReport', true)
+    sendEmit(name) {
+      this.$emit(name, true)
     },
   },
 }

@@ -2,7 +2,7 @@
   <button
     type="button"
     class="btn d-flex justify-content-center align-items-center"
-    @click.stop="s"
+    @click.stop="$emit('clicked')"
   >
     <slot />
   </button>
@@ -11,9 +11,6 @@
 <script>
 export default {
   name: 'BtnPrimary',
-  methods: {
-    s() {},
-  },
 }
 </script>
 

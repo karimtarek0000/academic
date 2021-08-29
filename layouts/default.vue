@@ -12,9 +12,11 @@
       <Footer />
     </div>
     <!--  -->
-    <SideBarMenu />
-    <!--  -->
-    <SideBarUser />
+    <template v-if="$mq === 'tablet'">
+      <SideBarMenu />
+      <!--  -->
+      <SideBarUser />
+    </template>
   </div>
 </template>
 

@@ -1,9 +1,16 @@
 <template>
   <div class="select-box">
     <!--  -->
-    <select>
-      <option value="one">ترتيب حسب</option>
+    <select @change="sendNewSelected($event)">
+      <option selected hidden v-text="title" />
+      <option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+        v-text="option.title"
+      />
     </select>
+
     <!--  -->
     <svg
       class="select-box__icon"
@@ -23,6 +30,21 @@
 <script>
 export default {
   name: 'SelectBox',
+  props: {
+    options: {
+      type: Array,
+      required: true,
+    },
+    title: {
+      type: String,
+      default: 'اختر',
+    },
+  },
+  methods: {
+    sendNewSelected(e) {
+      this.$emit('newSelected', e.target.value)
+    },
+  },
 }
 </script>
 
@@ -35,6 +57,8 @@ export default {
     outline: none;
     background-color: transparent;
     width: 100%;
+    height: inherit;
+    cursor: pointer;
   }
 
   //
