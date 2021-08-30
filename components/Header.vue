@@ -127,10 +127,10 @@ export default {
   }
   //
   .translate-up-btn {
-    animation: slide-up 1.5s ease-in-out forwards;
+    animation: slide-up-btn 1.5s ease-in-out forwards;
   }
   //
-  @keyframes slide-up {
+  @keyframes slide-up-btn {
     from {
       transform: translateY(100%);
       opacity: 0;

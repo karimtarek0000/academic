@@ -58,6 +58,7 @@
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
       <CourseContent
+        id="course-description"
         class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
       />
       <CourseRequirements
@@ -106,7 +107,7 @@
       </div>
     </BackDrop>
     <!--  -->
-    <QuickAddInMobile />
+    <QuickAddInMobile v-if="$mq === 'tablet'" />
   </main>
 </template>
 
@@ -153,28 +154,30 @@ export default {
         },
       ],
       socialMedia: ['facebook', 'twitter', 'linkedin', 'whatsapp'],
-      courseContent: [
-        {
-          title: 'المقدمة',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          title: 'الباب الاول',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          title: 'الباب الثاني',
-          lectures: 12,
-          time: 32,
-        },
-        {
-          title: 'الباب الثالث',
-          lectures: 12,
-          time: 32,
-        },
-      ],
+      wrapperCourseContent: {
+        courseContent: [
+          {
+            title: 'المقدمة',
+            lectures: 12,
+            time: 32,
+          },
+          {
+            title: 'الباب الاول',
+            lectures: 12,
+            time: 32,
+          },
+          {
+            title: 'الباب الثاني',
+            lectures: 12,
+            time: 32,
+          },
+          {
+            title: 'الباب الثالث',
+            lectures: 12,
+            time: 32,
+          },
+        ],
+      },
     }
   },
   validate({ params }) {
@@ -186,7 +189,8 @@ export default {
       rating: this.rating,
       totalCourseContent: this.totalCourseContent,
       bookingStatic: this.bookingStatic,
-      courseContent: this.courseContent,
+      wrapperCourseContent: this.wrapperCourseContent,
+      wrapperSelectAll: 0,
       socialMedia: this.socialMedia,
     }
   },
@@ -216,7 +220,6 @@ export default {
 }
 </script>
 <style lang="scss">
-//
 .course {
   //
   &__info {

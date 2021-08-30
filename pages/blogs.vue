@@ -49,7 +49,7 @@
           <GSvg class="svg-11" name-icon="angle-right" />
         </template>
         <template slot="prev">
-          <GSvg class="svg-11" name-icon="angle-left" />
+          <GSvg class="svg-11" name-icon="angle-left-1" />
         </template>
       </Pagination>
     </client-only>
@@ -57,22 +57,29 @@
 </template>
 
 <script>
-import BlogSliderSection from '~/pages/BlogSliderSection'
-import Pagination from '~/components/Pagination'
-import GSvg from '~/components/GSvg'
 export default {
   name: 'Blogs',
-  components: { GSvg, Pagination, BlogSliderSection },
+  // async asyncData({ $axios, query }) {
+  //   const { data } = await $axios.get(
+  //     `https://jsonplaceholder.typicode.com/posts/${
+  //       query.page ? query.page : 1
+  //     }`
+  //   )
+  //
+  //   return {
+  //     data,
+  //   }
+  // },
   data() {
     return {
       currentPage: 1,
     }
   },
-  watch: {
-    $route() {
-      console.log('changed!')
-    },
-  },
+  // watch: {
+  //   $route() {
+  //     this.$nuxt.refresh()
+  //   },
+  // },
   head: {
     title: 'المدونة',
     meta: [

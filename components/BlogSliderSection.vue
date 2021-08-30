@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import BlogCard from '@/components/BlogCard.vue'
+import BlogCard from '~/components/BlogCard.vue'
 export default {
   name: 'BlogSliderSection',
   components: {
