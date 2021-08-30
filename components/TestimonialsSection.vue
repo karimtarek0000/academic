@@ -30,7 +30,7 @@ import CardTestimonials from '@/components/CardTestimonials.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
 
 export default {
-  name: 'SectionTestimonials',
+  name: 'TestimonialsSection',
   components: {
     CardTestimonials,
   },

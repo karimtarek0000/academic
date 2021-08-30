@@ -5,7 +5,7 @@
       flex-column
       align-items-center
       text-center
-      shadow-cards
+      shadow__card-1
       padding-y-30
       radius-21
     "

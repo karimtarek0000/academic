@@ -1,5 +1,8 @@
 <template>
-  <div role="card" class="card specific-size shadow-cards padding-0 radius-21">
+  <div
+    role="card"
+    class="card specific-size shadow__card-1 padding-0 radius-21"
+  >
     <!--  -->
     <figure>
       <img

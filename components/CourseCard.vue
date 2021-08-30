@@ -1,6 +1,6 @@
 <template>
   <!--  -->
-  <div class="course-card d-flex radius-21 overflow-hidden">
+  <div class="course-card shadow__card-2 d-flex radius-21 overflow-hidden">
     <!--  -->
     <div class="row flex-column flex-md-row g-0">
       <!--  -->
@@ -129,8 +129,4 @@ export default {
 }
 </script>
 
-<style>
-.course-card {
-  box-shadow: 0px 1px 24px #70707012;
-}
-</style>
+<style></style>

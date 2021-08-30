@@ -3,11 +3,11 @@
     <!--  -->
     <Header />
     <!--  -->
-    <SectionOurServices />
+    <OurServicesSection />
     <!--  -->
     <SectionAllSections :data="itemsSliderSectionAllSections" />
     <!--  -->
-    <SectionNewCourses>
+    <NewCoursesSection>
       <NavbarSelected>
         <template>
           <li
@@ -24,17 +24,17 @@
           />
         </template>
       </NavbarSelected>
-    </SectionNewCourses>
+    </NewCoursesSection>
     <!--  -->
-    <SectionSpecialCourses />
+    <SpecialCoursesSection />
     <!--  -->
-    <SectionZoomMeetings />
+    <ZoomMeetingsSection />
     <!--  -->
-    <SectionCombinedCourses />
+    <CombinedCoursesSection />
     <!--  -->
-    <Blog />
+    <BlogSection />
     <!--  -->
-    <SectionTestimonials />
+    <TestimonialsSection />
   </main>
 </template>
 
@@ -102,6 +102,14 @@ export default {
   },
   head: {
     title: 'الرئيسية',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
+      },
+    ],
   },
 }
 </script>

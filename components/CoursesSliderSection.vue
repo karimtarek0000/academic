@@ -1,7 +1,7 @@
 <template>
-  <section role="design-courses" class="courses">
+  <section role="courses" class="space-between-slides">
     <Slider :add-settings="sliderSettings">
-      <CourseCard v-for="s in ss" :key="s" dir="rtl" class="margin-y-20" />
+      <CourseCard v-for="s in 6" :key="s" dir="rtl" class="margin-y-20" />
     </Slider>
   </section>
 </template>
@@ -9,13 +9,12 @@
 <script>
 import CourseCard from '@/components/CourseCard.vue'
 export default {
-  name: 'SectionCoursesSlider',
+  name: 'CoursesSliderSection',
   components: {
     CourseCard,
   },
   data() {
     return {
-      ss: 6,
       sliderSettings: {
         centerMode: true,
         centerPadding: '300px',
@@ -66,10 +65,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.courses {
-  .slick-slide {
-    padding: 0 10px;
-  }
-}
-</style>
+<style></style>

@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: 'SectionSubSections',
+  name: 'SubSectionsSection',
   props: {
     items: {
       type: Array,

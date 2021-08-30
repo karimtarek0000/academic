@@ -86,7 +86,7 @@ import Card from '@/components/Card.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
 import BtnPrimary from '~/components/BtnPrimary.vue'
 export default {
-  name: 'SectionSpecialCourses',
+  name: 'SpecialCoursesSection',
   components: {
     Card,
     BtnPrimary,

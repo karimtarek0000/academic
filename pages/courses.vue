@@ -9,9 +9,9 @@
       </p>
     </header>
     <!--  -->
-    <SectionCoursesSlider />
+    <CoursesSliderSection />
     <!--  -->
-    <SectionSubSections :items="items" />
+    <SubSectionsSection :items="items" />
     <!--  -->
     <div
       class="
@@ -37,6 +37,7 @@
         <div class="row justify-content-end align-items-center">
           <!--  -->
           <SelectBox
+            :options="[1, 2, 3]"
             class="
               col-3
               border-gallery
@@ -49,6 +50,7 @@
           />
           <!--  -->
           <SelectBox
+            :options="[1, 2, 3]"
             class="
               col-3
               border-gallery

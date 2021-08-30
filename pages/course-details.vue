@@ -3,7 +3,7 @@
     <!--  -->
     <HeaderCoursePage />
     <!--  -->
-    <SectionCourseInformation>
+    <CourseInformationSection>
       <template slot="video">
         <Video class="col-12 col-lg-5" @openVideo="toggleBackDrop = $event" />
       </template>
@@ -18,7 +18,7 @@
           "
         />
       </template>
-    </SectionCourseInformation>
+    </CourseInformationSection>
     <!--  -->
     <NavbarSelected>
       <template>

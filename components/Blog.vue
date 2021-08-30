@@ -49,7 +49,7 @@
 
 <script>
 export default {
-  name: 'Blog',
+  name: 'BlogSection',
   data() {
     return {
       s: 2,

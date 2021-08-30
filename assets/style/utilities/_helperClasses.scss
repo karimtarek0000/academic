@@ -1,45 +1,24 @@
 ////////////////////////////
-// 1) Class => obj img
-.resize-img {
-  width: 100vw;
-  max-width: 100%;
-  max-height: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.user-select-none {
-  user-select: none;
-}
-
-////////////////////////////
-// 2) ADD CLASSES BORDER RADUIS
+// 1) ADD CLASSES BORDER RADUIS
 @each $name, $size in $borderRaduis {
   .radius-#{$name} {
     border-radius: $size;
   }
 }
-
 ////////////////////////////
-// 3) - Other
+// 2) - Other
 .cursor-pointer {
   cursor: pointer;
 }
-
-//
 .direction-ltr {
   direction: ltr;
 }
-
-//
 .truncut-text {
-  max-width: 30rem;
+  max-width: 40rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-//
 .video__wrapper {
   min-width: 70vw;
 
@@ -51,8 +30,19 @@
     min-width: 100%;
   }
 }
-
-//
+.space-between-slides {
+  .slick-slide {
+    padding: 0 7px;
+  }
+}
+.shadow {
+  &__card-1 {
+    box-shadow: 0px 5px 10px rgba(#bebebe17, 0.2);
+  }
+  &__card-2 {
+    box-shadow: 0px 1px 24px #70707012;
+  }
+}
 .underline {
   text-decoration: underline !important;
   //
@@ -63,43 +53,33 @@
 
 //
 .border {
-  //
   &-botton-whiteDark {
     border-bottom: 2px solid var(--whiteDark);
   }
-  //
   &-whiteDark-1 {
     border: 1px solid var(--whiteDark);
   }
-  //
   &-whiteDark {
     border: 2px solid var(--whiteDark);
   }
-  //
   &-coral-1 {
     border: 1px solid var(--coral);
   }
-  //
   &-botton-Voodoo {
     border-bottom: 1px solid var(--Voodoo);
   }
-  //
   &-top-whiteDark {
     border-top: 2px solid var(--whiteDark);
   }
+  &-gallery {
+    border: 1px solid var(--gallery);
+  }
 }
-
-.border-gallery {
-  border: 1px solid var(--gallery);
-}
-
 .text-align-center {
   @media only screen and (max-width: 768px) {
     text-align: center !important;
   }
 }
-
-//
 .shape {
   overflow: hidden;
   //
@@ -137,36 +117,17 @@
     }
   }
 }
-
-//
 .set-padding {
   @media only screen and (min-width: 1350px) {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 105px;
+    padding-right: 105px;
   }
 }
-
-//
-.space-between-slides {
-  .slick-slide {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-//
 .translate-up-slider-action {
   .slider__actions {
     transform: translateY(4rem);
   }
 }
-
-//
-.shadow-cards {
-  box-shadow: 0px 5px 10px rgba(#bebebe17, 0.2);
-}
-
-//
 .specific-size {
   @media only screen and (min-width: 1350px) {
     flex-basis: calc(97% / 3);
@@ -184,16 +145,26 @@
     flex-basis: 100%;
   }
 }
-
 .max-width-831 {
   max-width: 83.1rem;
 }
-
 .global-style-sidebar {
   @include position('lt', $moveR: 0, $moveT: 0);
   box-shadow: -3px 0px 50px #bbb8b8bd;
 }
-
 .zindex-4 {
   z-index: 4;
+}
+.resize-img {
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.position-top-img {
+  object-position: center top;
+}
+.user-select-none {
+  user-select: none;
 }

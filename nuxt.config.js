@@ -131,8 +131,8 @@ export default {
         component: resolve(__dirname, 'pages/instructor.vue'),
       })
       routes.push({
-        path: '/blog',
-        component: resolve(__dirname, 'pages/blog.vue'),
+        path: '/blogs',
+        component: resolve(__dirname, 'pages/blogs.vue'),
       })
     },
   },
