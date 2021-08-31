@@ -134,6 +134,10 @@ export default {
         path: '/blogs',
         component: resolve(__dirname, 'pages/blogs.vue'),
       })
+      routes.push({
+        path: '/blogs/article/:id',
+        component: resolve(__dirname, 'pages/article.vue'),
+      })
     },
   },
 
