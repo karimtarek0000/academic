@@ -222,11 +222,11 @@ export default {
         },
         {
           name: 'من نحن',
-          path: 'index',
+          path: 'who-we-are',
         },
         {
           name: 'اتصل بنا',
-          path: 'index',
+          path: 'contact-us',
         },
       ],
       sections: [
