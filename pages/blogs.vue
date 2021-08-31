@@ -16,7 +16,7 @@
         v-for="s in 6"
         :key="s"
         class="
-          col-9
+          col-12 col-md-9
           mx-auto
           padding-top-25 padding-bottom-67
           border-botton-whiteDark
@@ -25,7 +25,7 @@
       >
         <BlogCard class="padding-x-10">
           <figure
-            class="col col-md-4 radius-21 overflow-hidden margin-0 padding-0"
+            class="col-12 col-sm-4 radius-21 overflow-hidden margin-0 padding-0"
             style="max-height: 21.4rem"
           >
             <img

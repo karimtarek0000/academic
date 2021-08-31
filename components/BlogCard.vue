@@ -2,11 +2,11 @@
   <!--  -->
   <nuxt-link to="/" class="blog-card d-flex radius-21 overflow-hidden">
     <!--  -->
-    <div class="row flex-column align-items-center flex-md-row g-0">
+    <div class="row g-0 align-items-center">
       <!--  -->
       <slot />
       <!--  -->
-      <div class="col-md-8 padding-x-20 xxlg-padding-x-30 padding-y-20">
+      <div class="col-12 col-sm-8 padding-x-20 xxlg-padding-x-30 padding-y-20">
         <!--  -->
         <div class="row">
           <!--  -->
