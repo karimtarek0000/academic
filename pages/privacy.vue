@@ -43,14 +43,6 @@ export default {
   name: 'Privacy',
   head: {
     title: 'سياسة الخصوصية',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
-      },
-    ],
   },
 }
 </script>

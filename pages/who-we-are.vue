@@ -1,6 +1,5 @@
 <template>
   <main>
-    <!--  -->
     <header class="text-center padding-y-45 border-botton-whiteDark">
       <h1 class="text-30 text-dark margin-bottom-10">من نحن</h1>
       <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
@@ -8,7 +7,6 @@
         تصميم أو مجموعة من التصاميم
       </p>
     </header>
-    <!--    -->
     <article class="col-xl-8 mx-auto custom-container margin-bottom-50">
       <section role="start" class="padding-y-30 margin-bottom-10">
         <div class="row g-0 align-items-start">
@@ -103,13 +101,6 @@ export default {
   name: 'WhoWeAre',
   head: {
     title: 'من نحن',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'من نحن',
-      },
-    ],
   },
 }
 </script>
