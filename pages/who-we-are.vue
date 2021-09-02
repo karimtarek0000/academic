@@ -39,7 +39,7 @@
       <section role="about" class="padding-y-10 margin-bottom-10">
         <div class="row g-0 justify-content-center">
           <div class="col-12 col-sm-10">
-            <figure class="margin-bottom-20">
+            <figure class="margin-bottom-20 radius-21 overflow-hidden">
               <img
                 class="resize-img"
                 src="~/assets/images/who-we-are/2.png"
