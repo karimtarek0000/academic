@@ -26,6 +26,20 @@
       }
     }
   }
+
+  &--object-3 {
+    & input,
+    & textarea {
+      &:focus {
+        transition: border-color 0.3s ease;
+        border-color: var(--coral);
+      }
+      &::placeholder {
+        font-weight: 300;
+        color: var(--silver);
+      }
+    }
+  }
 }
 
 textarea,

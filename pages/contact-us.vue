@@ -1,5 +1,5 @@
 <template>
-  <main class="contact-us">
+  <main class="contact-us custom-input--object-3">
     <!--  -->
     <header class="text-center padding-y-45 border-botton-whiteDark">
       <h1 class="text-30 text-dark margin-bottom-10">اتصل بنا</h1>
@@ -54,7 +54,7 @@
                     padding-start-30
                     border-whiteDark-1
                     width-100
-                    padding-y-15
+                    padding-y-10
                     radius-12
                     text-12
                   "
@@ -91,7 +91,7 @@
                     padding-start-30
                     border-whiteDark-1
                     width-100
-                    padding-y-15
+                    padding-y-10
                     radius-12
                     text-12
                   "
@@ -135,7 +135,7 @@
                     padding-start-30
                     border-whiteDark-1
                     width-100
-                    padding-y-15
+                    padding-y-10
                     radius-12
                     text-12
                   "
@@ -169,7 +169,7 @@
                   padding-start-15
                   border-whiteDark-1
                   width-100
-                  padding-y-15
+                  padding-y-10
                   radius-12
                   text-12
                 "
@@ -344,16 +344,10 @@ export default {
   & input,
   & textarea {
     &:focus {
-      transition: border-color 0.3s ease;
-      border-color: var(--coral);
       + svg {
         transition: fill 0.3s ease;
         fill: var(--dark);
       }
-    }
-    &::placeholder {
-      font-weight: 300;
-      color: var(--silver);
     }
   }
 }

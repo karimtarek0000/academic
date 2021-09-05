@@ -93,6 +93,10 @@ export default {
   ],
 
   //
+  publicRuntimeConfig: {},
+  privateRuntimeConfig: {},
+
+  //
   mq: {
     defaultBreakpoint: 'desktop',
     breakpoints: {

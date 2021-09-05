@@ -94,7 +94,7 @@
               'weight-br-300': item.name !== selected.name,
             },
           ]"
-          @click="moveActive($event, item, index)"
+          @click="moveActive($event, item, index + 1)"
           v-text="item.name"
         />
         <span
@@ -106,7 +106,7 @@
     </NavbarSelected>
     <!--  -->
     <article class="custom-container">
-      <transition :name="dirctionAnimate">
+      <transition :name="dirctionAnimate" mode="out-in">
         <component
           :is="selected.compName"
           @addAnswer="addAnswer = $event"
@@ -660,9 +660,11 @@
 </template>
 
 <script>
+import { setDirectionAnim } from '@/mixins/other'
 import format from 'date-fns/format'
 export default {
   name: 'Course',
+  mixins: [setDirectionAnim],
   validate({ params }) {
     // Must be params string not number and params exsist.
     return /^\D+$/.test(params.course) && params.course
@@ -758,12 +760,10 @@ export default {
       addNewQuestion: false,
       addTask: false,
       addMeeting: false,
-      dirctionAnimate: 'slide-right-dir',
       selected: {
         name: 'نظرة عامة',
         compName: 'UserCourseOverview',
       },
-      numComp: 0,
       options: {
         ratio: '16:9',
       },
@@ -803,11 +803,6 @@ export default {
   watch: {
     statusToggleBackDrop(value) {
       if (value) this.$nextTick(() => this.$refs.firstInput.focus())
-    },
-    numComp(newValue, oldValue) {
-      newValue > oldValue
-        ? (this.dirctionAnimate = 'slide-right-dir')
-        : (this.dirctionAnimate = 'slide-left-dir')
     },
   },
   mounted() {
