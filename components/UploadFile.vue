@@ -1,6 +1,6 @@
 <template>
   <!--  -->
-  <div class="uploadVideo" role="upload-file">
+  <div class="upload-file" role="upload-file">
     <!--  -->
     <label
       for="uploadFile"
@@ -15,13 +15,25 @@
       <slot />
     </label>
     <!--  -->
-    <input id="uploadFile" class="d-none" type="file" @change="getFile" />
+    <input
+      id="uploadFile"
+      :accept="accept"
+      class="d-none"
+      type="file"
+      @change="getFile"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: 'UploadFile',
+  props: {
+    accept: {
+      type: String,
+      default: '*',
+    },
+  },
   methods: {
     getFile(e) {
       const file = e.target.files[0]

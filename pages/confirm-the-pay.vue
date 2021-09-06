@@ -1,6 +1,8 @@
 <template>
   <main class="confirm-the-pay">
-    <header class="text-center padding-y-45">
+    <header
+      class="text-center padding-y-45 border-botton-whiteDark margin-bottom-50"
+    >
       <h1 class="text-30 text-dark margin-bottom-10">اتمام الشراء</h1>
       <p class="text-14 text-silver weight-br-300 mx-auto col-lg-3">
         حدد طريقة دفع مناسبة لك لتأكيد اشتراكك في هذه الدورة وتمتع بتجربة فريدة
@@ -67,8 +69,8 @@
             <div class="row justify-content-center">
               <h3 class="padding-y-20 text-18">حدد طريقة الدفع</h3>
               <!--  -->
-              <div class="row row-cols-1 row-cols-md-2 gx-3">
-                <div class="col">
+              <div class="row row-cols-1 row-cols-sm-2 gx-4">
+                <div class="col sm-margin-bottom-10">
                   <BtnPrimary
                     :class="[
                       'bg-light width-100 overflow-hidden custom-button text-14 radius-14 weight-br-300',
@@ -125,7 +127,7 @@
                 style="min-height: 38.4rem"
               >
                 <transition :name="dirctionAnimate" mode="out-in">
-                  <component :is="comp">
+                  <component :is="comp" @data="getData">
                     <PayWithCard />
                     <BankTransfer />
                   </component>
@@ -145,6 +147,7 @@
                 bg-emerald
                 text-14
               "
+              :disabled="disabled"
               @clicked="done"
             >
               تأكيد الطلب
@@ -163,6 +166,8 @@ export default {
   mixins: [setDirectionAnim],
   data() {
     return {
+      data: null,
+      disabled: true,
       comp: 'PayWithCard',
     }
   },
@@ -174,7 +179,17 @@ export default {
       return this.comp === 'PayWithCard'
     },
   },
+  watch: {
+    comp() {
+      this.data = null
+      this.disabled = true
+    },
+  },
   methods: {
+    getData(data) {
+      this.data = data.form
+      this.disabled = data.statusDisabled
+    },
     done() {
       // eslint-disable-next-line no-console
       console.log('التاكيد')
