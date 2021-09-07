@@ -182,20 +182,19 @@
               >
                 مطلوب ادخاله
               </p>
-              <button
+              <BtnPrimary
+                type="submit"
                 style="width: 23.5rem; height: 5.5rem"
                 class="
-                  btn btn-Voodoo
+                  btn-Voodoo
                   bg-Voodoo
                   text-light
                   margin-top-30
                   radius-18
                   text-14
                 "
-                type="submit"
+                >ارسال</BtnPrimary
               >
-                ارسال
-              </button>
             </form>
           </div>
         </div>

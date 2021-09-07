@@ -54,6 +54,7 @@
                 />
               </figure>
               <UploadFile
+                accept="image/*"
                 style="width: 5.1rem; height: 4.7rem"
                 class="bg-Voodoo upload-file position-absolute radius-18"
               >
@@ -66,7 +67,7 @@
             </div>
             <!--  -->
             <div class="col margin-top-40">
-              <form @submit.prevent="submit">
+              <form>
                 <div class="row">
                   <div class="col">
                     <div
@@ -625,6 +626,25 @@
                 </div>
               </form>
             </div>
+          </div>
+          <!-- Submit -->
+          <div class="col">
+            <BtnPrimary
+              type="submit"
+              style="width: 19.5rem; height: 6rem"
+              class="
+                btn-Voodoo
+                text-light
+                margin-top-30
+                radius-18
+                text-14
+                mx-auto
+                d-block
+              "
+              @clicked="submit"
+            >
+              حفظ التعديلات
+            </BtnPrimary>
           </div>
         </div>
       </div>
