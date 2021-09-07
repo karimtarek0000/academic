@@ -76,6 +76,7 @@
                 v-show="toggleUserOptions"
                 class="
                   user-options
+                  shadow__user-options-list
                   position-absolute
                   width-267
                   bg-light
@@ -92,7 +93,10 @@
                   email="ibtdi.com@gmail.com"
                 />
                 <!--  -->
-                <UserOptionsList />
+                <UserOptionsList
+                  :add-items="userOptionsitems"
+                  class="margin-top-20"
+                />
                 <!--  -->
                 <logOutButton class="border-top-whiteDark padding-y-10" />
               </div>
@@ -147,6 +151,33 @@ export default {
     return {
       userLogIn: false,
       toggleUserOptions: false,
+      userOptionsitems: [
+        {
+          title: 'دوراتي',
+          path: 'index',
+          icon: 'book-3-fill',
+        },
+        {
+          title: 'المفضلة',
+          path: 'index',
+          icon: 'heart-fill',
+        },
+        {
+          title: 'السلة',
+          path: 'index',
+          icon: 'shopping-basket-2-fill',
+        },
+        {
+          title: 'الملف الشخصي',
+          path: 'index',
+          icon: 'user-fill',
+        },
+        {
+          title: 'انضم الينا كمدرب',
+          path: 'index',
+          icon: 'team-fill-1',
+        },
+      ],
     }
   },
   mounted() {
@@ -184,7 +215,23 @@ export default {
   .user-options {
     @include position('lt', $moveL: 0, $moveT: '100%');
     z-index: 9999;
-    box-shadow: 0px 3px 25px #aeaeae1f;
+
+    @include DetectHover {
+      span {
+        transition: color 0.3s ease;
+        //
+        &:hover {
+          color: rgba($dark, 0.6);
+        }
+      }
+    }
+
+    &__item {
+      padding: 1rem 0;
+      span {
+        font-size: 1.2rem;
+      }
+    }
 
     .user {
       align-items: center;

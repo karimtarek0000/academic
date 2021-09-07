@@ -1,16 +1,16 @@
 <template>
   <!--  -->
-  <ul class="user-options list-unstyled margin-top-20" role="user-options">
+  <ul class="user-options list-unstyled" role="user-options">
     <li
-      v-for="item in items"
+      v-for="item in addItems"
       :key="item.title"
-      class="border-top-whiteDark padding-y-10 d-flex"
+      class="user-options__item d-flex align-items-center"
     >
-      <nuxt-link :to="{ name: item.path }" class="text-dark text-12">
+      <nuxt-link :to="{ name: item.path }" class="width-100">
         <!--  -->
         <figure
           class="
-            sections__items__action
+            user-options__item-action
             d-flex
             align-items-center
             justify-content-between
@@ -18,11 +18,14 @@
             margin-0
           "
         >
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center width-100">
             <GSvg class="svg-20" :name-icon="item.icon" :title="item.title" />
-            <span class="text-12 margin-start-5" v-text="item.title" />
+            <span class="margin-start-10" v-text="item.title" />
+            <GSvg
+              class="svg-17 m-s-auto margin-end-10"
+              name-icon="angle-left"
+            />
           </div>
-          <!-- <GSvg class="svg-20" name-icon="angle-left" title="افتح" /> -->
         </figure>
       </nuxt-link>
     </li>
@@ -32,50 +35,13 @@
 <script>
 export default {
   name: 'UserOptionsList',
-  data() {
-    return {
-      items: [
-        {
-          title: 'دوراتي',
-          path: 'index',
-          icon: 'book-3-fill',
-        },
-        {
-          title: 'المفضلة',
-          path: 'index',
-          icon: 'heart-fill',
-        },
-        {
-          title: 'السلة',
-          path: 'index',
-          icon: 'shopping-basket-2-fill',
-        },
-        {
-          title: 'الملف الشخصي',
-          path: 'index',
-          icon: 'user-fill',
-        },
-        {
-          title: 'انضم الينا كمدرب',
-          path: 'index',
-          icon: 'team-fill-1',
-        },
-      ],
-    }
+  props: {
+    addItems: {
+      type: Array,
+      default: () => [],
+    },
   },
 }
 </script>
 
-<style lang="scss">
-.user-options {
-  @include DetectHover {
-    span {
-      transition: color 0.3s ease;
-      //
-      &:hover {
-        color: rgba($dark, 0.6);
-      }
-    }
-  }
-}
-</style>
+<style></style>

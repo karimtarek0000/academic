@@ -40,6 +40,17 @@
       }
     }
   }
+  &--object-4 {
+    & input,
+    & textarea {
+      &:focus {
+        + svg {
+          transition: fill 0.3s ease;
+          fill: var(--dark);
+        }
+      }
+    }
+  }
 }
 
 textarea,

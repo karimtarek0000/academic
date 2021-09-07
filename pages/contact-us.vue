@@ -1,5 +1,5 @@
 <template>
-  <main class="contact-us custom-input--object-3">
+  <main class="contact-us custom-input--object-3 custom-input--object-4">
     <!--  -->
     <header class="text-center padding-y-45 border-botton-whiteDark">
       <h1 class="text-30 text-dark margin-bottom-10">اتصل بنا</h1>
@@ -338,17 +338,6 @@ export default {
   }
   &:nth-of-type(2)::after {
     background-color: var(--picton);
-  }
-}
-.contact-us {
-  & input,
-  & textarea {
-    &:focus {
-      + svg {
-        transition: fill 0.3s ease;
-        fill: var(--dark);
-      }
-    }
   }
 }
 </style>

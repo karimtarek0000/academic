@@ -48,6 +48,12 @@
   &__card-2 {
     box-shadow: 0px 1px 24px #70707012;
   }
+  &__user-options-list {
+    box-shadow: 0px 3px 25px #aeaeae1f;
+  }
+  &__user-options-list-1 {
+    box-shadow: 0px 8px 24px #9c9c9c17;
+  }
 }
 .underline {
   text-decoration: underline !important;
@@ -173,4 +179,16 @@
 }
 .user-select-none {
   user-select: none;
+}
+//
+.user-options {
+  &__item {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--whiteDark);
+    }
+
+    a {
+      color: var(--dark);
+    }
+  }
 }

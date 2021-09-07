@@ -142,6 +142,10 @@ export default {
         path: '/blogs/article/:id',
         component: resolve(__dirname, 'pages/article.vue'),
       })
+      routes.push({
+        path: '/profile/:name',
+        component: resolve(__dirname, 'pages/profile.vue'),
+      })
     },
   },
 
