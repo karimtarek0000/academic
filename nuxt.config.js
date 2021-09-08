@@ -146,6 +146,10 @@ export default {
         path: '/profile/:name',
         component: resolve(__dirname, 'pages/profile.vue'),
       })
+      routes.push({
+        path: '/bank-accounts/:id',
+        component: resolve(__dirname, 'pages/bank-accounts.vue'),
+      })
     },
   },
 

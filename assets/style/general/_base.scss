@@ -17,18 +17,6 @@ html {
     font-size: 56.25%;
   }
 
-  // // FONT SIZE MD
-  // @include BreakPoint(md) {
-  //   // MEDIUM SCREEN => 8px / 16px = 50% => 768px
-  //   font-size: 50%;
-  // }
-
-  // // FONT SIZE SM
-  // @include BreakPoint(sm) {
-  //   // SMALL SCREEN => 7px / 16px = 46.875%
-  //   font-size: 46.875%;
-  // }
-
   // Change color scroll bar
   @include scrollBar($widthTrack, $colorTrack, $colorThumb, html);
 }

@@ -192,3 +192,14 @@
     }
   }
 }
+
+.custom-upload-file-1 {
+  //
+  .upload-file {
+    @include position('lb', $moveB: 0, $moveL: '-15px');
+  }
+}
+
+.fit-content {
+  width: fit-content;
+}

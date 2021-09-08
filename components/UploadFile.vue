@@ -3,7 +3,7 @@
   <div class="upload-file" role="upload-file">
     <!--  -->
     <label
-      for="uploadFile"
+      :for="id"
       class="
         d-flex
         flex-column
@@ -18,7 +18,7 @@
     </label>
     <!--  -->
     <input
-      id="uploadFile"
+      :id="id"
       :accept="accept"
       class="d-none"
       type="file"
@@ -34,6 +34,10 @@ export default {
     accept: {
       type: String,
       default: '*',
+    },
+    id: {
+      type: String,
+      default: 'image',
     },
   },
   methods: {

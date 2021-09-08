@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Navbar -->
-    <Navbar v-if="$mq === 'desktop'" class="d-none d-lg-block" />
+    <Navbar v-if="ifDesktop" class="d-none d-lg-block" />
     <!-- Navbar mobile -->
     <NavbarMobile v-else class="d-block d-lg-none" />
     <!-- Pages -->
@@ -12,7 +12,7 @@
       <Footer />
     </div>
     <!--  -->
-    <template v-if="$mq === 'tablet'">
+    <template v-if="ifTablet">
       <SideBarMenu />
       <!--  -->
       <SideBarUser />
@@ -21,7 +21,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    ifDesktop() {
+      return this.$mq === 'desktop'
+    },
+    ifTablet() {
+      return this.$mq === 'tablet'
+    },
+  },
+}
 </script>
 
 <style></style>

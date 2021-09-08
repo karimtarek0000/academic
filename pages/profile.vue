@@ -1,7 +1,11 @@
 <template>
   <main
     role="profile"
-    class="profile custom-input--object-3 custom-input--object-4"
+    class="
+      profile
+      custom-input--object-3 custom-input--object-4
+      custom-upload-file-1
+    "
   >
     <header class="text-center padding-y-45 margin-bottom-50">
       <h1 class="text-30 text-dark margin-bottom-10">الملف الشخصي</h1>
@@ -48,6 +52,7 @@
                 style="height: 14.7rem"
               >
                 <img
+                  ref="userImage"
                   class="resize-img"
                   src="~/assets/images/global/avatar-placeholder.jpg"
                   alt=""
@@ -57,6 +62,7 @@
                 accept="image/*"
                 style="width: 5.1rem; height: 4.7rem"
                 class="bg-Voodoo upload-file position-absolute radius-18"
+                @uploadFile="form.image = $event"
               >
                 <GSvg
                   class="svg-22"
@@ -69,7 +75,7 @@
             <div class="col margin-top-40">
               <form>
                 <div class="row">
-                  <div class="col">
+                  <div class="col-12 col-sm-6">
                     <div
                       class="
                         d-flex
@@ -110,7 +116,7 @@
                       مطلوب ادخاله
                     </p>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-sm-6">
                     <div
                       class="
                         d-flex
@@ -219,13 +225,6 @@
                     name-icon="smartphone"
                   />
                 </div>
-                <p
-                  v-if="!$v.form.phone.required && $v.form.phone.$dirty"
-                  role="error"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  مطلوب ادخاله
-                </p>
                 <p
                   v-if="!$v.form.phone.numeric && $v.form.phone.$dirty"
                   role="error"
@@ -443,7 +442,7 @@
                   "
                 >
                   <input
-                    v-model.trim="$v.form.newPassword.$model"
+                    v-model.trim.lazy="$v.form.newPassword.$model"
                     role="old-password"
                     type="password"
                     class="
@@ -464,15 +463,6 @@
                     name-icon="key-2-line"
                   />
                 </div>
-                <p
-                  v-if="
-                    !$v.form.newPassword.required && $v.form.newPassword.$dirty
-                  "
-                  role="require"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  مطلوب ادخاله
-                </p>
                 <p
                   v-if="
                     !$v.form.newPassword.minLength && $v.form.newPassword.$dirty
@@ -653,13 +643,14 @@
 </template>
 
 <script>
-const {
+import {
   required,
+  requiredIf,
   email,
   minLength,
   numeric,
   url,
-} = require('vuelidate/lib/validators')
+} from 'vuelidate/lib/validators'
 
 export default {
   name: 'Profile',
@@ -670,6 +661,7 @@ export default {
   data() {
     return {
       form: {
+        image: null,
         firstName: null,
         lastName: null,
         email: null,
@@ -689,7 +681,7 @@ export default {
       userOptionsitems: [
         {
           title: 'دوراتي',
-          path: 'index',
+          path: 'my-courses',
           icon: 'book-3-fill',
         },
         {
@@ -704,7 +696,7 @@ export default {
         },
         {
           title: 'انضم الينا كمدرب',
-          path: 'index',
+          path: 'join-us-instructor',
           icon: 'team-fill-1',
         },
         {
@@ -728,15 +720,15 @@ export default {
         email,
       },
       phone: {
-        required,
         numeric,
       },
       oldPassword: {
-        required,
+        required: requiredIf(function () {
+          return this.form.newPassword !== null && this.form.newPassword !== ''
+        }),
       },
       newPassword: {
         minLength: minLength(10),
-        required,
       },
       facebook: {
         url,
@@ -752,8 +744,17 @@ export default {
       },
     },
   },
+  watch: {
+    'form.image'(image) {
+      this.$nextTick(
+        () => (this.$refs.userImage.src = URL.createObjectURL(image))
+      )
+    },
+  },
   methods: {
-    submit() {},
+    submit() {
+      this.$v.$touch()
+    },
   },
   head: {
     title: 'الملف الشخصي',
@@ -789,10 +790,6 @@ export default {
         }
       }
     }
-  }
-  //
-  .upload-file {
-    @include position('lb', $moveB: 0, $moveL: '-15px');
   }
 }
 </style>

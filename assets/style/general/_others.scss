@@ -2,7 +2,7 @@
 //// Change style scrollbar
 @mixin scrollBar($width, $cTrack, $cThumb, $type: false) {
   //
-  @if $type == "html" {
+  @if $type == 'html' {
     scrollbar-color: $cThumb $cTrack;
   }
 
