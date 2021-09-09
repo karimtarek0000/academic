@@ -12,7 +12,6 @@
         bg-light
         padding-top-30
       "
-      @click.stop=""
     >
       <UserInfo
         class="flex-column align-items-center"
@@ -22,7 +21,7 @@
         email="ibtdi.com@gmail.com"
       />
       <!-- Render category -->
-      <UserOptionsList class="padding-x-10" />
+      <UserOptionsList :add-items="userOptionsitems" class="padding-x-10" />
     </aside>
   </transition>
 </template>
@@ -30,6 +29,37 @@
 <script>
 export default {
   name: 'SideBarUser',
+  data() {
+    return {
+      userOptionsitems: [
+        {
+          title: 'دوراتي',
+          path: 'my-courses',
+          icon: 'book-3-fill',
+        },
+        {
+          title: 'المفضلة',
+          path: 'index',
+          icon: 'heart-fill',
+        },
+        {
+          title: 'طلبات الشراء',
+          path: 'index',
+          icon: 'shopping-basket-2-fill',
+        },
+        {
+          title: 'انضم الينا كمدرب',
+          path: 'join-us-instructor',
+          icon: 'team-fill-1',
+        },
+        {
+          title: 'الحساب البنكي',
+          path: 'index',
+          icon: 'bank',
+        },
+      ],
+    }
+  },
   computed: {
     toggle() {
       return this.$store.state.statusToggleNavbarUser

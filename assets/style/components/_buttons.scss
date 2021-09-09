@@ -63,4 +63,16 @@
       }
     }
   }
+  //
+  &-light {
+    background-color: var(--light);
+
+    //
+    @include DetectHover {
+      &:hover {
+        background-color: darken($light, 5%);
+        color: var(--coral);
+      }
+    }
+  }
 }

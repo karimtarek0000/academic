@@ -1,5 +1,5 @@
 <template>
-  <section role="new-courses" class="margin-top-90">
+  <section role="new-courses" class="new-courese margin-top-90">
     <!--  -->
     <Heading h5="تعلم أولا" h2="الكورسات المضافة حديثا" />
     <!--  -->
@@ -93,20 +93,22 @@ export default {
 </script>
 
 <style lang="scss">
-.navbar-selected {
-  //
-  &__active {
-    font-weight: 400;
-    background-color: var(--coral);
-    color: var(--light);
-  }
+.new-courese {
+  .navbar-selected {
+    //
+    &__active {
+      font-weight: 400;
+      background-color: var(--coral);
+      color: var(--light);
+    }
 
-  //
-  &__item {
-    @include DetectHover {
-      &:hover {
-        background-color: var(--coral);
-        color: var(--light);
+    //
+    &__item {
+      @include DetectHover {
+        &:hover {
+          background-color: var(--coral);
+          color: var(--light);
+        }
       }
     }
   }

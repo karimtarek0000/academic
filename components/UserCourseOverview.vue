@@ -17,11 +17,20 @@
           <div class="col-12 col-md-6 md-padding-end-0 padding-end-20">
             <div>
               <!--  -->
-              <h6 class="row g-0 align-items-center margin-bottom-10">
+              <h6 class="row margin-bottom-10">
                 <span class="col text-16 text-dark">آخر الاسئلة</span>
-                <span class="col cursor-pointer text-start text-12 text-coral"
-                  >عرض الكل</span
+                <BtnPrimary
+                  class="
+                    col-2
+                    fit-content
+                    btn-light
+                    cursor-pointer
+                    text-start text-12 text-coral
+                  "
+                  @clicked="goToComp('UserQuestionAndAnswer')"
                 >
+                  عرض الكل
+                </BtnPrimary>
               </h6>
               <!--  -->
               <div class="row g-0 flex-column">
@@ -70,10 +79,19 @@
             <div style="min-height: 10.6rem">
               <!--  -->
               <h6 class="row g-0 align-items-center margin-bottom-10">
-                <span class="col text-16 text-dark">آخر الاسئلة</span>
-                <span class="col cursor-pointer text-start text-12 text-coral"
-                  >عرض الكل</span
+                <span class="col text-16 text-dark">آخر الاعلانات</span>
+                <BtnPrimary
+                  class="
+                    col-2
+                    fit-content
+                    btn-light
+                    cursor-pointer
+                    text-start text-12 text-coral
+                  "
+                  @clicked="goToComp('Ads')"
                 >
+                  عرض الكل
+                </BtnPrimary>
               </h6>
               <!--  -->
               <div class="row g-0 flex-column">
@@ -241,12 +259,7 @@
         </h2>
         <div
           slot="social"
-          class="
-            col-5 col-md-7 col-lg-8
-            d-flex
-            justify-content-between
-            margin-top-10
-          "
+          class="col-5 col-sm-8 d-flex justify-content-between margin-top-10"
         >
           <a
             role="instagram"
@@ -334,6 +347,11 @@
 <script>
 export default {
   name: 'UserCourseOverview',
+  methods: {
+    goToComp(nameComp) {
+      this.$emit('goToComponent', nameComp)
+    },
+  },
 }
 </script>
 

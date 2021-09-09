@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main role="home" class="home">
     <!--  -->
     <Header />
     <!--  -->
@@ -114,4 +114,19 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.home {
+  .navbar-selected {
+    &__item,
+    &__active {
+      width: calc((106.5rem - 12rem) / 6);
+    }
+
+    &__item {
+      &:not(:last-of-type) {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+</style>

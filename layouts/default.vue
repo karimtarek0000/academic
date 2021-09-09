@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default">
     <!-- Navbar -->
     <Navbar v-if="ifDesktop" class="d-none d-lg-block" />
     <!-- Navbar mobile -->
@@ -14,7 +14,6 @@
     <!--  -->
     <template v-if="ifTablet">
       <SideBarMenu />
-      <!--  -->
       <SideBarUser />
     </template>
   </div>
@@ -33,4 +32,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.default {
+  //
+  .user-options {
+    &__item {
+      a {
+        padding: 1.8rem 2.5rem 1.8rem 0;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+</style>

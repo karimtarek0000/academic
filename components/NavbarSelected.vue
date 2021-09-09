@@ -6,15 +6,10 @@
       d-flex
       align-items-center
       justify-content-center
+      padding-0
       navbar-selected__wrapper
-      overflow-hidden
+      custom-container
     "
-    @mousedown="mouseDown"
-    @touchstart="touchStart"
-    @mousemove="mouseMove"
-    @touchmove="touchMove"
-    @mouseleave="mouseLeave"
-    @mouseup="mouseUp"
   >
     <!--  -->
     <ul
@@ -23,6 +18,7 @@
         navbar-selected__items
         position-relative
         margin-0
+        width-100
         d-flex
         align-items-center
         list-unstyled
@@ -36,57 +32,6 @@
 <script>
 export default {
   name: 'NavbarSelected',
-  data() {
-    return {
-      status: false,
-      startDownX: null,
-      scrollLeft: null,
-    }
-  },
-  methods: {
-    mouseDown(e) {
-      // 1
-      this.status = true
-      // 2
-      this.startDownX = e.pageX - this.$refs.navbarSelected.offsetLeft
-      // 3
-      this.scrollLeft = this.$refs.navbarSelected.scrollLeft
-    },
-    mouseMove(e) {
-      // 1
-      if (!this.status) return
-      // 2
-      const startMoveX = e.pageX - this.$refs.navbarSelected.offsetLeft
-      const div = startMoveX - this.startDownX
-      this.$refs.navbarSelected.scrollLeft = this.scrollLeft - div
-    },
-    mouseLeave() {
-      // 1
-      this.status = false
-    },
-    mouseUp() {
-      // 1
-      this.status = false
-    },
-    touchStart(e) {
-      // 1
-      this.status = true
-      // 2
-      this.startDownX =
-        e.touches[0].pageX - this.$refs.navbarSelected.offsetLeft
-      // 3
-      this.scrollLeft = this.$refs.navbarSelected.scrollLeft
-    },
-    touchMove(e) {
-      // 1
-      if (!this.status) return
-      // 2
-      const startMoveX =
-        e.touches[0].pageX - this.$refs.navbarSelected.offsetLeft
-      const div = startMoveX - this.startDownX
-      this.$refs.navbarSelected.scrollLeft = this.scrollLeft - div
-    },
-  },
 }
 </script>
 
@@ -95,12 +40,16 @@ export default {
 .navbar-selected {
   //
   &__wrapper {
-    max-width: 99%;
     margin-left: auto;
     margin-right: auto;
-    //
-    @media only screen and (max-width: 992px) {
-      max-width: 78vw;
+    overflow-x: auto;
+
+    @include scrollBar(5px, $light, $whiteDark) {
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 5px;
     }
   }
   //
@@ -125,7 +74,7 @@ export default {
     }
 
     &:not(:last-of-type) {
-      margin-left: 2rem;
+      // margin-left: 2rem;
     }
   }
 }

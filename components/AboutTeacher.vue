@@ -5,10 +5,18 @@
         المدرب
       </h2>
     </slot>
-    <div class="row max-width-831 g-0">
-      <div class="col-sm-12 d-flex flex-column align-items-center col-md-4">
+    <div class="row max-width-831">
+      <div class="col-12 d-flex flex-column align-items-center col-sm-4">
         <!--  -->
-        <figure class="margin-0 about-teacher__image overflow-hidden radius-21">
+        <figure
+          class="
+            margin-0
+            width-100
+            about-teacher__image
+            overflow-hidden
+            radius-21
+          "
+        >
           <img
             class="resize-img"
             src="~/assets/images/global/test.png"
@@ -17,7 +25,7 @@
         </figure>
         <slot name="social" />
       </div>
-      <div class="col-sm-12 col-md-8">
+      <div class="col-12 col-sm-8">
         <p role="name" class="text-18">أحمد حمدان</p>
         <p
           role="job"
@@ -48,8 +56,8 @@ export default {
 <style lang="scss">
 .about-teacher {
   &__image {
-    width: 25.3rem;
-    height: 22.5rem;
+    // width: 25.3rem;
+    // height: 22.5rem;
   }
 }
 </style>

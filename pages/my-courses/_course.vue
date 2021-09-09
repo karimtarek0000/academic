@@ -84,23 +84,24 @@
         <li
           v-for="(item, index) in itemsNavbarSelected"
           :key="item.name"
-          style="width: 16.7rem; height: 6.5rem"
+          :ref="item.compName"
+          style="height: 6.5rem"
           :class="[
-            'navbar-selected__item overflow-hidden user-select-none cursor-pointer d-flex align-items-center justify-content-center text-16 flex-shrink-0',
+            'd-flex navbar-selected__item overflow-hidden user-select-none cursor-pointer align-items-center justify-content-center text-16 flex-shrink-0',
             {
-              'weight-br-400 text-coral': item.name === selected.name,
+              'weight-br-400 text-coral': item.compName === compName,
             },
             {
-              'weight-br-300': item.name !== selected.name,
+              'weight-br-300': item.compName !== compName,
             },
           ]"
-          @click="moveActive($event, item, index + 1)"
+          @click="moveActive($event, item.compName, index + 1)"
           v-text="item.name"
         />
         <span
           ref="navbar__active"
           class="navbar-selected__active radius-18 bg-chardon position-absolute"
-          style="width: 16.7rem; height: 6.5rem"
+          style="height: 6.5rem"
         />
       </template>
     </NavbarSelected>
@@ -108,23 +109,23 @@
     <article class="custom-container">
       <transition :name="dirctionAnimate" mode="out-in">
         <component
-          :is="selected.compName"
+          :is="compName"
           @addAnswer="addAnswer = $event"
           @addReport="addReport = $event"
           @newQuestion="addNewQuestion = $event"
           @openCreateTask="addTask = $event"
           @openCreateMeeting="addMeeting = $event"
+          @goToComponent="goToComponent"
         >
           <UserCourseOverview />
           <UserCourseContent />
           <UserQuestionAndAnswer />
-          <Test />
+          <Exam />
           <Ads />
           <UserTask />
           <UserMeeting />
         </component>
       </transition>
-      <!--  -->
     </article>
     <!-- Video -->
     <BackDrop
@@ -142,46 +143,20 @@
         </vue-plyr>
       </div>
     </BackDrop>
-    <!--  -->
+    <!-- Model's -->
     <BackDrop
       :toggle="statusToggleBackDrop || addTask"
       @toggleBackDrop="closeBackDrop"
     >
-      <template v-if="addAnswer">
-        <div
-          role="add-answer"
-          style="min-height: 35.3rem"
-          class="
-            bg-light
-            radius-21
-            md-padding-x-20
-            padding-x-45 padding-y-10
-            slide-up-enter-active
-            set-width
-          "
-          @click.stop
-        >
-          <div class="row g-0 position-relative border-botton-whiteDark">
-            <div
-              style="width: 3rem; height: 3rem"
-              class="
-                course-user__close
-                position-absolute
-                bg-light
-                radius-9
-                cursor-pointer
-                d-flex
-                align-items-center
-                justify-content-center
-              "
-              @click="addAnswer = false"
-            >
-              <GSvg class="svg-17" name-icon="close" title="اقفل" />
-            </div>
-            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-              إضافة اجابة
-            </h3>
-          </div>
+      <AppModel @clicked="closeBackDrop">
+        <template v-if="addAnswer">
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
+          >
+            الاجابة
+          </h3>
           <!--  -->
           <div class="row g-0 text-center padding-y-20">
             <p role="title" class="text-16 text-dark margin-bottom-5">السؤال</p>
@@ -208,60 +183,22 @@
                 btn btn-Voodoo
                 text-light text-12
                 radius-14
-                margin-top-15
+                margin-top-15 margin-bottom-10
                 mx-auto
               "
             >
               ارسال
             </button>
           </div>
-        </div>
-      </template>
-      <!--  -->
-      <template v-if="addReport">
-        <div
-          role="add-report"
-          style="min-height: 35.3rem"
-          class="
-            bg-light
-            radius-21
-            md-padding-x-20
-            padding-x-45 padding-y-20
-            slide-up-enter-active
-            set-width
-          "
-          @click.stop
-        >
-          <div
-            class="
-              row
-              g-0
-              position-relative
-              border-botton-whiteDark
-              margin-bottom-40
-            "
+        </template>
+        <template v-if="addReport">
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
           >
-            <div
-              style="width: 3rem; height: 3rem"
-              class="
-                course-user__close
-                position-absolute
-                bg-light
-                radius-9
-                cursor-pointer
-                d-flex
-                align-items-center
-                justify-content-center
-              "
-              @click="addReport = false"
-            >
-              <GSvg class="svg-17" name-icon="close" title="اقفل" />
-            </div>
-            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-              ابلاغ
-            </h3>
-          </div>
-          <!--  -->
+            ابلاغ
+          </h3>
           <div class="row g-0">
             <form>
               <div>
@@ -308,60 +245,22 @@
                 btn btn-Voodoo
                 text-light text-12
                 radius-14
-                margin-top-15
+                margin-top-15 margin-bottom-10
                 mx-auto
               "
             >
               ارسال
             </button>
           </div>
-        </div>
-      </template>
-      <!--  -->
-      <template v-if="addNewQuestion">
-        <div
-          role="add-report"
-          style="min-height: 35.3rem"
-          class="
-            bg-light
-            radius-21
-            md-padding-x-20
-            padding-x-45 padding-y-20
-            slide-up-enter-active
-            set-width
-          "
-          @click.stop
-        >
-          <div
-            class="
-              row
-              g-0
-              position-relative
-              border-botton-whiteDark
-              margin-bottom-40
-            "
+        </template>
+        <template v-if="addNewQuestion">
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
           >
-            <div
-              style="width: 3rem; height: 3rem"
-              class="
-                course-user__close
-                position-absolute
-                bg-light
-                radius-9
-                cursor-pointer
-                d-flex
-                align-items-center
-                justify-content-center
-              "
-              @click="addNewQuestion = false"
-            >
-              <GSvg class="svg-17" name-icon="close" title="اقفل" />
-            </div>
-            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-              سؤال جديد
-            </h3>
-          </div>
-          <!--  -->
+            سؤال جديد
+          </h3>
           <div class="row g-0">
             <form>
               <textarea
@@ -380,60 +279,22 @@
                 btn btn-Voodoo
                 text-light text-12
                 radius-14
-                margin-top-15
+                margin-top-15 margin-bottom-10
                 mx-auto
               "
             >
               ارسال
             </button>
           </div>
-        </div>
-      </template>
-      <!--  -->
-      <template v-if="addTask">
-        <div
-          role="add-report"
-          style="min-height: 35.3rem"
-          class="
-            bg-light
-            radius-21
-            md-padding-x-20
-            padding-x-45 padding-y-20
-            slide-up-enter-active
-            set-width
-          "
-          @click.stop
-        >
-          <div
-            class="
-              row
-              g-0
-              position-relative
-              border-botton-whiteDark
-              margin-bottom-40
-            "
+        </template>
+        <template v-if="addTask">
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
           >
-            <div
-              style="width: 3rem; height: 3rem"
-              class="
-                course-user__close
-                position-absolute
-                bg-light
-                radius-9
-                cursor-pointer
-                d-flex
-                align-items-center
-                justify-content-center
-              "
-              @click="addTask = false"
-            >
-              <GSvg class="svg-17" name-icon="close" title="اقفل" />
-            </div>
-            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-              ارسال مهمة
-            </h3>
-          </div>
-          <!--  -->
+            ارسال مهمة
+          </h3>
           <div class="row g-0">
             <form>
               <!--  -->
@@ -462,7 +323,7 @@
               </div>
               <!--  -->
               <UploadFile
-                class="text-coral"
+                class="text-coral fit-content mx-auto"
                 @uploadFile="task.selectFile = $event"
               >
                 <template>
@@ -489,63 +350,25 @@
                 btn btn-Voodoo
                 text-light text-12
                 radius-14
-                margin-top-15
+                margin-top-15 margin-bottom-10
                 mx-auto
               "
             >
               ارسال
             </button>
           </div>
-        </div>
-      </template>
-      <!--  -->
-      <template v-if="addMeeting">
-        <div
-          role="add-meeting"
-          style="min-height: 35.3rem"
-          class="
-            bg-light
-            radius-21
-            md-padding-x-20
-            padding-x-45 padding-y-20
-            slide-up-enter-active
-            set-width
-          "
-          @click.stop
-        >
-          <div
-            class="
-              row
-              g-0
-              position-relative
-              border-botton-whiteDark
-              margin-bottom-40
-            "
+        </template>
+        <template v-if="addMeeting">
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
           >
-            <div
-              style="width: 3rem; height: 3rem"
-              class="
-                course-user__close
-                position-absolute
-                bg-light
-                radius-9
-                cursor-pointer
-                d-flex
-                align-items-center
-                justify-content-center
-              "
-              @click="addMeeting = false"
-            >
-              <GSvg class="svg-17" name-icon="close" title="اقفل" />
-            </div>
-            <h3 role="head" class="text-16 text-center padding-y-15 text-dark">
-              تحديد موعد
-            </h3>
-          </div>
-          <!--  -->
+            تحديد موعد
+          </h3>
           <div class="row g-0">
             <form>
-              <div class="row g-0 margin-bottom-10">
+              <div class="row margin-bottom-10">
                 <div class="col-12 col-md-6 md-margin-bottom-10">
                   <input
                     ref="firstInput"
@@ -578,7 +401,7 @@
                 </div>
               </div>
               <!--  -->
-              <div class="row g-0 margin-bottom-10">
+              <div class="row margin-bottom-10">
                 <div class="col-12 col-md-6 md-margin-bottom-10">
                   <input
                     v-model="meeting.subject"
@@ -646,15 +469,15 @@
                 btn btn-Voodoo
                 text-light text-12
                 radius-14
-                margin-top-15
+                margin-top-15 margin-bottom-10
                 mx-auto
               "
             >
               ارسال
             </button>
           </div>
-        </div>
-      </template>
+        </template>
+      </AppModel>
     </BackDrop>
   </main>
 </template>
@@ -728,7 +551,7 @@ export default {
         },
         {
           name: 'اختبار',
-          compName: 'Test',
+          compName: 'Exam',
         },
         {
           name: 'اعلانات',
@@ -760,10 +583,7 @@ export default {
       addNewQuestion: false,
       addTask: false,
       addMeeting: false,
-      selected: {
-        name: 'نظرة عامة',
-        compName: 'UserCourseOverview',
-      },
+      compName: 'UserCourseOverview',
       options: {
         ratio: '16:9',
       },
@@ -802,7 +622,7 @@ export default {
   },
   watch: {
     statusToggleBackDrop(value) {
-      if (value) this.$nextTick(() => this.$refs.firstInput.focus())
+      if (value) setTimeout(() => this.$refs.firstInput.focus(), 100)
     },
   },
   mounted() {
@@ -814,11 +634,14 @@ export default {
     ).style.left = `${offsetLeftFirstElement}px`
   },
   methods: {
-    moveActive(e, item, index) {
+    moveActive(e, compName, index) {
       const { offsetLeft } = e.target
-      this.selected = item
+      this.compName = compName
       this.numComp = index
       this.$refs.navbar__active.style.left = `${offsetLeft}px`
+    },
+    goToComponent(nameComp) {
+      this.$refs[nameComp][0].click()
     },
     closeBackDrop() {
       this.addAnswer = false
@@ -852,7 +675,9 @@ export default {
   .navbar-selected {
     //
     &__wrapper {
-      border: 1px solid var(--gallery);
+      @media only screen and (min-width: 768px) {
+        border: 1px solid var(--gallery);
+      }
       border-radius: 1.8rem !important;
     }
     //
@@ -864,31 +689,25 @@ export default {
         }
       }
     }
+    &__item,
+    &__active {
+      width: calc(106.5rem / 6.875);
+    }
     //
     &__active {
       top: 0;
-      z-index: -1;
       transition: left 0.4s cubic-bezier(0.66, 0.36, 0.58, 0.57);
       will-change: left;
+      z-index: -1;
     }
   }
+  //
   .progress {
     span {
       background-color: var(--coral);
     }
   }
-  //
-  &__close {
-    top: 15px;
-    right: 10px;
-    transition: background-color 0.3s ease;
-    //
-    @include DetectHover {
-      &:hover {
-        background-color: var(--whiteDark);
-      }
-    }
-  }
+
   .icon-calendar {
     @include position('rt', $moveR: 2rem, $moveT: '50%');
     pointer-events: none;
@@ -909,13 +728,6 @@ export default {
         font-weight: 300;
         font-size: 1.2rem;
       }
-    }
-  }
-  .set-width {
-    width: 65.9rem;
-    //
-    @media only screen and (max-width: 768px) {
-      width: 100%;
     }
   }
   //////////////////////////////////////////

@@ -275,7 +275,7 @@
 </template>
 
 <script>
-const { required, email, numeric } = require('vuelidate/lib/validators')
+import { required, email, numeric } from 'vuelidate/lib/validators'
 export default {
   name: 'ContactUs',
   data() {
