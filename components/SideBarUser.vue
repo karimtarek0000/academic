@@ -2,13 +2,13 @@
   <transition name="slide-right">
     <aside
       v-show="toggle"
+      style="width: 22rem"
       role="navbar-user-options"
       class="
         navbar-user
         global-style-sidebar
         bg-black
         position-fixed
-        width-220
         bg-light
         padding-top-30
       "

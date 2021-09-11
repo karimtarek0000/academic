@@ -77,8 +77,8 @@
   &-coral-1 {
     border: 1px solid var(--coral);
   }
-  &-botton-Voodoo {
-    border-bottom: 1px solid var(--Voodoo);
+  &-botton-voodoo {
+    border-bottom: 1px solid var(--voodoo);
   }
   &-top-whiteDark {
     border-top: 2px solid var(--whiteDark);
@@ -121,10 +121,10 @@
       }
     }
 
-    &__Voodoo {
+    &__voodoo {
       //
       &:hover::after {
-        background-color: var(--Voodoo);
+        background-color: var(--voodoo);
       }
     }
   }

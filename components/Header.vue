@@ -55,14 +55,8 @@
         </p>
         <!--  -->
         <BtnGo
-          class="
-            btn-Voodoo
-            translate-up-btn
-            height-60
-            width-195
-            margin-y-38
-            text-16 text-light
-          "
+          style="width: 19.5rem; height: 6rem"
+          class="btn-voodoo translate-up-btn margin-y-38 text-16 text-light"
           to="sign-up"
         >
           ابدأ التعلم

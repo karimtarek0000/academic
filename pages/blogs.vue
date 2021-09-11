@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="blog">
     <!--  -->
     <header class="text-center padding-y-45">
       <h1 class="text-30 text-dark margin-bottom-10">المدونة</h1>
@@ -93,3 +93,5 @@ export default {
   },
 }
 </script>
+
+<style></style>

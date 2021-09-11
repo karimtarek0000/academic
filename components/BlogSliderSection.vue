@@ -1,5 +1,5 @@
 <template>
-  <section role="blogs" class="space-between-slides">
+  <section role="blogs" class="blog-slider space-between-slides">
     <Slider :add-settings="sliderSettings">
       <BlogCard
         v-for="s in 6"
@@ -8,7 +8,13 @@
         class="shadow__card-2 margin-y-20"
       >
         <figure
-          class="col col-md-4 overflow-hidden margin-0 padding-0"
+          class="
+            col-12 col-sm-4
+            blog-slider__image
+            overflow-hidden
+            margin-0
+            padding-0
+          "
           style="max-height: 20rem"
         >
           <img
@@ -37,16 +43,9 @@ export default {
         variableWidth: false,
         responsive: [
           {
-            breakpoint: 650,
-            settings: {
-              slidesToShow: 1,
-              centerPadding: '0px',
-            },
-          },
-          {
             breakpoint: 767,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 1,
               centerPadding: '0px',
             },
           },
@@ -81,4 +80,18 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.blog-slider {
+  .blog {
+    .blog-card__body {
+      @media only screen and (max-width: 768px) {
+        width: 100% !important;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 0 21px 21px 0;
+  }
+}
+</style>

@@ -68,13 +68,9 @@
                   name-icon="user"
                 />
               </div>
-              <p
+              <AppMessageInputRequired
                 v-if="!$v.form.name.required && $v.form.name.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
+              />
               <div
                 class="
                   d-flex
@@ -105,20 +101,13 @@
                   name-icon="mail-2"
                 />
               </div>
-              <p
+              <AppMessageInputRequired
                 v-if="!$v.form.email.required && $v.form.email.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
-              <p
+              />
+              <AppMessageInputError
                 v-if="!$v.form.email.email && $v.form.email.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                ادخل الايميل بشكل صحيح
-              </p>
+                type-error="email"
+              />
               <div
                 class="
                   d-flex
@@ -149,20 +138,13 @@
                   name-icon="smartphone"
                 />
               </div>
-              <p
+              <AppMessageInputRequired
                 v-if="!$v.form.phone.required && $v.form.phone.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
-              <p
+              />
+              <AppMessageInputError
                 v-if="!$v.form.phone.numeric && $v.form.phone.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                يجب ادخال ارقام فقط
-              </p>
+                type-error="num"
+              />
               <textarea
                 v-model.trim="$v.form.message.$model"
                 class="
@@ -175,19 +157,15 @@
                 "
                 placeholder="الرسالة"
               />
-              <p
+              <AppMessageInputRequired
                 v-if="!$v.form.message.required && $v.form.message.$dirty"
-                role="error"
-                class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
+              />
               <BtnPrimary
                 type="submit"
                 style="width: 23.5rem; height: 5.5rem"
                 class="
-                  btn-Voodoo
-                  bg-Voodoo
+                  btn-voodoo
+                  bg-voodoo
                   text-light
                   margin-top-30
                   radius-18

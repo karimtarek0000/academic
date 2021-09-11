@@ -65,9 +65,8 @@
           <!--  -->
           <div
             v-if="!addPrice"
+            style="width: 4.1rem; height: 4.1rem"
             class="
-              width-41
-              height-41
               rounded-circle
               d-flex
               align-items-center
@@ -78,7 +77,7 @@
             "
           >
             <GSvg
-              class="svg-20 fill-Voodoo"
+              class="svg-20 fill-voodoo"
               name-icon="heart-fill"
               title="مفضلة"
             />
@@ -100,14 +99,8 @@
         <!--  -->
         <BtnGo
           v-if="!addPrice"
-          class="
-            btn-Voodoo
-            height-41
-            width-116
-            text-12 text-light
-            m-s-auto
-            margin-top-20
-          "
+          style="width: 11.6rem; height: 4.1rem"
+          class="btn-voodoo text-12 text-light m-s-auto margin-top-20"
           to="sign-up"
         >
           تصفح الكورس

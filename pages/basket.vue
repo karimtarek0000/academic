@@ -50,13 +50,8 @@
                     <div class="col d-flex align-items-center margin-y-10">
                       <!--  -->
                       <figure
-                        class="
-                          width-32
-                          flex-shrink-0
-                          margin-0
-                          height-32
-                          rounded-circle
-                        "
+                        style="width: 3.2rem; height: 3.2rem"
+                        class="flex-shrink-0 margin-0 rounded-circle"
                       >
                         <img
                           class="resize-img"
@@ -151,8 +146,8 @@
                 class="
                   text-light
                   radius-10
-                  btn-Voodoo
-                  bg-Voodoo
+                  btn-voodoo
+                  bg-voodoo
                   text-11
                   padding-y-5
                   position-absolute

@@ -42,7 +42,7 @@
             <UploadFile
               accept="image/*"
               style="width: 5.1rem; height: 4.7rem"
-              class="bg-Voodoo upload-file position-absolute radius-18"
+              class="bg-voodoo upload-file position-absolute radius-18"
               @uploadFile="form.image = $event"
             >
               <GSvg class="svg-22" name-icon="upload-image" title="ارفع صورة" />
@@ -285,7 +285,7 @@
             type="submit"
             style="width: 19.5rem; height: 6rem"
             class="
-              btn-Voodoo
+              btn-voodoo
               text-light
               margin-top-30
               radius-18

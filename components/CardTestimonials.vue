@@ -11,7 +11,10 @@
     "
   >
     <!--  -->
-    <figure class="width-91 height-91 rounded-circle mx-auto">
+    <figure
+      style="width: 9.1rem; height: 9.1rem"
+      class="rounded-circle mx-auto"
+    >
       <img
         class="resize-img"
         src="~/assets/images/home/other/avatar2.png"
@@ -19,7 +22,10 @@
       />
     </figure>
     <!--  -->
-    <div class="width-75 mx-auto d-flex flex-column align-items-center">
+    <div
+      style="width: 75%"
+      class="d-flex flex-column align-items-center mx-auto"
+    >
       <p role="opnion" class="text-13 text-dark weight-br-300">
         موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن
         العربي مع التمتع بمميزات عديدة في أكاديمي

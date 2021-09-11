@@ -13,8 +13,17 @@
     <!--  -->
     <Heading h5="تعلم أولا" h2="اجتماعات زووم" />
     <!--  -->
-    <Slider v-if="s.length" class="padding-y-20" :add-settings="settings">
-      <Card v-for="sd in s" :key="sd" dir="rtl" class="margin-y-20">
+    <Slider
+      v-if="zoomMeetingsData.length !== 0"
+      class="padding-y-20"
+      :add-settings="settings"
+    >
+      <Card
+        v-for="data in zoomMeetingsData"
+        :key="data"
+        dir="rtl"
+        class="margin-y-20"
+      >
         <div slot="part2" class="col d-flex align-items-center">
           <!--  -->
           <div class="margin-end-5 d-flex align-items-center">
@@ -31,12 +40,10 @@
         <div slot="part3" class="col">
           <BtnPrimary
             class="
-              bg-Voodoo
-              text-12
-              width-136
-              height-41
-              text-light
-              btn-Voodoo
+              bg-voodoo
+              set-w-h
+              btn-voodoo
+              text-12 text-light
               mx-auto
               radius-18
             "
@@ -60,12 +67,13 @@ export default {
     BtnPrimary,
   },
   mixins: [sliderSetting],
-  data() {
-    return {
-      s: [1, 2, 3, 4, 5, 6],
-    }
-  },
+  inject: ['zoomMeetingsData'],
 }
 </script>
 
-<style></style>
+<style scoped>
+.set-w-h {
+  width: 13.6rem;
+  height: 4.1rem;
+}
+</style>

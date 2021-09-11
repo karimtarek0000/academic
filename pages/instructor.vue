@@ -26,14 +26,13 @@
               >
                 <a
                   role="instagram"
+                  style="width: 2.9rem; height: 2.9rem"
                   href="#"
                   target="_blank"
                   class="
                     d-flex
                     align-items-center
                     justify-content-center
-                    width-29
-                    height-29
                     bg-instagram
                     rounded-circle
                   "
@@ -46,14 +45,13 @@
                 </a>
                 <a
                   role="facebook"
+                  style="width: 2.9rem; height: 2.9rem"
                   href="#"
                   target="_blank"
                   class="
                     d-flex
                     align-items-center
                     justify-content-center
-                    width-29
-                    height-29
                     bg-facebook
                     rounded-circle
                   "
@@ -66,14 +64,13 @@
                 </a>
                 <a
                   role="twitter"
+                  style="width: 2.9rem; height: 2.9rem"
                   href="#"
                   target="_blank"
                   class="
                     d-flex
                     align-items-center
                     justify-content-center
-                    width-29
-                    height-29
                     bg-twitter
                     rounded-circle
                   "
@@ -86,14 +83,13 @@
                 </a>
                 <a
                   role="google"
+                  style="width: 2.9rem; height: 2.9rem"
                   href="#"
                   target="_blank"
                   class="
                     d-flex
                     align-items-center
                     justify-content-center
-                    width-29
-                    height-29
                     bg-light
                     rounded-circle
                     border-whiteDark

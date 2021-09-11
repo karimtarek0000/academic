@@ -1,12 +1,9 @@
 <template>
-  <p
-    v-if="typeError === 'num'"
-    role="error"
-    class="margin-y-10 text-12 text-dark"
-  >
-    يجب ادخال ارقام فقط
+  <p role="error" class="margin-y-10 text-12 text-dark">
+    <template v-if="typeError === 'num'"> يجب ادخال ارقام فقط </template>
+    <template v-if="typeError === 'email'"> ادخل الايميل بشكل صحيح </template>
+    <template v-else> خطا </template>
   </p>
-  <p v-else role="error" class="margin-y-10 text-12 text-dark">خطا</p>
 </template>
 
 <script>

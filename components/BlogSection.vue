@@ -35,8 +35,9 @@
           </div>
           <!--  -->
           <p
+            style="width: 75%"
             role="description-blog"
-            class="text-12 text-silver weight-br-300 width-75"
+            class="text-12 text-silver weight-br-300"
           >
             موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن
             العربي مع التمتع بمميزات عديدة في أكاديمي

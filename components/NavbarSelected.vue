@@ -18,7 +18,6 @@
         navbar-selected__items
         position-relative
         margin-0
-        width-100
         d-flex
         align-items-center
         list-unstyled
@@ -71,10 +70,6 @@ export default {
       &:hover {
         font-weight: 400;
       }
-    }
-
-    &:not(:last-of-type) {
-      // margin-left: 2rem;
     }
   }
 }

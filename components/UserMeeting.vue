@@ -9,9 +9,9 @@
       role="user-meeting"
       style="width: 17.4rem; height: 5rem"
       class="
-        btn btn-Voodoo
+        btn btn-voodoo
         radius-14
-        bg-Voodoo
+        bg-voodoo
         text-light text-14
         margin-top-30
       "

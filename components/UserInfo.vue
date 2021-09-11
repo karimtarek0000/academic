@@ -2,7 +2,11 @@
   <!--  -->
   <div class="user d-flex">
     <!--  -->
-    <figure class="user__image width-61 height-55 radius-21" v-on="$listeners">
+    <figure
+      style="width: 6.1rem; height: 5.5rem"
+      class="user__image radius-21"
+      v-on="$listeners"
+    >
       <img
         role="image-user"
         class="img-fluid"

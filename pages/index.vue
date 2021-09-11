@@ -14,11 +14,12 @@
             v-for="item in itemsNavbarSelected"
             :key="item"
             :class="[
-              'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark width-155 height-55 radius-18 text-13 flex-shrink-0 weight-br-300',
+              'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark radius-18 text-13 flex-shrink-0 weight-br-300',
               {
                 'navbar-selected__active': item === selected,
               },
             ]"
+            style="height: 5.5rem"
             @click="selected = item"
             v-text="item"
           />
@@ -93,11 +94,30 @@ export default {
       'التسويق',
       'الميديا',
     ]
-    return { itemsSliderSectionAllSections, itemsNavbarSelected }
+    const zoomMeetings = [1, 2, 3, 4, 5, 6]
+    const combinedCourses = [1, 2, 3, 4, 5, 6]
+    const specialCourses = [1, 2, 3, 4, 5, 6]
+    const testmonials = [1, 2, 3, 4, 5, 6]
+    return {
+      itemsSliderSectionAllSections,
+      itemsNavbarSelected,
+      zoomMeetings,
+      combinedCourses,
+      specialCourses,
+      testmonials,
+    }
   },
   data() {
     return {
       selected: 'التصميم',
+    }
+  },
+  provide() {
+    return {
+      zoomMeetingsData: this.zoomMeetings,
+      combinedCoursesData: this.combinedCourses,
+      specialCoursesData: this.specialCourses,
+      testmonialsData: this.testmonials,
     }
   },
   head: {

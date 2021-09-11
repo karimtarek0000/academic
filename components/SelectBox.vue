@@ -31,6 +31,10 @@
 export default {
   name: 'SelectBox',
   props: {
+    value: {
+      type: String,
+      required: true,
+    },
     options: {
       type: Array,
       required: true,
@@ -42,7 +46,7 @@ export default {
   },
   methods: {
     sendNewSelected(e) {
-      this.$emit('newSelected', e.target.value)
+      this.$emit('input', e.target.value)
     },
   },
 }

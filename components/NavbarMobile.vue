@@ -3,7 +3,7 @@
     <!--  -->
     <div class="row padding-y-10">
       <div class="col d-flex justify-content-center">
-        <Logo color="text-Voodoo" class="scale-small" />
+        <Logo color="text-voodoo" class="scale-small" />
       </div>
     </div>
     <!--  -->
@@ -16,7 +16,7 @@
         margin-bottom-5
       "
     >
-      <!-- <Logo class="col flex-grow-0 scale-small" color="text-Voodoo" /> -->
+      <!-- <Logo class="col flex-grow-0 scale-small" color="text-voodoo" /> -->
       <!--  -->
       <div class="col flex-grow-0">
         <div class="d-flex align-items-center">
@@ -43,7 +43,7 @@
     <!--  -->
     <div class="row">
       <div class="col d-flex justify-content-center padding-x-20">
-        <Search class="width-349" />
+        <Search style="width: 34.9rem" />
       </div>
     </div>
   </nav>
@@ -73,7 +73,7 @@ export default {
 <style lang="scss">
 .toggler__toggler__burger {
   span {
-    background-color: var(--Voodoo);
+    background-color: var(--voodoo);
   }
 }
 .scale-small {

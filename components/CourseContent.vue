@@ -164,12 +164,12 @@
                 <p slot="time" class="text-14 mr-auto">03:22</p>
                 <!--  -->
                 <p
+                  style="width: 75%"
                   role="description"
                   class="
                     text-silver text-12
                     padding-bottom-20 padding-start-30
                     md-width-100
-                    width-75
                   "
                 >
                   تقدم هذه الدورة التدريبية شرحاً عن قواعد وفنيات الخط الديواني

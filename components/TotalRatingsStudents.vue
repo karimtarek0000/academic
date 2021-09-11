@@ -6,7 +6,7 @@
           margin-bottom-0
           rating__width-total
           text-29 text-light
-          bg-Voodoo
+          bg-voodoo
           radius-30
           d-flex
           justify-content-center
@@ -55,7 +55,7 @@
           "
         >
           <span
-            class="position-absolute radius-21 bg-Voodoo"
+            class="position-absolute radius-21 bg-voodoo"
             :style="`width: ${i.per}`"
           ></span>
         </div>

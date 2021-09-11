@@ -14,10 +14,14 @@
     <!--  -->
     <Heading h5="عملاء سعيدة" h2="آراء العملاء" />
     <!--  -->
-    <Slider v-if="s.length" class="padding-y-20" :add-settings="settings">
+    <Slider
+      v-if="testmonialsData.length !== 0"
+      class="padding-y-20"
+      :add-settings="settings"
+    >
       <CardTestimonials
-        v-for="sd in s"
-        :key="sd"
+        v-for="data in testmonialsData"
+        :key="data"
         dir="rtl"
         class="margin-y-20"
       />
@@ -35,11 +39,7 @@ export default {
     CardTestimonials,
   },
   mixins: [sliderSetting],
-  data() {
-    return {
-      s: [1, 2, 3, 4, 5, 6],
-    }
-  },
+  inject: ['testmonialsData'],
 }
 </script>
 

@@ -26,7 +26,8 @@
         <div class="col d-flex align-items-center">
           <!--  -->
           <figure
-            class="width-32 flex-shrink-0 margin-0 height-32 rounded-circle"
+            style="width: 3.2rem; height: 3.2rem"
+            class="flex-shrink-0 margin-0 rounded-circle"
           >
             <img
               class="resize-img"

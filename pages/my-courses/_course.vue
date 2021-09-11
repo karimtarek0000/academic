@@ -28,7 +28,7 @@
     </HeaderCousreUser>
     <!--  -->
     <div
-      class="bg-Voodoo radius-30 margin-bottom-50 md-padding-y-20 padding-y-0"
+      class="bg-voodoo radius-30 margin-bottom-50 md-padding-y-20 padding-y-0"
     >
       <div
         class="
@@ -144,10 +144,7 @@
       </div>
     </BackDrop>
     <!-- Model's -->
-    <BackDrop
-      :toggle="statusToggleBackDrop || addTask"
-      @toggleBackDrop="closeBackDrop"
-    >
+    <BackDrop :toggle="statusToggleBackDrop" @toggleBackDrop="closeBackDrop">
       <AppModel @clicked="closeBackDrop">
         <template v-if="addAnswer">
           <h3
@@ -169,26 +166,15 @@
             <form>
               <textarea
                 ref="firstInput"
-                v-model="answer"
+                v-model="$v.answer.$model"
                 style="width: 100%; height: 7.3rem"
                 class="padding-10 radius-12 text-13"
                 placeholder="الاجابة"
               ></textarea>
+              <AppMessageInputRequired
+                v-if="!$v.answer.required && $v.answer.$dirty"
+              />
             </form>
-            <button
-              disabled
-              style="width: 13.6rem; height: 4.2rem"
-              type="submit"
-              class="
-                btn btn-Voodoo
-                text-light text-12
-                radius-14
-                margin-top-15 margin-bottom-10
-                mx-auto
-              "
-            >
-              ارسال
-            </button>
           </div>
         </template>
         <template v-if="addReport">
@@ -204,7 +190,7 @@
               <div>
                 <input
                   ref="firstInput"
-                  v-model="report.subject"
+                  v-model="$v.report.subject.$model"
                   type="text"
                   class="
                     width-100
@@ -216,9 +202,12 @@
                   placeholder="العنوان"
                 />
               </div>
+              <AppMessageInputRequired
+                v-if="!$v.report.subject.required && $v.report.subject.$dirty"
+              />
               <div class="margin-y-10">
                 <input
-                  v-model="report.email"
+                  v-model="$v.report.email.$model"
                   type="email"
                   class="
                     width-100
@@ -230,27 +219,26 @@
                   placeholder="البريد الالكتروني"
                 />
               </div>
+              <AppMessageInputRequired
+                v-if="!$v.report.email.required && $v.report.email.$dirty"
+              />
+              <AppMessageInputError
+                v-if="!$v.report.email.email && $v.report.email.$dirty"
+                type-error="email"
+              />
               <textarea
-                v-model="report.reportMessage"
+                v-model="$v.report.reportMessage.$model"
                 style="width: 100%; height: 7.3rem"
                 class="padding-10 radius-12 text-13"
                 placeholder="التفاصيل"
               ></textarea>
+              <AppMessageInputRequired
+                v-if="
+                  !$v.report.reportMessage.required &&
+                  $v.report.reportMessage.$dirty
+                "
+              />
             </form>
-            <button
-              disabled
-              style="width: 13.6rem; height: 4.2rem"
-              type="submit"
-              class="
-                btn btn-Voodoo
-                text-light text-12
-                radius-14
-                margin-top-15 margin-bottom-10
-                mx-auto
-              "
-            >
-              ارسال
-            </button>
           </div>
         </template>
         <template v-if="addNewQuestion">
@@ -265,26 +253,15 @@
             <form>
               <textarea
                 ref="firstInput"
-                v-model="newQuestion"
+                v-model="$v.newQuestion.$model"
                 style="width: 100%; height: 7.3rem"
                 class="padding-10 radius-12 text-13"
                 placeholder="السؤال"
               ></textarea>
+              <AppMessageInputRequired
+                v-if="!$v.newQuestion.required && $v.newQuestion.$dirty"
+              />
             </form>
-            <button
-              disabled
-              style="width: 13.6rem; height: 4.2rem"
-              type="submit"
-              class="
-                btn btn-Voodoo
-                text-light text-12
-                radius-14
-                margin-top-15 margin-bottom-10
-                mx-auto
-              "
-            >
-              ارسال
-            </button>
           </div>
         </template>
         <template v-if="addTask">
@@ -299,16 +276,19 @@
             <form>
               <!--  -->
               <SelectBox
+                v-model="$v.task.unitName.$model"
                 style="height: 5rem"
                 class="width-100 padding-x-10 radius-12 text-13 border-coral-1"
                 :options="unites"
                 title="اسم الوحدة"
-                @newSelected="task.unitName = $event"
+              />
+              <AppMessageInputRequired
+                v-if="!$v.task.unitName.required && $v.task.unitName.$dirty"
               />
               <!--  -->
               <div>
                 <input
-                  v-model="task.subject"
+                  v-model="$v.task.subject.$model"
                   type="text"
                   class="
                     width-100
@@ -321,10 +301,13 @@
                   placeholder="عنوان الموضوع"
                 />
               </div>
+              <AppMessageInputRequired
+                v-if="!$v.task.subject.required && $v.task.subject.$dirty"
+              />
               <!--  -->
               <UploadFile
+                v-model="$v.task.selectFile.$model"
                 class="text-coral fit-content mx-auto"
-                @uploadFile="task.selectFile = $event"
               >
                 <template>
                   <GSvg class="svg-70" name-icon="upload" title="اختار ملف" />
@@ -341,21 +324,10 @@
                   </p>
                 </template>
               </UploadFile>
+              <AppMessageInputRequired
+                v-if="!$v.task.selectFile.required && $v.task.selectFile.$dirty"
+              />
             </form>
-            <button
-              disabled
-              style="width: 13.6rem; height: 4.2rem"
-              type="submit"
-              class="
-                btn btn-Voodoo
-                text-light text-12
-                radius-14
-                margin-top-15 margin-bottom-10
-                mx-auto
-              "
-            >
-              ارسال
-            </button>
           </div>
         </template>
         <template v-if="addMeeting">
@@ -372,7 +344,7 @@
                 <div class="col-12 col-md-6 md-margin-bottom-10">
                   <input
                     ref="firstInput"
-                    v-model="meeting.emailUser"
+                    v-model="$v.meeting.emailUser.$model"
                     type="text"
                     class="
                       width-100
@@ -383,11 +355,23 @@
                     "
                     placeholder="ادخل ايميلك"
                   />
+                  <AppMessageInputRequired
+                    v-if="
+                      !$v.meeting.emailUser.required &&
+                      $v.meeting.emailUser.$dirty
+                    "
+                  />
+                  <AppMessageInputError
+                    v-if="
+                      !$v.meeting.emailUser.email && $v.meeting.emailUser.$dirty
+                    "
+                    type-error="email"
+                  />
                 </div>
                 <!--  -->
                 <div class="col-12 col-md-6">
                   <input
-                    v-model="meeting.emailInstructor"
+                    v-model="$v.meeting.emailInstructor.$model"
                     type="text"
                     class="
                       width-100
@@ -398,13 +382,26 @@
                     "
                     placeholder="ادخل ايميل المدرب"
                   />
+                  <AppMessageInputRequired
+                    v-if="
+                      !$v.meeting.emailInstructor.required &&
+                      $v.meeting.emailInstructor.$dirty
+                    "
+                  />
+                  <AppMessageInputError
+                    v-if="
+                      !$v.meeting.emailInstructor.email &&
+                      $v.meeting.emailInstructor.$dirty
+                    "
+                    type-error="email"
+                  />
                 </div>
               </div>
               <!--  -->
-              <div class="row margin-bottom-10">
+              <div class="row align-items-start margin-bottom-10">
                 <div class="col-12 col-md-6 md-margin-bottom-10">
                   <input
-                    v-model="meeting.subject"
+                    v-model="$v.meeting.subject.$model"
                     type="text"
                     class="
                       width-100
@@ -414,6 +411,11 @@
                       border-whiteDark-1
                     "
                     placeholder="عنوان الموضوع"
+                  />
+                  <AppMessageInputRequired
+                    v-if="
+                      !$v.meeting.subject.required && $v.meeting.subject.$dirty
+                    "
                   />
                 </div>
                 <!--  -->
@@ -455,34 +457,40 @@
                 </div>
               </div>
               <textarea
-                v-model="meeting.details"
+                v-model="$v.meeting.details.$model"
                 style="width: 100%; height: 7.3rem"
                 class="padding-10 radius-12 text-13"
                 placeholder="التفاصيل"
               ></textarea>
+              <AppMessageInputRequired
+                v-if="!$v.meeting.details.required && $v.meeting.details.$dirty"
+              />
             </form>
-            <button
-              disabled
-              style="width: 13.6rem; height: 4.2rem"
-              type="submit"
-              class="
-                btn btn-Voodoo
-                text-light text-12
-                radius-14
-                margin-top-15 margin-bottom-10
-                mx-auto
-              "
-            >
-              ارسال
-            </button>
           </div>
         </template>
+        <!-- SUBMIT -->
+        <BtnPrimary
+          type="submit"
+          style="width: 13.6rem; height: 4.2rem"
+          class="
+            btn-voodoo
+            text-light text-12
+            radius-14
+            margin-top-15 margin-bottom-10
+            mx-auto
+          "
+          @clicked="submit"
+        >
+          ارسال
+        </BtnPrimary>
       </AppModel>
     </BackDrop>
   </main>
 </template>
 
 <script>
+import { required, email } from 'vuelidate/lib/validators'
+// numeric
 import { setDirectionAnim } from '@/mixins/other'
 import format from 'date-fns/format'
 export default {
@@ -533,6 +541,53 @@ export default {
       progress: '70%',
       wrapperCourseContent: this.wrapperCourseContent,
     }
+  },
+  validations: {
+    report: {
+      subject: {
+        required,
+      },
+      email: {
+        required,
+        email,
+      },
+      reportMessage: {
+        required,
+      },
+    },
+    answer: {
+      required,
+    },
+    newQuestion: {
+      required,
+    },
+    task: {
+      subject: {
+        required,
+      },
+      unitName: {
+        required,
+      },
+      selectFile: {
+        required,
+      },
+    },
+    meeting: {
+      emailUser: {
+        required,
+        email,
+      },
+      emailInstructor: {
+        required,
+        email,
+      },
+      subject: {
+        required,
+      },
+      details: {
+        required,
+      },
+    },
   },
   data() {
     return {
@@ -616,13 +671,17 @@ export default {
         this.addAnswer ||
         this.addReport ||
         this.addNewQuestion ||
-        this.addMeeting
+        this.addMeeting ||
+        this.addTask
       )
     },
   },
   watch: {
     statusToggleBackDrop(value) {
-      if (value) setTimeout(() => this.$refs.firstInput.focus(), 100)
+      this.$nextTick(() => {
+        if (value && this.$refs.firstInput) this.$refs.firstInput.focus()
+        if (!value) this.$v.$reset()
+      })
     },
   },
   mounted() {
@@ -652,6 +711,9 @@ export default {
     },
     formatDates(date) {
       if (date) return format(this.meeting.date, this.dateFormat)
+    },
+    submit() {
+      this.$v.$touch()
     },
   },
   head() {

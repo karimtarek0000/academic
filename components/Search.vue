@@ -1,10 +1,10 @@
 <template>
   <form
+    style="height: 5.5rem"
     class="
       input-search input--object-1
       custom-input custom-input--object-1
       radius-21
-      height-55
       overflow-hidden
       position-relative
     "
@@ -16,7 +16,7 @@
       class="
         padding-start-27
         bg-whiteDark
-        text-13 text-Voodoo
+        text-13 text-voodoo
         width-100
         height-100
         weight-br-300
@@ -44,7 +44,4 @@ export default {
     }
   }
 }
-
-//  width-349
-// height-55
 </style>

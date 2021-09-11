@@ -9,7 +9,6 @@
       class="
         row
         margin-top-20
-        width-148
         align-items-center
         justify-content-center
         slider__actions
@@ -19,7 +18,7 @@
         style="width: 4.8rem; height: 4.8rem"
         class="
           arrow arrow--next
-          shape shape__Voodoo
+          shape shape__voodoo
           position-relative
           rounded-circle
           bg-voodoo-light
@@ -33,7 +32,7 @@
         style="width: 4.8rem; height: 4.8rem"
         class="
           arrow arrow--prev
-          shape shape__Voodoo
+          shape shape__voodoo
           position-relative
           rounded-circle
           bg-voodoo-light
@@ -88,5 +87,9 @@ export default {
     position: relative;
     z-index: 2;
   }
+}
+
+.slider__actions {
+  width: 14.8rem;
 }
 </style>

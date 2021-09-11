@@ -23,7 +23,7 @@
       <BtnPrimary
         :disabled="true"
         style="width: 23.6rem; height: 6rem"
-        class="btn-Voodoo m-x-auto bg-Voodoo text-light radius-21 text-14"
+        class="btn-voodoo m-x-auto bg-voodoo text-light radius-21 text-14"
       >
         تحديد كمكتملة
       </BtnPrimary>

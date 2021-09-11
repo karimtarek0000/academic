@@ -16,7 +16,7 @@
       <BtnPrimary
         style="width: 33.2rem; height: 6.2rem"
         class="
-          btn-Voodoo
+          btn-voodoo
           text-light
           margin-y-50
           radius-18
@@ -32,110 +32,119 @@
     <!--  -->
     <BackDrop :toggle="toggle" @toggleBackDrop="toggle = $event">
       <AppModel head="اضافة حساب بنكي" @clicked="toggle = false">
-        <form class="col-10 mx-auto margin-top-30" @submit.prevent="submit">
-          <input
-            v-model="$v.form.name.$model"
-            role="name"
-            type="text"
-            class="
-              padding-start-15
-              border-whiteDark-1
-              width-100
-              padding-y-10
-              radius-12
-              text-12
-            "
-            placeholder="اسم صاحب الحساب"
-          />
-          <AppMessageInputRequired
-            v-if="!$v.form.name.required && $v.form.name.$dirty"
-            class="margin-bottom-5"
-          />
-          <input
-            v-model="$v.form.bankName.$model"
-            role="bank-name"
-            type="text"
-            class="
-              padding-start-15
-              border-whiteDark-1
-              width-100
-              padding-y-10
-              radius-12
-              text-12
-              margin-top-10
-            "
-            placeholder="اسم البنك"
-          />
-          <AppMessageInputRequired
-            v-if="!$v.form.bankName.required && $v.form.bankName.$dirty"
-            class="margin-bottom-10"
-          />
-          <input
-            v-model="$v.form.accountNumber.$model"
-            role="account-number"
-            type="text"
-            class="
-              padding-start-15
-              border-whiteDark-1
-              width-100
-              padding-y-10
-              radius-12
-              text-12
-              margin-top-10
-            "
-            placeholder="رقم الحساب"
-          />
-          <AppMessageInputRequired
-            v-if="
-              !$v.form.accountNumber.required && $v.form.accountNumber.$dirty
-            "
-            class="margin-bottom-10"
-          />
-          <AppMessageInputError
-            v-if="
-              !$v.form.accountNumber.numeric && $v.form.accountNumber.$dirty
-            "
-            type-error="num"
-          />
-          <input
-            v-model="$v.form.IFSCCode.$model"
-            role="IFSC-code"
-            type="text"
-            class="
-              padding-start-15
-              border-whiteDark-1
-              width-100
-              padding-y-10
-              radius-12
-              text-12
-              margin-top-10
-            "
-            placeholder="IFSC Codes"
-          />
-          <AppMessageInputRequired
-            v-if="!$v.form.IFSCCode.required && $v.form.IFSCCode.$dirty"
-            class="margin-bottom-10"
-          />
-          <AppMessageInputError
-            v-if="!$v.form.IFSCCode.numeric && $v.form.IFSCCode.$dirty"
-            type-error="num"
-          />
-          <BtnPrimary
-            type="submit"
-            style="width: 13.6rem; height: 4.2rem"
-            class="
-              btn-Voodoo
-              bg-Voodoo
-              text-light
-              margin-top-30 margin-bottom-20
-              mx-auto
-              radius-18
-              text-14
-              d-block
-            "
-            >اضافة</BtnPrimary
+        <template>
+          <h3
+            slot="head"
+            role="head"
+            class="text-16 text-center padding-y-15 text-dark"
           >
-        </form>
+            اضافة حساب بنكي
+          </h3>
+          <form class="col-10 mx-auto margin-top-30" @submit.prevent="submit">
+            <input
+              v-model="$v.form.name.$model"
+              role="name"
+              type="text"
+              class="
+                padding-start-15
+                border-whiteDark-1
+                width-100
+                padding-y-10
+                radius-12
+                text-12
+              "
+              placeholder="اسم صاحب الحساب"
+            />
+            <AppMessageInputRequired
+              v-if="!$v.form.name.required && $v.form.name.$dirty"
+              class="margin-bottom-5"
+            />
+            <input
+              v-model="$v.form.bankName.$model"
+              role="bank-name"
+              type="text"
+              class="
+                padding-start-15
+                border-whiteDark-1
+                width-100
+                padding-y-10
+                radius-12
+                text-12
+                margin-top-10
+              "
+              placeholder="اسم البنك"
+            />
+            <AppMessageInputRequired
+              v-if="!$v.form.bankName.required && $v.form.bankName.$dirty"
+              class="margin-bottom-10"
+            />
+            <input
+              v-model="$v.form.accountNumber.$model"
+              role="account-number"
+              type="text"
+              class="
+                padding-start-15
+                border-whiteDark-1
+                width-100
+                padding-y-10
+                radius-12
+                text-12
+                margin-top-10
+              "
+              placeholder="رقم الحساب"
+            />
+            <AppMessageInputRequired
+              v-if="
+                !$v.form.accountNumber.required && $v.form.accountNumber.$dirty
+              "
+              class="margin-bottom-10"
+            />
+            <AppMessageInputError
+              v-if="
+                !$v.form.accountNumber.numeric && $v.form.accountNumber.$dirty
+              "
+              type-error="num"
+            />
+            <input
+              v-model="$v.form.IFSCCode.$model"
+              role="IFSC-code"
+              type="text"
+              class="
+                padding-start-15
+                border-whiteDark-1
+                width-100
+                padding-y-10
+                radius-12
+                text-12
+                margin-top-10
+              "
+              placeholder="IFSC Codes"
+            />
+            <AppMessageInputRequired
+              v-if="!$v.form.IFSCCode.required && $v.form.IFSCCode.$dirty"
+              class="margin-bottom-10"
+            />
+            <AppMessageInputError
+              v-if="!$v.form.IFSCCode.numeric && $v.form.IFSCCode.$dirty"
+              type-error="num"
+            />
+            <BtnPrimary
+              type="submit"
+              style="width: 13.6rem; height: 4.2rem"
+              class="
+                btn-voodoo
+                bg-voodoo
+                text-light
+                margin-top-30 margin-bottom-20
+                mx-auto
+                radius-18
+                text-14
+                d-block
+              "
+              >اضافة</BtnPrimary
+            >
+          </form>
+        </template>
       </AppModel>
     </BackDrop>
   </main>
@@ -196,7 +205,7 @@ export default {
   section {
     position: relative;
     z-index: 4000;
-    @include scrollBar(5px, $alabaster, $Voodoo) {
+    @include scrollBar(5px, $alabaster, $voodoo) {
       border-radius: 20px;
     }
     &::-webkit-scrollbar {

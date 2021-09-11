@@ -2,12 +2,11 @@
   <!--  -->
   <nuxt-link
     :to="{ name: path }"
+    style="width: 6.1rem; height: 5.5rem"
     class="
       d-flex
       justify-content-center
       align-items-center
-      width-61
-      height-55
       radius-21
       bg-whiteDark
       position-relative
@@ -15,9 +14,8 @@
   >
     <span
       v-if="count"
+      style="width: 2.4rem; height: 2.4rem"
       class="
-        width-24
-        height-24
         text-center
         bg-emerald
         rounded-circle
@@ -30,7 +28,7 @@
     <GSvg class="svg-22" :name-icon="icon" :title="iconTitle" />
     <span
       v-if="text"
-      class="d-inline-block text-Voodoo margin-start-5"
+      class="d-inline-block text-voodoo margin-start-5"
       v-text="text"
     />
   </nuxt-link>

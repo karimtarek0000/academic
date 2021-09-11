@@ -5,7 +5,7 @@ $dark: #000000;
 $whiteDark: #f5f5f5;
 $light: #ffff;
 $gray: #7d7b7b;
-$Voodoo: #452b4e;
+$voodoo: #452b4e;
 $voodoo-light: #503758;
 $coral: #ff805d;
 $silver: #9e9e9e;
@@ -36,11 +36,11 @@ $themes: (
   whiteDark: $whiteDark,
   gray: $gray,
   light: $light,
-  Voodoo: $Voodoo,
+  voodoo: $voodoo,
+  voodoo-light: $voodoo-light,
   coral: $coral,
   silver: $silver,
   snuff: $snuff,
-  voodoo-light: $voodoo-light,
   london: $london,
   emerald: $emerald,
   rhino: $rhino,
@@ -112,7 +112,7 @@ $baseFont: 'BR';
 $chooseColorText: (
   'dark',
   'light',
-  'Voodoo',
+  'voodoo',
   'coral',
   'silver',
   'snuff',
@@ -143,65 +143,21 @@ $svg: (
 
 // Choose fill svg
 // Ex => first-color second-color ..etc if null will render all themes
-$chooseFillSvg: ('light', 'Voodoo', 'coral', 'light', 'silver', 'dark');
-
-////////////////////////////
-/// 4) - DISPLAY
-// Choose type display will add classes
-// Ex => flex - grid - block - inline-block - table - box
-$chooseDisplay: ();
-
-// Choose type aligment will add classes
-// Ex => justify-content - align-items - align-self - align-content
-$chooseAligmentFlex: ();
-
-// Choose type aligment will add classes
-// Ex => flex-grow flex-shrink
-$chooseGrowAndShrink: ();
+$chooseFillSvg: ('light', 'voodoo', 'coral', 'light', 'silver', 'dark');
 
 ////////////////////////////
 /// 5) - WIDTH
 // Write all width you need
 $chooseWidth: (
   100: 100%,
-  148: 14.8rem,
-  181: 18.1rem,
-  195: 19.5rem,
   75: 75%,
-  349: 349px,
-  155: 15.5rem,
-  61: 6.1rem,
-  24: 2.4rem,
-  74: 74px,
-  220: 220px,
-  41: 4.1rem,
-  58: 5.8rem,
-  50: 50%,
-  116: 11.6rem,
-  267: 26.7rem,
-  32: 3.2rem,
-  91: 9.1rem,
-  30: 30%,
-  29: 2.9rem,
-  136: 13.6rem,
 );
 
 ////////////////////////////
 /// 6) - HEIGHT
 // Write all height you need
 $chooseHeight: (
-  20: 2rem,
-  24: 2.4rem,
-  29: 2.9rem,
-  33: 3.3rem,
-  41: 4.1rem,
-  55: 5.5rem,
-  60: 6rem,
   100: 100%,
-  109: 109px,
-  115: 11.5rem,
-  32: 3.2rem,
-  91: 9.1rem,
 );
 
 ////////////////////////////

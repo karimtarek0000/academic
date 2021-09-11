@@ -1,6 +1,7 @@
 <template>
   <transition v-if="statusToggler" name="slide-right">
     <aside
+      style="width: 22rem"
       class="
         navbar-menu
         global-style-sidebar
@@ -8,7 +9,6 @@
         bg-whiteDark
         padding-x-10
         vh-100
-        width-220
       "
     >
       <!--  -->
@@ -17,19 +17,15 @@
         class="d-flex flex-column align-items-center margin-y-10"
       >
         <BtnGo
-          class="
-            btn-Voodoo
-            width-148
-            height-55
-            text-14 text-light
-            margin-bottom-5
-          "
+          style="width: 14.8rem; height: 5.5rem"
+          class="btn-voodoo text-14 text-light margin-bottom-5"
           to="sign-up"
         >
           حساب جديد
         </BtnGo>
         <BtnGo
-          class="width-148 height-55 btn-Voodoo-outline text-14 text-Voodoo"
+          style="width: 14.8rem; height: 5.5rem"
+          class="btn-voodoo-outline text-14 text-voodoo"
           to="sign-in"
         >
           تسجيل الدخول
@@ -43,7 +39,7 @@
           d-flex
           align-items-center
           cursor-pointer
-          border-botton-Voodoo
+          border-botton-voodoo
           padding-y-10
           margin-bottom-10
         "
@@ -107,7 +103,7 @@
               d-flex
               align-items-center
               cursor-pointer
-              border-botton-Voodoo
+              border-botton-voodoo
               padding-y-10
               margin-bottom-10
             "

@@ -13,7 +13,7 @@
           <!-- 1) - Logo -->
           <Logo
             class="col-3 col-xl-3 padding-x-0 text-dark resetHoverLink"
-            color="text-Voodoo"
+            color="text-voodoo"
           />
           <!-- 2) - Sections -->
           <Sections class="col-2 col-xl-1" />
@@ -38,19 +38,15 @@
         <!-- If user not login -->
         <template v-if="!userLogIn">
           <BtnGo
-            class="
-              btn-Voodoo
-              width-148
-              height-55
-              margin-end-20
-              text-14 text-light
-            "
+            style="width: 14.8rem; height: 5.5rem"
+            class="btn-voodoo margin-end-20 text-14 text-light"
             to="sign-up"
           >
             حساب جديد
           </BtnGo>
           <BtnGo
-            class="width-148 height-55 btn-Voodoo-outline text-14 text-Voodoo"
+            style="width: 14.8rem; height: 5.5rem"
+            class="btn-voodoo-outline text-14 text-voodoo"
             to="sign-in"
           >
             تسجيل الدخول
@@ -74,11 +70,11 @@
               <!--  -->
               <div
                 v-show="toggleUserOptions"
+                style="width: 26.7rem"
                 class="
                   user-options
                   shadow__user-options-list
                   position-absolute
-                  width-267
                   bg-light
                   radius-25
                   padding-x-20 padding-y-10
@@ -104,11 +100,12 @@
             <!--  -->
             <div class="col">
               <User-Options
+                style="width: 11.6rem"
                 path="index"
                 text="دوراتي"
                 icon="book-3-fill"
                 icon-title="الاشعارات"
-                class="width-116 text-12"
+                class="text-12"
               />
             </div>
             <!--  -->

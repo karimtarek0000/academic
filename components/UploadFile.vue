@@ -31,6 +31,10 @@
 export default {
   name: 'UploadFile',
   props: {
+    // eslint-disable-next-line vue/require-prop-types
+    value: {
+      required: true,
+    },
     accept: {
       type: String,
       default: '*',
@@ -44,7 +48,7 @@ export default {
     getFile(e) {
       const file = e.target.files[0]
       if (file) {
-        this.$emit('uploadFile', file)
+        this.$emit('input', file)
       }
     },
   },

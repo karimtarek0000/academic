@@ -6,7 +6,14 @@
       <!--  -->
       <slot />
       <!--  -->
-      <div class="col-12 col-sm-8 padding-x-20 xxlg-padding-x-30 padding-y-20">
+      <div
+        class="
+          col-12 col-sm-8
+          blog-card__body
+          padding-x-20 padding-y-20
+          xxlg-padding-x-30
+        "
+      >
         <!--  -->
         <div class="row">
           <!--  -->
@@ -84,4 +91,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style></style>

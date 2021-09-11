@@ -91,8 +91,8 @@ export default {
     margin: 0 !important;
     justify-content: space-between !important;
     pointer-events: none;
-    z-index: 9999;
     padding: 0 20px;
+    z-index: 9999;
   }
 
   //

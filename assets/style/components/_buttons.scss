@@ -2,18 +2,18 @@
 .btn {
   transition: background-color 0.3s ease;
   //
-  &-Voodoo {
-    background-color: var(--Voodoo);
+  &-voodoo {
+    background-color: var(--voodoo);
 
     &-outline {
-      border: 1px solid var(--Voodoo);
+      border: 1px solid var(--voodoo);
     }
 
     //
     @include DetectHover {
       //
       &:hover {
-        background-color: rgba($Voodoo, 0.9);
+        background-color: rgba($voodoo, 0.9);
         color: var(--light);
       }
     }

@@ -75,14 +75,8 @@
         class="padding-y-30 border-botton-whiteDark"
       >
         <BtnGo
-          class="
-            btn-Voodoo
-            height-41
-            width-148
-            text-12 text-light
-            ml-auto
-            margin-top-20
-          "
+          style="width: 14.8rem; height: 4.1rem"
+          class="btn-voodoo text-12 text-light ml-auto margin-top-20"
           to="index"
         >
           تعرف أكثر

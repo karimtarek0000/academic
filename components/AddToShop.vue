@@ -2,6 +2,7 @@
   <!--  -->
   <button
     type="button"
+    style="height: 6rem"
     class="
       col-8
       btn btn-emerald
@@ -10,7 +11,6 @@
       justify-content-center
       text-14
       radius-18
-      height-60
       align-items-center
     "
   >

@@ -75,11 +75,11 @@
                     :class="[
                       'bg-light width-100 overflow-hidden custom-button text-14 radius-14 weight-br-300',
                       {
-                        'bg-Voodoo text-light pointer-event-none':
+                        'bg-voodoo text-light pointer-event-none':
                           isPayWithCard,
                       },
                       {
-                        'text-Voodoo': !isPayWithCard,
+                        'text-voodoo': !isPayWithCard,
                       },
                     ]"
                     style="height: 5.9rem"
@@ -87,7 +87,7 @@
                   >
                     <GSvg
                       :class="[
-                        'svg-20 fill-Voodoo margin-end-5',
+                        'svg-20 fill-voodoo margin-end-5',
                         { 'fill-light': isPayWithCard },
                       ]"
                       name-icon="bank-card"
@@ -100,11 +100,11 @@
                     :class="[
                       'bg-light width-100 overflow-hidden custom-button text-14 radius-14 weight-br-300',
                       {
-                        'bg-Voodoo text-light pointer-event-none':
+                        'bg-voodoo text-light pointer-event-none':
                           isBankTransfer,
                       },
                       {
-                        'text-Voodoo': !isBankTransfer,
+                        'text-voodoo': !isBankTransfer,
                       },
                     ]"
                     style="height: 5.9rem"
@@ -112,7 +112,7 @@
                   >
                     <GSvg
                       :class="[
-                        'svg-20 margin-end-5 fill-Voodoo',
+                        'svg-20 margin-end-5 fill-voodoo',
                         { 'fill-light': isBankTransfer },
                       ]"
                       name-icon="bank"
@@ -209,7 +209,7 @@ export default {
 .confirm-the-pay {
   .custom-button {
     &:hover {
-      background-color: var(--Voodoo);
+      background-color: var(--voodoo);
       color: var(--light);
       svg {
         fill: var(--light);

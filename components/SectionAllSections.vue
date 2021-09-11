@@ -3,7 +3,7 @@
     role="all-sctions"
     class="
       row
-      bg-Voodoo
+      bg-voodoo
       radius-60
       margin-top-90
       section-height

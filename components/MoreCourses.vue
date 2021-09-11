@@ -49,15 +49,8 @@
           </div>
           <div class="col flex-grow-0">
             <BtnPrimary
-              class="
-                bg-Voodoo
-                text-12
-                width-116
-                height-41
-                text-light
-                btn-Voodoo
-                radius-18
-              "
+              style="width: 11.6rem; height: 4.1rem"
+              class="bg-voodoo text-12 text-light btn-voodoo radius-18"
             >
               اضف الي السلة
             </BtnPrimary>
