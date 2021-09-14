@@ -65,19 +65,22 @@
 
 //
 .border {
-  &-botton-whiteDark {
+  &-bottom-whiteDark {
     border-bottom: 2px solid var(--whiteDark);
   }
-  &-whiteDark-1 {
+  &-whiteDark-all {
     border: 1px solid var(--whiteDark);
   }
   &-whiteDark {
     border: 2px solid var(--whiteDark);
   }
+  &-whiteDark-left {
+    border-left: 1px solid var(--whiteDark);
+  }
   &-coral-1 {
     border: 1px solid var(--coral);
   }
-  &-botton-voodoo {
+  &-bottom-voodoo {
     border-bottom: 1px solid var(--voodoo);
   }
   &-top-whiteDark {

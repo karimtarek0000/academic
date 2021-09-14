@@ -20,6 +20,8 @@
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
     "vue-airbnb-style-datepicker": "^2.7.1",
+    "vue-html2canvas": "0.0.4",
+    "vue-html2pdf": "^1.8.0",
     "vue-plyr": "^7.0.0",
     "vue-slick-carousel": "^1.0.6",
     "vue-social-sharing": "^3.0.8",

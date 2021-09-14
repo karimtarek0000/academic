@@ -5,7 +5,7 @@
       <!-- First col -->
       <div
         :class="[
-          'col align-items-center pseudo position-relative ml-auto',
+          'col align-items-center pseudo position-relative margin-end-auto',
           { 'col-lg-8': !userLogIn, 'col-xl-7': userLogIn },
         ]"
       >
@@ -20,7 +20,7 @@
           <!-- 3) - Search-1 -->
           <div
             :class="[
-              'col  mr-auto',
+              'col margin-start-auto',
               { 'col-xl-6': !userLogIn, 'col-xl-7': userLogIn },
             ]"
           >
@@ -37,20 +37,20 @@
       >
         <!-- If user not login -->
         <template v-if="!userLogIn">
-          <BtnGo
+          <AppBtnGo
             style="width: 14.8rem; height: 5.5rem"
             class="btn-voodoo margin-end-20 text-14 text-light"
             to="sign-up"
           >
             حساب جديد
-          </BtnGo>
-          <BtnGo
+          </AppBtnGo>
+          <AppBtnGo
             style="width: 14.8rem; height: 5.5rem"
             class="btn-voodoo-outline text-14 text-voodoo"
             to="sign-in"
           >
             تسجيل الدخول
-          </BtnGo>
+          </AppBtnGo>
         </template>
         <!-- If user login -->
         <template v-else>

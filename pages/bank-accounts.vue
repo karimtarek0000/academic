@@ -11,9 +11,9 @@
     </header>
     <!--  -->
     <section class="custom-container overflow-auto" style="max-width: 109.8rem">
-      <TableData style="min-width: 108.8rem" />
+      <AppDataTable style="min-width: 108.8rem" />
       <!--  -->
-      <BtnPrimary
+      <AppBtn
         style="width: 33.2rem; height: 6.2rem"
         class="
           btn-voodoo
@@ -27,7 +27,7 @@
         @clicked="toggle = true"
       >
         اضافة حساب بنكي
-      </BtnPrimary>
+      </AppBtn>
     </section>
     <!--  -->
     <BackDrop :toggle="toggle" @toggleBackDrop="toggle = $event">
@@ -47,7 +47,7 @@
               type="text"
               class="
                 padding-start-15
-                border-whiteDark-1
+                border-whiteDark-all
                 width-100
                 padding-y-10
                 radius-12
@@ -65,7 +65,7 @@
               type="text"
               class="
                 padding-start-15
-                border-whiteDark-1
+                border-whiteDark-all
                 width-100
                 padding-y-10
                 radius-12
@@ -84,7 +84,7 @@
               type="text"
               class="
                 padding-start-15
-                border-whiteDark-1
+                border-whiteDark-all
                 width-100
                 padding-y-10
                 radius-12
@@ -111,7 +111,7 @@
               type="text"
               class="
                 padding-start-15
-                border-whiteDark-1
+                border-whiteDark-all
                 width-100
                 padding-y-10
                 radius-12
@@ -128,7 +128,7 @@
               v-if="!$v.form.IFSCCode.numeric && $v.form.IFSCCode.$dirty"
               type-error="num"
             />
-            <BtnPrimary
+            <AppBtn
               type="submit"
               style="width: 13.6rem; height: 4.2rem"
               class="
@@ -141,7 +141,7 @@
                 text-14
                 d-block
               "
-              >اضافة</BtnPrimary
+              >اضافة</AppBtn
             >
           </form>
         </template>
@@ -167,6 +167,21 @@ export default {
         IFSCCode: null,
       },
       toggle: false,
+      table: {
+        head: ['الاسم', 'اسم البنك', 'رقم الحساب', 'IFSC Codes', 'العملية'],
+        body: [
+          'Ahmed Hamdan',
+          'بنك الراجحي',
+          '25785506000109',
+          'SA8880000487608010416925',
+          'دفع',
+        ],
+      },
+    }
+  },
+  provide() {
+    return {
+      table: this.table,
     }
   },
   validations: {
@@ -210,6 +225,16 @@ export default {
     }
     &::-webkit-scrollbar {
       height: 5px;
+    }
+  }
+
+  .table {
+    &__cell {
+      width: calc(108.8rem / 5);
+    }
+
+    &__body .table__row {
+      border-bottom: 2px solid var(--whiteDark);
     }
   }
 }

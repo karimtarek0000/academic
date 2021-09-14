@@ -146,7 +146,7 @@
                   weight-br-300
                   col-11
                   mx-auto
-                  border-botton-whiteDark
+                  border-bottom-whiteDark
                   margin-y-5
                 "
                 :toggle-status="index2 === selectAccordionSub"
@@ -161,7 +161,7 @@
                 <!--  -->
                 <p slot="title" class="text-14">الدرس الاول</p>
                 <!--  -->
-                <p slot="time" class="text-14 mr-auto">03:22</p>
+                <p slot="time" class="text-14 margin-start-auto">03:22</p>
                 <!--  -->
                 <p
                   style="width: 75%"
@@ -182,7 +182,7 @@
                 class="
                   d-flex
                   align-items-center
-                  border-botton-whiteDark
+                  border-bottom-whiteDark
                   col-11
                   mx-auto
                   padding-y-10
@@ -196,14 +196,16 @@
                   title="فيديو"
                 />
                 <p role="title" class="text-14 weight-br-300">الدرس الثاني</p>
-                <p role="time" class="text-14 weight-br-300 mr-auto">03:22</p>
+                <p role="time" class="text-14 weight-br-300 margin-start-auto">
+                  03:22
+                </p>
               </div>
               <!-- PDF -->
               <div
                 class="
                   d-flex
                   align-items-center
-                  border-botton-whiteDark
+                  border-bottom-whiteDark
                   col-11
                   mx-auto
                   padding-y-10
@@ -217,7 +219,9 @@
                   title="ملف"
                 />
                 <p role="title" class="text-14 weight-br-300">ملف pdf</p>
-                <p role="time" class="text-14 weight-br-300 mr-auto">03:22</p>
+                <p role="time" class="text-14 weight-br-300 margin-start-auto">
+                  03:22
+                </p>
               </div>
             </AccordionAnimate>
           </div>

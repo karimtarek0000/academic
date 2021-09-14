@@ -40,36 +40,36 @@
                 role="new-price"
                 class="d-flex text-15 text-coral margin-0 margin-end-10"
               >
-                <span>S.R</span> <span class="m-s-2">50</span>
+                <span>S.R</span> <span class="margin-x-2">50</span>
               </p>
               <del
                 role="discount"
                 class="d-flex text-silver text-14 weight-br-300"
               >
                 <span>S.R</span>
-                <span class="m-s-2">50</span>
+                <span class="margin-x-2">50</span>
               </del>
             </div>
             <div class="col flex-grow-0">
-              <BtnPrimary
+              <AppBtn
                 style="width: 11.1rem; height: 4rem"
                 class="bg-voodoo text-12 text-light btn-voodoo radius-18"
               >
                 أضف الى السلة
-              </BtnPrimary>
+              </AppBtn>
             </div>
           </template>
         </Card>
       </div>
     </div>
     <!--  -->
-    <BtnGo
+    <AppBtnGo
       style="width: 18.1rem; height: 5.5rem"
       class="btn-voodoo margin-y-38 text-14 text-light mx-auto"
       to="index"
     >
       شاهد المزيد
-    </BtnGo>
+    </AppBtnGo>
   </section>
 </template>
 

@@ -120,16 +120,18 @@ export default {
       testmonialsData: this.testmonials,
     }
   },
-  head: {
-    title: 'الرئيسية',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
-      },
-    ],
+  head() {
+    return {
+      title: 'الرئيسية',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
+        },
+      ],
+    }
   },
 }
 </script>

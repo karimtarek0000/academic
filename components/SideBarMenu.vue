@@ -16,20 +16,20 @@
         role="select-register"
         class="d-flex flex-column align-items-center margin-y-10"
       >
-        <BtnGo
+        <AppBtnGo
           style="width: 14.8rem; height: 5.5rem"
           class="btn-voodoo text-14 text-light margin-bottom-5"
           to="sign-up"
         >
           حساب جديد
-        </BtnGo>
-        <BtnGo
+        </AppBtnGo>
+        <AppBtnGo
           style="width: 14.8rem; height: 5.5rem"
           class="btn-voodoo-outline text-14 text-voodoo"
           to="sign-in"
         >
           تسجيل الدخول
-        </BtnGo>
+        </AppBtnGo>
       </div>
       <!--  -->
       <div
@@ -39,7 +39,7 @@
           d-flex
           align-items-center
           cursor-pointer
-          border-botton-voodoo
+          border-bottom-voodoo
           padding-y-10
           margin-bottom-10
         "
@@ -103,7 +103,7 @@
               d-flex
               align-items-center
               cursor-pointer
-              border-botton-voodoo
+              border-bottom-voodoo
               padding-y-10
               margin-bottom-10
             "

@@ -1,7 +1,7 @@
 <template>
   <main class="confirm-the-pay">
     <header
-      class="text-center padding-y-45 border-botton-whiteDark margin-bottom-50"
+      class="text-center padding-y-45 border-bottom-whiteDark margin-bottom-50"
     >
       <h1 class="text-30 text-dark margin-bottom-10">اتمام الشراء</h1>
       <p class="text-14 text-silver weight-br-300 mx-auto col-lg-3">
@@ -51,14 +51,14 @@
                         role="new-price"
                         class="d-flex text-18 text-dark margin-0 margin-end-10"
                       >
-                        <span>S.R</span> <span class="m-s-2">50</span>
+                        <span>S.R</span> <span class="margin-x-2">50</span>
                       </p>
                       <del
                         role="discount"
                         class="d-flex text-silver text-14 weight-br-300"
                       >
                         <span>S.R</span>
-                        <span class="m-s-2">50</span>
+                        <span class="margin-x-2">50</span>
                       </del>
                     </div>
                   </div>
@@ -71,7 +71,7 @@
               <!--  -->
               <div class="row row-cols-1 row-cols-sm-2 gx-4">
                 <div class="col sm-margin-bottom-10">
-                  <BtnPrimary
+                  <AppBtn
                     :class="[
                       'bg-light width-100 overflow-hidden custom-button text-14 radius-14 weight-br-300',
                       {
@@ -93,10 +93,10 @@
                       name-icon="bank-card"
                     />
                     <span>الدفع باستخدام كارت البنك</span>
-                  </BtnPrimary>
+                  </AppBtn>
                 </div>
                 <div class="col">
-                  <BtnPrimary
+                  <AppBtn
                     :class="[
                       'bg-light width-100 overflow-hidden custom-button text-14 radius-14 weight-br-300',
                       {
@@ -118,7 +118,7 @@
                       name-icon="bank"
                     />
                     <span>التحويل البنكي</span>
-                  </BtnPrimary>
+                  </AppBtn>
                 </div>
               </div>
               <!--  -->
@@ -137,7 +137,7 @@
           </div>
           <!--  -->
           <OrderSummary>
-            <BtnPrimary
+            <AppBtn
               style="height: 6rem"
               class="
                 width-100
@@ -151,7 +151,7 @@
               @clicked="done"
             >
               تأكيد الطلب
-            </BtnPrimary>
+            </AppBtn>
           </OrderSummary>
         </div>
       </div>
@@ -199,8 +199,10 @@ export default {
       this.numComp = numComp
     },
   },
-  head: {
-    title: 'اتمام الشراء',
+  head() {
+    return {
+      title: 'اتمام الشراء',
+    }
   },
 }
 </script>

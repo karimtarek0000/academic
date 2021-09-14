@@ -1,7 +1,7 @@
 <template>
   <main class="contact-us custom-input--object-3 custom-input--object-4">
     <!--  -->
-    <header class="text-center padding-y-45 border-botton-whiteDark">
+    <header class="text-center padding-y-45 border-bottom-whiteDark">
       <h1 class="text-30 text-dark margin-bottom-10">اتصل بنا</h1>
       <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
         هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر
@@ -52,7 +52,7 @@
                   type="text"
                   class="
                     padding-start-30
-                    border-whiteDark-1
+                    border-whiteDark-all
                     width-100
                     padding-y-10
                     radius-12
@@ -85,7 +85,7 @@
                   type="email"
                   class="
                     padding-start-30
-                    border-whiteDark-1
+                    border-whiteDark-all
                     width-100
                     padding-y-10
                     radius-12
@@ -122,7 +122,7 @@
                   type="text"
                   class="
                     padding-start-30
-                    border-whiteDark-1
+                    border-whiteDark-all
                     width-100
                     padding-y-10
                     radius-12
@@ -149,7 +149,7 @@
                 v-model.trim="$v.form.message.$model"
                 class="
                   padding-start-15
-                  border-whiteDark-1
+                  border-whiteDark-all
                   width-100
                   padding-y-10
                   radius-12
@@ -160,7 +160,7 @@
               <AppMessageInputRequired
                 v-if="!$v.form.message.required && $v.form.message.$dirty"
               />
-              <BtnPrimary
+              <AppBtn
                 type="submit"
                 style="width: 23.5rem; height: 5.5rem"
                 class="
@@ -171,7 +171,7 @@
                   radius-18
                   text-14
                 "
-                >ارسال</BtnPrimary
+                >ارسال</AppBtn
               >
             </form>
           </div>
@@ -294,8 +294,10 @@ export default {
       }
     },
   },
-  head: {
-    title: 'تواصل معنا',
+  head() {
+    return {
+      title: 'تواصل معنا',
+    }
   },
 }
 </script>

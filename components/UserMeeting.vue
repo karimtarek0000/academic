@@ -5,7 +5,7 @@
     class="row g-0 flex-column align-items-center"
   >
     <GSvg class="svg-90" name-icon="date" title="" />
-    <BtnPrimary
+    <AppBtn
       role="user-meeting"
       style="width: 17.4rem; height: 5rem"
       class="
@@ -18,7 +18,7 @@
       @clicked="$emit('openCreateMeeting', true)"
     >
       تحديد موعد
-    </BtnPrimary>
+    </AppBtn>
   </section>
 </template>
 

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'BtnPrimary',
+  name: 'AppBtn',
 }
 </script>
 

@@ -33,7 +33,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -55,7 +55,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -84,7 +84,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -113,7 +113,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12

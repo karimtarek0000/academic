@@ -12,7 +12,7 @@
         <CourseProgressBar class="col-11" />
       </template>
       <template slot="btn">
-        <BtnPrimary
+        <AppBtn
           style="width: 29.4rem; height: 6rem"
           class="
             btn-emerald
@@ -23,7 +23,7 @@
           "
         >
           الاستمرار الى المحاضرة
-        </BtnPrimary>
+        </AppBtn>
       </template>
     </HeaderCousreUser>
     <!--  -->
@@ -55,7 +55,7 @@
             هل قمت باكمال الدورة ؟
           </p>
           <!--  -->
-          <BtnPrimary
+          <AppBtn
             style="width: 17.4rem; height: 5rem"
             class="btn-chardonnay text-14 text-light bg-chardonnay radius-14"
           >
@@ -64,17 +64,17 @@
               class="svg-22 fill-light"
               name-icon="arrow_drop_down_line__1"
             />
-          </BtnPrimary>
+          </AppBtn>
         </div>
         <div class="col-12 col-md-2 flex-grow-0 md-margin-top-20">
-          <BtnGo
+          <AppBtnGo
             style="width: 17.4rem; height: 5rem"
-            class="text-14 m-x-auto text-light btn-voodoo-light radius-14"
+            class="text-14 margin-x-auto text-light btn-voodoo-light radius-14"
             to="index"
           >
             <span>تفاصيل الدورة</span>
             <GSvg class="svg-20 fill-light" name-icon="angle-left" />
-          </BtnGo>
+          </AppBtnGo>
         </div>
       </div>
     </div>
@@ -197,7 +197,7 @@
                     padding-y-15 padding-x-10
                     radius-12
                     text-13
-                    border-whiteDark-1
+                    border-whiteDark-all
                   "
                   placeholder="العنوان"
                 />
@@ -213,7 +213,7 @@
                     width-100
                     padding-y-15 padding-x-10
                     radius-12
-                    border-whiteDark-1
+                    border-whiteDark-all
                     text-13
                   "
                   placeholder="البريد الالكتروني"
@@ -295,7 +295,7 @@
                     padding-y-15 padding-x-10
                     radius-12
                     text-13
-                    border-whiteDark-1
+                    border-whiteDark-all
                     margin-y-10
                   "
                   placeholder="عنوان الموضوع"
@@ -305,7 +305,7 @@
                 v-if="!$v.task.subject.required && $v.task.subject.$dirty"
               />
               <!--  -->
-              <UploadFile
+              <AppUploadFile
                 v-model="$v.task.selectFile.$model"
                 class="text-coral fit-content mx-auto"
               >
@@ -323,7 +323,7 @@
                     />
                   </p>
                 </template>
-              </UploadFile>
+              </AppUploadFile>
               <AppMessageInputRequired
                 v-if="!$v.task.selectFile.required && $v.task.selectFile.$dirty"
               />
@@ -351,7 +351,7 @@
                       padding-10
                       radius-12
                       text-13
-                      border-whiteDark-1
+                      border-whiteDark-all
                     "
                     placeholder="ادخل ايميلك"
                   />
@@ -378,7 +378,7 @@
                       padding-10
                       radius-12
                       text-13
-                      border-whiteDark-1
+                      border-whiteDark-all
                     "
                     placeholder="ادخل ايميل المدرب"
                   />
@@ -408,7 +408,7 @@
                       padding-10
                       radius-12
                       text-13
-                      border-whiteDark-1
+                      border-whiteDark-all
                     "
                     placeholder="عنوان الموضوع"
                   />
@@ -432,7 +432,7 @@
                       radius-12
                       text-13
                       padding-10
-                      border-whiteDark-1
+                      border-whiteDark-all
                     "
                     placeholder="MM/DD/YY"
                     :value="formatDates(meeting.date)"
@@ -469,7 +469,7 @@
           </div>
         </template>
         <!-- SUBMIT -->
-        <BtnPrimary
+        <AppBtn
           type="submit"
           style="width: 13.6rem; height: 4.2rem"
           class="
@@ -482,7 +482,7 @@
           @clicked="submit"
         >
           ارسال
-        </BtnPrimary>
+        </AppBtn>
       </AppModel>
     </BackDrop>
   </main>

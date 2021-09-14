@@ -2,42 +2,6 @@
 $utilities: map-merge(
   $utilities,
   (
-    'ml': (
-      property: margin-end,
-      class: ml,
-      values: (
-        auto: auto,
-      ),
-    ),
-    'mr': (
-      property: margin-start,
-      class: mr,
-      values: (
-        auto: auto,
-      ),
-    ),
-    'm-s': (
-      property: margin-right,
-      class: m-s,
-      values: (
-        2: 2px,
-        auto: auto,
-      ),
-    ),
-    'm-s-l': (
-      property: margin-left,
-      class: m-s-l,
-      values: (
-        auto: auto,
-      ),
-    ),
-    'm-x': (
-      property: margin-inline,
-      class: m-x,
-      values: (
-        auto: auto,
-      ),
-    ),
     'vh': (
       property: height,
       class: vh,

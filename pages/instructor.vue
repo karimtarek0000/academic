@@ -1,6 +1,6 @@
 <template>
   <main class="instructor">
-    <header class="custom-container padding-y-45 border-botton-whiteDark">
+    <header class="custom-container padding-y-45 border-bottom-whiteDark">
       <div class="row instructor g-0 padding-x-10">
         <div class="col-12 col-md-6 d-flex">
           <div class="row g-0 width-100">
@@ -210,14 +210,14 @@
                 role="new-price"
                 class="d-flex text-15 text-coral margin-0 margin-end-10"
               >
-                <span>S.R</span> <span class="m-s-2">50</span>
+                <span>S.R</span> <span class="margin-x-2">50</span>
               </p>
               <del
                 role="discount"
                 class="d-flex text-silver text-14 weight-br-300"
               >
                 <span>S.R</span>
-                <span class="m-s-2">50</span>
+                <span class="margin-x-2">50</span>
               </del>
             </div>
           </template>

@@ -19,7 +19,7 @@
               <!--  -->
               <h6 class="row margin-bottom-10">
                 <span class="col text-16 text-dark">آخر الاسئلة</span>
-                <BtnPrimary
+                <AppBtn
                   class="
                     col-2
                     fit-content
@@ -30,7 +30,7 @@
                   @clicked="goToComp('UserQuestionAndAnswer')"
                 >
                   عرض الكل
-                </BtnPrimary>
+                </AppBtn>
               </h6>
               <!--  -->
               <div class="row g-0 flex-column">
@@ -80,7 +80,7 @@
               <!--  -->
               <h6 class="row g-0 align-items-center margin-bottom-10">
                 <span class="col text-16 text-dark">آخر الاعلانات</span>
-                <BtnPrimary
+                <AppBtn
                   class="
                     col-2
                     fit-content
@@ -91,7 +91,7 @@
                   @clicked="goToComp('Ads')"
                 >
                   عرض الكل
-                </BtnPrimary>
+                </AppBtn>
               </h6>
               <!--  -->
               <div class="row g-0 flex-column">
@@ -140,7 +140,7 @@
       </div>
     </div>
     <!--  -->
-    <div role="about-course" class="padding-y-30 border-botton-whiteDark">
+    <div role="about-course" class="padding-y-30 border-bottom-whiteDark">
       <h2 role="head" class="text-dark text-18 margin-bottom-15">عن الدورة</h2>
       <p role="description" class="text-16 text-silver weight-br-300">
         اختلط الأمر كثيراً عند المصممين وخصوصاً المبتدئين منهم رغم أن فن الكتابة
@@ -155,7 +155,7 @@
         flex-column flex-sm-row
         align-items-start align-items-sm-center
         padding-y-45
-        border-botton-whiteDark
+        border-bottom-whiteDark
       "
     >
       <h2
@@ -222,7 +222,7 @@
       </div>
     </div>
     <!--  -->
-    <div role="description" class="padding-y-30 border-botton-whiteDark">
+    <div role="description" class="padding-y-30 border-bottom-whiteDark">
       <h2 role="head" class="text-dark text-18 margin-end-20 margin-bottom-20">
         الوصف
       </h2>

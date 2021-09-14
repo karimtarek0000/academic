@@ -19,7 +19,7 @@
           col-12 col-md-9
           mx-auto
           padding-top-25 padding-bottom-67
-          border-botton-whiteDark
+          border-bottom-whiteDark
           margin-bottom-20
         "
       >
@@ -80,16 +80,18 @@ export default {
   //     this.$nuxt.refresh()
   //   },
   // },
-  head: {
-    title: 'المدونة',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
-      },
-    ],
+  head() {
+    return {
+      title: 'المدونة',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر تصميم أو مجموعة من التصاميم',
+        },
+      ],
+    }
   },
 }
 </script>

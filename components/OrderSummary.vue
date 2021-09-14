@@ -14,11 +14,11 @@
       radius-12
     "
   >
-    <h4 class="text-16 text-center padding-y-15 border-botton-whiteDark">
+    <h4 class="text-16 text-center padding-y-15 border-bottom-whiteDark">
       ملخص الطلب
     </h4>
     <!--  -->
-    <div class="padding-y-10 padding-x-20 border-botton-whiteDark">
+    <div class="padding-y-10 padding-x-20 border-bottom-whiteDark">
       <div
         role="total"
         class="d-flex align-items-center justify-content-between"

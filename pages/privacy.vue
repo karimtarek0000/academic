@@ -1,6 +1,6 @@
 <template>
   <main>
-    <header class="text-center padding-y-45 border-botton-whiteDark">
+    <header class="text-center padding-y-45 border-bottom-whiteDark">
       <h1 class="text-30 text-dark margin-bottom-10">سياسة الخصوصية</h1>
       <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
         هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر
@@ -41,8 +41,10 @@
 <script>
 export default {
   name: 'Privacy',
-  head: {
-    title: 'سياسة الخصوصية',
+  head() {
+    return {
+      title: 'سياسة الخصوصية',
+    }
   },
 }
 </script>

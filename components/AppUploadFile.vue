@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'UploadFile',
+  name: 'AppAppUploadFile',
   props: {
     // eslint-disable-next-line vue/require-prop-types
     value: {

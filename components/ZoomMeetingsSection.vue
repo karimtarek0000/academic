@@ -38,7 +38,7 @@
           </div>
         </div>
         <div slot="part3" class="col">
-          <BtnPrimary
+          <AppBtn
             class="
               bg-voodoo
               set-w-h
@@ -49,7 +49,7 @@
             "
           >
             انضم الى الاجتماع
-          </BtnPrimary>
+          </AppBtn>
         </div>
       </Card>
     </Slider>
@@ -59,12 +59,12 @@
 <script>
 import Card from '@/components/Card.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
-import BtnPrimary from '~/components/BtnPrimary.vue'
+import AppBtn from '~/components/AppBtn.vue'
 export default {
   name: 'ZoomMeetingsSection',
   components: {
     Card,
-    BtnPrimary,
+    AppBtn,
   },
   mixins: [sliderSetting],
   inject: ['zoomMeetingsData'],

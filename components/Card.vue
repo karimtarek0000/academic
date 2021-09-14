@@ -21,7 +21,7 @@
         </h4>
       </div>
       <!-- Part 2 -->
-      <div class="row border-botton-whiteDark padding-y-15">
+      <div class="row border-bottom-whiteDark padding-y-15">
         <!-- Part 1 -->
         <div class="col d-flex align-items-center">
           <!--  -->

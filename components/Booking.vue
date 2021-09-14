@@ -26,14 +26,14 @@
             </p>
             <del role="discount" class="d-flex text-dark text-17 weight-br-300">
               <span>S.R</span>
-              <span class="m-s-2">100</span>
+              <span class="margin-x-2">100</span>
             </del>
           </div>
           <!--  -->
           <div class="col">
             <p role="discount" class="d-flex text-14 text-coral weight-br-300">
               <span>خصم</span>
-              <span class="m-s-2">75%</span>
+              <span class="margin-x-2">75%</span>
             </p>
           </div>
         </div>

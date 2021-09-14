@@ -1,7 +1,7 @@
 <template>
   <section role="bank-transfer" class="confirm-the-pay custom-input--object-3">
     <div class="row padding-y-30 padding-x-45 justify-content-center">
-      <div class="col border-botton-whiteDark padding-x-30 padding-bottom-20">
+      <div class="col border-bottom-whiteDark padding-x-30 padding-bottom-20">
         <div class="row align-items-center">
           <div class="col-8 col-sm-3 sm-margin-bottom-10">
             <figure class="margin-bottom-0">
@@ -42,7 +42,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -64,7 +64,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -86,7 +86,7 @@
           type="text"
           class="
             padding-start-30
-            border-whiteDark-1
+            border-whiteDark-all
             width-100
             padding-y-10
             radius-12
@@ -110,10 +110,10 @@
           يجب ادخال ارقام فقط
         </p>
         <!--  -->
-        <UploadFile
+        <AppUploadFile
+          v-model="form.file"
           accept="image/*"
-          class="margin-top-10 ml-auto col-3"
-          @uploadFile="form.file = $event"
+          class="margin-top-10 margin-end-auto col-3"
         >
           <template>
             <div class="d-flex align-items-center">
@@ -125,7 +125,7 @@
               <span class="text-coral text-13">صورة الحوالة</span>
             </div>
           </template>
-        </UploadFile>
+        </AppUploadFile>
         <p
           v-if="form.file"
           role="name-file"

@@ -171,7 +171,7 @@
         role="copyright"
         class="
           col-lg-5
-          mr-auto
+          margin-start-auto
           d-flex
           text-16
           justify-content-center

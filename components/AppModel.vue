@@ -11,7 +11,7 @@
     @click.stop
   >
     <div
-      class="row g-0 position-relative border-botton-whiteDark margin-bottom-20"
+      class="row g-0 position-relative border-bottom-whiteDark margin-bottom-20"
     >
       <div
         style="width: 3rem; height: 3rem"

@@ -54,13 +54,13 @@
           العربي مع التمتع بمميزات عديدة في أكاديمي
         </p>
         <!--  -->
-        <BtnGo
+        <AppBtnGo
           style="width: 19.5rem; height: 6rem"
           class="btn-voodoo translate-up-btn margin-y-38 text-16 text-light"
           to="sign-up"
         >
           ابدأ التعلم
-        </BtnGo>
+        </AppBtnGo>
       </div>
     </div>
   </header>

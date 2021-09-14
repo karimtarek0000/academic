@@ -89,22 +89,22 @@
             role="new-price"
             class="d-flex text-15 text-dark margin-0 margin-end-10"
           >
-            <span>S.R</span> <span class="m-s-2">50</span>
+            <span>S.R</span> <span class="margin-x-2">50</span>
           </p>
           <del role="discount" class="d-flex text-silver text-14 weight-br-300">
             <span>S.R</span>
-            <span class="m-s-2">50</span>
+            <span class="margin-x-2">50</span>
           </del>
         </div>
         <!--  -->
-        <BtnGo
+        <AppBtnGo
           v-if="!addPrice"
           style="width: 11.6rem; height: 4.1rem"
-          class="btn-voodoo text-12 text-light m-s-auto margin-top-20"
+          class="btn-voodoo text-12 text-light margin-x-auto margin-top-20"
           to="sign-up"
         >
           تصفح الكورس
-        </BtnGo>
+        </AppBtnGo>
       </div>
     </div>
   </div>

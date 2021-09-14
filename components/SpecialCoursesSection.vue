@@ -59,22 +59,22 @@
               role="new-price"
               class="d-flex text-15 text-coral margin-0 margin-end-10"
             >
-              <span>S.R</span> <span class="m-s-2">50</span>
+              <span>S.R</span> <span class="margin-x-2">50</span>
             </p>
             <del
               role="discount"
               class="d-flex text-silver text-14 weight-br-300"
             >
               <span>S.R</span>
-              <span class="m-s-2">50</span>
+              <span class="margin-x-2">50</span>
             </del>
           </div>
           <div class="col flex-grow-0">
-            <BtnPrimary
+            <AppBtn
               class="bg-voodoo set-w-h text-12 text-light btn-voodoo radius-18"
             >
               أضف الى السلة
-            </BtnPrimary>
+            </AppBtn>
           </div>
         </template>
       </Card>
@@ -85,12 +85,12 @@
 <script>
 import Card from '@/components/Card.vue'
 import sliderSetting from '@/mixins/sliderSetting.js'
-import BtnPrimary from '~/components/BtnPrimary.vue'
+import AppBtn from '~/components/AppBtn.vue'
 export default {
   name: 'SpecialCoursesSection',
   components: {
     Card,
-    BtnPrimary,
+    AppBtn,
   },
   mixins: [sliderSetting],
   inject: ['specialCoursesData'],

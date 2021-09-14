@@ -46,7 +46,7 @@
           "
         >
           <!--  -->
-          <p class="border-botton-whiteDark padding-y-10">
+          <p class="border-bottom-whiteDark padding-y-10">
             <GSvg class="svg-20" name-icon="paint-roller" />
             <span class="text-14 margin-start-10" v-text="item.title" />
           </p>

@@ -2,7 +2,7 @@
   <main class="basket">
     <h1
       role="head"
-      class="text-30 text-dark text-center padding-y-30 border-botton-whiteDark"
+      class="text-30 text-dark text-center padding-y-30 border-bottom-whiteDark"
     >
       السلة
     </h1>
@@ -69,19 +69,19 @@
                         role="new-price"
                         class="d-flex text-18 text-dark margin-0 margin-end-10"
                       >
-                        <span>S.R</span> <span class="m-s-2">50</span>
+                        <span>S.R</span> <span class="margin-x-2">50</span>
                       </p>
                       <del
                         role="discount"
                         class="d-flex text-silver text-14 weight-br-300"
                       >
                         <span>S.R</span>
-                        <span class="m-s-2">50</span>
+                        <span class="margin-x-2">50</span>
                       </del>
                     </div>
                     <!--  -->
                     <div class="d-flex align-items-center margin-top-10">
-                      <BtnPrimary
+                      <AppBtn
                         class="padding-y-5 padding-x-0 margin-end-15"
                         @clicked="favi"
                       >
@@ -100,11 +100,8 @@
                             >إضافة الى المفضلة</span
                           >
                         </template>
-                      </BtnPrimary>
-                      <BtnPrimary
-                        class="padding-y-5 padding-x-0"
-                        @clicked="delet"
-                      >
+                      </AppBtn>
+                      <AppBtn class="padding-y-5 padding-x-0" @clicked="delet">
                         <template>
                           <GSvg
                             class="svg-20 fill-silver"
@@ -120,7 +117,7 @@
                             >ازالة</span
                           >
                         </template>
-                      </BtnPrimary>
+                      </AppBtn>
                     </div>
                   </div>
                 </div>
@@ -135,14 +132,14 @@
                 placeholder="أدخل كود الكوبون"
                 class="
                   padding-start-15
-                  border-whiteDark-1
+                  border-whiteDark-all
                   width-100
                   padding-y-10
                   radius-12
                   text-12
                 "
               />
-              <BtnPrimary
+              <AppBtn
                 class="
                   text-light
                   radius-10
@@ -155,9 +152,9 @@
                 @clicked="activate"
               >
                 تفعيل
-              </BtnPrimary>
+              </AppBtn>
             </form>
-            <BtnPrimary
+            <AppBtn
               style="height: 6rem"
               class="
                 width-100
@@ -170,7 +167,7 @@
               @clicked="done"
             >
               اتمام الشراء
-            </BtnPrimary>
+            </AppBtn>
           </OrderSummary>
         </div>
       </div>
@@ -199,8 +196,10 @@ export default {
       console.log('تفعيل')
     },
   },
-  head: {
-    title: 'السلة',
+  head() {
+    return {
+      title: 'السلة',
+    }
   },
 }
 </script>

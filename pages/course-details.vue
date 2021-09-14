@@ -52,35 +52,35 @@
     </NavbarSelected>
     <!--  -->
     <article class="custom-container">
-      <Overview id="overview" class="padding-y-30 border-botton-whiteDark" />
+      <Overview id="overview" class="padding-y-30 border-bottom-whiteDark" />
       <CourseDescription
         id="course-description"
-        class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
+        class="padding-top-30 padding-bottom-45 border-bottom-whiteDark"
       />
       <CourseContent
         id="course-description"
-        class="padding-top-30 padding-bottom-45 border-botton-whiteDark"
+        class="padding-top-30 padding-bottom-45 border-bottom-whiteDark"
       />
       <CourseRequirements
         id="course-requirements"
-        class="padding-y-30 border-botton-whiteDark"
+        class="padding-y-30 border-bottom-whiteDark"
       />
       <StudentsOpinion
         id="students-opinion"
-        class="padding-y-30 border-botton-whiteDark"
+        class="padding-y-30 border-bottom-whiteDark"
       />
-      <StudentReviews class="padding-y-30 border-botton-whiteDark" />
+      <StudentReviews class="padding-y-30 border-bottom-whiteDark" />
       <AboutTeacher
         id="about-teacher"
-        class="padding-y-30 border-botton-whiteDark"
+        class="padding-y-30 border-bottom-whiteDark"
       >
-        <BtnGo
+        <AppBtnGo
           style="width: 14.8rem; height: 4.1rem"
-          class="btn-voodoo text-12 text-light ml-auto margin-top-20"
+          class="btn-voodoo text-12 text-light margin-end-auto margin-top-20"
           to="index"
         >
           تعرف أكثر
-        </BtnGo>
+        </AppBtnGo>
       </AboutTeacher>
       <MoreCourses class="padding-y-30" />
     </article>

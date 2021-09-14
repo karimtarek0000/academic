@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'BtnGo',
+  name: 'AppAppBtnGo',
   props: {
     to: {
       type: String,

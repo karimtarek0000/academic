@@ -5,7 +5,7 @@
     class="row g-0 flex-column align-items-center"
   >
     <GSvg class="svg-90" name-icon="Verification" title="" />
-    <BtnPrimary
+    <AppBtn
       role="send-task"
       style="width: 17.4rem; height: 5rem"
       class="
@@ -18,7 +18,7 @@
       @clicked="$emit('openCreateTask', true)"
     >
       ارسال مهمة
-    </BtnPrimary>
+    </AppBtn>
   </section>
 </template>
 

@@ -55,7 +55,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    { src: '~/assets/style/style.scss', lang: 'scss' },
+    { src: '~/assets/style/style', lang: 'scss' },
     { src: 'vue-slick-carousel/dist/vue-slick-carousel.css', lang: 'css' },
   ],
 
@@ -149,6 +149,10 @@ export default {
       routes.push({
         path: '/bank-accounts/:id',
         component: resolve(__dirname, 'pages/bank-accounts.vue'),
+      })
+      routes.push({
+        path: '/invoice/:id',
+        component: resolve(__dirname, 'pages/invoice.vue'),
       })
     },
   },

@@ -20,13 +20,13 @@
     </CourseContent>
     <!--  -->
     <div class="col-12 col-lg-10">
-      <BtnPrimary
+      <AppBtn
         :disabled="true"
         style="width: 23.6rem; height: 6rem"
-        class="btn-voodoo m-x-auto bg-voodoo text-light radius-21 text-14"
+        class="btn-voodoo margin-x-auto bg-voodoo text-light radius-21 text-14"
       >
         تحديد كمكتملة
-      </BtnPrimary>
+      </AppBtn>
     </div>
     <!--  -->
   </section>

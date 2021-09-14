@@ -8,7 +8,7 @@
         align-items-center
         text-center
         padding-y-45
-        border-botton-whiteDark
+        border-bottom-whiteDark
       "
     >
       <div class="custom-container">
@@ -113,15 +113,17 @@ export default {
     // Must be params number not string and params exsist.
     return /^\d+$/.test(params.id) && params.id
   },
-  head: {
-    title: 'مقال',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'مقال',
-      },
-    ],
+  head() {
+    return {
+      title: 'مقال',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'مقال',
+        },
+      ],
+    }
   },
 }
 </script>

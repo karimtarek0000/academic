@@ -58,18 +58,18 @@
                   alt=""
                 />
               </figure>
-              <UploadFile
+              <AppUploadFile
+                v-model="form.image"
                 accept="image/*"
                 style="width: 5.1rem; height: 4.7rem"
                 class="bg-voodoo upload-file position-absolute radius-18"
-                @uploadFile="form.image = $event"
               >
                 <GSvg
                   class="svg-22"
                   name-icon="upload-image"
                   title="ارفع صورة"
                 />
-              </UploadFile>
+              </AppUploadFile>
             </div>
             <!--  -->
             <div class="col margin-top-40">
@@ -90,7 +90,7 @@
                         type="text"
                         class="
                           padding-start-30
-                          border-whiteDark-1
+                          border-whiteDark-all
                           width-100
                           padding-y-10
                           radius-12
@@ -131,7 +131,7 @@
                         type="text"
                         class="
                           padding-start-10
-                          border-whiteDark-1
+                          border-whiteDark-all
                           width-100
                           padding-y-10
                           radius-12
@@ -165,7 +165,7 @@
                     type="email"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -209,7 +209,7 @@
                     type="text"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -246,7 +246,7 @@
                     type="text"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -278,7 +278,7 @@
                       type="text"
                       class="
                         padding-start-30
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -309,7 +309,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -333,7 +333,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -357,7 +357,7 @@
                     role="about-me"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -408,7 +408,7 @@
                     type="password"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -447,7 +447,7 @@
                     type="password"
                     class="
                       padding-start-30
-                      border-whiteDark-1
+                      border-whiteDark-all
                       width-100
                       padding-y-10
                       radius-12
@@ -507,7 +507,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -537,7 +537,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -567,7 +567,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -597,7 +597,7 @@
                       type="text"
                       class="
                         padding-start-10
-                        border-whiteDark-1
+                        border-whiteDark-all
                         width-100
                         padding-y-10
                         radius-12
@@ -619,7 +619,7 @@
           </div>
           <!-- Submit -->
           <div class="col">
-            <BtnPrimary
+            <AppBtn
               type="submit"
               style="width: 19.5rem; height: 6rem"
               class="
@@ -634,7 +634,7 @@
               @clicked="submit"
             >
               حفظ التعديلات
-            </BtnPrimary>
+            </AppBtn>
           </div>
         </div>
       </div>
@@ -756,8 +756,10 @@ export default {
       this.$v.$touch()
     },
   },
-  head: {
-    title: 'الملف الشخصي',
+  head() {
+    return {
+      title: 'الملف الشخصي',
+    }
   },
 }
 </script>
