@@ -143,7 +143,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'AppNavbar',
   data() {
     return {
       userLogIn: false,

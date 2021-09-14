@@ -131,6 +131,14 @@ export default {
         component: resolve(__dirname, 'pages/course-details.vue'),
       })
       routes.push({
+        path: '/my-courses',
+        component: resolve(__dirname, 'pages/my-courses.vue'),
+      })
+      routes.push({
+        path: '/my-courses/:course',
+        component: resolve(__dirname, 'pages/course.vue'),
+      })
+      routes.push({
         path: '/instructor/:name',
         component: resolve(__dirname, 'pages/instructor.vue'),
       })
@@ -147,7 +155,7 @@ export default {
         component: resolve(__dirname, 'pages/profile.vue'),
       })
       routes.push({
-        path: '/bank-accounts/:id',
+        path: '/bank-accounts',
         component: resolve(__dirname, 'pages/bank-accounts.vue'),
       })
       routes.push({

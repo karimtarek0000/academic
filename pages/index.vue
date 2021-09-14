@@ -8,10 +8,10 @@
     <SectionAllSections :data="itemsSliderSectionAllSections" />
     <!--  -->
     <NewCoursesSection>
-      <NavbarSelected>
+      <AppNavbarToGo>
         <template>
           <li
-            v-for="item in itemsNavbarSelected"
+            v-for="item in itemsAppNavbarToGo"
             :key="item"
             :class="[
               'navbar-selected__item user-select-none cursor-pointer d-flex align-items-center justify-content-center text-dark radius-18 text-13 flex-shrink-0 weight-br-300',
@@ -24,7 +24,7 @@
             v-text="item"
           />
         </template>
-      </NavbarSelected>
+      </AppNavbarToGo>
     </NewCoursesSection>
     <!--  -->
     <SpecialCoursesSection />
@@ -86,7 +86,7 @@ export default {
           'موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن العربي',
       },
     ]
-    const itemsNavbarSelected = [
+    const itemsAppNavbarToGo = [
       'التصميم',
       'إدارة الاعمال',
       'البرمجة',
@@ -100,7 +100,7 @@ export default {
     const testmonials = [1, 2, 3, 4, 5, 6]
     return {
       itemsSliderSectionAllSections,
-      itemsNavbarSelected,
+      itemsAppNavbarToGo,
       zoomMeetings,
       combinedCourses,
       specialCourses,

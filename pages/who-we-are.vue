@@ -1,15 +1,16 @@
 <template>
-  <main>
-    <header class="text-center padding-y-45 border-bottom-whiteDark">
-      <h1 class="text-30 text-dark margin-bottom-10">من نحن</h1>
-      <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
+  <main role="how-we-are">
+    <AppPagesHeader class="border-bottom-whiteDark">
+      <template slot="head">من نحن</template>
+      <template slot="desc">
         هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر
-        تصميم أو مجموعة من التصاميم
-      </p>
-    </header>
-    <article class="col-xl-8 mx-auto custom-container margin-bottom-50">
+        تصميم أو مجموعة من التصاميم</template
+      >
+    </AppPagesHeader>
+    <!--  -->
+    <article class="col-xl-9 mx-auto custom-container margin-bottom-50">
       <section role="start" class="padding-y-30 margin-bottom-10">
-        <div class="row g-0 align-items-start">
+        <div class="row align-items-start">
           <div class="col-12 col-sm-4">
             <figure class="margin-0">
               <img
@@ -37,7 +38,7 @@
         </div>
       </section>
       <section role="about" class="padding-y-10 margin-bottom-10">
-        <div class="row g-0 justify-content-center">
+        <div class="row justify-content-center">
           <div class="col-12 col-sm-10">
             <figure class="margin-bottom-20 radius-21 overflow-hidden">
               <img
@@ -61,11 +62,25 @@
               النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص
               لوريم إيبسوم ما،
             </p>
+            <br />
+            <p class="text-12 text-dark" style="line-height: 29px">
+              هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية
+              تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى
+              النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق
+              أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في
+              هذا النص. بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت
+              على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه
+              الحاجة هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن
+              الغالبية تم تعديلها بشكل هنالك العديد من الأنواع المتوفرة لنصوص
+              لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض
+              النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص
+              لوريم إيبسوم ما،
+            </p>
           </div>
         </div>
       </section>
       <section role="goals" class="padding-y-30">
-        <div class="row g-0 align-items-start">
+        <div class="row align-items-start">
           <div class="col-12 col-sm-4">
             <figure class="margin-0">
               <img

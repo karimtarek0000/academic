@@ -137,7 +137,7 @@
 
 <script>
 export default {
-  name: 'SideBarMenu',
+  name: 'AppSideBarMenu',
   data() {
     return {
       subCategory: null,

@@ -20,12 +20,12 @@
       </template>
     </CourseInformationSection>
     <!--  -->
-    <NavbarSelected>
+    <AppNavbarToGo>
       <template>
         <li
-          v-for="item in itemsNavbarSelected"
+          v-for="item in itemsAppNavbarToGo"
           :key="item.name"
-          style="width: 24.2rem; height: 6.5rem"
+          style="height: 6.5rem"
           :class="[
             'navbar-selected__item overflow-hidden radius-18 user-select-none cursor-pointer d-flex align-items-center justify-content-center text-13 flex-shrink-0 weight-br-300',
             {
@@ -49,7 +49,7 @@
           />
         </li>
       </template>
-    </NavbarSelected>
+    </AppNavbarToGo>
     <!--  -->
     <article class="custom-container">
       <Overview id="overview" class="padding-y-30 border-bottom-whiteDark" />
@@ -101,7 +101,7 @@
       </div>
     </BackDrop>
     <!--  -->
-    <QuickAddInMobile v-if="$mq === 'tablet'" />
+    <QuickAddInMobile v-if="isTablet" />
   </main>
 </template>
 
@@ -125,7 +125,7 @@ export default {
           icon: 'file-download-fill',
         },
       ],
-      itemsNavbarSelected: [
+      itemsAppNavbarToGo: [
         {
           name: 'نظرة عامة',
           id: 'overview',
@@ -198,6 +198,11 @@ export default {
       },
     }
   },
+  computed: {
+    isTablet() {
+      return this.$mq === 'tablet'
+    },
+  },
   head() {
     return {
       title: `${this.$route.params.courseName}`,
@@ -246,6 +251,11 @@ export default {
           color: var(--coral);
         }
       }
+    }
+
+    &__item,
+    &__active {
+      width: calc(108.5rem / 5);
     }
 
     //

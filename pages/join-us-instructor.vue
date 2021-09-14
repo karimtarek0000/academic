@@ -3,12 +3,12 @@
     role="join-us-as-an-instuctor"
     class="custom-input--object-3 custom-input--object-4 custom-upload-file-1"
   >
-    <header class="text-center padding-y-45 margin-bottom-50">
-      <h1 class="text-30 text-dark margin-bottom-10">انضم الينا كمدرب</h1>
-      <p class="text-14 text-silver weight-br-300">
-        انضم الينا الآن كمدرب اذا كان عندك القدرة على التدريب
-      </p>
-    </header>
+    <AppPagesHeader>
+      <template slot="head">انضم الينا كمدرب</template>
+      <template slot="desc">
+        انضم الينا الآن كمدرب اذا كان عندك القدرة على التدريب</template
+      >
+    </AppPagesHeader>
     <!--  -->
     <section class="bg-alabaster radius-12 padding-y-67">
       <div class="row custom-container justify-content-center">

@@ -195,14 +195,21 @@
     }
   }
 }
-
 .custom-upload-file-1 {
   //
   .upload-file {
     @include position('lb', $moveB: 0, $moveL: '-15px');
   }
 }
-
 .fit-content {
   width: fit-content;
+}
+.change-scrollbar-x {
+  @include scrollBar(5px, $light, $whiteDark) {
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
 }

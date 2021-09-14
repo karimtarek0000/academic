@@ -1,13 +1,12 @@
 <template>
   <main class="blog">
-    <!--  -->
-    <header class="text-center padding-y-45">
-      <h1 class="text-30 text-dark margin-bottom-10">المدونة</h1>
-      <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
+    <AppPagesHeader>
+      <template slot="head">المدونة</template>
+      <template slot="desc">
         هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر
-        تصميم أو مجموعة من التصاميم
-      </p>
-    </header>
+        تصميم أو مجموعة من التصاميم</template
+      >
+    </AppPagesHeader>
     <!--   -->
     <BlogSliderSection class="margin-bottom-30" />
     <!--    -->

@@ -1,5 +1,8 @@
 <template>
-  <div class="invoice-paper" style="max-width: 100%; overflow-x: auto">
+  <div
+    class="invoice-paper change-scrollbar-x"
+    style="max-width: 100%; overflow-x: auto"
+  >
     <div
       style="width: 72rem"
       class="

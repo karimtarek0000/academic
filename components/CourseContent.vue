@@ -101,7 +101,7 @@
                 v-show="course.status === 'complete'"
                 class="svg-20"
                 name-icon="select"
-                title="تحديد الكل"
+                title="تحديد"
               />
             </button>
             <!--  -->

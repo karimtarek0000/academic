@@ -9,9 +9,24 @@
       role="invoice-content"
       class="bg-alabaster radius-12 padding-y-67 user-select-none"
     >
-      <AppInvoicePaper id="paper">
+      <!-- Invoice html -->
+      <AppInvoicePaper id="invoice">
         <AppDataTable />
       </AppInvoicePaper>
+      <!-- Invoice PDF -->
+      <client-only>
+        <VueHtml2pdf
+          ref="invoicePdf"
+          :manual-pagination="true"
+          :enable-download="true"
+          filename="فاتورة"
+          pdf-format="a4"
+        >
+          <AppInvoicePaper slot="pdf-content">
+            <AppDataTable />
+          </AppInvoicePaper>
+        </VueHtml2pdf>
+      </client-only>
       <!-- Print and download invoice -->
       <div class="margin-top-40 row g-0 col col-md-7 col-xl-4 margin-x-auto">
         <div class="col d-flex justify-content-center justify-content-md-end">
@@ -66,19 +81,14 @@ export default {
     }
   },
   methods: {
-    async print() {
-      const el = document.getElementById('paper')
-      const output = await this.$html2canvas(el, { type: 'dataURL' })
-      //
-      setTimeout(this.initPrint(output), 10)
-    },
     initPrint(src) {
-      const pwa = window.open()
-      pwa.document.open()
-      pwa.document.write(this.ImagetoPrint(src))
-      pwa.document.close()
+      const url = ''
+      const w = window.open(url, '_blank')
+      w.document.open()
+      w.document.write(this.ImageToPrint(src))
+      w.document.close()
     },
-    ImagetoPrint(source) {
+    ImageToPrint(source) {
       return (
         '<html><head><scri' +
         'pt>function step1(){\n' +
@@ -91,9 +101,14 @@ export default {
         "' /></body></html>"
       )
     },
+    async print() {
+      const el = document.getElementById('invoice')
+      const output = await this.$html2canvas(el, { type: 'dataURL' })
+      //
+      setTimeout(this.initPrint(output), 1000)
+    },
     download() {
-      // eslint-disable-next-line no-console
-      console.log('download')
+      this.$refs.invoicePdf.generatePdf()
     },
   },
   head() {

@@ -1,5 +1,5 @@
 <template>
-  <main class="course-user">
+  <main role="course" class="course-user">
     <HeaderCousreUser>
       <template slot="video">
         <Video
@@ -79,10 +79,10 @@
       </div>
     </div>
     <!--  -->
-    <NavbarSelected class="margin-bottom-50">
+    <AppNavbarToGo class="margin-bottom-50">
       <template>
         <li
-          v-for="(item, index) in itemsNavbarSelected"
+          v-for="(item, index) in itemsAppNavbarToGo"
           :key="item.name"
           :ref="item.compName"
           style="height: 6.5rem"
@@ -104,7 +104,7 @@
           style="height: 6.5rem"
         />
       </template>
-    </NavbarSelected>
+    </AppNavbarToGo>
     <!--  -->
     <article class="custom-container">
       <transition :name="dirctionAnimate" mode="out-in">
@@ -591,7 +591,7 @@ export default {
   },
   data() {
     return {
-      itemsNavbarSelected: [
+      itemsAppNavbarToGo: [
         {
           name: 'نظرة عامة',
           compName: 'UserCourseOverview',

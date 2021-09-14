@@ -154,10 +154,6 @@
 import { required, numeric } from 'vuelidate/lib/validators'
 export default {
   name: 'BankAccounts',
-  validate({ params }) {
-    // Must be params number not string and params exsist.
-    return /^\d+$/.test(params.id) && params.id
-  },
   data() {
     return {
       form: {

@@ -1,13 +1,12 @@
 <template>
   <main class="confirm-the-pay">
-    <header
-      class="text-center padding-y-45 border-bottom-whiteDark margin-bottom-50"
-    >
-      <h1 class="text-30 text-dark margin-bottom-10">اتمام الشراء</h1>
-      <p class="text-14 text-silver weight-br-300 mx-auto col-lg-3">
-        حدد طريقة دفع مناسبة لك لتأكيد اشتراكك في هذه الدورة وتمتع بتجربة فريدة
-      </p>
-    </header>
+    <AppPagesHeader class="border-bottom-whiteDark">
+      <template slot="head">اتمام الشراء</template>
+      <template slot="desc">
+        حدد طريقة دفع مناسبة لك لتأكيد اشتراكك في هذه الدورة وتمتع بتجربة
+        فريدة</template
+      >
+    </AppPagesHeader>
     <section>
       <!--  -->
       <div class="bg-alabaster radius-12 padding-y-20">

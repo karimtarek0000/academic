@@ -1,13 +1,12 @@
 <template>
   <main class="contact-us custom-input--object-3 custom-input--object-4">
-    <!--  -->
-    <header class="text-center padding-y-45 border-bottom-whiteDark">
-      <h1 class="text-30 text-dark margin-bottom-10">اتصل بنا</h1>
-      <p class="text-14 text-silver weight-br-300 mx-auto col-lg-4">
+    <AppPagesHeader class="border-bottom-whiteDark">
+      <template slot="head">اتصل بنا</template>
+      <template slot="desc">
         هو أسلوب فني إبداعي يهدف إلى إيصال فكرة معينة إلى الجمهور المستهدف عبر
-        تصميم أو مجموعة من التصاميم
-      </p>
-    </header>
+        تصميم أو مجموعة من التصاميم</template
+      >
+    </AppPagesHeader>
     <!--  -->
     <article class="custom-container">
       <section class="col-lg-10 justify-content-center mx-auto padding-y-45">

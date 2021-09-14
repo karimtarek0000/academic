@@ -7,10 +7,10 @@
       custom-upload-file-1
     "
   >
-    <header class="text-center padding-y-45 margin-bottom-50">
-      <h1 class="text-30 text-dark margin-bottom-10">الملف الشخصي</h1>
-      <p class="text-14 text-silver weight-br-300">إدارة تفاصيل ملفك الشخصي</p>
-    </header>
+    <AppPagesHeader>
+      <template slot="head">الملف الشخصي</template>
+      <template slot="desc"> إدارة تفاصيل ملفك الشخصي</template>
+    </AppPagesHeader>
     <!--  -->
     <section class="bg-alabaster radius-12 padding-y-67">
       <div class="row gx-5 custom-container">
@@ -18,10 +18,7 @@
           <aside
             class="bg-light radius-21 shadow__user-options-list-1 padding-10"
           >
-            <UserOptionsList
-              :add-items="userOptionsitems"
-              class="margin-bottom-0"
-            />
+            <UserOptionsList :add-items="userItems" class="margin-bottom-0" />
           </aside>
         </div>
         <!--  -->
@@ -678,7 +675,7 @@ export default {
         linkedin: null,
         youtube: null,
       },
-      userOptionsitems: [
+      userItems: [
         {
           title: 'دوراتي',
           path: 'my-courses',
@@ -701,7 +698,7 @@ export default {
         },
         {
           title: 'الحساب البنكي',
-          path: 'index',
+          path: 'bank-accounts',
           icon: 'bank',
         },
       ],

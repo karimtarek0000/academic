@@ -1,6 +1,6 @@
 <template>
   <nav
-    ref="navbarSelected"
+    ref="AppNavbarToGo"
     role="category"
     class="
       d-flex
@@ -8,6 +8,7 @@
       justify-content-center
       padding-0
       navbar-selected__wrapper
+      change-scrollbar-x
       custom-container
     "
   >
@@ -30,7 +31,7 @@
 
 <script>
 export default {
-  name: 'NavbarSelected',
+  name: 'AppNavbarToGo',
 }
 </script>
 
@@ -42,14 +43,6 @@ export default {
     margin-left: auto;
     margin-right: auto;
     overflow-x: auto;
-
-    @include scrollBar(5px, $light, $whiteDark) {
-      border-radius: 20px;
-    }
-
-    &::-webkit-scrollbar {
-      height: 5px;
-    }
   }
   //
   &__items {

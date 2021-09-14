@@ -30,7 +30,7 @@
             </del>
           </div>
           <!--  -->
-          <div class="col">
+          <div class="col flex-grow-0 margin-start-auto">
             <p role="discount" class="d-flex text-14 text-coral weight-br-300">
               <span>خصم</span>
               <span class="margin-x-2">75%</span>
@@ -79,7 +79,7 @@
         </ul>
       </div>
       <!--  -->
-      <div class="col-12">
+      <div class="col-12 padding-x-15">
         <addToShop class="width-100" />
       </div>
     </div>

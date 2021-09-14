@@ -1,9 +1,9 @@
 <template>
   <div class="default">
     <!-- Navbar -->
-    <Navbar v-if="ifDesktop" class="d-none d-lg-block" />
+    <AppNavbar v-if="ifDesktop" class="d-none d-lg-block" />
     <!-- Navbar mobile -->
-    <NavbarMobile v-else class="d-block d-lg-none" />
+    <AppNavbarMobile v-else class="d-block d-lg-none" />
     <!-- Pages -->
     <div class="container-xxl">
       <!--  -->
@@ -13,8 +13,8 @@
     </div>
     <!--  -->
     <template v-if="ifTablet">
-      <SideBarMenu />
-      <SideBarUser />
+      <AppSideBarMenu />
+      <AppSideBarUser />
     </template>
   </div>
 </template>

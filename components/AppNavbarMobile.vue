@@ -51,7 +51,7 @@
 
 <script>
 export default {
-  name: 'NavbarMobile',
+  name: 'AppNavbarMobile',
   data() {
     return {
       statusToggler: false,

@@ -1,5 +1,5 @@
 <template>
-  <footer class="margin-top-40">
+  <footer class="margin-top-40 footer">
     <!--  -->
     <div class="bg-voodoo radius-60 overflow-hidden">
       <div
@@ -205,7 +205,7 @@ export default {
         },
         {
           name: 'انضم الينا كمدرب',
-          path: 'index',
+          path: 'join-us-instructor',
         },
         {
           name: 'المدونة',
@@ -291,10 +291,21 @@ export default {
 </script>
 
 <style lang="scss">
-.social {
-  svg {
-    position: relative;
-    z-index: 2;
+.footer {
+  .social {
+    svg {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  a {
+    @include DetectHover {
+      &:hover {
+        text-decoration: underline;
+        color: var(--light);
+      }
+    }
   }
 }
 </style>

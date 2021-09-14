@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'SideBarUser',
+  name: 'AppSideBarUser',
   data() {
     return {
       userOptionsitems: [

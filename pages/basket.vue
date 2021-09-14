@@ -1,11 +1,8 @@
 <template>
   <main class="basket">
-    <h1
-      role="head"
-      class="text-30 text-dark text-center padding-y-30 border-bottom-whiteDark"
-    >
-      السلة
-    </h1>
+    <AppPagesHeader class="border-bottom-whiteDark">
+      <template slot="head">السلة</template>
+    </AppPagesHeader>
     <section>
       <h2 class="custom-container padding-y-20">
         <span class="text-20 text-dark margin-end-5">السلة</span>

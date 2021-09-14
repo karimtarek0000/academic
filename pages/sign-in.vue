@@ -1,10 +1,11 @@
 <template>
-  <p>sign in</p>
+  <p></p>
 </template>
 
 <script>
 export default {
   name: 'SignIn',
+  layout: 'auth',
 }
 </script>
 
