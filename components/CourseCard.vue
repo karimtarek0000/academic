@@ -4,7 +4,7 @@
     <!--  -->
     <div class="row flex-column flex-md-row g-0">
       <!--  -->
-      <figure class="col col-md-4 margin-0 padding-0">
+      <figure class="col col-md-4 padding-0 margin-0">
         <img
           class="resize-img height-100"
           src="~/assets/images/global/course.png"
@@ -99,8 +99,8 @@
         <!--  -->
         <AppBtnGo
           v-if="!addPrice"
-          style="width: 11.6rem; height: 4.1rem"
-          class="btn-voodoo text-12 text-light margin-x-auto margin-top-20"
+          style="width: 11.6rem; height: 4.1rem; margin-right: auto"
+          class="btn-voodoo text-12 text-light margin-top-20"
           to="sign-up"
         >
           تصفح الكورس

@@ -1,9 +1,26 @@
 <template>
-  <main role="register" class="register">
+  <main
+    role="register"
+    class="register custom-input--object-3 custom-input--object-4"
+  >
     <div class="row overflow-hidden" style="max-height: 100vh">
-      <div class="col-6 padding-x-30">
-        <Logo color="text-voodoo" />
-        <nuxt />
+      <div class="col-6">
+        <div class="row g-0 col-lg-9 margin-x-auto">
+          <div
+            class="
+              col-12
+              d-flex
+              justify-content-start
+              margin-bottom-20
+              padding-y-20
+            "
+          >
+            <Logo class="register__logo" color="text-voodoo" />
+          </div>
+          <div class="col">
+            <nuxt />
+          </div>
+        </div>
       </div>
       <!--  -->
       <div
@@ -75,6 +92,9 @@ export default {
       );
       z-index: -1;
     }
+  }
+  &__logo {
+    transform: scale(0.8);
   }
 }
 </style>

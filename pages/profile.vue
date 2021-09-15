@@ -103,15 +103,11 @@
                         name-icon="user"
                       />
                     </div>
-                    <p
+                    <AppMessageInputRequired
                       v-if="
                         !$v.form.firstName.required && $v.form.firstName.$dirty
                       "
-                      role="error"
-                      class="margin-y-10 text-12 text-dark"
-                    >
-                      مطلوب ادخاله
-                    </p>
+                    />
                   </div>
                   <div class="col-12 col-sm-6">
                     <div
@@ -137,15 +133,11 @@
                         placeholder="الاسم الاخير"
                       />
                     </div>
-                    <p
+                    <AppMessageInputRequired
                       v-if="
                         !$v.form.lastName.required && $v.form.lastName.$dirty
                       "
-                      role="error"
-                      class="margin-y-10 text-12 text-dark"
-                    >
-                      مطلوب ادخاله
-                    </p>
+                    />
                   </div>
                 </div>
                 <div
@@ -178,20 +170,13 @@
                     name-icon="mail-2"
                   />
                 </div>
-                <p
+                <AppMessageInputRequired
                   v-if="!$v.form.email.required && $v.form.email.$dirty"
-                  role="error"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  مطلوب ادخاله
-                </p>
-                <p
+                />
+                <AppMessageInputError
                   v-if="!$v.form.email.email && $v.form.email.$dirty"
-                  role="error"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  ادخل الايميل بشكل صحيح
-                </p>
+                  type-error="email"
+                />
                 <div
                   class="
                     d-flex
@@ -222,13 +207,10 @@
                     name-icon="smartphone"
                   />
                 </div>
-                <p
+                <AppMessageInputError
                   v-if="!$v.form.phone.numeric && $v.form.phone.$dirty"
-                  role="error"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  يجب ادخال ارقام فقط
-                </p>
+                  type-error="num"
+                />
                 <div
                   class="
                     d-flex
@@ -421,15 +403,12 @@
                     name-icon="key-2-line"
                   />
                 </div>
-                <p
+                <AppMessageInputRequired
                   v-if="
                     !$v.form.oldPassword.required && $v.form.oldPassword.$dirty
                   "
-                  role="require"
-                  class="margin-y-10 text-12 text-dark"
-                >
-                  مطلوب ادخاله
-                </p>
+                />
+
                 <div
                   class="
                     d-flex
@@ -460,17 +439,16 @@
                     name-icon="key-2-line"
                   />
                 </div>
-                <p
+                <AppMessageInputError
                   v-if="
                     !$v.form.newPassword.minLength && $v.form.newPassword.$dirty
                   "
-                  role="error"
-                  class="margin-y-10 text-12 text-dark"
+                  type-error="custom"
                 >
                   يجب ادخال على الاقل
                   {{ $v.form.newPassword.$params.minLength.min }}
                   ادخالات
-                </p>
+                </AppMessageInputError>
               </form>
             </div>
           </div>

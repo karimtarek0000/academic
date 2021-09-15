@@ -46,6 +46,7 @@
               padding-start-20
               margin-end-10
             "
+            :value="selectBox1"
           />
           <!--  -->
           <SelectBox
@@ -58,6 +59,7 @@
               radius-14
               padding-start-20
             "
+            :value="selectBox2"
           />
         </div>
       </div>
@@ -84,7 +86,7 @@
           <CourseCard
             v-for="t in 3"
             :key="t"
-            class="col-sm-12 col-md-12 margin-bottom-20"
+            class="col-sm-12 col-md-12 padding-0 margin-bottom-20"
             :add-price="true"
           />
         </div>
@@ -125,6 +127,12 @@ export default {
   validate({ params }) {
     // Must be params string not number and params exsist.
     return /^\D+$/.test(params.categoryName) && params.categoryName
+  },
+  data() {
+    return {
+      selectBox1: '',
+      selectBox2: '',
+    }
   },
   head() {
     return {

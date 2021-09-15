@@ -164,6 +164,14 @@ export default {
         path: '/invoice/:id',
         component: resolve(__dirname, 'pages/invoice.vue'),
       })
+      routes.push({
+        path: '/auth/sign-up',
+        component: resolve(__dirname, 'pages/auth/sign-up.vue'),
+      })
+      routes.push({
+        path: '/auth/sign-in',
+        component: resolve(__dirname, 'pages/auth/sign-in.vue'),
+      })
     },
   },
 
