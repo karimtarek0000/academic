@@ -19,6 +19,7 @@
     "date-fns": "^1.29.0",
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
+    "nuxt-route-meta": "^2.3.2",
     "vue-airbnb-style-datepicker": "^2.7.1",
     "vue-html2canvas": "0.0.4",
     "vue-html2pdf": "^1.8.0",

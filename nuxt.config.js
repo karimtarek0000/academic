@@ -90,6 +90,8 @@ export default {
     'nuxt-mq',
     //
     'vue-social-sharing/nuxt',
+    //
+    'nuxt-route-meta',
   ],
 
   //

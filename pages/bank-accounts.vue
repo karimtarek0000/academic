@@ -3,32 +3,32 @@
     role="bank-accounts"
     class="bank-accounts custom-input--object-3 custom-input--object-4"
   >
-    <header class="text-center padding-y-45 margin-bottom-20">
-      <h1 class="text-30 text-dark margin-bottom-10">الحساب البنكي</h1>
-      <p class="text-14 text-silver weight-br-300">
-        الحساب البنكي الخاص بك وبامكانك إضافة حساب اخر
-      </p>
-    </header>
+    <AppPagesHeader>
+      <template slot="head">الحساب البنكي</template>
+      <template slot="desc">
+        الحساب البنكي الخاص بك وبامكانك إضافة حساب اخر</template
+      >
+    </AppPagesHeader>
     <!--  -->
     <section class="custom-container overflow-auto" style="max-width: 109.8rem">
       <AppDataTable style="min-width: 108.8rem" />
-      <!--  -->
-      <AppBtn
-        style="width: 33.2rem; height: 6.2rem"
-        class="
-          btn-voodoo
-          text-light
-          margin-y-50
-          radius-18
-          text-14
-          mx-auto
-          d-block
-        "
-        @clicked="toggle = true"
-      >
-        اضافة حساب بنكي
-      </AppBtn>
     </section>
+    <!--  -->
+    <AppBtn
+      style="width: 33.2rem; height: 6.2rem"
+      class="
+        btn-voodoo
+        text-light
+        margin-y-50
+        radius-18
+        text-14
+        mx-auto
+        d-block
+      "
+      @clicked="toggle = true"
+    >
+      اضافة حساب بنكي
+    </AppBtn>
     <!--  -->
     <BackDrop :toggle="toggle" @toggleBackDrop="toggle = $event">
       <AppModel head="اضافة حساب بنكي" @clicked="toggle = false">

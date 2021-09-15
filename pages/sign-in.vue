@@ -6,6 +6,9 @@
 export default {
   name: 'SignIn',
   layout: 'auth',
+  meta: {
+    image: 2,
+  },
 }
 </script>
 
