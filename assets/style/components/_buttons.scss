@@ -67,11 +67,14 @@
   &-light {
     background-color: var(--light);
 
+    &-outline {
+      border: 1px solid var(--light);
+    }
+
     //
     @include DetectHover {
       &:hover {
         background-color: darken($light, 5%);
-        color: var(--coral);
       }
     }
   }

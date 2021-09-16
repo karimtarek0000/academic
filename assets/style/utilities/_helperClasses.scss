@@ -55,11 +55,20 @@
     box-shadow: 0px 8px 24px #9c9c9c17;
   }
 }
+
 .underline {
   text-decoration: underline !important;
   //
   &:hover {
     color: var(--chardonnay);
+  }
+
+  &__hover {
+    @include DetectHover {
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
   }
 }
 
@@ -211,5 +220,10 @@
 
   &::-webkit-scrollbar {
     height: 5px;
+  }
+}
+.change-scrollbar-y {
+  @include scrollBar(5px, $light, $whiteDark) {
+    border-radius: 20px;
   }
 }

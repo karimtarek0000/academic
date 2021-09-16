@@ -40,14 +40,14 @@
           <AppBtnGo
             style="width: 14.8rem; height: 5.5rem"
             class="btn-voodoo margin-end-20 text-14 text-light"
-            to="sign-up"
+            to="auth-sign-up"
           >
             حساب جديد
           </AppBtnGo>
           <AppBtnGo
             style="width: 14.8rem; height: 5.5rem"
-            class="btn-voodoo-outline text-14 text-voodoo"
-            to="sign-in"
+            class="btn-voodoo-outline text-14 text-voodoo bg-light"
+            to="auth-sign-in"
           >
             تسجيل الدخول
           </AppBtnGo>

@@ -102,6 +102,7 @@ export default {
   mq: {
     defaultBreakpoint: 'desktop',
     breakpoints: {
+      tabletP: 768,
       tablet: 992,
       desktop: Infinity,
     },
@@ -171,6 +172,18 @@ export default {
       routes.push({
         path: '/auth/sign-in',
         component: resolve(__dirname, 'pages/auth/sign-in.vue'),
+      })
+      routes.push({
+        path: '/auth/forget-password',
+        component: resolve(__dirname, 'pages/auth/forget-password.vue'),
+      })
+      routes.push({
+        path: '/auth/forget-password/enter-new-password',
+        component: resolve(__dirname, 'pages/auth/enter-new-password.vue'),
+      })
+      routes.push({
+        path: '/auth/forget-password/enter-code',
+        component: resolve(__dirname, 'pages/auth/enter-code.vue'),
       })
     },
   },

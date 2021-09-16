@@ -24,7 +24,7 @@
         title="السعر"
         @click="accordion2 = !accordion2"
       >
-        <Radio
+        <Selected
           class="margin-y-5"
           v-bind="{
             id: 'one',
@@ -35,7 +35,7 @@
           }"
           @changeSelect="priceSelected = $event"
         />
-        <Radio
+        <Selected
           class="margin-y-5"
           v-bind="{
             id: 'two',
@@ -54,7 +54,7 @@
         :toggle-status="accordion3"
         @click="accordion3 = !accordion3"
       >
-        <Radio
+        <Selected
           class="margin-y-5"
           v-bind="{
             id: 'three',
@@ -65,7 +65,7 @@
           }"
           @changeSelect="languageSelected = $event"
         />
-        <Radio
+        <Selected
           class="margin-y-5"
           v-bind="{
             id: 'four',

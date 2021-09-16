@@ -1,16 +1,16 @@
 <template>
-  <div class="radio d-flex align-items-center">
+  <div class="selected d-flex align-items-center">
     <input
       :id="id"
-      class="radio__input"
+      class="selected__input"
       :value="value"
-      type="radio"
+      :type="type"
       :name="name"
       @input="select"
     />
     <label
       class="
-        radio__label
+        selected__label
         d-flex
         align-items-center
         weight-br-300
@@ -19,25 +19,20 @@
       "
       :for="id"
     >
-      <span class="radio__label__icon" />
-      <span class="radio__label__text text-14 margin-start-10" v-text="label" />
+      <span class="selected__label__icon" />
+      <span
+        class="selected__label__text text-14 margin-start-10"
+        v-text="label"
+      />
     </label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Radio',
+  name: 'Selected',
   props: {
-    selected: {
-      type: String,
-      default: '',
-    },
     value: {
-      type: String,
-      required: true,
-    },
-    label: {
       type: String,
       required: true,
     },
@@ -49,17 +44,30 @@ export default {
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      default: 'radio',
+    },
+    selected: {
+      type: String,
+      default: '',
+    },
+    label: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     select() {
-      this.$emit('changeSelect', this.value)
+      if (this.selected === '') return this.$emit('changeSelect', this.value)
+      this.$emit('changeSelect', '')
     },
   },
 }
 </script>
 
 <style lang="scss">
-.radio {
+.selected {
   //
   &__label {
     cursor: pointer;
