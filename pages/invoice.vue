@@ -11,7 +11,26 @@
     >
       <!-- Invoice html -->
       <AppInvoicePaper id="invoice">
-        <AppDataTable />
+        <AppDataTable>
+          <template slot="head">
+            <div
+              v-for="head in table.head"
+              :key="head"
+              class="table__cell"
+              v-text="head"
+            />
+          </template>
+          <template slot="body">
+            <div class="table__row weight-br-300">
+              <p class="table__cell">
+                الفرق بين التايبوجرافي و الكاليجرافي وفن التعريب
+              </p>
+              <p class="table__cell">Ibtdi.com@ibtdi.com</p>
+              <p class="table__cell weight-br-400">S.R</p>
+              <p class="table__cell weight-br-400 text-18">50</p>
+            </div>
+          </template>
+        </AppDataTable>
       </AppInvoicePaper>
       <!-- Invoice PDF -->
       <client-only>
@@ -23,7 +42,26 @@
           pdf-format="a4"
         >
           <AppInvoicePaper slot="pdf-content">
-            <AppDataTable />
+            <AppDataTable>
+              <template slot="head">
+                <div
+                  v-for="head in table.head"
+                  :key="head"
+                  class="table__cell"
+                  v-text="head"
+                />
+              </template>
+              <template slot="body">
+                <div class="table__row weight-br-300">
+                  <p class="table__cell">
+                    الفرق بين التايبوجرافي و الكاليجرافي وفن التعريب
+                  </p>
+                  <p class="table__cell">Ibtdi.com@ibtdi.com</p>
+                  <p class="table__cell weight-br-400">S.R</p>
+                  <p class="table__cell weight-br-400 text-18">50</p>
+                </div>
+              </template>
+            </AppDataTable>
           </AppInvoicePaper>
         </VueHtml2pdf>
       </client-only>
@@ -73,11 +111,6 @@ export default {
           '50',
         ],
       },
-    }
-  },
-  provide() {
-    return {
-      table: this.table,
     }
   },
   methods: {

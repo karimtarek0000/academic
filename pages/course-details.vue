@@ -222,7 +222,7 @@ export default {
 .course {
   //
   &__info {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 48em) {
       transform: translateY(-10rem);
     }
   }
@@ -238,7 +238,7 @@ export default {
       border: 1px solid var(--gallery);
       border-radius: 1.8rem !important;
 
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 48em) {
         margin-top: -7rem;
       }
     }

@@ -52,7 +52,7 @@ export default {
 .model {
   width: 65.9rem;
   //
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 48em) {
     width: 100%;
   }
   //

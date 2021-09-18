@@ -1,7 +1,7 @@
 <template>
   <div
     role="card"
-    class="card specific-size shadow__card-1 padding-0 radius-21"
+    class="card shadow__card-1 padding-0 radius-21 position-relative"
   >
     <!--  -->
     <figure>
@@ -46,6 +46,8 @@
         <slot name="part3" />
       </div>
     </div>
+    <!--  -->
+    <slot name="delete" />
   </div>
 </template>
 
@@ -56,14 +58,15 @@ export default {
 </script>
 
 <style lang="scss">
-//
 .card {
-  //
   @include DetectHover {
     transition: transform 0.3s ease;
     &:hover {
       transform: translateY(-10px);
     }
+  }
+  &__btn-delete {
+    @include position('lt', $moveL: '2rem', $moveT: '1.5rem');
   }
 }
 </style>

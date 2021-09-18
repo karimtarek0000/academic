@@ -10,8 +10,29 @@
       >
     </AppPagesHeader>
     <!--  -->
-    <section class="custom-container overflow-auto" style="max-width: 109.8rem">
-      <AppDataTable style="min-width: 108.8rem" />
+    <section
+      class="custom-container overflow-auto change-scrollbar-x user-select-none"
+      style="max-width: 109.8rem"
+    >
+      <AppDataTable style="min-width: 108.8rem">
+        <template slot="head">
+          <div
+            v-for="head in table.head"
+            :key="head"
+            class="table__cell"
+            v-text="head"
+          />
+        </template>
+        <template slot="body">
+          <div class="table__row weight-br-300">
+            <p class="table__cell">Ahmed Hamdan</p>
+            <p class="table__cell">بنك الراجحي</p>
+            <p class="table__cell weight-br-400">25785506000109</p>
+            <p class="table__cell weight-br-400">SA8880000487608010416925</p>
+            <p class="table__cell">دفع</p>
+          </div>
+        </template>
+      </AppDataTable>
     </section>
     <!--  -->
     <AppBtn
@@ -175,11 +196,6 @@ export default {
       },
     }
   },
-  provide() {
-    return {
-      table: this.table,
-    }
-  },
   validations: {
     form: {
       name: {
@@ -216,21 +232,11 @@ export default {
   section {
     position: relative;
     z-index: 4000;
-    @include scrollBar(5px, $alabaster, $voodoo) {
-      border-radius: 20px;
-    }
-    &::-webkit-scrollbar {
-      height: 5px;
-    }
   }
 
   .table {
     &__cell {
       width: calc(108.8rem / 5);
-    }
-
-    &__body .table__row {
-      border-bottom: 2px solid var(--whiteDark);
     }
   }
 }

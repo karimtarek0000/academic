@@ -166,6 +166,14 @@ export default {
         component: resolve(__dirname, 'pages/invoice.vue'),
       })
       routes.push({
+        path: '/favorit',
+        component: resolve(__dirname, 'pages/favorit.vue'),
+      })
+      routes.push({
+        path: '/purchase-orders',
+        component: resolve(__dirname, 'pages/purchase-orders.vue'),
+      })
+      routes.push({
         path: '/auth/sign-up',
         component: resolve(__dirname, 'pages/auth/sign-up.vue'),
       })

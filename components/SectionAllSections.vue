@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss">
 .section-height {
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 75em) {
     height: 40.6rem;
   }
 }

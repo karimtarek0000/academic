@@ -26,7 +26,7 @@ export default {
       return this.$mq === 'desktop'
     },
     ifTablet() {
-      return this.$mq === 'tablet'
+      return this.$mq === 'tablet' || this.$mq === 'tabletP'
     },
   },
 }

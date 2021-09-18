@@ -19,7 +19,7 @@
         <AppBtnGo
           style="width: 14.8rem; height: 5.5rem"
           class="btn-voodoo text-14 text-light margin-bottom-5"
-          to="sign-up"
+          to="auth-sign-up"
         >
           حساب جديد
         </AppBtnGo>

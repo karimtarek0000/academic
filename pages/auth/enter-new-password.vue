@@ -130,7 +130,6 @@ export default {
       ...password.validations,
     },
   },
-
   methods: {
     submit() {
       this.$v.$touch()

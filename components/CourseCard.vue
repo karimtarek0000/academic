@@ -101,7 +101,7 @@
           v-if="!addPrice"
           style="width: 11.6rem; height: 4.1rem; margin-right: auto"
           class="btn-voodoo text-12 text-light margin-top-20"
-          to="sign-up"
+          to="auth-sign-up"
         >
           تصفح الكورس
         </AppBtnGo>

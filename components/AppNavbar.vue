@@ -203,7 +203,7 @@ export default {
     @include position('rt', $moveR: '-2px', $moveT: '50%');
 
     //
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 75em) {
       display: none;
     }
   }

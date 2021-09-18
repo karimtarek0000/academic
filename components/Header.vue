@@ -57,7 +57,7 @@
         <AppBtnGo
           style="width: 19.5rem; height: 6rem"
           class="btn-voodoo translate-up-btn margin-y-38 text-16 text-light"
-          to="sign-up"
+          to="auth-sign-up"
         >
           ابدأ التعلم
         </AppBtnGo>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 62em) {
   //
   .animate-slide-right {
     animation: slide-right 1.5s ease-in-out forwards;

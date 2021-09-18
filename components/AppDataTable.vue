@@ -3,24 +3,12 @@
     <!-- Table head -->
     <div class="table__head text-13 overflow-hidden">
       <div class="table__row">
-        <div
-          v-for="head in table.head"
-          :key="head"
-          class="table__cell bg-alabaster text-center"
-          v-text="head"
-        />
+        <slot name="head" />
       </div>
     </div>
     <!-- Table body -->
-    <div class="table__body">
-      <div class="table__row text-12">
-        <div
-          v-for="body in table.body"
-          :key="body"
-          class="table__cell"
-          v-text="body"
-        />
-      </div>
+    <div class="table__body text-12">
+      <slot name="body" />
     </div>
   </div>
 </template>
@@ -28,7 +16,6 @@
 <script>
 export default {
   name: 'AppDataTable',
-  inject: ['table'],
 }
 </script>
 
@@ -41,7 +28,8 @@ export default {
 
   &__head {
     display: table-header-group;
-
+    background-color: $alabaster;
+    //
     .table__cell:first-child {
       border-radius: 0 1rem 1rem 0;
     }
@@ -49,19 +37,20 @@ export default {
       border-radius: 1rem 0 0 1rem;
     }
   }
-
-  &__row {
-    display: table-row;
-    vertical-align: middle;
-    text-align: center;
-  }
-
   &__cell {
     display: table-cell;
     padding: 2rem 0;
     max-width: 10rem;
+    text-align: center;
   }
+  &__row {
+    display: table-row;
+    overflow: hidden;
 
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--whiteDark);
+    }
+  }
   &__body {
     display: table-row-group;
   }

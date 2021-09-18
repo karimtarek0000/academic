@@ -183,67 +183,64 @@
         </h3>
         <div
           class="
-            row
-            align-items-center
+            row row-cols-1 row-cols-sm-2 row-cols-lg-3
+            g-4
             justify-content-center justify-content-lg-between
           "
         >
-          <div
-            style="min-height: 16.5rem"
-            class="
-              specific-size
-              radius-11
-              shadow__card-1
-              text-dark text-center
-              padding-y-20
-              position-relative
-              line-over
-              lg-margin-bottom-20
-            "
-          >
-            <GSvg class="svg-25" name-icon="map" title="العنوان" />
-            <p class="text-16 margin-y-5">العنوان</p>
-            <p role="address" class="text-14 padding-x-30 weight-br-300">
-              Comapny 12345 South Main Street Anywhere
-            </p>
+          <div class="col position-relative line-over">
+            <div
+              style="min-height: 16.5rem"
+              class="
+                radius-11
+                shadow__card-1
+                text-dark text-center
+                padding-y-20
+                lg-margin-bottom-20
+              "
+            >
+              <GSvg class="svg-25" name-icon="map" title="العنوان" />
+              <p class="text-16 margin-y-5">العنوان</p>
+              <p role="address" class="text-14 padding-x-30 weight-br-300">
+                Comapny 12345 South Main Street Anywhere
+              </p>
+            </div>
           </div>
-          <div
-            style="min-height: 16.5rem"
-            class="
-              specific-size
-              radius-11
-              shadow__card-1
-              text-dark text-center
-              padding-y-20
-              position-relative
-              line-over
-              lg-margin-bottom-20
-            "
-          >
-            <GSvg class="svg-25" name-icon="mail" title="البريد الالكتروني" />
-            <p class="text-16 margin-y-5">البريد الالكتروني</p>
-            <p role="email" class="text-14 padding-x-30 weight-br-300">
-              Ibtdi.com@gmail.com
-            </p>
+          <div class="col position-relative line-over">
+            <div
+              style="min-height: 16.5rem"
+              class="
+                radius-11
+                shadow__card-1
+                text-dark text-center
+                padding-y-20
+                lg-margin-bottom-20
+              "
+            >
+              <GSvg class="svg-25" name-icon="mail" title="البريد الالكتروني" />
+              <p class="text-16 margin-y-5">البريد الالكتروني</p>
+              <p role="email" class="text-14 padding-x-30 weight-br-300">
+                Ibtdi.com@gmail.com
+              </p>
+            </div>
           </div>
-          <div
-            style="min-height: 16.5rem"
-            class="
-              specific-size
-              radius-11
-              shadow__card-1
-              text-dark text-center
-              padding-y-20
-              position-relative
-              line-over
-              lg-margin-bottom-20
-            "
-          >
-            <GSvg class="svg-25" name-icon="mobile" title="رقم التليفون" />
-            <p class="text-16 margin-y-5">رقم الجوال</p>
-            <p role="phone" class="text-14 padding-x-30 weight-br-300">
-              +000000000000
-            </p>
+          <div class="col position-relative line-over">
+            <div
+              style="min-height: 16.5rem"
+              class="
+                radius-11
+                shadow__card-1
+                text-dark text-center
+                padding-y-20
+                lg-margin-bottom-20
+              "
+            >
+              <GSvg class="svg-25" name-icon="mobile" title="رقم التليفون" />
+              <p class="text-16 margin-y-5">رقم الجوال</p>
+              <p role="phone" class="text-14 padding-x-30 weight-br-300">
+                +000000000000
+              </p>
+            </div>
           </div>
         </div>
       </section>

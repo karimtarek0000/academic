@@ -115,7 +115,7 @@ export default {
   .wrapper {
     margin: 0 auto;
     max-width: 88vw;
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 75em) {
       max-width: 70vw;
     }
   }

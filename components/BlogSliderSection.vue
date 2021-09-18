@@ -84,7 +84,7 @@ export default {
 .blog-slider {
   .blog {
     .blog-card__body {
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 48em) {
         width: 100% !important;
       }
     }

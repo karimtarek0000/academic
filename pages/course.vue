@@ -490,7 +490,6 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-// numeric
 import { setDirectionAnim } from '@/mixins/other'
 import format from 'date-fns/format'
 export default {
@@ -737,7 +736,7 @@ export default {
   .navbar-selected {
     //
     &__wrapper {
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 48em) {
         border: 1px solid var(--gallery);
       }
       border-radius: 1.8rem !important;
@@ -797,7 +796,7 @@ export default {
   .asd__wrapper--datepicker-open {
     left: -17px !important;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 48em) {
       left: 0 !important;
     }
   }
