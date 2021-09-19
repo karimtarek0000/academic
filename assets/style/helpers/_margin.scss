@@ -4,7 +4,7 @@
   .margin-start-#{$name} {
     // 1 - SUPPORTS
     @include Supports(
-      "support",
+      'support',
       (
         margin-inline: 0,
       )
@@ -13,19 +13,19 @@
     }
     // 2 - IF NOT SUPPORTS
     @include Supports(
-      "notSupport",
+      'notSupport',
       (
         margin-inline: 0,
       )
     ) {
-      @include margin("left", $sL: #{$marginSize});
+      @include margin('left', $sL: #{$marginSize});
     }
   }
   // 2) - MARGIN END
   .margin-end-#{$name} {
     // 1 - SUPPORTS
     @include Supports(
-      "support",
+      'support',
       (
         margin-inline: 0,
       )
@@ -34,25 +34,25 @@
     }
     // 2 - IF NOT SUPPORTS
     @include Supports(
-      "notSupport",
+      'notSupport',
       (
         margin-inline: 0,
       )
     ) {
-      @include margin("right", $sR: #{$marginSize});
+      @include margin('right', $sR: #{$marginSize});
     }
   }
   // 3) - MARGIN
   .margin-#{$name} {
-    @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+    @include margin('xy', $sX: #{$marginSize}, $sY: #{$marginSize});
   }
   // 4) - MARGIN - X
   .margin-x-#{$name} {
-    @include margin("x", $sX: #{$marginSize});
+    @include margin('x', $sX: #{$marginSize});
   }
   // 5) - MARGIN - Y
   .margin-y-#{$name} {
-    @include margin("y", $sY: #{$marginSize});
+    @include margin('y', $sY: #{$marginSize});
   }
   // 6) - MARGIN TOP
   .margin-top-#{$name} {
@@ -73,7 +73,7 @@
     @include BreakPoint(xlg) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -82,12 +82,12 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("left", $sL: #{$marginSize});
+        @include margin('left', $sL: #{$marginSize});
       }
     }
   }
@@ -96,7 +96,7 @@
     @include BreakPoint(xlg) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -105,31 +105,31 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("right", $sR: #{$marginSize});
+        @include margin('right', $sR: #{$marginSize});
       }
     }
   }
   // 3) - MARGIN
   .xlg-margin-#{$name} {
     @include BreakPoint(xlg) {
-      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+      @include margin('xy', $sX: #{$marginSize}, $sY: #{$marginSize});
     }
   }
   // 4) - MARGIN - X
   .xlg-margin-x-#{$name} {
     @include BreakPoint(xlg) {
-      @include margin("x", $sX: #{$marginSize});
+      @include margin('x', $sX: #{$marginSize});
     }
   }
   // 5) - MARGIN - Y
   .xlg-margin-y-#{$name} {
     @include BreakPoint(xlg) {
-      @include margin("y", $sY: #{$marginSize});
+      @include margin('y', $sY: #{$marginSize});
     }
   }
   // 6) - MARGIN TOP
@@ -153,7 +153,7 @@
     @include BreakPoint(lg) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -162,12 +162,12 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("left", $sL: #{$marginSize});
+        @include margin('left', $sL: #{$marginSize});
       }
     }
   }
@@ -176,7 +176,7 @@
     @include BreakPoint(lg) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -185,31 +185,31 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("right", $sR: #{$marginSize});
+        @include margin('right', $sR: #{$marginSize});
       }
     }
   }
   // 3) - MARGIN
   .lg-margin-#{$name} {
     @include BreakPoint(lg) {
-      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+      @include margin('xy', $sX: #{$marginSize}, $sY: #{$marginSize});
     }
   }
   // 4) - MARGIN - X
   .lg-margin-x-#{$name} {
     @include BreakPoint(lg) {
-      @include margin("x", $sX: #{$marginSize});
+      @include margin('x', $sX: #{$marginSize});
     }
   }
   // 5) - MARGIN - Y
   .lg-margin-y-#{$name} {
     @include BreakPoint(lg) {
-      @include margin("y", $sY: #{$marginSize});
+      @include margin('y', $sY: #{$marginSize});
     }
   }
   // 6) - MARGIN TOP
@@ -233,7 +233,7 @@
     @include BreakPoint(md) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -242,12 +242,12 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("left", $sL: #{$marginSize});
+        @include margin('left', $sL: #{$marginSize});
       }
     }
   }
@@ -256,7 +256,7 @@
     @include BreakPoint(md) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -265,31 +265,31 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("right", $sR: #{$marginSize});
+        @include margin('right', $sR: #{$marginSize});
       }
     }
   }
   // 3) - MARGIN
   .md-margin-#{$name} {
     @include BreakPoint(md) {
-      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+      @include margin('xy', $sX: #{$marginSize}, $sY: #{$marginSize});
     }
   }
   // 4) - MARGIN - X
   .md-margin-x-#{$name} {
     @include BreakPoint(md) {
-      @include margin("x", $sX: #{$marginSize});
+      @include margin('x', $sX: #{$marginSize});
     }
   }
   // 5) - MARGIN - Y
   .md-margin-y-#{$name} {
     @include BreakPoint(md) {
-      @include margin("y", $sY: #{$marginSize});
+      @include margin('y', $sY: #{$marginSize});
     }
   }
   // 6) - MARGIN TOP
@@ -313,7 +313,7 @@
     @include BreakPoint(sm) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -322,12 +322,12 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("left", $sL: #{$marginSize});
+        @include margin('left', $sL: #{$marginSize});
       }
     }
   }
@@ -336,7 +336,7 @@
     @include BreakPoint(sm) {
       // 1 - SUPPORTS
       @include Supports(
-        "support",
+        'support',
         (
           margin-inline: 0,
         )
@@ -345,31 +345,31 @@
       }
       // 2 - IF NOT SUPPORTS
       @include Supports(
-        "notSupport",
+        'notSupport',
         (
           margin-inline: 0,
         )
       ) {
-        @include margin("right", $sR: #{$marginSize});
+        @include margin('right', $sR: #{$marginSize});
       }
     }
   }
   // 3) - MARGIN
   .sm-margin-#{$name} {
     @include BreakPoint(sm) {
-      @include margin("xy", $sX: #{$marginSize}, $sY: #{$marginSize});
+      @include margin('xy', $sX: #{$marginSize}, $sY: #{$marginSize});
     }
   }
   // 4) - MARGIN - X
   .sm-margin-x-#{$name} {
     @include BreakPoint(sm) {
-      @include margin("x", $sX: #{$marginSize});
+      @include margin('x', $sX: #{$marginSize});
     }
   }
   // 5) - MARGIN - Y
   .sm-margin-y-#{$name} {
     @include BreakPoint(sm) {
-      @include margin("y", $sY: #{$marginSize});
+      @include margin('y', $sY: #{$marginSize});
     }
   }
   // 6) - MARGIN TOP

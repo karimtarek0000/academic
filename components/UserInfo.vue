@@ -5,7 +5,7 @@
     <figure
       style="width: 6.1rem; height: 5.5rem"
       class="user__image radius-21"
-      v-on="$listeners"
+      @click.stop="clicked"
     >
       <img
         role="image-user"
@@ -47,6 +47,11 @@ export default {
     statusWelcome: {
       type: Boolean,
       default: true,
+    },
+  },
+  methods: {
+    clicked() {
+      this.$emit('clicked')
     },
   },
 }

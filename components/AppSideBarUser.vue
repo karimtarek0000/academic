@@ -1,8 +1,8 @@
 <template>
   <transition name="slide-right">
     <aside
-      v-show="toggle"
-      style="width: 22rem"
+      v-show="statusToggler"
+      style="width: 22rem; height: 100vh"
       role="navbar-user-options"
       class="
         navbar-user
@@ -22,6 +22,8 @@
       />
       <!-- Render category -->
       <UserOptionsList :add-items="userOptionsitems" class="padding-x-10" />
+      <!--  -->
+      <logOutButton class="border-top-whiteDark padding-y-10" />
     </aside>
   </transition>
 </template>
@@ -61,13 +63,13 @@ export default {
     }
   },
   computed: {
-    toggle() {
-      return this.$store.state.statusToggleNavbarUser
+    statusToggler() {
+      return this.$store.state.statusSideBarUser
     },
   },
   mounted() {
     document.addEventListener('click', () => {
-      this.$store.commit('toggleNavbarUser', false)
+      this.$store.commit('sideBarUser', false)
     })
   },
 }
@@ -76,6 +78,6 @@ export default {
 <style lang="scss">
 .navbar-user {
   height: 100vh;
-  z-index: 8888;
+  z-index: 10000;
 }
 </style>

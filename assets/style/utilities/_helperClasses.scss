@@ -5,16 +5,15 @@
     border-radius: $size;
   }
 }
-////////////////////////////
-// 2) - Other
+// OTHER
 .cursor-pointer {
   cursor: pointer;
 }
 .pointer-event-none {
   pointer-events: none;
 }
-.direction-ltr {
-  direction: ltr;
+.user-select-none {
+  user-select: none;
 }
 .truncut-text {
   max-width: 40rem;
@@ -24,6 +23,33 @@
   @media only screen and (max-width: 48em) {
     max-width: 30rem;
   }
+}
+// SCROLL
+.change-scrollbar-x {
+  @include scrollBar(0.5rem, $light, $voodoo) {
+    border-radius: 2rem;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+}
+.change-scrollbar-y {
+  @include scrollBar(1rem, $light, $voodoo) {
+    border-radius: 2rem;
+  }
+}
+// IMAGE
+.resize-img {
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+//
+.direction-ltr {
+  direction: ltr;
 }
 .video__wrapper {
   min-width: 70vw;
@@ -42,17 +68,21 @@
   }
 }
 .shadow {
-  &__card-1 {
-    box-shadow: 0px 5px 10px rgba(#bebebe17, 0.2);
-  }
-  &__card-2 {
-    box-shadow: 0px 1px 24px #70707012;
+  &__card {
+    &-1 {
+      box-shadow: 0px 5px 10px rgba(#bebebe17, 0.2);
+    }
+    &-2 {
+      box-shadow: 0px 1px 24px #70707012;
+    }
   }
   &__user-options-list {
-    box-shadow: 0px 3px 25px #aeaeae1f;
-  }
-  &__user-options-list-1 {
-    box-shadow: 0px 8px 24px #9c9c9c17;
+    &-1 {
+      box-shadow: 0px 3px 25px #aeaeae1f;
+    }
+    &-2 {
+      box-shadow: 0px 8px 24px #9c9c9c17;
+    }
   }
 }
 .underline {
@@ -149,35 +179,17 @@
     transform: translateY(4rem);
   }
 }
-.max-width-831 {
-  max-width: 83.1rem;
-}
 .global-style-sidebar {
   @include position('lt', $moveR: 0, $moveT: 0);
-  box-shadow: -3px 0px 50px #bbb8b8bd;
 }
 .zindex-4 {
   z-index: 4;
-}
-.resize-img {
-  width: 100vw;
-  max-width: 100%;
-  max-height: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.position-top-img {
-  object-position: center top;
-}
-.user-select-none {
-  user-select: none;
 }
 .user-options {
   &__item {
     &:not(:last-of-type) {
       border-bottom: 1px solid var(--whiteDark);
     }
-
     a {
       color: var(--dark);
     }
@@ -192,17 +204,12 @@
 .fit-content {
   width: fit-content;
 }
-.change-scrollbar-x {
-  @include scrollBar(5px, $light, $voodoo) {
-    border-radius: 20px;
-  }
-
-  &::-webkit-scrollbar {
-    height: 5px;
-  }
+.no-wrap {
+  white-space: nowrap;
 }
-.change-scrollbar-y {
-  @include scrollBar(5px, $light, $whiteDark) {
-    border-radius: 20px;
-  }
+.text-right {
+  text-align: right;
+}
+.scale-small {
+  transform: scale(0.8);
 }

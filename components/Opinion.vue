@@ -1,16 +1,10 @@
 <template>
   <div
     role="opinion"
-    class="
-      opinion
-      max-width-831
-      radius-21
-      sm-padding-20
-      md-padding-10
-      overflow-hidden
-    "
+    style="max-width: 83.1rem"
+    class="opinion radius-21 sm-padding-20 md-padding-10 overflow-hidden"
   >
-    <div class="row align-items-center">
+    <div class="row align-items-center" style="min-height: 15.8rem">
       <!--  -->
       <div
         class="
@@ -79,10 +73,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.opinion {
-  .row {
-    min-height: 15.8rem;
-  }
-}
-</style>
+<style></style>

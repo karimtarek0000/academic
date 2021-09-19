@@ -1,14 +1,14 @@
 <template>
-  <transition v-if="statusToggler" name="slide-right">
+  <transition name="slide-right">
     <aside
-      style="width: 22rem"
+      v-show="statusToggler"
+      style="width: 22rem; height: 100vh"
       class="
         navbar-menu
         global-style-sidebar
         position-fixed
         bg-whiteDark
         padding-x-10
-        vh-100
       "
     >
       <!--  -->
@@ -26,7 +26,7 @@
         <AppBtnGo
           style="width: 14.8rem; height: 5.5rem"
           class="btn-voodoo-outline text-14 text-voodoo"
-          to="sign-in"
+          to="auth-sign-in"
         >
           تسجيل الدخول
         </AppBtnGo>
@@ -149,7 +149,7 @@ export default {
       return this.$store.state.sections_items
     },
     statusToggler() {
-      return this.$store.state.statusToggler
+      return this.$store.state.statusSideBarMenu
     },
   },
   watch: {
@@ -170,11 +170,8 @@ export default {
 </script>
 
 <style lang="scss">
-//
 .navbar-menu {
-  z-index: 9999;
-
-  //
+  z-index: 10000;
   &__sub {
     width: 100%;
     height: 100%;

@@ -14,7 +14,7 @@
       class="
         sections__category
         position-absolute
-        shadow-wrapper
+        shadow__user-options-list-1
         radius-25
         bg-light
         padding-start-20 padding-end-30 padding-top-15 padding-bottom-20
@@ -39,7 +39,7 @@
         <div
           class="
             sections__details
-            shadow-wrapper
+            shadow__user-options-list-1
             bg-light
             padding-x-10
             position-absolute
@@ -82,14 +82,8 @@ export default {
 </script>
 
 <style lang="scss" scopped>
-//
-.shadow-wrapper {
-  box-shadow: 0px 3px 25px #aeaeae1f;
-}
-
-//
 .sections {
-  $width: 285px;
+  $width: 28.5rem;
   //
   &__category {
     width: $width;
@@ -140,7 +134,7 @@ export default {
   &:hover &__category {
     opacity: 1;
     visibility: visible;
-    @include position('top', $moveT: '220%');
+    @include position('top', $moveT: '180%');
   }
 }
 </style>

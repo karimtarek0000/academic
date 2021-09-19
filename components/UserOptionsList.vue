@@ -1,5 +1,4 @@
 <template>
-  <!--  -->
   <ul class="user-options list-unstyled" role="user-options">
     <li
       v-for="item in addItems"
@@ -22,7 +21,7 @@
             <GSvg class="svg-20" :name-icon="item.icon" :title="item.title" />
             <span class="margin-start-10" v-text="item.title" />
             <GSvg
-              class="svg-17 margin-x-auto margin-end-10"
+              class="svg-17 margin-start-auto padding-end-10"
               name-icon="angle-left"
             />
           </div>

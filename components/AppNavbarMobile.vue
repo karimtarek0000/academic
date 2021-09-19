@@ -1,5 +1,5 @@
 <template>
-  <nav class="overflow-hidden">
+  <nav class="navbar-mobile overflow-hidden">
     <!--  -->
     <div class="row padding-y-10">
       <div class="col d-flex justify-content-center">
@@ -22,15 +22,18 @@
         <div class="d-flex align-items-center">
           <UserInfo
             name-user="كريم"
-            class="flex-column align-items-center"
-            @click.stop="openNavbarUser"
+            class="flex-column align-items-center cursor-pointer"
+            @clicked="toggle('sideBarUser', true)"
           />
-          <User-Options
+          <UserOptions
             class="margin-x-10"
-            :count="2"
-            icon="notification-2-fill"
-            icon-title="الاشعارات"
-            path="index"
+            v-bind="{
+              count: 2,
+              icon: 'notification-2-fill',
+              iconTitle: 'الاشعارات',
+              link: false,
+            }"
+            @clicked="toggle('sideNotification', true)"
           />
         </div>
       </div>
@@ -46,6 +49,18 @@
         <Search style="width: 34.9rem" />
       </div>
     </div>
+    <!-- OTHER -->
+    <AppSideBarMenu />
+    <AppSideBarUser />
+    <transition name="slide-right">
+      <AppNotification
+        v-show="statusNotifi"
+        :close="true"
+        class="position-fixed global-style-sidebar"
+        @close="toggle('sideNotification', false)"
+        @deleteAll="deleteAllNotification"
+      />
+    </transition>
   </nav>
 </template>
 
@@ -57,30 +72,44 @@ export default {
       statusToggler: false,
     }
   },
+  computed: {
+    statusNotifi() {
+      return this.$store.state.statusSideNotification
+    },
+  },
   watch: {
     statusToggler(v) {
-      this.$store.commit('toggler', v)
+      this.$store.commit('sideBarMenu', v)
     },
   },
   methods: {
-    openNavbarUser() {
-      this.$store.commit('toggleNavbarUser', true)
+    toggle(nameMutation, status) {
+      this.$store.commit(nameMutation, status)
     },
+    deleteAllNotification() {},
   },
 }
 </script>
 
 <style lang="scss">
-.toggler__toggler__burger {
-  span {
-    background-color: var(--voodoo);
+.navbar-mobile {
+  .toggler__toggler__burger {
+    span {
+      background-color: var(--voodoo);
+    }
   }
-}
-.scale-small {
-  transform: scale(0.8);
-}
-
-.count-notifi {
-  @include position('rt', $moveR: '-5px', $moveT: 0);
+  .count-notifi {
+    @include position('rt', $moveR: '-5px', $moveT: 0);
+  }
+  .user-options {
+    &__item {
+      a {
+        padding: 1.8rem 2.5rem 1.8rem 0;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+    }
+  }
 }
 </style>

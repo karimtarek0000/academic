@@ -4,18 +4,13 @@
     <AppNavbar v-if="ifDesktop" class="d-none d-lg-block" />
     <!-- Navbar mobile -->
     <AppNavbarMobile v-else class="d-block d-lg-none" />
-    <!-- Pages -->
+    <!--  -->
     <div class="container-xxl">
-      <!--  -->
       <Nuxt />
-      <!--  -->
       <Footer />
     </div>
     <!--  -->
-    <template v-if="ifTablet">
-      <AppSideBarMenu />
-      <AppSideBarUser />
-    </template>
+    <BackDrop :toggle="statusToggler" />
   </div>
 </template>
 
@@ -25,8 +20,12 @@ export default {
     ifDesktop() {
       return this.$mq === 'desktop'
     },
-    ifTablet() {
-      return this.$mq === 'tablet' || this.$mq === 'tabletP'
+    statusToggler() {
+      return (
+        this.$store.state.statusSideBarMenu ||
+        this.$store.state.statusSideBarUser ||
+        this.$store.state.statusSideNotification
+      )
     },
   },
 }
@@ -34,15 +33,11 @@ export default {
 
 <style lang="scss">
 .default {
-  //
-  .user-options {
-    &__item {
-      a {
-        padding: 1.8rem 2.5rem 1.8rem 0;
-      }
-      span {
-        font-size: 1.3rem;
-      }
+  .navbar-mobile {
+    .notification {
+      width: 100%;
+      height: 100vh;
+      max-height: 100vh;
     }
   }
 }

@@ -18,7 +18,7 @@
             row
             col-md-9
             flex-column
-            shadow__user-options-list-1
+            shadow__user-options-list-2
             bg-light
             padding-y-61 padding-x-20
             radius-21

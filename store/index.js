@@ -1,15 +1,20 @@
 export const state = () => ({
   sections_items: [],
-  statusToggler: false,
-  statusToggleNavbarUser: false,
+  statusSideBarMenu: false,
+  statusSideBarUser: false,
+  statusSideNotification: false,
+  isAuth: false,
 })
 
 export const mutations = {
-  toggler(state, status) {
-    state.statusToggler = status
+  sideBarMenu(state, status) {
+    state.statusSideBarMenu = status
   },
-  toggleNavbarUser(state, status) {
-    state.statusToggleNavbarUser = status
+  sideBarUser(state, status) {
+    state.statusSideBarUser = status
+  },
+  sideNotification(state, status) {
+    state.statusSideNotification = status
   },
   setSectionsItems(state, payload) {
     state.sections_items = payload

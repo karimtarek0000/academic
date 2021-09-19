@@ -5,7 +5,7 @@
         المدرب
       </h2>
     </slot>
-    <div class="row max-width-831">
+    <div class="row" style="max-width: 83.1rem">
       <div class="col-12 d-flex flex-column align-items-center col-sm-4">
         <!--  -->
         <figure
@@ -53,11 +53,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.about-teacher {
-  &__image {
-    // width: 25.3rem;
-    // height: 22.5rem;
-  }
-}
-</style>
+<style></style>

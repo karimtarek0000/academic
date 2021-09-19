@@ -16,7 +16,7 @@
       <div class="row gx-5 custom-container">
         <div class="col-12 col-md-4 md-margin-top-0 margin-top-50">
           <aside
-            class="bg-light radius-21 shadow__user-options-list-1 padding-10"
+            class="bg-light radius-21 shadow__user-options-list-2 padding-10"
           >
             <UserOptionsList :add-items="userItems" class="margin-bottom-0" />
           </aside>
@@ -34,7 +34,7 @@
             class="
               row
               flex-column
-              shadow__user-options-list-1
+              shadow__user-options-list-2
               bg-light
               padding-y-61 padding-x-20
               radius-21
@@ -364,7 +364,7 @@
             class="
               row
               flex-column
-              shadow__user-options-list-1
+              shadow__user-options-list-2
               bg-light
               padding-y-45 padding-x-20
               radius-21
@@ -460,7 +460,7 @@
             class="
               row
               flex-column
-              shadow__user-options-list-1
+              shadow__user-options-list-2
               bg-light
               padding-y-45 padding-x-20
               radius-21

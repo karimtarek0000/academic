@@ -2,19 +2,12 @@
 $utilities: map-merge(
   $utilities,
   (
-    'vh': (
-      property: height,
-      class: vh,
-      values: (
-        100: 100vh,
-      ),
-    ),
-    'text': (
-      property: text-align,
-      class: text,
-      values: (
-        right: right,
-      ),
-    ),
+    // 'vh': (
+    //   property: height,
+    //   class: vh,
+    //   values: (
+    //     100: 100vh,
+    //   ),
+    // ),
   )
 );

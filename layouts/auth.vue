@@ -24,12 +24,14 @@
           >
             <Logo
               style="margin-right: -1rem"
-              class="register__logo"
+              class="scale-small"
               color="text-voodoo"
             />
           </div>
           <div class="col">
-            <nuxt />
+            <transition name="slide-right" mode="out-in">
+              <nuxt />
+            </transition>
           </div>
         </div>
       </div>
@@ -106,22 +108,24 @@
         </div>
         <!--  -->
         <div class="row height-100 align-items-center text-light padding-x-45">
-          <div v-if="isSignUp">
-            <h2 class="text-16">أكاديمي تعلم أينما كنت</h2>
-            <h1 class="text-25">في أي وقت وفي أي مكان</h1>
-            <p class="text-12 weight-br-300 col col-lg-7">
-              موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في
-              الوطن العربي مع التمتع بمميزات عديدة في أكاديمي
-            </p>
-          </div>
-          <!--  -->
-          <div v-if="!isSignUp">
-            <h1 class="text-25">سارع بالتسجيل</h1>
-            <p class="text-12 weight-br-300 col col-lg-7">
-              موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في
-              الوطن العربي مع التمتع بمميزات عديدة في أكاديمي
-            </p>
-          </div>
+          <transition-group name="slide-up" mode="in-out" appear>
+            <div v-if="isSignUp" key="1">
+              <h2 class="text-16">أكاديمي تعلم أينما كنت</h2>
+              <h1 class="text-25">في أي وقت وفي أي مكان</h1>
+              <p class="text-12 weight-br-300 col col-lg-7">
+                موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في
+                الوطن العربي مع التمتع بمميزات عديدة في أكاديمي
+              </p>
+            </div>
+            <!--  -->
+            <div v-if="!isSignUp" key="2">
+              <h1 class="text-25">سارع بالتسجيل</h1>
+              <p class="text-12 weight-br-300 col col-lg-7">
+                موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في
+                الوطن العربي مع التمتع بمميزات عديدة في أكاديمي
+              </p>
+            </div>
+          </transition-group>
         </div>
       </div>
     </div>
@@ -151,14 +155,12 @@ export default {
     @media only screen and (max-width: 48em) {
       min-height: 40vh;
     }
-
     img {
       width: 100%;
       height: 100%;
       z-index: -1;
       object-position: left;
     }
-
     &::after {
       content: '';
       position: absolute;
@@ -173,9 +175,6 @@ export default {
       );
       z-index: -1;
     }
-  }
-  &__logo {
-    transform: scale(0.8);
   }
 }
 </style>

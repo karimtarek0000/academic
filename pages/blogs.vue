@@ -28,7 +28,8 @@
             style="max-height: 21.4rem"
           >
             <img
-              class="resize-img position-top-img height-100"
+              style="object-position: center top"
+              class="resize-img height-100"
               src="~/assets/images/global/course.png"
               alt=""
             />
