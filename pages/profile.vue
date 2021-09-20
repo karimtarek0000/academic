@@ -661,12 +661,12 @@ export default {
         },
         {
           title: 'المفضلة',
-          path: 'index',
+          path: 'favorit',
           icon: 'heart-fill',
         },
         {
           title: 'طلبات الشراء',
-          path: 'index',
+          path: 'purchase-orders',
           icon: 'shopping-basket-2-fill',
         },
         {
