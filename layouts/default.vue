@@ -24,7 +24,8 @@ export default {
       return (
         this.$store.state.statusSideBarMenu ||
         this.$store.state.statusSideBarUser ||
-        this.$store.state.statusSideNotification
+        this.$store.state.statusSideNotification ||
+        this.$store.state.statusAsideFilter
       )
     },
   },

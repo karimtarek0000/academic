@@ -10,7 +10,7 @@
         class="
           col-12 col-sm-8
           blog-card__body
-          padding-x-20 padding-y-20
+          padding-x-5 padding-y-20
           xxlg-padding-x-30
         "
       >

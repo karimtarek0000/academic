@@ -135,11 +135,28 @@
     opacity: 0;
   }
 }
+
+.scale-1-animate {
+  animation: scale1 0.4s ease-in-out both;
+}
+
+@keyframes scale1 {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .slide-right-dir-enter-active,
 .slide-right-dir-leave-active,
 .slide-left-dir-enter-active,
 .slide-left-dir-leave-active,
 .slide-right-enter-active,
-.slide-right-leave-active {
+.slide-right-leave-active,
+.scale-1-animate {
   will-change: animation;
 }

@@ -48,6 +48,8 @@ export default {
   data() {
     return {
       settings: {
+        lazyLoad: 'progressive',
+        initialSlide: 1,
         responsive: [
           {
             breakpoint: 675,

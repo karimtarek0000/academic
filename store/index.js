@@ -3,6 +3,7 @@ export const state = () => ({
   statusSideBarMenu: false,
   statusSideBarUser: false,
   statusSideNotification: false,
+  statusAsideFilter: false,
   isAuth: false,
 })
 
@@ -15,6 +16,9 @@ export const mutations = {
   },
   sideNotification(state, status) {
     state.statusSideNotification = status
+  },
+  asideFilter(state, status) {
+    state.statusAsideFilter = status
   },
   setSectionsItems(state, payload) {
     state.sections_items = payload

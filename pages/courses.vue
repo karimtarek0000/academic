@@ -15,30 +15,41 @@
     <div
       class="
         row
-        justify-content-between
+        justify-content-center justify-content-md-between
         align-items-center
-        set-padding
         padding-y-20
-        margin-bottom-10
-        d-none d-md-flex
+        custom-container
+        margin-bottom-5
       "
     >
       <!--  -->
       <div
         role="number-search"
-        class="col col-lg-3 d-flex align-items-center text-16 text-dark"
+        class="
+          col-12 col-md-3
+          d-flex
+          justify-content-center justify-content-md-start
+          align-items-center
+          text-16 text-dark
+        "
       >
         <span class="margin-end-5">200</span>
         <span>نتائج البحث</span>
       </div>
       <!--  -->
-      <div class="col col-lg-6 sort">
-        <div class="row justify-content-end align-items-center">
+      <div class="col-12 col-md-6 md-margin-top-10 sort">
+        <div
+          class="
+            row
+            justify-content-center justify-content-md-end
+            align-items-center
+          "
+        >
           <!--  -->
           <SelectBox
             :options="[1, 2, 3]"
             class="
-              col-3
+              col-4 col-md-4
               border-gallery
               text-14
               padding-y-10
@@ -52,7 +63,7 @@
           <SelectBox
             :options="[1, 2, 3]"
             class="
-              col-3
+              col-4 col-md-4
               border-gallery
               text-14
               padding-y-10
@@ -65,9 +76,27 @@
       </div>
     </div>
     <!--  -->
+    <client-only>
+      <AppBtn
+        v-if="widthWindow"
+        class="
+          bg-light
+          border-whiteDark-all
+          margin-x-auto margin-bottom-10
+          padding-y-10 padding-x-20
+          radius-14
+        "
+        @clicked="toggleAside(true)"
+      >
+        <GSvg class="svg-20" name-icon="filter" title="فلتر" />
+        <span class="text-14 margin-start-5">فلتر</span>
+      </AppBtn>
+    </client-only>
+    <!--  -->
     <div
       class="
         row
+        gx-2
         padding-y-10
         lg-padding-x-10
         justify-content-between
@@ -75,12 +104,34 @@
       "
     >
       <!--  -->
-      <div class="col col-sm-3">
-        <!--  -->
-        <AsideFilter />
+      <div class="col-12 col-sm-4">
+        <client-only>
+          <transition name="slide-right">
+            <AppAsideFilter
+              v-show="statusRender"
+              style="width: 22rem; height: 100vh"
+              class="padding-x-10"
+            >
+              <span
+                class="
+                  aside-filter__close
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                  scale-1-animate
+                  cursor-pointer
+                  d-sm-none
+                "
+                @click="toggleAside(false)"
+              >
+                <GSvg class="svg-11" name-icon="close" title="اغلاق" />
+              </span>
+            </AppAsideFilter>
+          </transition>
+        </client-only>
       </div>
       <!--  -->
-      <div class="col-12 col-sm-8">
+      <div class="col-12 col-sm-7 col-md-8">
         <!--  -->
         <div class="row">
           <CourseCard
@@ -133,6 +184,22 @@ export default {
       selectBox1: '',
       selectBox2: '',
     }
+  },
+  computed: {
+    toggleAsideFilter() {
+      return this.$store.state.statusAsideFilter
+    },
+    widthWindow() {
+      return process.client && window.innerWidth <= 576
+    },
+    statusRender() {
+      return this.widthWindow ? this.toggleAsideFilter : true
+    },
+  },
+  methods: {
+    toggleAside(status) {
+      this.$store.commit('asideFilter', status)
+    },
   },
   head() {
     return {

@@ -1,5 +1,6 @@
 <template>
   <aside role="filter" class="aside-filter bg-light">
+    <slot />
     <!--  -->
     <div class="row flex-column">
       <!--  -->
@@ -32,6 +33,7 @@
             label: 'مجاني',
             value: 'مجاني',
             name: 'price',
+            type: 'checkbox',
           }"
           @changeSelect="priceSelected = $event"
         />
@@ -43,6 +45,7 @@
             label: 'مدفوعة',
             value: 'مدفوعة',
             name: 'price',
+            type: 'checkbox',
           }"
           @changeSelect="priceSelected = $event"
         />
@@ -62,6 +65,7 @@
             label: 'عربي',
             value: 'عربي',
             name: 'lang',
+            type: 'checkbox',
           }"
           @changeSelect="languageSelected = $event"
         />
@@ -73,6 +77,7 @@
             label: 'انجليزي',
             value: 'انجليزي',
             name: 'lang',
+            type: 'checkbox',
           }"
           @changeSelect="languageSelected = $event"
         />
@@ -97,16 +102,20 @@ export default {
 </script>
 
 <style lang="scss">
-@media only screen and (max-width: 36em) {
-  .aside-filter {
+.aside-filter {
+  @media only screen and (max-width: 576px) {
     position: fixed;
-    top: 0;
-    right: 0;
-    // transform: translateX(50%);
-    width: 220px;
-    min-height: 100vh;
-    padding: 10px 20px;
-    z-index: 9999;
+    z-index: 11000;
+    @include position('lt', $moveT: 0, $moveL: 0);
+  }
+
+  &__close {
+    @include position('rt', $moveT: '10px', $moveR: '-20%');
+    border-radius: 50%;
+    background-color: var(--light);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
   }
 }
 </style>

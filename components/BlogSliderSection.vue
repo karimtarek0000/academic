@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       sliderSettings: {
+        initialSlide: 1,
         centerMode: true,
         centerPadding: '300px',
         variableWidth: false,
@@ -46,7 +47,7 @@ export default {
             breakpoint: 767,
             settings: {
               slidesToShow: 1,
-              centerPadding: '0px',
+              centerPadding: '30px',
             },
           },
           {

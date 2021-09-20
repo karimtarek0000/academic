@@ -12,7 +12,7 @@
         />
       </figure>
       <!--  -->
-      <div class="col-md-8 padding-x-20 xxlg-padding-x-45 padding-y-20">
+      <div class="col-md-8 padding-x-10 xxlg-padding-x-45 padding-y-20">
         <!--  -->
         <div class="row">
           <!--  -->
@@ -100,7 +100,7 @@
         <AppBtnGo
           v-if="!addPrice"
           style="width: 11.6rem; height: 4.1rem; margin-right: auto"
-          class="btn-voodoo text-12 text-light margin-top-20"
+          class="btn-voodoo text-12 text-light sm-margin-end-30 margin-top-20"
           to="auth-sign-up"
         >
           تصفح الكورس
