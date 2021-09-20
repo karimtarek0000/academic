@@ -263,6 +263,9 @@ export default {
   }
   .notification {
     @include position('rt', $moveT: '80%', $moveR: 0);
+    &__data {
+      max-height: 40rem;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div role="notification" class="notification bg-light">
+  <div role="notification" class="notification bg-light overflow-hidden">
     <div
       class="
         row
@@ -10,7 +10,7 @@
       "
     >
       <div v-if="close" class="col flex-grow-0 cursor-pointer" @click="clicked">
-        <GSvg class="svg-20" name-icon="close" />
+        <GSvg class="svg-20" name-icon="close" title="اغلاق" />
       </div>
       <div class="col flex-grow-0 text-12">
         <span>الاشعارات</span>
@@ -25,12 +25,12 @@
     </div>
     <!-- RENDER ALL NOTIFICATION -->
     <div
-      class="row padding-x-20 change-scrollbar-y"
-      style="max-height: 92vh; overflow-y: auto"
+      class="row padding-x-20 notification__data change-scrollbar-y"
+      style="overflow-y: auto"
     >
       <!--  -->
       <div
-        v-for="i in 2"
+        v-for="i in 10"
         :key="i"
         class="
           col-12

@@ -35,7 +35,7 @@
   }
 }
 .change-scrollbar-y {
-  @include scrollBar(1rem, $light, $voodoo) {
+  @include scrollBar(0.5rem, $light, $voodoo) {
     border-radius: 2rem;
   }
 }
@@ -209,7 +209,4 @@
 }
 .text-right {
   text-align: right;
-}
-.scale-small {
-  transform: scale(0.8);
 }

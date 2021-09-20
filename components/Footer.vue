@@ -48,7 +48,7 @@
           </ul>
         </div>
         <!--  -->
-        <div class="col-lg-4 lg-margin-bottom-10">
+        <div class="col-lg-4 lg-margin-bottom-10 footer__links">
           <div class="row">
             <!--  -->
             <div class="col">
@@ -299,7 +299,7 @@ export default {
     }
   }
 
-  a {
+  &__links a {
     @include DetectHover {
       &:hover {
         text-decoration: underline;

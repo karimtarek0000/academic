@@ -35,9 +35,17 @@ export default {
 .default {
   .navbar-mobile {
     .notification {
-      width: 100%;
+      width: 50%;
       height: 100vh;
       max-height: 100vh;
+
+      @media only screen and (max-width: 48em) {
+        width: 100%;
+      }
+
+      &__data {
+        max-height: 92vh;
+      }
     }
   }
 }

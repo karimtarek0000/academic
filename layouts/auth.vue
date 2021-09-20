@@ -1,7 +1,11 @@
 <template>
   <main
     role="register"
-    class="register custom-input--object-3 custom-input--object-4"
+    class="
+      register
+      custom-input--object-3 custom-input--object-4
+      overflow-hidden
+    "
   >
     <div class="row overflow-hidden">
       <!-- Col 1 -->
@@ -17,16 +21,13 @@
             class="
               col-12
               d-flex
+              flex-grow-0
               justify-content-start
               margin-bottom-20
               padding-y-20
             "
           >
-            <Logo
-              style="margin-right: -1rem"
-              class="scale-small"
-              color="text-voodoo"
-            />
+            <Logo :small="true" color="text-voodoo" />
           </div>
           <div class="col">
             <transition name="slide-right" mode="out-in">
@@ -64,11 +65,7 @@
         >
           <!--  -->
           <div v-if="!ifNotTabletP" class="col flex-grow-0">
-            <Logo
-              style="margin-right: -1rem"
-              class="register__logo"
-              color="text-light"
-            />
+            <Logo :small="true" class="padding-x-5" color="text-light" />
           </div>
           <!--  -->
           <div
@@ -144,6 +141,10 @@ export default {
     ifNotTabletP() {
       return this.$mq !== 'tabletP'
     },
+  },
+  mounted() {
+    this.$store.commit('sideBarMenu', false)
+    document.body.style.overflowY = 'visible'
   },
 }
 </script>

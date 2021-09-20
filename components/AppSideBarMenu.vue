@@ -13,6 +13,7 @@
     >
       <!--  -->
       <div
+        v-if="!isAuth"
         role="select-register"
         class="d-flex flex-column align-items-center margin-y-10"
       >
@@ -136,6 +137,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'AppSideBarMenu',
   data() {
@@ -145,12 +147,11 @@ export default {
     }
   },
   computed: {
-    getItems() {
-      return this.$store.state.sections_items
-    },
-    statusToggler() {
-      return this.$store.state.statusSideBarMenu
-    },
+    ...mapState({
+      getItems: 'sections_items',
+      statusToggler: 'statusSideBarMenu',
+      isAuth: 'isAuth',
+    }),
   },
   watch: {
     statusToggler(v) {

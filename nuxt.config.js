@@ -151,7 +151,9 @@ export default {
       })
       routes.push({
         path: '/blogs/article/:id',
+        name: '_article',
         component: resolve(__dirname, 'pages/article.vue'),
+        chunkName: 'pages/article',
       })
       routes.push({
         path: '/profile/:name',

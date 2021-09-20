@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar-mobile overflow-hidden">
     <!--  -->
-    <div class="row padding-y-10">
+    <div v-if="isAuth" class="row padding-y-10">
       <div class="col d-flex justify-content-center">
-        <Logo color="text-voodoo" class="scale-small" />
+        <Logo :small="true" color="text-voodoo" />
       </div>
     </div>
     <!--  -->
@@ -16,9 +16,14 @@
         margin-bottom-5
       "
     >
-      <!-- <Logo class="col flex-grow-0 scale-small" color="text-voodoo" /> -->
+      <Logo
+        v-if="!isAuth"
+        :small="true"
+        class="col flex-grow-0"
+        color="text-voodoo"
+      />
       <!--  -->
-      <div class="col flex-grow-0">
+      <div v-if="isAuth" class="col flex-grow-0">
         <div class="d-flex align-items-center">
           <UserInfo
             name-user="كريم"
@@ -65,6 +70,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'AppNavbarMobile',
   data() {
@@ -73,9 +79,10 @@ export default {
     }
   },
   computed: {
-    statusNotifi() {
-      return this.$store.state.statusSideNotification
-    },
+    ...mapState({
+      statusNotifi: 'statusSideNotification',
+      isAuth: 'isAuth',
+    }),
   },
   watch: {
     statusToggler(v) {
