@@ -41,6 +41,7 @@
 
 <script>
 export default {
+  layout: 'site',
   asyncData() {
     const itemsSliderSectionAllSections = [
       {

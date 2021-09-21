@@ -278,9 +278,6 @@ export default {
   name: 'SignUp',
   mixins: [password],
   layout: 'auth',
-  meta: {
-    image: 1,
-  },
   data() {
     return {
       form: {
@@ -293,6 +290,9 @@ export default {
       },
       agree: '',
     }
+  },
+  meta: {
+    image: 1,
   },
   validations: {
     form: {
@@ -324,6 +324,13 @@ export default {
   head() {
     return {
       title: 'تسجيل جديد',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'تسجيل لموقع اكاديمي',
+        },
+      ],
     }
   },
 }

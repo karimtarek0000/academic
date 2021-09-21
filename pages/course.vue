@@ -490,11 +490,12 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import { setDirectionAnim } from '@/mixins/other'
+import { setDirectionAnim, focusInput } from '@/mixins/other'
 import format from 'date-fns/format'
 export default {
   name: 'Course',
-  mixins: [setDirectionAnim],
+  mixins: [setDirectionAnim, focusInput],
+  layout: 'site',
   validate({ params }) {
     // Must be params string not number and params exsist.
     return /^\D+$/.test(params.course) && params.course
@@ -673,14 +674,6 @@ export default {
         this.addMeeting ||
         this.addTask
       )
-    },
-  },
-  watch: {
-    statusToggleBackDrop(value) {
-      this.$nextTick(() => {
-        if (value && this.$refs.firstInput) this.$refs.firstInput.focus()
-        if (!value) this.$v.$reset()
-      })
     },
   },
   mounted() {

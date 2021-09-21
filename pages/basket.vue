@@ -175,6 +175,7 @@
 <script>
 export default {
   name: 'Basket',
+  layout: 'site',
   methods: {
     favi() {
       // eslint-disable-next-line no-console

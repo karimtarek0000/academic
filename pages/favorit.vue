@@ -92,6 +92,7 @@
 <script>
 export default {
   name: 'Favorit',
+  layout: 'site',
   methods: {
     deleteCourse(i) {
       // eslint-disable-next-line no-console

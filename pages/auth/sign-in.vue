@@ -166,6 +166,13 @@ export default {
   head() {
     return {
       title: 'تسجيل الدخول',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'تسجيل الدخول لموقع اكاديمي',
+        },
+      ],
     }
   },
 }

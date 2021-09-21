@@ -13,3 +13,14 @@ export const setDirectionAnim = {
     },
   },
 }
+
+export const focusInput = {
+  watch: {
+    statusToggleBackDrop(value) {
+      this.$nextTick(() => {
+        if (value && this.$refs.firstInput) this.$refs.firstInput.focus()
+        if (!value) this.$v.$reset()
+      })
+    },
+  },
+}

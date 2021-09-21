@@ -149,6 +149,7 @@
 <script>
 export default {
   name: 'Courses',
+  layout: 'site',
   asyncData() {
     return {
       items: [

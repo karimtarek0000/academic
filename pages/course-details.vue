@@ -108,6 +108,7 @@
 <script>
 export default {
   name: 'CourseDetails',
+  layout: 'site',
   asyncData() {
     return {
       totalCourseContent: [44, 75, 75],

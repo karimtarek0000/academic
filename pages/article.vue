@@ -113,6 +113,7 @@ export default {
     // Must be params number not string and params exsist.
     return /^\d+$/.test(params.id) && params.id
   },
+  layout: 'site',
   head() {
     return {
       title: 'مقال',

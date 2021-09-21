@@ -243,6 +243,7 @@
 <script>
 export default {
   name: 'Instructor',
+  layout: 'site',
   validate({ params }) {
     // Must be params string not number and params exsist.
     return /^\D+$/.test(params.name) && params.name

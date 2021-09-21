@@ -56,6 +56,7 @@
 <script>
 export default {
   name: 'MyCourses',
+  layout: 'site',
   provide() {
     return {
       progress: '70%',

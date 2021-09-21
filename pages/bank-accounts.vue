@@ -46,13 +46,16 @@
         mx-auto
         d-block
       "
-      @clicked="toggle = true"
+      @clicked="statusToggleBackDrop = true"
     >
       اضافة حساب بنكي
     </AppBtn>
     <!--  -->
-    <BackDrop :toggle="toggle" @toggleBackDrop="toggle = $event">
-      <AppModel head="اضافة حساب بنكي" @clicked="toggle = false">
+    <BackDrop
+      :toggle="statusToggleBackDrop"
+      @toggleBackDrop="statusToggleBackDrop = $event"
+    >
+      <AppModel head="اضافة حساب بنكي" @clicked="statusToggleBackDrop = false">
         <template>
           <h3
             slot="head"
@@ -63,6 +66,7 @@
           </h3>
           <form class="col-10 mx-auto margin-top-30" @submit.prevent="submit">
             <input
+              ref="firstInput"
               v-model="$v.form.name.$model"
               role="name"
               type="text"
@@ -173,8 +177,11 @@
 
 <script>
 import { required, numeric } from 'vuelidate/lib/validators'
+import { focusInput } from '@/mixins/other'
 export default {
   name: 'BankAccounts',
+  mixins: [focusInput],
+  layout: 'site',
   data() {
     return {
       form: {
@@ -183,7 +190,7 @@ export default {
         accountNumber: null,
         IFSCCode: null,
       },
-      toggle: false,
+      statusToggleBackDrop: false,
       table: {
         head: ['الاسم', 'اسم البنك', 'رقم الحساب', 'IFSC Codes', 'العملية'],
         body: [

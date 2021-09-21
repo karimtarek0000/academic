@@ -83,15 +83,12 @@
                       name-icon="user"
                     />
                   </div>
-                  <p
+                  <AppMessageInputRequired
                     v-if="
                       !$v.form.firstName.required && $v.form.firstName.$dirty
                     "
-                    role="error"
                     class="margin-y-10 text-12 text-dark"
-                  >
-                    مطلوب ادخاله
-                  </p>
+                  />
                 </div>
                 <div class="col-12 col-sm-6">
                   <div
@@ -117,13 +114,10 @@
                       placeholder="الاسم الاخير"
                     />
                   </div>
-                  <p
+                  <AppMessageInputRequired
                     v-if="!$v.form.lastName.required && $v.form.lastName.$dirty"
-                    role="error"
                     class="margin-y-10 text-12 text-dark"
-                  >
-                    مطلوب ادخاله
-                  </p>
+                  />
                 </div>
               </div>
               <div
@@ -156,20 +150,15 @@
                   name-icon="mail-2"
                 />
               </div>
-              <p
+              <AppMessageInputRequired
                 v-if="!$v.form.email.required && $v.form.email.$dirty"
-                role="error"
                 class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
-              <p
+              />
+              <AppMessageInputError
                 v-if="!$v.form.email.email && $v.form.email.$dirty"
-                role="error"
+                type-error="email"
                 class="margin-y-10 text-12 text-dark"
-              >
-                ادخل الايميل بشكل صحيح
-              </p>
+              />
               <div
                 class="
                   d-flex
@@ -200,24 +189,19 @@
                   name-icon="smartphone"
                 />
               </div>
-              <p
+              <AppMessageInputRequired
                 v-if="
                   !$v.form.contactPhone.required && $v.form.contactPhone.$dirty
                 "
-                role="require"
                 class="margin-y-10 text-12 text-dark"
-              >
-                مطلوب ادخاله
-              </p>
-              <p
+              />
+              <AppMessageInputError
                 v-if="
                   !$v.form.contactPhone.numeric && $v.form.contactPhone.$dirty
                 "
-                role="error"
+                type-error="num"
                 class="margin-y-10 text-12 text-dark"
-              >
-                يجب ادخال ارقام فقط
-              </p>
+              />
               <div
                 class="
                   d-flex
@@ -252,7 +236,7 @@
               <!--  -->
               <AppUploadFile
                 id="uploadCv"
-                v-model="form.cv"
+                v-model="$v.form.cv.$model"
                 class="margin-top-20 fit-content"
                 accept="application/pdf"
               >
@@ -276,6 +260,10 @@
                 <span class="text-coral margin-end-5">تم اختيار:</span>
                 <span v-text="form.cv.name" />
               </div>
+              <!--  -->
+              <AppMessageInputRequired
+                v-if="!$v.form.cv.required && $v.form.cv.$dirty"
+              />
             </form>
           </div>
         </div>
@@ -293,7 +281,6 @@
               mx-auto
               d-block
             "
-            disabled
             @clicked="submit"
           >
             ارسال
@@ -308,6 +295,7 @@
 import { required, email, numeric } from 'vuelidate/lib/validators'
 export default {
   name: 'JoinUsInstructor',
+  layout: 'site',
   data() {
     return {
       form: {
@@ -335,6 +323,9 @@ export default {
       },
       contactPhone: {
         numeric,
+        required,
+      },
+      cv: {
         required,
       },
     },

@@ -114,6 +114,7 @@
 <script>
 export default {
   name: 'WhoWeAre',
+  layout: 'site',
   head() {
     return {
       title: 'من نحن',

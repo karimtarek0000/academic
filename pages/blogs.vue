@@ -59,6 +59,7 @@
 <script>
 export default {
   name: 'Blogs',
+  layout: 'site',
   // async asyncData({ $axios, query }) {
   //   const { data } = await $axios.get(
   //     `https://jsonplaceholder.typicode.com/posts/${

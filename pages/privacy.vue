@@ -41,6 +41,7 @@
 <script>
 export default {
   name: 'Privacy',
+  layout: 'site',
   head() {
     return {
       title: 'سياسة الخصوصية',

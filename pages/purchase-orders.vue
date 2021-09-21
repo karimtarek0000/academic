@@ -74,6 +74,7 @@
 <script>
 export default {
   name: 'PurchaseOrders',
+  layout: 'site',
   data() {
     return {
       table: {

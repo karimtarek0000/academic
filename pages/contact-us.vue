@@ -252,6 +252,7 @@
 import { required, email, numeric } from 'vuelidate/lib/validators'
 export default {
   name: 'ContactUs',
+  layout: 'site',
   data() {
     return {
       form: {

@@ -163,6 +163,7 @@ import { setDirectionAnim } from '@/mixins/other'
 export default {
   name: 'ConfirmThePay',
   mixins: [setDirectionAnim],
+  layout: 'site',
   data() {
     return {
       data: null,

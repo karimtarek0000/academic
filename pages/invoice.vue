@@ -96,6 +96,7 @@
 <script>
 export default {
   name: 'Invoice',
+  layout: 'site',
   validate({ params }) {
     // Must be params number not string and params exsist.
     return /^\d+$/.test(params.id) && params.id
