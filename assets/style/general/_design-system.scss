@@ -219,9 +219,9 @@ $borderRaduis: (
 ////////////////////////////
 // 11) OTHER
 // Prorperty Change Scroll Bar
-$colorTrack: null;
-$colorThumb: null;
-$widthTrack: null;
+$colorTrack: $whiteDark;
+$colorThumb: $voodoo;
+$widthTrack: 5px;
 
 // Change Color Selection
-$colorSelection: null;
+$colorSelection: $whiteDark;

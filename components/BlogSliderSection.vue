@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       sliderSettings: {
+        lazyLoad: 'ondemand',
         initialSlide: 1,
         centerMode: true,
         centerPadding: '300px',

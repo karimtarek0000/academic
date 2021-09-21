@@ -57,7 +57,7 @@ export default {
   data() {
     return {
       settings: {
-        lazyLoad: 'ondemand',
+        // lazyLoad: 'ondemand',
         // autoplay: true,
         // autoplaySpeed: 3000,
         arrows: false,
