@@ -15,9 +15,15 @@
         <div class="col-lg-4 lg-margin-bottom-10">
           <Logo class="text-light margin-bottom-15" />
           <p
-            style="width: 75%"
             role="description"
-            class="text-snuff weight-br-300 text-13 lg-width-100 margin-top-18"
+            class="
+              text-snuff
+              col-9
+              weight-br-300
+              text-13
+              lg-width-100
+              margin-top-18
+            "
           >
             موقعنا لجميع المجالات نقدم لكم دورات لباقة من أفضل المدربين في الوطن
             العربي مع التمتع بمميزات عديدة في أكاديمي

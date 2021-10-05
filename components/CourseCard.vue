@@ -100,7 +100,7 @@
         <AppBtnGo
           v-if="!addPrice"
           style="width: 11.6rem; height: 4.1rem; margin-right: auto"
-          class="btn-voodoo text-12 text-light sm-margin-end-30 margin-top-20"
+          class="btn-voodoo text-12 text-light margin-top-20"
           to="auth-sign-up"
         >
           تصفح الكورس

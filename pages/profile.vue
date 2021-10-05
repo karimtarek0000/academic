@@ -408,7 +408,6 @@
                     !$v.form.oldPassword.required && $v.form.oldPassword.$dirty
                   "
                 />
-
                 <div
                   class="
                     d-flex
@@ -418,7 +417,7 @@
                   "
                 >
                   <input
-                    v-model.trim.lazy="$v.form.newPassword.$model"
+                    v-model.trim="$v.form.password.$model"
                     role="old-password"
                     type="password"
                     class="
@@ -434,21 +433,51 @@
                   <GSvg
                     :class="[
                       'svg-17 fill-silver position-absolute margin-x-10',
-                      { 'fill-dark': form.newPassword },
+                      { 'fill-dark': form.password },
                     ]"
                     name-icon="key-2-line"
                   />
                 </div>
-                <AppMessageInputError
-                  v-if="
-                    !$v.form.newPassword.minLength && $v.form.newPassword.$dirty
-                  "
-                  type-error="custom"
+                <AppMessageInputRequired
+                  v-if="!$v.form.password.required && $v.form.password.$dirty"
+                />
+                <div
+                  v-if="$v.form.password.$invalid && $v.form.password.$dirty"
                 >
-                  يجب ادخال على الاقل
-                  {{ $v.form.newPassword.$params.minLength.min }}
-                  ادخالات
-                </AppMessageInputError>
+                  <span class="text-13"
+                    >يجب ادخال على الاقل 10 ادخالات تحتوي على</span
+                  >
+                  <ul class="list-unstyled weight-br-300 text-12">
+                    <li class="d-flex align-items-center">
+                      <GSvg
+                        :name-icon="checkNumbers ? 'done' : 'wrong'"
+                        class="svg-18 fill-coral"
+                      />
+                      <span>ارقام</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <GSvg
+                        :name-icon="checkLowerCase ? 'done' : 'wrong'"
+                        class="svg-18 fill-coral"
+                      />
+                      <span>حروف صغيرة</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <GSvg
+                        :name-icon="checkUpperCase ? 'done' : 'wrong'"
+                        class="svg-18 fill-coral"
+                      />
+                      <span>حروف كبيرة</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <GSvg
+                        :name-icon="checkCharacters ? 'done' : 'wrong'"
+                        class="svg-18 fill-coral"
+                      />
+                      <span>ادخال على الاقل واحد مثل @#%^*&</span>
+                    </li>
+                  </ul>
+                </div>
               </form>
             </div>
           </div>
@@ -622,14 +651,14 @@ import {
   required,
   requiredIf,
   email,
-  minLength,
   numeric,
   url,
 } from 'vuelidate/lib/validators'
-
+import { password } from '~/mixins/validation.js'
 export default {
   name: 'Profile',
   layout: 'site',
+  mixins: [password],
   validate({ params }) {
     // Must be params string not number and params exsist.
     return /^\D+$/.test(params.name) && params.name
@@ -648,7 +677,7 @@ export default {
         city: null,
         aboutMe: null,
         oldPassword: null,
-        newPassword: null,
+        password: null,
         facebook: null,
         twitter: null,
         linkedin: null,
@@ -700,11 +729,14 @@ export default {
       },
       oldPassword: {
         required: requiredIf(function () {
-          return this.form.newPassword !== null && this.form.newPassword !== ''
+          return this.form.password !== null && this.form.password !== ''
         }),
       },
-      newPassword: {
-        minLength: minLength(10),
+      password: {
+        ...password.validations.password,
+        required: requiredIf(function () {
+          return this.form.oldPassword !== null && this.form.oldPassword !== ''
+        }),
       },
       facebook: {
         url,

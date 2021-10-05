@@ -39,11 +39,17 @@ export default {
     return {
       sliderSettings: {
         lazyLoad: 'ondemand',
-        initialSlide: 1,
         centerMode: true,
         centerPadding: '300px',
         variableWidth: false,
         responsive: [
+          {
+            breakpoint: 350,
+            settings: {
+              slidesToShow: 1,
+              centerPadding: '0px',
+            },
+          },
           {
             breakpoint: 767,
             settings: {
